@@ -1,0 +1,27 @@
+name: plantrip
+services:
+  plantrip:
+    build: .
+    ports:
+      - "127.0.0.1:${PLANTRIP_PORT:-18080}:8000"
+    environment:
+      COOKIE_SECURE: "${COOKIE_SECURE:-1}"
+      ALLOW_SETUP: "${ALLOW_SETUP:-0}"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - plantrip-data:/data
+    restart: unless-stopped
+    init: true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/state', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+volumes:
+  plantrip-data:

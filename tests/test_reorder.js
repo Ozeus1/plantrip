@@ -1,0 +1,21 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const context=vm.createContext({console});
+vm.runInContext(fs.readFileSync('static/reorder.js','utf8'),context);
+function move(ids,from,to,after){return Array.from(context.stepOrderIds(ids,from,to,after))}
+assert.deepEqual(move([1,2,3,4],1,4,true),[2,3,4,1]);
+assert.deepEqual(move([1,2,3,4],4,1,false),[4,1,2,3]);
+assert.deepEqual(move([1,2,3,4],2,3,true),[1,3,2,4]);
+assert.deepEqual(move([1,2,3],2,2,true),[1,2,3]);
+assert.deepEqual(move([1,2,3],9,2,false),[1,2,3]);
+context.state={user:{role:'admin'},entries:[]};context.view='logistics';context.filter='';
+context.esc=String;context.date=String;context.time=()=>'';
+const rows=[{id:1,start:'2026-10-28',title:'Hotel',kind:'logistics',files:[],comments:[]},{id:2,start:'2026-10-27',title:'Voo',kind:'logistics',files:[],comments:[]},{id:3,start:'2026-10-28',title:'Trem',kind:'logistics',files:[],comments:[]}];
+const html=context.renderOrderedSteps(rows);
+assert.ok(html.indexOf('data-step-id="1"')<html.indexOf('data-step-id="2"'));
+assert.ok(html.indexOf('data-step-id="2"')<html.indexOf('data-step-id="3"'));
+assert.equal((html.match(/class="day-heading"/g)||[]).length,3);
+context.filter='Hotel';assert.ok(context.renderOrderedSteps(rows).includes('draggable="false" disabled'));
+context.state.user.role='member';assert.ok(!context.renderOrderedSteps(rows).includes('class="drag-handle"'));
+console.log('Ordenação e blocos por dia: OK');

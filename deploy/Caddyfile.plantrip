@@ -1,0 +1,7 @@
+# Acrescente este bloco ao Caddyfile existente; não substitua os outros sites.
+plantrip.orleibarbosa.com.br {
+    request_body {
+        max_size 100MB
+    }
+    reverse_proxy 127.0.0.1:18080
+}
