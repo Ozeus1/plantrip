@@ -1,7 +1,7 @@
 {
   "roma-centro": {
     "key": "roma-centro",
-    "title": "Primeiro passeio: centro histórico",
+    "title": "Centro histórico: Trevi, Spagna, Condotti e Colonna",
     "city": "Roma",
     "kicker": "Água, pedra e vida nas praças",
     "intro": "Uma primeira caminhada para sentir Roma sem pressa: fontes barrocas, fachadas em tons quentes e a escadaria que liga a cidade ao Pincio. O passeio cabe na tarde da chegada e pode ser encurtado conforme o cansaço.",
@@ -24,6 +24,7 @@
       }
     ],
     "tips": [
+      "Dia da chegada às 06h: priorizar imigração, traslado, descanso e alimentação antes de sair. Percurso solicitado: Fontana di Trevi → Piazza di Spagna → Via Condotti → Piazza Colonna, continuando para Pantheon e Navona na etapa seguinte. A sequência exige alguns retornos entre ruas; ajustar o trajeto real às rampas e ao cansaço, sem compromisso de cumprir tudo. Não usar a escadaria de Spagna como passagem da cadeira. Almoço conforme chegada, perto do percurso: Armando al Pantheon, Da Gino al Parlamento ou Osteria del Grillo; estimativa do grupo €25–40 por pessoa. Confirmar acessibilidade antes de reservar.",
       "Comece depois de deixar as malas e almoçar; o descanso da chegada tem prioridade.",
       "Consulte as regras atuais de acesso ao perímetro da fonte e de uso da escadaria.",
       "Evite reunir o grupo nos pontos de passagem; combine um encontro em uma rua lateral."
@@ -96,6 +97,7 @@
       }
     ],
     "tips": [
+      "Roma Antiga: começar pelo Coliseu por volta de 08h30/09h, conforme ingresso; depois Fórum Romano/Palatino, com percurso acessível confirmado. Um ingresso combinado, na modalidade escolhida; não pressupor acesso a todas as áreas especiais. Estimativa: Orlei, Elma/acompanhante e Aline €0 mediante regras; Arthur, Fernanda e Danielle €18 cada, total €54. Confirmar tarifas, documentação e janela de entrada na compra. Almoço em Monti: La Taverna dei Fori Imperiali, Taverna Romana ou La Carbonara, €20–40 por pessoa; a primeira é uma preferência do grupo pela localização, sem garantia de acessibilidade. Confirmar rampa, mesa, banheiro e percurso. Fonte: https://colosseo.it/en/tickets/regulation-for-visitors-and-terms-and-conditions-for-the-purchase-of-admission-tickets-to-the-archaeological-park-of-the-colosseum/",
       "Marque o Coliseu como primeiro compromisso com horário fixo e deixe margem para a segurança.",
       "Um guia credenciado ou audioguia ajuda a interpretar as ruínas; escolha idioma antes de comprar.",
       "Leve água e calçado firme; planeje almoço e descanso antes do passeio da tarde."
@@ -160,7 +162,7 @@
   },
   "roma-campidoglio": {
     "key": "roma-campidoglio",
-    "title": "Campidoglio e Piazza Venezia",
+    "title": "Fori Imperiali, Piazza Venezia, Campidoglio e Monti",
     "city": "Roma",
     "kicker": "Duas ideias de cidade monumental",
     "intro": "Uma caminhada curta em distância, mas rica em camadas históricas: da praça renascentista desenhada por Michelangelo à escala do monumento dedicado à unificação italiana.",
@@ -183,6 +185,7 @@
       }
     ],
     "tips": [
+      "Depois do complexo arqueológico e do almoço: Via dei Fori Imperiali → Piazza Venezia → Campidoglio → Monti. Manter o restante do dia nesta região e terminar em Monti. Confirmar rota para cadeira motorizada no Campidoglio; escadarias não são trajeto acessível e rampas podem ser íngremes. Mirantes e trechos adicionais apenas conforme energia, piso e condições do grupo; não é obrigatório completar todas as paradas.",
       "O passeio da manhã já terá exigido caminhada: faça uma pausa antes da subida.",
       "Museus Capitolinos e terraços são visitas independentes; não os trate como automaticamente incluídos.",
       "Use travessias sinalizadas ao redor de Piazza Venezia e confira desvios locais."
@@ -255,6 +258,7 @@
       }
     ],
     "tips": [
+      "Começar cedo pelos Museus Vaticanos e Capela Sistina, seguindo o percurso acessível orientado pela equipe. Estimativa do grupo: Orlei €0, Elma €0, Aline €10, Arthur €10, Fernanda €20 e Danielle €20; total €60 sem taxas. A gratuidade depende da certificação aceita pelos Museus; acompanhante gratuito quando comprovada a necessidade. Arthur deve apresentar matrícula universitária válida e identificação para a redução de estudante até 25 anos. Confirmar previamente dimensões/peso e percurso permitido para a cadeira motorizada: determinados equipamentos podem exigir transferência para cadeira convencional; não presumir acesso integral. Almoço em Prati após a visita: Osteria Ragno d’Oro, La Locanda di Pietro ou Taverna Bacchus, €25–40 por pessoa, com acesso a confirmar. Fontes: https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/accessibilita/agevolazioni-e-servizi-per-visitatori-con-disabilita-.html e https://www.museivaticani.va/content/museivaticani/en/organizza-visita/tariffe-e-biglietti/biglietto-ridotto-studenti.html",
       "Compre no portal oficial e confirme o idioma se optar por guia ou audioguia.",
       "Não programe o grupo para se separar sem definir ponto de reencontro: o percurso é extenso.",
       "Use roupas adequadas aos espaços religiosos e confira o tamanho permitido de bolsas."
@@ -331,6 +335,7 @@
       }
     ],
     "tips": [
+      "Depois do almoço: Basílica → Praça de São Pedro → Via della Conciliazione, seguindo para Castel Sant’Angelo. Visita básica à basílica gratuita, com controle de segurança; serviços adicionais, cúpula e visitas especiais podem ter cobrança e limites de acessibilidade. Confirmar entrada acessível e percurso externo entre Museus e Basílica: não presumir passagem direta pela Capela Sistina. Reservar pausas e adaptar ao tempo das filas.",
       "Faça uma pausa para almoço entre os museus e a basílica.",
       "Confirme celebrações, acessos e vestimenta antes de sair do hotel.",
       "Não conte com passagem direta dos museus para a basílica; planeje o trajeto permitido."
@@ -380,7 +385,7 @@
   },
   "roma-pantheon": {
     "key": "roma-pantheon",
-    "title": "Pantheon, Piazza Navona e Campo de’ Fiori",
+    "title": "Pantheon e Piazza Navona",
     "city": "Roma",
     "kicker": "Da Roma antiga à cidade barroca",
     "intro": "Um percurso a pé entre uma cúpula romana extraordinária, uma praça que conserva a forma de um estádio antigo e ruas de comércio e convivência.",
@@ -403,6 +408,7 @@
       }
     ],
     "tips": [
+      "Continuação do centro histórico, sem nova travessia da cidade. Pantheon → Piazza Navona; Campo de’ Fiori deixa de ser compromisso obrigatório. Visita interna ao Pantheon opcional conforme descanso e ingresso. Estimativa: Orlei €0, Elma/acompanhante €0 e Aline €0 mediante elegibilidade; Arthur, Fernanda e Danielle €7 cada, total €21. Tarifa integral oficial €7 desde julho/2026. A redução etária é vinculada à cidadania UE, não apenas à condição de estudante brasileiro. Confirmar documentação e horário antes da compra. Fonte: https://direzionemuseiroma.cultura.gov.it/pantheon/",
       "Reserve a entrada do Pantheon conforme o calendário oficial.",
       "Leve um mapa e conecte os pontos pelas ruas menores, sem transformar o passeio em corrida.",
       "Na visita à igreja, respeite vestimenta, silêncio e orientações do pessoal."
@@ -490,6 +496,7 @@
       }
     ],
     "tips": [
+      "Retirado do programa principal de 28–31/10 para evitar atravessar Roma depois da Roma Antiga. Mantido apenas como alternativa opcional a Villa Borghese em 01/11, nunca como passeio adicional obrigatório. Escolher somente uma região ou descansar. Saída para Paris às 18h: priorizar malas, check-out, veículo acessível e aeroporto; não comprometer o traslado. Confirmar funcionamento no feriado de 01/11. Fotos, comentários e vínculos desta etapa foram preservados.",
       "Reserve o jantar se o grupo for grande; não há restaurante já contratado.",
       "Use calçado confortável no piso de pedra.",
       "Prefira um percurso curto e evite falar alto junto às residências à noite."
@@ -2048,5 +2055,99 @@
       }
     ],
     "reviewed": "2026-10-24"
+  },
+  "roma-castel": {
+    "key": "roma-castel",
+    "title": "Via della Conciliazione e Castel Sant’Angelo",
+    "city": "Roma",
+    "kicker": "Roma e Toscana — outubro de 2026",
+    "intro": "Via della Conciliazione e Castel Sant’Angelo",
+    "photos": [],
+    "history": [
+      "Construído no século II como mausoléu de Adriano, o edifício foi transformado em fortaleza, residência papal e prisão. Sua posição perto do Vaticano marcou os sucessivos usos do monumento ao longo dos séculos.",
+      "A antiga Mole Adriana tornou-se Museu Nacional em 1925. A visita permite observar a sobreposição de funções militares, religiosas e residenciais; o percurso interno exige confirmação das áreas acessíveis antes da reserva."
+    ],
+    "stops": [
+      {
+        "title": "Via della Conciliazione",
+        "text": "Prosseguir da Praça de São Pedro com pausas."
+      },
+      {
+        "title": "Exterior e ponte",
+        "text": "Observar o monumento e o entorno sem pressupor acesso interno."
+      },
+      {
+        "title": "Museu — opcional",
+        "text": "Entrar somente com acessibilidade e ingresso confirmados."
+      }
+    ],
+    "tips": [
+      "Continuação na mesma região pela Via della Conciliazione até Castel Sant’Angelo. Visita externa como alternativa; interior somente após confirmar rota, elevador e áreas efetivamente alcançáveis com a cadeira motorizada. Estimativa do grupo: Orlei, Elma/acompanhante e Aline €0 mediante regras/documentos; Arthur, Fernanda e Danielle €18 cada, total €54. Não pressupor desconto para Arthur por ser universitário brasileiro. Fonte oficial: https://direzionemuseiroma.cultura.gov.it/museo-nazionale-di-castel-santangelo/",
+      "Confirmar acesso da cadeira motorizada antes de contratar serviços.",
+      "Horários propostos: ajustar ao descanso e aos deslocamentos."
+    ],
+    "sources": [
+      {
+        "title": "Museu Nacional de Castel Sant’Angelo",
+        "url": "https://direzionemuseiroma.cultura.gov.it/museo-nazionale-di-castel-santangelo/"
+      },
+      {
+        "title": "Ingressos oficiais",
+        "url": "https://portale.museiitaliani.it/"
+      }
+    ],
+    "arrival": "Roma",
+    "duration": "Conforme roteiro do grupo",
+    "booking": "Reservas, tarifas e disponibilidade a confirmar.",
+    "accessibility": "Confirmar percurso, rampas e banheiro para cadeira motorizada.",
+    "photo_tip": "Registre as paisagens e os momentos compartilhados.",
+    "reviewed": "2026-10-25"
+  },
+  "toscana-rural": {
+    "key": "toscana-rural",
+    "title": "Toscana rural: Montepulciano, vinícola e Pienza/Val d’Orcia",
+    "city": "Toscana — saída e retorno em Roma",
+    "kicker": "Roma e Toscana — outubro de 2026",
+    "intro": "Toscana rural: Montepulciano, vinícola e Pienza/Val d’Orcia",
+    "photos": [],
+    "history": [
+      "A paisagem do sul da Toscana reúne agricultura, cidades históricas e tradições vinícolas. O passeio proposto concentra-se em Montepulciano e no Val d’Orcia, com tempo para gastronomia e paisagens, sem acrescentar Florença e Siena ao mesmo dia.",
+      "Montepulciano combina um centro de origem medieval com arquitetura renascentista. Pienza está associada ao projeto urbano renascentista de Pio II. Em ambas, o roteiro deve ser escolhido conforme o relevo e as condições reais de circulação da cadeira motorizada."
+    ],
+    "stops": [
+      {
+        "title": "Montepulciano",
+        "text": "Visita curta, respeitando ladeiras e acessos confirmados."
+      },
+      {
+        "title": "Vinícola familiar a escolher",
+        "text": "Degustação com almoço; reserva e acessibilidade pendentes."
+      },
+      {
+        "title": "Pienza e Val d’Orcia",
+        "text": "Paisagens e passeio opcional conforme tempo e mobilidade."
+      }
+    ],
+    "tips": [
+      "Bate-volta proposto: Roma → Montepulciano → vinícola familiar → Pienza/Val d’Orcia → Roma. 07h saída; 09h30/10h chegada; 10h–11h30 Montepulciano; 12h–14h30 degustação e almoço; 15h Pienza/Val d’Orcia; 15h30–17h passeio/paisagens; 17h/17h30 retorno; 20h/20h30 chegada. Tempos são estimativas, sem transporte reservado: prever 2h15–2h40 ou mais em cada sentido, trânsito, embarque e pausas. Não incluir Florença e Siena no mesmo dia. Vinícola ainda a escolher: pequena/familiar, menos turística, boa relação custo-benefício, almoço com degustação e acesso comprovado para cadeira motorizada, inclusive banheiro. Escolher restaurante só depois da vinícola. Confirmar veículo para seis passageiros mais cadeira (rampa/elevador, fixação, peso/dimensões e bagagem) antes de contratar; não presumir que um carro comum acomode o grupo. Centros históricos podem ter ladeiras e pedra: limitar trechos e priorizar mirantes acessíveis. Se houver atraso, reduzir ou dispensar Pienza. Nenhuma vinícola ou reserva foi escolhida automaticamente.",
+      "Confirmar acesso da cadeira motorizada antes de contratar serviços.",
+      "Horários propostos: ajustar ao descanso e aos deslocamentos."
+    ],
+    "sources": [
+      {
+        "title": "Turismo oficial da Toscana",
+        "url": "https://www.visittuscany.com/en/areas/val-dorcia/"
+      },
+      {
+        "title": "Turismo de Montepulciano",
+        "url": "https://www.visittuscany.com/en/towns-and-villages/montepulciano/"
+      }
+    ],
+    "arrival": "Toscana — saída e retorno em Roma",
+    "duration": "Conforme roteiro do grupo",
+    "booking": "Reservas, tarifas e disponibilidade a confirmar.",
+    "accessibility": "Confirmar percurso, rampas e banheiro para cadeira motorizada.",
+    "photo_tip": "Registre as paisagens e os momentos compartilhados.",
+    "reviewed": "2026-10-25"
   }
 }

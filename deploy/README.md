@@ -138,3 +138,9 @@ O arquivo é criado pelo usuário do terminal, com acesso privado e data no nome
 ## 6. Verificação final
 
 Abra `https://plantrip.orleibarbosa.com.br`, confira o certificado, faça login e teste uma foto/PDF, reprodução de vídeo e salvamento da ordem. Confira também os demais sites da VPS após recarregar o proxy. Nenhuma alteração remota é executada automaticamente por estes arquivos.
+# Atualização do roteiro Roma e Toscana — outubro de 2026
+
+A versão com `roma2026.py` adapta uma única vez os passeios da viagem Europa (27/10/2026): centro histórico em 28/10, Vaticano em 29/10, Toscana em 30/10 e Roma Antiga em 31/10. Ao iniciar o aplicativo, cria `backup-before-roma-*.db` no diretório de dados antes da alteração. IDs existentes, fotos, comentários e vínculos com memórias são preservados; observações anteriores ficam registradas no texto da etapa. Edições posteriores não são sobrescritas a cada reinício. Não reimporte o banco local sobre o banco em uso na VPS.
+
+Depois de `git pull --ff-only origin main` e `docker compose up -d --build plantrip`, confira o menu Passeios. Os horários são propostas; vinícola, veículo acessível e restaurantes continuam pendentes de confirmação. Trastevere foi mantido somente como alternativa opcional em 01/11. Os novos guias de Toscana e Castel Sant’Angelo ainda não possuem fotos editoriais; recebem as memórias publicadas pelo grupo.
+

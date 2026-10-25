@@ -130,3 +130,5 @@ def seed(c):
         except Exception:pass
     _seed_base(c)
     logistica_docs(c)
+    from roma2026 import apply
+    apply(c)
