@@ -1,0 +1,27 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const elements=new Map(),timers=new Map();let timerId=0;
+function element(selector){if(!elements.has(selector))elements.set(selector,{open:false,value:selector==='#memorySpeed'?'4':'',checked:false,style:{},classList:{toggle(){},remove(){}},listeners:{},addEventListener(name,fn){this.listeners[name]=fn},setAttribute(){},showModal(){this.open=true},textContent:'',innerHTML:''});return elements.get(selector)}
+const context=vm.createContext({console,Map,Date,setTimeout:fn=>{timers.set(++timerId,fn);return timerId},clearTimeout:id=>timers.delete(id),$:element,esc:s=>String(s??''),date:s=>s,memoryToday:()=> '2026-10-25',renderResults(){},renderPublicPosts(){},toast:s=>{throw Error(s)},document:{hidden:false,addEventListener(){},querySelectorAll:()=>[]}});
+vm.runInContext(fs.readFileSync('static/diary-views.js','utf8'),context);
+assert.equal(context.memoryDay('2026-10-25T22:00'),'2026-10-25');assert.equal(context.memoryDay(''), '');
+const image=id=>({id,mime:'image/jpeg',name:'Foto '+id});
+const entries=[{id:1,trip_id:1,place:'São Paulo',start:'2024-02-29',title:'Post A',author:'A',files:[image(1),image(2)]},{id:2,trip_id:1,place:' sao paulo ',start:'2024-02-29',title:'Post B',author:'B',files:[{id:3,mime:'application/pdf'}]},{id:3,trip_id:2,place:'São Paulo',start:'2024-03-01',title:'Post C',author:'C',files:[image(4)]}];
+const groups=context.groupMemoryPlaces(entries);assert.equal(groups.length,2);assert.equal(groups[0].entries.length,2);
+const feb=Array.from(context.memoryMonthCells(2024,1));assert.ok(feb.includes('2024-02-29'));assert.equal(feb.filter(Boolean).length,29);assert.equal(feb.length%7,0);
+assert.equal(Array.from(context.memoryMonthCells(2026,1)).filter(Boolean).length,28);
+assert.equal(context.memoryFramesFor(entries).length,3);
+context.setMemoryMode('private','calendar');
+let html=context.renderMemoryBrowser(entries.slice(0,2),'private',posts=>'POSTS:'+posts.length);
+assert.ok(html.includes('data-calendar-day="2024-02-29"'));assert.ok(html.includes('29/02/2024: 2 publicações'));assert.ok(html.includes('POSTS:2'));
+context.setMemoryMode('private','places');html=context.renderMemoryBrowser(entries,'private',()=> '');assert.ok(html.includes('São Paulo'));
+context.initMemoryViewer();
+const media=element('#memoryFrameMedia');media.tagName='IMG';media.complete=true;
+context.presentMemories(entries,true);assert.equal(timers.size,1);assert.equal(element('#memoryFrameCount').textContent,'1 / 3');
+function advance(){const [id,fn]=timers.entries().next().value;timers.delete(id);fn()}
+advance();assert.equal(element('#memoryFrameCount').textContent,'2 / 3');assert.equal(timers.size,1);
+element('#memoryPlayPause').onclick();assert.equal(timers.size,0);
+element('#memoryPlayPause').onclick();assert.equal(timers.size,1);
+advance();assert.equal(element('#memoryFrameCount').textContent,'3 / 3');advance();assert.equal(timers.size,0);
+element('#memoryPlayPause').onclick();assert.equal(element('#memoryFrameCount').textContent,'1 / 3');assert.equal(timers.size,1);
+element('#memoryViewer').open=false;element('#memoryViewer').listeners.close();assert.equal(timers.size,0);assert.equal(element('#memoryViewerStage').innerHTML,'');
+console.log('Calendário, locais, seleção de mídias e reprodução automática: OK');

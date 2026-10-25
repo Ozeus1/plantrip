@@ -26,6 +26,10 @@ O login permite **Mostrar senha / Ocultar senha** e **Esqueci minha senha**. A r
 
 Para participantes, **Publicar memória** usa um formulário próprio com título livre, passeio escolhido do roteiro ou local digitado, somente o dia, relato e fotos/vídeos. O módulo e a categoria são definidos automaticamente. Ao escolher um passeio, a publicação aparece também nas memórias da página desse passeio; o diário e o perfil do autor continuam reunindo suas publicações. É possível editar a memória e trocar o vínculo por um local livre sem alterar o roteiro do administrador.
 
+As memórias têm **Ver slides** (navegação manual) e **Ver miniclipe** (passagem automática das fotos, com intervalo de 2, 4 ou 6 segundos, pausa e repetição). Vídeos podem ser incluídos na sequência e, no modo automático, começam sem som e avançam ao terminar. O miniclipe é uma apresentação no navegador, sem geração de arquivo MP4. Fechar a janela encerra a reprodução. Há também apresentação de todas as memórias filtradas, de um local ou de uma data.
+
+No diário autenticado e no diário público, alterne entre **Memórias**, **Por local** e **Calendário**. A visualização por local reúne as publicações do mesmo lugar; o calendário marca os dias com publicações com um ícone clicável e permite navegar entre meses. A seleção respeita a busca, o viajante (no diário autenticado) e a viagem (no público). Os modos de visualização mantêm as mesmas permissões de acesso aos arquivos.
+
 Em **Usuários → Gerar nova senha**, o administrador pode substituir a senha de outro usuário por uma senha aleatória exibida somente na janela de geração. Copie e entregue diretamente ao usuário; nenhuma mensagem ou e-mail é enviado automaticamente. As sessões anteriores desse usuário são encerradas. O usuário pode depois escolher sua própria senha em **Minha senha**. O administrador altera sua própria senha pelo mesmo menu pessoal, usando a senha atual. As senhas são armazenadas somente como hashes, nunca em texto puro no banco ou na lista de usuários.
 
 Visitantes sem login acessam somente a visualização de leitura do diário em `/` ou `/diary`. O administrador controla a publicação em **Viagens → Editar / participantes → Permitir leitura pública do diário**. Apenas as viagens com essa opção ativa aparecem publicamente. A página mostra relatos, fotos, vídeos e comentários do diário; não fornece contas/e-mails, reservas, roteiros privados nem documentos PDF. Publicar, comentar, editar ou enviar arquivos exige login e participação no grupo. Ao desativar a opção, inclusive o acesso anônimo às mídias é revogado no servidor.
@@ -84,4 +88,5 @@ node --check static/app.js
 node --check static/attractions.js
 node --check static/reorder.js
 node tests/test_reorder.js
+node tests/test_diary_views.js
 ```
