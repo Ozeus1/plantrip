@@ -28,7 +28,7 @@ O cadastro de companheiros aceita senhas a partir de 5 caracteres; o cadastro in
 docker compose exec -T plantrip python scripts/import_members.py --trip Europa --publish-diary < /opt/plantrip/companheiros-europa.json
 ```
 
-O JSON é uma lista de objetos com os campos `name`, `email` e `password`. Ele deve ser transferido por SFTP, protegido com permissão 600 e mantido fora do Git. O importador vincula os participantes à viagem e pode habilitar o diário público; não duplica contas nem troca senhas de contas existentes.
+O JSON é uma lista de objetos com os campos `name`, `email` e `password`. Ele deve ser transferido por SFTP, protegido com permissão 600 e mantido fora do Git. O importador vincula os participantes à viagem e pode habilitar o diário público; por padrão não duplica contas nem troca senhas de contas existentes. Para trocar explicitamente as senhas dos companheiros listados, acrescente `--reset-passwords`; isso também encerra suas sessões anteriores, preservando perfis, publicações e participações.
 
 ### Guias das atrações
 
