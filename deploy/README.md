@@ -2,6 +2,8 @@
 
 Este procedimento adiciona um serviço independente à VPS. O contêiner não publica as portas 80 ou 443. O proxy existente continua responsável pelos outros sites e pelo HTTPS.
 
+**Infraestrutura informada: Nginx.** Siga a seção Nginx abaixo. Ela pressupõe o Nginx instalado no host da VPS; se ele estiver em contêiner, o encaminhamento precisa usar a rede compartilhada descrita na seção de proxies em contêiner.
+
 ## 1. Código e configuração
 
 Na VPS Linux, com Git e Docker Compose v2 já instalados:
@@ -45,13 +47,31 @@ O registro DNS A deve apontar para o IPv4 público da VPS. Só configure AAAA se
 
 Confira antes se já existe um virtual host para este domínio. Se existir, edite apenas seu encaminhamento; não instale outro bloco com o mesmo `server_name`.
 
-Em Debian/Ubuntu, sem virtual host prévio para o domínio:
+Se o domínio **já tem um bloco HTTPS e certificado**, mantenha as diretivas de certificado e o redirecionamento HTTP existentes. Copie o trecho de proxy:
+
+```sh
+sudo mkdir -p /etc/nginx/snippets
+sudo cp deploy/nginx-plantrip-proxy.conf /etc/nginx/snippets/plantrip-proxy.conf
+```
+
+Dentro do `server {}` HTTPS exclusivo do domínio, substitua o `location /` anterior por:
+
+```nginx
+include /etc/nginx/snippets/plantrip-proxy.conf;
+```
+
+Não mantenha dois blocos `location /` no mesmo servidor. Se houver outras diretivas de tamanho de upload ou timeout no mesmo contexto, ajuste as existentes para evitar duplicação. Valide e só então recarregue:
+
+```sh
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+Em Debian/Ubuntu, **sem virtual host prévio** para o domínio, use o modelo completo em vez da inclusão acima:
 
 ```sh
 sudo cp deploy/nginx-plantrip.conf /etc/nginx/sites-available/plantrip.conf
 sudo ln -s /etc/nginx/sites-available/plantrip.conf /etc/nginx/sites-enabled/plantrip.conf
-sudo nginx -t
-sudo systemctl reload nginx
+sudo nginx -t && sudo systemctl reload nginx
 ```
 
 Após o DNS propagar, use o mecanismo de certificados já adotado na VPS. Se for Certbot com plugin Nginx já instalado:

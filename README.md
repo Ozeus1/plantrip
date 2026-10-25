@@ -44,7 +44,7 @@ O diário começa vazio, sem publicações fictícias. Datas e horários das eta
 
 Repositório: `https://github.com/Ozeus1/plantrip.git`. Domínio de produção: `https://plantrip.orleibarbosa.com.br/`.
 
-Siga o [guia de implantação para VPS com outros sites](deploy/README.md). Ele cobre proxy Nginx/Caddy, HTTPS, criação do administrador, importação privada dos dados locais, backups e atualizações. O Compose usa por padrão `127.0.0.1:18080`, ajustável pelo `.env`, e não ocupa diretamente 80/443.
+Siga o [guia de implantação para VPS com outros sites](deploy/README.md). O proxy informado é **Nginx**; o guia contém configuração para um domínio novo e um trecho para integrar a um virtual host HTTPS existente, além de criação do administrador, importação privada dos dados locais, backups e atualizações. O Compose usa por padrão `127.0.0.1:18080`, ajustável pelo `.env`, e não ocupa diretamente 80/443.
 
 ```sh
 cp .env.example .env
