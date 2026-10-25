@@ -132,3 +132,5 @@ def seed(c):
     logistica_docs(c)
     from roma2026 import apply
     apply(c)
+    from roma2026 import apply_file
+    apply_file(c,'paris2026.json','europa-paris-champagne-202611-v1','paris')

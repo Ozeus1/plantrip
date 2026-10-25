@@ -618,7 +618,7 @@
   },
   "paris-eiffel": {
     "key": "paris-eiffel",
-    "title": "Trocadéro, Torre Eiffel e Champ de Mars",
+    "title": "Trocadéro, Torre Eiffel, Champ de Mars e Invalides",
     "city": "Paris",
     "kicker": "A Paris que chega pelo horizonte",
     "intro": "Um primeiro passeio parisiense entre o mirante do Trocadéro, a estrutura da Torre Eiffel e os jardins do Champ de Mars. A subida à torre é opcional e depende de ingresso.",
@@ -641,6 +641,7 @@
       }
     ],
     "tips": [
+      "09h Trocadéro para fotos, evitando escadarias; transporte adaptado até a torre se necessário. 10h–12h30: Torre Eiffel até o 2º andar, com ingresso e condições da cadeira motorizada confirmados; não prever cume. 12h45–14h: almoço em Gros-Caillou/rue Cler. 14h15–16h: Champ de Mars e exterior dos Invalides; interior opcional conforme energia. Não transformar os trechos em corrida; confirmar elevadores e ponto de entrada.",
       "Compre subida apenas no site oficial ou com operador identificado e confira qual pavimento está incluído.",
       "Deixe margem para o controle de segurança; não marque outro compromisso imediatamente depois.",
       "Vista-se para vento e frio nos espaços abertos."
@@ -684,13 +685,17 @@
       {
         "title": "Planeje a visita oficial",
         "url": "https://www.toureiffel.paris/en"
+      },
+      {
+        "title": "Torre Eiffel — visita em cadeira de rodas",
+        "url": "https://www.toureiffel.paris/en/faq/getting-tower/can-visits-be-made-people-wheelchairs"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-sena": {
     "key": "paris-sena",
-    "title": "Caminhada às margens do Sena",
+    "title": "Sena ao entardecer — cruzeiro opcional acessível",
     "city": "Paris",
     "kicker": "A cidade contada pelo rio",
     "intro": "Um percurso sem pressa junto à água, com pontes e fachadas como referências. A caminhada pode ser reduzida conforme o clima; o cruzeiro é um complemento opcional.",
@@ -713,6 +718,7 @@
       }
     ],
     "tips": [
+      "Passeio panorâmico no Sena após Eiffel/Invalides. Cruzeiro somente com embarcação, embarque, largura de passagem e banheiro adequados à cadeira motorizada confirmados por escrito; não presumir que qualquer barco seja acessível. Sem confirmação, escolher trecho confortável da margem superior ou retornar ao hotel. Reserva e operador ainda não definidos.",
       "Verifique clima e condições de acesso às margens no dia.",
       "Na chuva ou no frio intenso, reduza o circuito e escolha uma pausa coberta.",
       "Se optar por barco, confira cais de embarque, duração e condições de cancelamento."
@@ -758,11 +764,11 @@
         "url": "https://parisjetaime.com/eng/"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-louvre": {
     "key": "paris-louvre",
-    "title": "Museu do Louvre",
+    "title": "Museu do Louvre — visita selecionada",
     "city": "Paris",
     "kicker": "Escolher para enxergar melhor",
     "intro": "Uma manhã para conhecer um dos grandes museus do mundo por um recorte possível. Escolha algumas obras e salas antes de entrar: a visita ganha profundidade quando não vira uma corrida.",
@@ -785,6 +791,7 @@
       }
     ],
     "tips": [
+      "08h30: sair para o Louvre e prever segurança e entrada acessível confirmada. Selecionar Mona Lisa, Vitória de Samotrácia, Vênus de Milo e galerias prioritárias, sem tentar cobrir tudo. Confirmar elevadores e rotas entre alas na data. 12h45–14h: almoço no entorno de Palais Royal/rue de Rivoli, afastando-se da saída imediata do museu. Segunda-feira conforme PDF; consultar disponibilidade oficial. https://www.louvre.fr/en/visit/hours-admission",
       "O passeio está em 04/11, quarta-feira; o fechamento semanal habitual é na terça.",
       "Use o mapa oficial para conferir salas abertas e localização das obras no dia.",
       "Combine reencontro fora das áreas mais disputadas e faça uma pausa após a visita."
@@ -828,13 +835,17 @@
       {
         "title": "Horários e ingressos oficiais",
         "url": "https://www.louvre.fr/en/visit/hours-admission"
+      },
+      {
+        "title": "Louvre — acessibilidade e reservas",
+        "url": "https://www.louvre.fr/en/visit/accessibility"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-tuileries": {
     "key": "paris-tuileries",
-    "title": "Tuileries e Palais Royal",
+    "title": "Palais Royal e Louvre exterior — alternativa leve",
     "city": "Paris",
     "kicker": "Jardins para respirar entre obras",
     "intro": "Depois do Louvre, uma caminhada por dois espaços de jardim com atmosferas diferentes: a grande perspectiva das Tuileries e a escala mais reservada do Palais Royal.",
@@ -857,6 +868,7 @@
       }
     ],
     "tips": [
+      "O PDF propõe Palais Royal, Cour Carrée/Louvre exterior e Sena em 01/11 às 16h–18h. Isso conflita com a chegada anteriormente informada às 23h: não agendar esse passeio em 01/11. Mantido como alternativa curta no entorno do almoço em 02/11, somente se houver disposição, sem substituir descanso. Se o voo mudar para chegada diurna e hotel no 2º arrondissement, o administrador poderá mover a etapa para o dia 01. Tuileries é opcional, não uma visita adicional obrigatória.",
       "Faça uma pausa real, com água e algo para comer, antes de retomar a caminhada.",
       "Não é necessário entrar em outro museu nesta tarde.",
       "Em caso de mau tempo, encurte a visita e procure as galerias cobertas acessíveis."
@@ -902,11 +914,11 @@
         "url": "https://www.domaine-palais-royal.fr/en"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-cite": {
     "key": "paris-cite",
-    "title": "Île de la Cité e Quartier Latin",
+    "title": "Pont Neuf, Île de la Cité e Notre-Dame",
     "city": "Paris",
     "kicker": "As origens, as ilhas e o saber",
     "intro": "Uma manhã entre o núcleo histórico de Paris e a margem esquerda. O percurso privilegia o exterior de Notre-Dame, as pontes e as ruas ligadas à vida universitária.",
@@ -929,6 +941,7 @@
       }
     ],
     "tips": [
+      "Depois do almoço: Pont Neuf → Île de la Cité → entorno de Notre-Dame. Entrada na catedral só com procedimento de acesso e acessibilidade confirmados. 16h–17h café e retorno ao hotel. Margem proposta no PDF de 10–25 minutos entre zonas próximas é apenas referência, podendo aumentar com a cadeira motorizada, travessias e pausas. Quartier Latin passa para 07/11.",
       "Confirme o acesso a Notre-Dame no site oficial; não há reserva incluída.",
       "Sainte-Chapelle é uma visita extra e exige planejamento separado.",
       "Evite acumular igrejas e museus em sequência se o grupo preferir caminhar."
@@ -974,11 +987,11 @@
         "url": "https://parisjetaime.com/eng/article/timeless-paris-a897"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-luxemburgo": {
     "key": "paris-luxemburgo",
-    "title": "Jardim de Luxemburgo e Saint-Germain",
+    "title": "Saint-Germain, Luxemburgo e Quartier Latin",
     "city": "Paris",
     "kicker": "Jardins, literatura e uma pausa parisiense",
     "intro": "Uma tarde de passos curtos, bancos de jardim e cafés. É um contraponto leve à manhã na ilha e uma oportunidade de observar a vida cotidiana da margem esquerda.",
@@ -1001,6 +1014,7 @@
       }
     ],
     "tips": [
+      "09h30–11h Saint-Germain-des-Prés; 11h–12h Jardim de Luxemburgo pelas alamedas principais; 12h15–13h45 almoço no Quartier Latin ou Saint-Germain sem escadas. 14h–16h Quartier Latin ou substituir por Orsay com reserva. 16h–19h compras finais, descanso e jantar de despedida. Não combinar todas as alternativas no mesmo dia.",
       "Confirme o horário de fechamento do jardim para novembro.",
       "A visita proposta não inclui o interior do palácio ou do Senado.",
       "Em dia frio, distribua o passeio em trechos curtos com uma parada coberta."
@@ -1046,11 +1060,11 @@
         "url": "https://parisjetaime.com/eng/"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-versalhes": {
     "key": "paris-versalhes",
-    "title": "Versalhes — passeio opcional",
+    "title": "Versalhes — alternativa não incluída no roteiro principal",
     "city": "Paris",
     "kicker": "O poder como cenário",
     "intro": "Um dia fora do centro de Paris para conhecer o palácio e a paisagem de Versalhes. O passeio exige uma escolha de prioridades: palácio, jardins e domínios não cabem todos com a mesma profundidade.",
@@ -1073,6 +1087,7 @@
       }
     ],
     "tips": [
+      "O bate-volta de 05/11 foi substituído por Champagne. Esta etapa permanece apenas para preservar referências e memórias, como alternativa a reagendar pelo administrador se Champagne for cancelada. Não realizar junto com Champagne nem assumir que caiba no dia de partida: em 08/11 priorizar check-out, bagagem e traslado, com passeio perto do hotel se houver tempo. Horário desta etapa é apenas referência anterior, não compromisso nem reserva.",
       "Confirme a modalidade do ingresso e o que ela inclui no dia escolhido.",
       "Verifique transporte e eventuais alterações antes da partida.",
       "Leve roupa para áreas abertas e aceite trocar por um dia em Paris se o clima ou o grupo não favorecerem."
@@ -1118,11 +1133,11 @@
         "url": "https://en.chateauversailles.fr/plan-your-visit"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-montmartre": {
     "key": "paris-montmartre",
-    "title": "Montmartre e Sacré-Cœur",
+    "title": "Montmartre e Sacré-Cœur — ou Passages Couverts",
     "city": "Paris",
     "kicker": "Uma colina, muitos pontos de vista",
     "intro": "Uma manhã entre mirantes, ruas em ladeira e referências à vida artística de Paris. A basílica coroa a paisagem, mas o bairro merece atenção além da vista panorâmica.",
@@ -1145,6 +1160,7 @@
       }
     ],
     "tips": [
+      "Chegar em veículo acessível à área mais alta; Sacré-Cœur, Place du Tertre e ruas próximas conforme inclinações e piso. Evitar escadarias; confirmar acesso à basílica e trajeto antes. Dia mais exigente em ladeiras/pedras: alternativa confortável é permanecer em Passages Couverts e Opéra. 18h retorno e jantar perto do hotel. Escolher uma das alternativas, sem fazer as duas por obrigação.",
       "Use sapatos com boa aderência nas ladeiras.",
       "Combine um ponto de encontro claro antes de explorar ruas menores.",
       "Confira as regras de fotografia dentro da basílica e a condição do acesso à cúpula, se desejado."
@@ -1190,11 +1206,11 @@
         "url": "https://parisjetaime.com/eng/"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-opera": {
     "key": "paris-opera",
-    "title": "Opéra e arredores",
+    "title": "Opéra Garnier, Galeries Lafayette e Grands Boulevards",
     "city": "Paris",
     "kicker": "O espetáculo começa na arquitetura",
     "intro": "Uma tarde no entorno do Palais Garnier, entre fachadas monumentais e grandes eixos urbanos. A visita interna é opcional e precisa ser conciliada com a programação da ópera.",
@@ -1217,6 +1233,7 @@
       }
     ],
     "tips": [
+      "09h30–11h: Opéra Garnier por dentro, opcional e sujeita a operação e acesso adaptado. 11h–12h30: arquitetura interna das Galeries Lafayette e Grands Boulevards. Não pressupor acesso ao terraço. 12h30–14h: almoço em bistrô do 9º arrondissement, com acesso e banheiro a confirmar. Passages Couverts são alternativa à tarde em Montmartre.",
       "Consulte o calendário oficial antes de reservar visita ou espetáculo.",
       "Visita diurna e ingresso de apresentação são produtos diferentes.",
       "Escolha um trecho curto após Montmartre para evitar uma tarde excessivamente cansativa."
@@ -1262,11 +1279,11 @@
         "url": "https://www.operadeparis.fr/en"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-orsay": {
     "key": "paris-orsay",
-    "title": "Musée d’Orsay — visita opcional",
+    "title": "Musée d’Orsay — alternativa ao Quartier Latin",
     "city": "Paris",
     "kicker": "Uma estação transformada em museu",
     "intro": "Uma visita para quem quer aprofundar a arte do século XIX e do início do XX. O próprio edifício ajuda a compreender a relação entre modernidade, cidade e novas formas de olhar.",
@@ -1289,6 +1306,7 @@
       }
     ],
     "tips": [
+      "Alternativa ao passeio da tarde no Quartier Latin, para quem desejar mais arte e tiver reserva. Não adicionar à mesma tarde além do roteiro completo. Confirmar horários, entrada e elevadores; escolher poucas coleções prioritárias.",
       "A visita está proposta para sábado; confirme o calendário e a disponibilidade.",
       "Não use esta manhã para tentar repetir o ritmo do Louvre: mantenha um foco menor.",
       "Se o grupo não quiser outro museu, troque por caminhada curta pelo Sena."
@@ -1334,11 +1352,11 @@
         "url": "https://www.musee-orsay.fr/en"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-arco": {
     "key": "paris-arco",
-    "title": "Champs-Élysées e Arco do Triunfo",
+    "title": "Champs-Élysées e Arco — alternativa fora do roteiro principal",
     "city": "Paris",
     "kicker": "Perspectiva, memória e cidade",
     "intro": "Uma caminhada pelo eixo de uma das avenidas mais conhecidas de Paris, terminando no monumento que organiza visualmente a Place Charles-de-Gaulle.",
@@ -1361,6 +1379,7 @@
       }
     ],
     "tips": [
+      "Não integra o roteiro principal do PDF. Preservado como alternativa opcional, somente se o hotel, check-out e traslado para a saída às 23h permitirem. Prioridade em 08/11: café, malas, check-out, assistência e transporte reservado. Preferir passeio curto perto do hotel, sem ingresso com hora marcada. Não presumir acesso à cobertura do Arco.",
       "Use a passagem subterrânea para o monumento; não atravesse a rotatória pela pista.",
       "Consulte condições do terraço e possíveis cerimônias antes da visita.",
       "Mantenha uma alternativa apenas externa se o grupo estiver cansado do museu."
@@ -1406,11 +1425,11 @@
         "url": "https://www.paris-arc-de-triomphe.fr/en/discover"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "paris-marais": {
     "key": "paris-marais",
-    "title": "Le Marais e Place des Vosges",
+    "title": "Marais, Hôtel de Ville e Place des Vosges",
     "city": "Paris",
     "kicker": "Pátios, praças e ruas com memória",
     "intro": "Uma despedida de Paris em ritmo de bairro, com tempo para observar arquitetura e fazer uma pausa antes de organizar a saída para Londres.",
@@ -1433,6 +1452,7 @@
       }
     ],
     "tips": [
+      "Dia leve após Champagne: 09h30–11h Hôtel de Ville e ruas principais do Marais; 11h–12h Place des Vosges, arcadas e jardins com acesso nivelado. 12h15–13h45 almoço tradicional no bairro com banheiro acessível confirmado. 14h–16h lojas, cafés e pequenos museus opcionais; 16h–17h Sena ou hotel. Evitar adicionar museus com horário marcado sem necessidade.",
       "Mantenha o restante do dia livre para organizar a saída das 23h.",
       "Se quiser entrar em museu ou casa histórica, consulte o funcionamento específico de domingo.",
       "Evite transformar a manhã em compras longas com bagagens antes do transporte noturno."
@@ -1478,7 +1498,7 @@
         "url": "https://parisjetaime.com/eng/"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25"
   },
   "londres-westminster": {
     "key": "londres-westminster",
@@ -2108,7 +2128,7 @@
     "title": "Toscana rural: Montepulciano, vinícola e Pienza/Val d’Orcia",
     "city": "Toscana — saída e retorno em Roma",
     "kicker": "Roma e Toscana — outubro de 2026",
-    "intro": "Toscana rural: Montepulciano, vinícola e Pienza/Val d’Orcia",
+    "intro": "Montepulciano, uma vinícola a escolher e Pienza/Val d’Orcia: paisagens, gastronomia e cultura do vinho no ritmo do grupo.",
     "photos": [],
     "history": [
       "A paisagem do sul da Toscana reúne agricultura, cidades históricas e tradições vinícolas. O passeio proposto concentra-se em Montepulciano e no Val d’Orcia, com tempo para gastronomia e paisagens, sem acrescentar Florença e Siena ao mesmo dia.",
@@ -2131,7 +2151,9 @@
     "tips": [
       "Bate-volta proposto: Roma → Montepulciano → vinícola familiar → Pienza/Val d’Orcia → Roma. 07h saída; 09h30/10h chegada; 10h–11h30 Montepulciano; 12h–14h30 degustação e almoço; 15h Pienza/Val d’Orcia; 15h30–17h passeio/paisagens; 17h/17h30 retorno; 20h/20h30 chegada. Tempos são estimativas, sem transporte reservado: prever 2h15–2h40 ou mais em cada sentido, trânsito, embarque e pausas. Não incluir Florença e Siena no mesmo dia. Vinícola ainda a escolher: pequena/familiar, menos turística, boa relação custo-benefício, almoço com degustação e acesso comprovado para cadeira motorizada, inclusive banheiro. Escolher restaurante só depois da vinícola. Confirmar veículo para seis passageiros mais cadeira (rampa/elevador, fixação, peso/dimensões e bagagem) antes de contratar; não presumir que um carro comum acomode o grupo. Centros históricos podem ter ladeiras e pedra: limitar trechos e priorizar mirantes acessíveis. Se houver atraso, reduzir ou dispensar Pienza. Nenhuma vinícola ou reserva foi escolhida automaticamente.",
       "Confirmar acesso da cadeira motorizada antes de contratar serviços.",
-      "Horários propostos: ajustar ao descanso e aos deslocamentos."
+      "Horários propostos: ajustar ao descanso e aos deslocamentos.",
+      "Escolher uma única vinícola após comparar acesso real, almoço e orçamento; o roteiro não implica que as três estejam reservadas.",
+      "O ingresso/degustação não inclui transporte desde Roma. Aline precisa de programação sem degustação alcoólica."
     ],
     "sources": [
       {
@@ -2141,6 +2163,18 @@
       {
         "title": "Turismo de Montepulciano",
         "url": "https://www.visittuscany.com/en/towns-and-villages/montepulciano/"
+      },
+      {
+        "title": "Podere della Bruciata — candidata artesanal",
+        "url": "https://www.poderedellabruciatawines.it/"
+      },
+      {
+        "title": "Salcheto — alternativa com gastronomia",
+        "url": "https://salcheto.it/ospitalita/"
+      },
+      {
+        "title": "Icario — alternativa para comparar",
+        "url": "https://www.icario.it/en/home/"
       }
     ],
     "arrival": "Toscana — saída e retorno em Roma",
@@ -2148,6 +2182,107 @@
     "booking": "Reservas, tarifas e disponibilidade a confirmar.",
     "accessibility": "Confirmar percurso, rampas e banheiro para cadeira motorizada.",
     "photo_tip": "Registre as paisagens e os momentos compartilhados.",
-    "reviewed": "2026-10-25"
+    "reviewed": "2026-10-25",
+    "venues": [
+      {
+        "name": "Podere della Bruciata — candidata artesanal",
+        "text": "Pequena produtora de Montepulciano, com vinhos em quantidades limitadas e experiências de degustação em cantina ou vinhedo. É uma candidata alinhada à preferência por produção artesanal; solicitar proposta de almoço para seis em 30/10, idioma e duração. Contato: poderedellabruciata@gmail.com, +39 327 272 7130. Preço sob consulta.",
+        "access": "Não foi localizada confirmação técnica de acesso para a cadeira motorizada. Confirmar entrada, inclinações, piso, mesa e banheiro antes de escolher.",
+        "url": "https://www.poderedellabruciatawines.it/"
+      },
+      {
+        "name": "Salcheto — alternativa com gastronomia",
+        "text": "Via di Villa Bianca 15, Montepulciano. A página oficial oferece visita com três vinhos a €27 por pessoa e opções privadas; almoço no restaurante Indigeno deve ser consultado separadamente. O valor de reserva exibido para restaurante não representa o preço da refeição. Contato: enoteca@salcheto.it, +39 0578 799031 (int. 1). Confirmar funcionamento em 30/10.",
+        "access": "Confirmar acesso da cadeira motorizada em todas as áreas contratadas, banheiro e condição do acesso viário; não considerar a visita integralmente acessível sem resposta da propriedade.",
+        "url": "https://salcheto.it/ospitalita/"
+      },
+      {
+        "name": "Icario — alternativa para comparar",
+        "text": "Propriedade de Montepulciano com tours, degustações, arquitetura e projeto de arte. Consultar formato, preço e possibilidade de refeição; é alternativa à escolha principal, não uma segunda vinícola obrigatória no mesmo dia.",
+        "access": "Acessibilidade completa para cadeira motorizada ainda não confirmada. Pedir dimensões e trajeto sem escadas, além de sanitário acessível.",
+        "url": "https://www.icario.it/en/home/"
+      }
+    ]
+  },
+  "champagne-reims": {
+    "key": "champagne-reims",
+    "photos": [],
+    "history": [
+      "Champagne deve ser entendida como território vitícola e como tradição de produção, não apenas como uma bebida. Reims reúne patrimônio urbano e casas de champagne; os vinhedos ficam distribuídos por diferentes setores, ligados por rotas turísticas. Uma visita às caves na cidade não substitui um percurso pelas paisagens rurais.",
+      "A experiência proposta combina três olhares: a cidade de Reims, as caves da maison escolhida e as encostas da Montagne de Reims. A Veuve Clicquot, conhecida em português como Viúva Clicquot, integra o programa como preferência do grupo. O tempo disponível favorece uma única maison, sem acrescentar Épernay ao bate-volta.",
+      "Barbe-Nicole Clicquot assumiu a casa em 1805 após ficar viúva. A maison associa sua trajetória à inovação na produção, incluindo a mesa de remuage desenvolvida em 1816 para concentrar os depósitos das garrafas e obter vinhos límpidos. Essa história ajuda a compreender o trabalho apresentado na visita às caves."
+    ],
+    "stops": [
+      {
+        "title": "Reims e catedral",
+        "text": "Pausa para café e observação externa antes da sessão reservada; adaptar ao trânsito."
+      },
+      {
+        "title": "Veuve Clicquot — preferência",
+        "text": "Visita às caves e degustação para adultos, condicionadas à reserva e ao percurso acessível."
+      },
+      {
+        "title": "Montagne de Reims / Verzenay",
+        "text": "Percurso panorâmico com parada acessível, se confirmada; retorno sem adicionar Épernay."
+      }
+    ],
+    "tips": [
+      "07h30 saída de Paris em veículo acessível para seis mais cadeira motorizada, com fixação e embarque adequados. 09h30–10h15 Reims: café e exterior da catedral. 10h30–12h: sessão sugerida na Veuve Clicquot (não reservada); 12h15–13h45 almoço local em Reims. 14h–16h30: paisagens da Montagne de Reims e parada curta em Verzenay ou mirante com acesso confirmado; não programar caminhada entre fileiras de vinhas. 16h30–19h30 retorno, com margem para trânsito. Prever aproximadamente 2–2h30 ou mais de estrada por trecho. Não somar Épernay ao mesmo dia. Aline não participa de degustação alcoólica; confirmar política de visita para menor. Caves urbanas e vinhedos são experiências distintas: o ingresso na maison não inclui passeio rural automaticamente. Veuve Clicquot é a preferência; se não houver sessão/rota compatível, consultar alternativa em Reims, sem reservar automaticamente.",
+      "Levar agasalho para a visita subterrânea e confirmar temperatura e piso com a maison.",
+      "Motorista sem degustação; solicitar opção sem álcool e política para a adolescente.",
+      "Tempo de estrada e horários da sessão são propostas, sem disponibilidade garantida."
+    ],
+    "sources": [
+      {
+        "title": "Veuve Clicquot — visitas, agenda e contato",
+        "url": "https://www.veuveclicquot.com/en-gb/visitus.html"
+      },
+      {
+        "title": "Ruinart — visita e acessibilidade",
+        "url": "https://www.ruinart.com/en-int/maison---4-rue-des-cray%C3%A8res-4ruedescrayeres.html"
+      },
+      {
+        "title": "Comité Champagne — território e rotas",
+        "url": "https://www.champagne.fr/en/visit-champagne"
+      },
+      {
+        "title": "Mercier — visitas em Épernay",
+        "url": "https://www.champagnemercier.com/en/visit-us"
+      },
+      {
+        "title": "Madame Clicquot — história da maison",
+        "url": "https://www.veuveclicquot.com/en-us/madameclicquot.html"
+      }
+    ],
+    "title": "Champagne: Reims, Veuve Clicquot e Montagne de Reims",
+    "city": "Champagne — saída e retorno em Paris",
+    "reviewed": "2026-10-25",
+    "kicker": "Um dia em Champagne",
+    "intro": "Reims, a maison Veuve Clicquot e as paisagens da Montagne de Reims, com tempo para pausas e deslocamentos acessíveis.",
+    "duration": "07h30–19h30, incluindo deslocamentos",
+    "arrival": "Veículo acessível desde Paris; reservar espaço e fixação para a cadeira motorizada.",
+    "booking": "Veuve Clicquot é a preferência. Sessão de 05/11/2026, percurso, tarifa e política para menor ainda a confirmar.",
+    "accessibility": "A maison declara visita, loja e café acessíveis mediante aviso na reserva. Confirmar especificamente cadeira motorizada, dimensões, elevador, sanitário e procedimento de emergência. Mirantes e vinhedos exigem verificação independente.",
+    "photo_tip": "Registre a catedral, as paisagens e o grupo nos pontos permitidos; respeite as regras de fotografia nas caves.",
+    "venues": [
+      {
+        "name": "Veuve Clicquot — preferência do grupo",
+        "text": "Caves em Reims, 1 rue Albert Thomas. Calendário publicado: quarta a domingo de 04/11/2026 a 03/01/2027, 09h30–17h30; 05/11 está nesse período, mas a sessão não está confirmada. Experiência de 1 hora anunciada a €36 por adulto; confirmar preço e modalidade. Contato: visitscenter@veuve-clicquot.fr, +33 3 26 89 53 90. Visita privada a caves/vinhedos exige consulta separada.",
+        "access": "Acessibilidade anunciada mediante aviso; confirmar rota da cadeira motorizada e participação de Aline sem degustação alcoólica.",
+        "url": "https://www.veuveclicquot.com/en-gb/visitus.html"
+      },
+      {
+        "name": "Ruinart — alternativa em Reims",
+        "text": "4 rue des Crayères: proposta que reúne caves, arquitetura, arte e degustação. Consultar sessão, duração e orçamento, sem somar à Veuve no mesmo dia por obrigação. Contato: visites@ruinart.com, +33 1 57 32 42 78.",
+        "access": "A maison informa acolhimento de pessoas com mobilidade reduzida; verificar especificamente a visita subterrânea e cadeira motorizada, sem inferir acesso completo a partir do pavilhão.",
+        "url": "https://www.ruinart.com/en-int/maison---4-rue-des-cray%C3%A8res-4ruedescrayeres.html"
+      },
+      {
+        "name": "Épernay / Mercier — alternativa para outro programa",
+        "text": "Épernay e sua Avenue de Champagne podem substituir o dia em Reims em uma revisão futura. A Mercier fica em 68 avenue de Champagne; consultar experiências e agenda oficial. Não está agendada em 05/11.",
+        "access": "Confirmar elevador, percurso, equipamentos e política de menores diretamente; não presumir compatibilidade do trem interno com a cadeira.",
+        "url": "https://www.champagnemercier.com/en/visit-us"
+      }
+    ]
   }
 }

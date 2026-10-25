@@ -6,10 +6,10 @@ ROOT=Path(__file__).resolve().parents[1]
 class GuideContent(unittest.TestCase):
     def test_complete_guides_with_local_licensed_photos(self):
         guides=json.loads((ROOT/'guides.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(guides),30)
+        self.assertEqual(len(guides),31)
         for key,g in guides.items():
             with self.subTest(guide=key):
-                if key in ('roma-castel','toscana-rural'):
+                if key in ('roma-castel','toscana-rural','champagne-reims'):
                     self.assertEqual(g['photos'],[])  # No unlicensed or unrelated placeholder photos.
                     self.assertEqual(len(g['stops']),3)
                     self.assertGreaterEqual(len(g['history']),2)

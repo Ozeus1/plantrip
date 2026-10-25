@@ -3,6 +3,7 @@ WORKDIR /app
 COPY app.py .
 COPY europe.py .
 COPY roma2026.py roma2026.json ./
+COPY paris2026.json ./
 COPY attractions.py guides.json ./
 COPY static ./static
 COPY scripts/create_admin.py ./scripts/create_admin.py
