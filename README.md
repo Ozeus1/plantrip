@@ -18,6 +18,18 @@ Na atualização de um banco antigo, o conteúdo já existente é preservado em 
 
 ## Recursos
 
+### Diário público e companheiros
+
+Visitantes sem login acessam somente a visualização de leitura do diário em `/` ou `/diary`. O administrador controla a publicação em **Viagens → Editar / participantes → Permitir leitura pública do diário**. Apenas as viagens com essa opção ativa aparecem publicamente. A página mostra relatos, fotos, vídeos e comentários do diário; não fornece contas/e-mails, reservas, roteiros privados nem documentos PDF. Publicar, comentar, editar ou enviar arquivos exige login e participação no grupo. Ao desativar a opção, inclusive o acesso anônimo às mídias é revogado no servidor.
+
+O cadastro de companheiros aceita senhas a partir de 5 caracteres; o cadastro inicial do administrador continua exigindo 8. Para cadastrar uma lista de companheiros pela VPS sem armazenar senhas no repositório, use o importador com JSON privado via entrada padrão:
+
+```sh
+docker compose exec -T plantrip python scripts/import_members.py --trip Europa --publish-diary < /opt/plantrip/companheiros-europa.json
+```
+
+O JSON é uma lista de objetos com os campos `name`, `email` e `password`. Ele deve ser transferido por SFTP, protegido com permissão 600 e mantido fora do Git. O importador vincula os participantes à viagem e pode habilitar o diário público; não duplica contas nem troca senhas de contas existentes.
+
 ### Guias das atrações
 
 Os 28 passeios da Europa possuem páginas próprias em `/attractions/ID`, abertas pelo cartão ou pelo link **Conhecer a atração · Guia completo**. Cada guia reúne história, percurso sugerido, galeria de referência, recomendações, orientação de chegada, acessibilidade e links das instituições responsáveis. Os horários continuam ligados à etapa do roteiro. Há apresentação guiada em slides, ampliação das fotos, leitura da história pelo navegador quando disponível e impressão do guia.

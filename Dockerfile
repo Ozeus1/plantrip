@@ -5,6 +5,7 @@ COPY europe.py .
 COPY attractions.py guides.json ./
 COPY static ./static
 COPY scripts/create_admin.py ./scripts/create_admin.py
+COPY scripts/import_members.py ./scripts/import_members.py
 ENV HOST=0.0.0.0 PORT=8000 DATA_DIR=/data
 RUN mkdir /data && useradd --uid 10001 app && chown app /data
 USER app

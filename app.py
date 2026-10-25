@@ -46,6 +46,8 @@ def init():
             c.execute('ALTER TABLE entries ADD COLUMN attraction_id INTEGER REFERENCES entries(id) ON DELETE SET NULL')
         if 'sort_order' not in {r['name'] for r in c.execute('PRAGMA table_info(entries)')}:
             c.execute('ALTER TABLE entries ADD COLUMN sort_order INTEGER')
+        if 'public_diary' not in {r['name'] for r in c.execute('PRAGMA table_info(trips)')}:
+            c.execute('ALTER TABLE trips ADD COLUMN public_diary INTEGER NOT NULL DEFAULT 0')
         from europe import seed
         seed(c)
         from attractions import attach_guides
@@ -75,6 +77,13 @@ class Handler(BaseHTTPRequestHandler):
         path=self.path.split('?')[0]
         with db() as c:
             u=self.user(c)
+            if path=='/api/public/diary':
+                trips=[dict(r) for r in c.execute('SELECT id,name FROM trips WHERE public_diary=1 ORDER BY start,id')]
+                entries=[dict(r) for r in c.execute("SELECT e.id,e.trip_id,e.title,e.place,e.start,e.description,u.name author FROM entries e JOIN trips t ON t.id=e.trip_id JOIN users u ON u.id=e.user_id WHERE e.kind='diary' AND t.public_diary=1 ORDER BY e.start DESC,e.id DESC")]
+                for e in entries:
+                    e['files']=[dict(r) for r in c.execute("SELECT id,name,mime FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%')",(e['id'],))]
+                    e['comments']=[dict(r) for r in c.execute('SELECT u.name author,c.body,c.created FROM comments c JOIN users u ON u.id=c.user_id WHERE c.entry_id=? ORDER BY c.id',(e['id'],))]
+                return self.respond({'trips':trips,'entries':entries})
             if path=='/api/state':
                 if not u:
                     return self.respond({'user':None,'setup':os.environ.get('ALLOW_SETUP','1')=='1' and c.execute('SELECT count(*) FROM users').fetchone()[0]==0})
@@ -103,18 +112,20 @@ class Handler(BaseHTTPRequestHandler):
                 from attractions import guide_for
                 return self.respond({'entry':e,'guide':guide_for(entry)})
             if path.startswith('/media/'):
-                if not u:return self.respond({'error':'Entre para acessar os arquivos.'},401)
                 f=c.execute('SELECT * FROM files WHERE id=?',(path.rsplit('/',1)[-1],)).fetchone()
                 if not f:return self.respond({'error':'Arquivo não encontrado'},404)
-                entry=c.execute('SELECT trip_id FROM entries WHERE id=?',(f['entry_id'],)).fetchone()
-                if not entry or not allowed(c,u,entry['trip_id']):return self.respond({'error':'Sem acesso a esta viagem'},403)
+                entry=c.execute('SELECT e.trip_id,e.kind,t.public_diary FROM entries e JOIN trips t ON t.id=e.trip_id WHERE e.id=?',(f['entry_id'],)).fetchone()
+                public=bool(entry and entry['kind']=='diary' and entry['public_diary'] and f['mime'].startswith(('image/','video/')))
+                if not public and not u:return self.respond({'error':'Entre para acessar os arquivos.'},401)
+                if not public and (not entry or not allowed(c,u,entry['trip_id'])):return self.respond({'error':'Sem acesso a esta viagem'},403)
                 target=DATA/'uploads'/f['path']; mime=f['mime']
             else:
-                target=ROOT/'static'/('index.html' if path=='/' or re.fullmatch(r'/attractions/\d+/?',path) else path.lstrip('/'))
+                target=ROOT/'static'/('index.html' if path in ('/','/diary') or re.fullmatch(r'/attractions/\d+/?',path) else path.lstrip('/'))
                 if not target.resolve().is_relative_to((ROOT/'static').resolve()):return self.respond({'error':'Inválido'},404)
                 mime=mimetypes.guess_type(str(target))[0] or 'application/octet-stream'
             if not target.is_file():return self.respond({'error':'Não encontrado'},404)
             body=target.read_bytes(); self.send_response(200); self.send_header('Content-Type',mime)
+            if path.startswith('/media/'):self.send_header('Cache-Control','private, no-store')
             self.send_header('X-Content-Type-Options','nosniff')
             self.send_header('Content-Length',str(len(body))); self.end_headers(); self.wfile.write(body)
 
@@ -178,6 +189,9 @@ class Handler(BaseHTTPRequestHandler):
                         if not c.execute('SELECT 1 FROM trips WHERE id=?',(tid,)).fetchone():raise ValueError('Viagem inexistente')
                         c.execute('UPDATE trips SET name=?,start=?,end=?,places=?,notes=? WHERE id=?',values+(tid,))
                     else:tid=c.execute('INSERT INTO trips(name,start,end,places,notes) VALUES(?,?,?,?,?)',values).lastrowid
+                    if 'public_diary' in payload:
+                        if type(payload['public_diary']) is not bool:raise ValueError('Visibilidade do diário inválida')
+                        c.execute('UPDATE trips SET public_diary=? WHERE id=?',(int(payload['public_diary']),tid))
                     c.execute('DELETE FROM trip_members WHERE trip_id=?',(tid,))
                     c.executemany('INSERT INTO trip_members VALUES(?,?)',[(tid,uid) for uid in members])
                     return self.respond({'id':tid})
@@ -252,7 +266,8 @@ class Handler(BaseHTTPRequestHandler):
         except (ValueError,KeyError,sqlite3.IntegrityError) as ex:self.respond({'error':str(ex) if not isinstance(ex,sqlite3.IntegrityError) else 'Este e-mail já está cadastrado'},400)
 
     def add_user(self,c,p,role):
-        if len(p.get('password',''))<8:raise ValueError('Use uma senha com pelo menos 8 caracteres')
+        minimum=8 if role=='admin' else 5
+        if len(p.get('password',''))<minimum:raise ValueError(f'Use uma senha com pelo menos {minimum} caracteres')
         if not p.get('name','').strip() or '@' not in p.get('email',''):raise ValueError('Informe nome e e-mail válidos')
         salt=secrets.token_hex(16)
         return c.execute('INSERT INTO users(name,email,password,salt,role) VALUES(?,?,?,?,?)',(p['name'].strip(),p['email'].strip().lower(),password(p['password'],salt),salt,role)).lastrowid
