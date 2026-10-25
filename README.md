@@ -20,6 +20,10 @@ Na atualização de um banco antigo, o conteúdo já existente é preservado em 
 
 ### Diário público e companheiros
 
+Todos os usuários autenticados têm o menu **Minha senha**, que exige a senha atual, a nova senha e sua confirmação. Ao salvar, todas as sessões da conta são encerradas e é necessário entrar novamente. O mínimo é de 5 caracteres para participantes e 8 para administradores.
+
+Em **Usuários → Gerar nova senha**, o administrador pode substituir a senha de outro usuário por uma senha aleatória exibida somente na janela de geração. Copie e entregue diretamente ao usuário; nenhuma mensagem ou e-mail é enviado automaticamente. As sessões anteriores desse usuário são encerradas. O usuário pode depois escolher sua própria senha em **Minha senha**. O administrador altera sua própria senha pelo mesmo menu pessoal, usando a senha atual. As senhas são armazenadas somente como hashes, nunca em texto puro no banco ou na lista de usuários.
+
 Visitantes sem login acessam somente a visualização de leitura do diário em `/` ou `/diary`. O administrador controla a publicação em **Viagens → Editar / participantes → Permitir leitura pública do diário**. Apenas as viagens com essa opção ativa aparecem publicamente. A página mostra relatos, fotos, vídeos e comentários do diário; não fornece contas/e-mails, reservas, roteiros privados nem documentos PDF. Publicar, comentar, editar ou enviar arquivos exige login e participação no grupo. Ao desativar a opção, inclusive o acesso anônimo às mídias é revogado no servidor.
 
 O cadastro de companheiros aceita senhas a partir de 5 caracteres; o cadastro inicial do administrador continua exigindo 8. Para cadastrar uma lista de companheiros pela VPS sem armazenar senhas no repositório, use o importador com JSON privado via entrada padrão:

@@ -1,4 +1,4 @@
-import os, json, sqlite3, secrets, hashlib, hmac, mimetypes, re
+import os, json, sqlite3, secrets, hashlib, hmac, mimetypes, re, string
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
@@ -63,9 +63,10 @@ def available_trips(c,u):
     return trips
 
 class Handler(BaseHTTPRequestHandler):
-    def respond(self, data, status=200):
+    def respond(self, data, status=200, headers=None):
         body=json.dumps(data,ensure_ascii=False).encode()
         self.send_response(status); self.send_header('Content-Type','application/json; charset=utf-8'); self.send_header('Content-Length',str(len(body)))
+        for name,value in (headers or {}).items():self.send_header(name,value)
         self.send_header('Cache-Control','no-store'); self.end_headers(); self.wfile.write(body)
 
     def user(self,c):
@@ -158,6 +159,31 @@ class Handler(BaseHTTPRequestHandler):
                 if not u:return self.respond({'error':'Faça login'},401)
                 if path=='/api/logout':
                     cookie=SimpleCookie(); cookie.load(self.headers.get('Cookie','')); c.execute('DELETE FROM sessions WHERE token=?',(cookie['session'].value,)); return self.respond({'ok':True})
+                if path=='/api/account/password':
+                    c.execute('BEGIN IMMEDIATE');u=self.user(c)
+                    if not u:return self.respond({'error':'Entre novamente para alterar sua senha'},401)
+                    current=payload.get('current_password','');new=payload.get('new_password','')
+                    if not hmac.compare_digest(password(current,u['salt']),u['password']):return self.respond({'error':'A senha atual está incorreta'},400)
+                    minimum=8 if u['role']=='admin' else 5
+                    if not minimum<=len(new)<=128:raise ValueError(f'A nova senha deve ter entre {minimum} e 128 caracteres')
+                    if new!=payload.get('confirmation'):raise ValueError('A confirmação da nova senha não confere')
+                    if hmac.compare_digest(current,new):raise ValueError('Escolha uma senha diferente da atual')
+                    salt=secrets.token_hex(16)
+                    c.execute('UPDATE users SET password=?,salt=? WHERE id=?',(password(new,salt),salt,u['id']))
+                    c.execute('DELETE FROM sessions WHERE user_id=?',(u['id'],))
+                    return self.respond({'ok':True},headers={'Set-Cookie':'session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0'})
+                if path=='/api/users/reset-password':
+                    c.execute('BEGIN IMMEDIATE');u=self.user(c)
+                    if not u:return self.respond({'error':'Faça login'},401)
+                    if u['role']!='admin':return self.respond({'error':'Apenas o administrador pode gerar senhas'},403)
+                    target=c.execute('SELECT id,name FROM users WHERE id=?',(payload.get('user_id'),)).fetchone()
+                    if not target:raise ValueError('Usuário inexistente')
+                    if target['id']==u['id']:raise ValueError('Use Minha senha para alterar sua própria senha')
+                    alphabet=string.ascii_letters+string.digits
+                    new=''.join(secrets.choice(alphabet) for _ in range(14));salt=secrets.token_hex(16)
+                    c.execute('UPDATE users SET password=?,salt=? WHERE id=?',(password(new,salt),salt,target['id']))
+                    c.execute('DELETE FROM sessions WHERE user_id=?',(target['id'],))
+                    return self.respond({'ok':True,'name':target['name'],'password':new})
                 if path=='/api/members':
                     if u['role']!='admin':return self.respond({'error':'Apenas administrador'},403)
                     uid=self.add_user(c,payload,'member')
