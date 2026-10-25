@@ -1,0 +1,236 @@
+{
+  "common": "Roteiro de Roma em quatro dias, conforme a sequência das imagens: 28/10 centro histórico; 29/10 Roma Antiga; 30/10 Vaticano; 31/10 região norte. Horários sugeridos, não reservas. Grupo de seis, com cadeira motorizada: prever pausas, pavimento irregular, rampas, sanitários e transporte acessível. O primeiro domingo será 01/11, fora desses quatro dias; não aplicar sua gratuidade a 28–31/10. Museus Vaticanos seguem regra própria de último domingo, não primeiro domingo. Audiência papal depende de calendário e bilhete próprio. Toscana foi retirada de 30/10 e permanece como alternativa sem data, sem perda dos guias e memórias. Saída de Roma mantida em 01/11 às 18h.",
+  "stages": [
+    {
+      "key": "roma-centro",
+      "old_title": "Centro histórico: Trevi, Spagna, Condotti e Colonna",
+      "title": "Fontana di Trevi",
+      "place": "Roma",
+      "start": "2026-10-28T14:00",
+      "end": "2026-10-28T14:35",
+      "description": "DIA 1 — CENTRO HISTÓRICO | Parada 1: Fontana di Trevi.\nChegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.\n\nVisão a partir do espaço público e acesso ao perímetro interno são diferentes. Desde 02/02/2026, o perímetro interno tem ingresso de €2 para visitantes sujeitos à tarifa; verificar isenções de deficiência/acompanhante e procedimento oficial. O acesso ao perímetro interno tem regra própria.\n\nMobilidade: Evitar degraus até a borda; solicitar indicação do percurso permitido à cadeira motorizada. O piso pode estar molhado e a praça fica congestionada. A observação externa é alternativa válida.",
+      "day": 1,
+      "sequence": 1
+    },
+    {
+      "key": "roma-adriano",
+      "old_title": "Templo de Adriano e Piazza di Pietra",
+      "title": "Templo de Adriano e Piazza di Pietra",
+      "place": "Roma",
+      "start": "2026-10-28T14:50",
+      "end": "2026-10-28T15:15",
+      "description": "DIA 1 — CENTRO HISTÓRICO | Parada 2: Templo de Adriano e Piazza di Pietra.\nChegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.\n\nObservar as colunas pelo exterior não exige ingresso de atração. A indicação de “pago” da imagem não vale automaticamente para a praça: exposições, eventos ou visitas internas têm regras próprias a consultar.\n\nMobilidade: Há piso irregular e diferenças de nível entre rua e ruínas. Para uma visita interna, confirmar soleira, rampa, circulação e banheiro; não inferir acessibilidade a partir da vista externa.",
+      "day": 1,
+      "sequence": 2
+    },
+    {
+      "key": "roma-pantheon",
+      "old_title": "Pantheon e Piazza Navona",
+      "title": "Pantheon",
+      "place": "Roma",
+      "start": "2026-10-28T15:30",
+      "end": "2026-10-28T16:15",
+      "description": "DIA 1 — CENTRO HISTÓRICO | Parada 3: Pantheon.\nChegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.\n\nTarifa integral oficial de €7 desde julho/2026; menores de 18 anos e outras categorias têm isenções conforme regras. O benefício etário reduzido não decorre apenas de estudar no Brasil. Primeiro domingo: consultar condições; a visita proposta é quarta-feira, 28/10. Gratuidades de Orlei/Elma dependem de documentação aceita.\n\nMobilidade: Solicitar à equipe a entrada acessível e confirmar o percurso; não usar a fila comum como garantia de acesso sem desnível. Prever piso molhado em chuva, multidões e tempo de segurança.",
+      "day": 1,
+      "sequence": 3
+    },
+    {
+      "key": "roma-sanluigi",
+      "old_title": "San Luigi dei Francesi",
+      "title": "San Luigi dei Francesi",
+      "place": "Roma",
+      "start": "2026-10-28T16:30",
+      "end": "2026-10-28T17:00",
+      "description": "DIA 1 — CENTRO HISTÓRICO | Parada 4: San Luigi dei Francesi.\nChegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.\n\nVisita ordinária à igreja geralmente gratuita. Confirmar horários do dia, celebrações e acesso à capela; não programar entrada durante culto. Eventual iluminação ou serviço não equivale a bilhete geral.\n\nMobilidade: Confirmar com a igreja a solução de entrada sem degraus e a posição para ver as pinturas sentado. A capela pode ficar cheia; evitar apertar o grupo entre visitantes.",
+      "day": 1,
+      "sequence": 4
+    },
+    {
+      "key": "roma-navona",
+      "old_title": "Piazza Navona",
+      "title": "Piazza Navona",
+      "place": "Roma",
+      "start": "2026-10-28T17:10",
+      "end": "2026-10-28T17:45",
+      "description": "DIA 1 — CENTRO HISTÓRICO | Parada 5: Piazza Navona.\nChegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.\n\nPraça pública sem ingresso geral. Estádio subterrâneo, exposições e serviços privados são cobrados separadamente, se escolhidos. Não há necessidade de comprá-los para conhecer a praça.\n\nMobilidade: Pavimentação de pedra, concentração de visitantes e obstáculos temporários. Preferir percurso nivelado pelo entorno das fontes e confirmar sanitário em local próximo.",
+      "day": 1,
+      "sequence": 5
+    },
+    {
+      "key": "roma-campo",
+      "old_title": "Campo de’ Fiori",
+      "title": "Campo de’ Fiori",
+      "place": "Roma",
+      "start": "2026-10-28T18:00",
+      "end": "2026-10-28T18:30",
+      "description": "DIA 1 — CENTRO HISTÓRICO | Parada 6: Campo de’ Fiori.\nChegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.\n\nPraça pública sem ingresso. O mercado é atividade de horário próprio; não prometer bancas abertas às 18h. Restaurantes ainda a escolher, com preço e acesso confirmados antes de reservar.\n\nMobilidade: Pedras, resíduos após o mercado, mesas e mudanças de circulação podem dificultar a cadeira. Escolher rota lateral confortável e restaurante com banheiro efetivamente acessível.",
+      "day": 1,
+      "sequence": 6
+    },
+    {
+      "key": "roma-campidoglio",
+      "old_title": "Fori Imperiali, Piazza Venezia, Campidoglio e Monti",
+      "title": "Piazza Venezia",
+      "place": "Roma",
+      "start": "2026-10-29T09:00",
+      "end": "2026-10-29T09:20",
+      "description": "DIA 2 — ROMA ANTIGA | Parada 1: Piazza Venezia.\nDia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.\n\nObservar a praça é gratuito. Palazzo Venezia, museus e terraços têm acesso próprio; escolher apenas o que cabe no horário do Coliseu.\n\nMobilidade: Trânsito intenso e possíveis obras. Confirmar rebaixamentos de calçada e travessia; guardar margem para desvios e não se reunir em ilhas apertadas.",
+      "day": 2,
+      "sequence": 1
+    },
+    {
+      "key": "roma-vittoriano",
+      "old_title": "Altar da Pátria e Vittoriano",
+      "title": "Altar da Pátria e Vittoriano",
+      "place": "Roma",
+      "start": "2026-10-29T09:30",
+      "end": "2026-10-29T10:05",
+      "description": "DIA 2 — ROMA ANTIGA | Parada 2: Altar da Pátria e Vittoriano.\nDia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.\n\nDistinguir áreas externas/cerimoniais do ingresso para os espaços e terraços do VIVE. Consultar tarifa vigente e isenções; o primeiro domingo não se aplica à quinta-feira, 29/10. Pessoa com deficiência e acompanhante podem ter gratuidade conforme regras e documentação.\n\nMobilidade: O VIVE informa acesso pelo lado Aracoeli com plataforma e elevador para a Terrazza Italia e elevadores panorâmicos. Confirmar operação, medidas, peso e entrada exata para a cadeira motorizada; não usar a escadaria principal.",
+      "day": 2,
+      "sequence": 2
+    },
+    {
+      "key": "roma-capitolino",
+      "old_title": "Monte Capitolino e Piazza del Campidoglio",
+      "title": "Monte Capitolino e Piazza del Campidoglio",
+      "place": "Roma",
+      "start": "2026-10-29T10:15",
+      "end": "2026-10-29T10:50",
+      "description": "DIA 2 — ROMA ANTIGA | Parada 3: Monte Capitolino e Piazza del Campidoglio.\nDia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.\n\nA praça é visita externa gratuita. Museus Capitolinos são uma visita independente e não cabem como inclusão automática nesta manhã.\n\nMobilidade: A Cordonata tem inclinação e irregularidades. Consultar alternativa pelas vias de acesso à colina; não confundir a escadaria de Aracoeli com rota para cadeira. Mirantes e acessos aos museus exigem conferência separada.",
+      "day": 2,
+      "sequence": 3
+    },
+    {
+      "key": "roma-forum",
+      "old_title": "Fórum Romano",
+      "title": "Fórum Romano",
+      "place": "Roma",
+      "start": "2026-10-29T11:15",
+      "end": "2026-10-29T12:30",
+      "description": "DIA 2 — ROMA ANTIGA | Parada 4: Fórum Romano.\nDia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.\n\nConferir ingresso combinado com Palatino/Coliseu e número de acessos permitidos. Não sair para almoçar supondo reentrada livre no Fórum/Palatino. O roteiro prevê refeição depois dessas duas etapas. Gratuidade de PCD/acompanhante e menor depende das regras oficiais.\n\nMobilidade: Pedras antigas, inclinações e trechos expostos. Solicitar o percurso acessível efetivamente aberto; plataformas e elevadores precisam estar operacionais. Se o esforço for alto, reduzir o Palatino em favor do Coliseu reservado.",
+      "day": 2,
+      "sequence": 4
+    },
+    {
+      "key": "roma-palatino",
+      "old_title": "Monte Palatino",
+      "title": "Monte Palatino",
+      "place": "Roma",
+      "start": "2026-10-29T12:40",
+      "end": "2026-10-29T13:25",
+      "description": "DIA 2 — ROMA ANTIGA | Parada 5: Monte Palatino.\nDia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.\n\nIntegra modalidades de ingresso do parque, mas salas e áreas especiais podem exigir bilhete específico. Confirmar o produto adquirido e os acessos; não presumir que todos os interiores estejam incluídos.\n\nMobilidade: É a etapa de maior ganho de altura da manhã. Verificar rampas/elevadores e autonomia da cadeira. Alternativa: abreviar a colina ou observar o Fórum por pontos viáveis, preservando o horário do Coliseu.",
+      "day": 2,
+      "sequence": 5
+    },
+    {
+      "key": "roma-coliseu",
+      "old_title": "Coliseu, Fórum Romano e Palatino",
+      "title": "Coliseu",
+      "place": "Roma",
+      "start": "2026-10-29T15:00",
+      "end": "2026-10-29T16:00",
+      "description": "DIA 2 — ROMA ANTIGA | Parada 6: Coliseu.\nDia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.\n\n15h é proposta, não ingresso comprado. Confirmar operação de outono e última entrada; se não houver sessão adequada, reajustar as etapas anteriores. Conferir bilhete combinado, identificação, gratuidade e áreas especiais. Não contar com o primeiro domingo em 29/10.\n\nMobilidade: Confirmar entrada acessível e elevadores operacionais para a modalidade escolhida. O percurso tem controle de segurança e desníveis; subsolo e áreas especiais não têm acesso automaticamente equivalente ao circuito básico.",
+      "day": 2,
+      "sequence": 6
+    },
+    {
+      "key": "vaticano-saopedro",
+      "old_title": "Basílica e Praça de São Pedro",
+      "title": "Basílica e Praça de São Pedro",
+      "place": "Roma",
+      "start": "2026-10-30T08:00",
+      "end": "2026-10-30T09:30",
+      "description": "DIA 3 — VATICANO E ARREDORES | Parada 1: Basílica e Praça de São Pedro.\nComeçar cedo por São Pedro. Planejar saída e trajeto externo até os Museus, com margem para filas e almoço.\n\nEntrada básica gratuita, sujeita à segurança e à liturgia. Serviços e áreas especiais podem ter cobrança/reserva. Audiência papal exige consulta ao calendário oficial e bilhete/procedimento próprios; não é garantida por visitar a basílica.\n\nMobilidade: Confirmar o ponto de acolhimento para cadeira motorizada e o caminho sem escadas. Vestimenta compatível com templo religioso. A cúpula não deve ser considerada acessível como a nave.",
+      "day": 3,
+      "sequence": 1
+    },
+    {
+      "key": "vaticano-museus",
+      "old_title": "Museus Vaticanos e Capela Sistina",
+      "title": "Museus Vaticanos e Capela Sistina",
+      "place": "Roma",
+      "start": "2026-10-30T10:30",
+      "end": "2026-10-30T14:00",
+      "description": "DIA 3 — VATICANO E ARREDORES | Parada 2: Museus Vaticanos e Capela Sistina.\nComeçar cedo por São Pedro. Planejar saída e trajeto externo até os Museus, com margem para filas e almoço.\n\nCORREÇÃO DA IMAGEM: a regra habitual de domingo gratuito é o último domingo do mês, com exceções do calendário, e não o primeiro. Em 30/10, sexta, usar ingresso/reserva ou gratuidade individual elegível. Confirmar documentos de deficiência e acompanhante e matrícula de Arthur. Não confundir prioridade com visita sem procedimento.\n\nMobilidade: Consultar previamente a admissibilidade da cadeira motorizada, medidas/peso e necessidade de transferência para cadeira convencional em algum trecho. Informar limitações de transferência antes da reserva. O percurso até a Sistina e a saída devem ser confirmados integralmente.",
+      "day": 3,
+      "sequence": 2
+    },
+    {
+      "key": "roma-castel",
+      "old_title": "Via della Conciliazione e Castel Sant’Angelo",
+      "title": "Castel Sant’Angelo",
+      "place": "Roma",
+      "start": "2026-10-30T16:00",
+      "end": "2026-10-30T17:30",
+      "description": "DIA 3 — VATICANO E ARREDORES | Parada 3: Castel Sant’Angelo.\nComeçar cedo por São Pedro. Planejar saída e trajeto externo até os Museus, com margem para filas e almoço.\n\nIngresso integral anunciado a €18 desde julho/2026; verificar isenções, documentação e eventual exposição. Em 30/10 não se aplica o primeiro domingo. A visita exterior não equivale ao ingresso no museu.\n\nMobilidade: Confirmar quais pavimentos são alcançáveis, funcionamento dos equipamentos e compatibilidade da cadeira motorizada. Não anunciar o monumento inteiro como acessível; manter exterior e ponte como alternativa.",
+      "day": 3,
+      "sequence": 3
+    },
+    {
+      "key": "roma-spagna",
+      "old_title": "Piazza di Spagna",
+      "title": "Piazza di Spagna",
+      "place": "Roma",
+      "start": "2026-10-31T09:00",
+      "end": "2026-10-31T09:45",
+      "description": "DIA 4 — REGIÃO NORTE | Parada 1: Piazza di Spagna.\nPriorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.\n\nPraça pública gratuita. Respeitar regras de uso da escadaria, sem sentar, comer ou bloquear passagens conforme sinalização. Não há necessidade de comprar ingresso para ver a praça.\n\nMobilidade: Visita proposta no nível inferior, sem subida pela escadaria. Para alcançar mirantes altos, usar rota/veículo acessível independente; não presumir acesso pelos mesmos caminhos de pedestres.",
+      "day": 4,
+      "sequence": 1
+    },
+    {
+      "key": "roma-popolo",
+      "old_title": "Piazza del Popolo e Santa Maria del Popolo",
+      "title": "Piazza del Popolo e Santa Maria del Popolo",
+      "place": "Roma",
+      "start": "2026-10-31T10:15",
+      "end": "2026-10-31T11:30",
+      "description": "DIA 4 — REGIÃO NORTE | Parada 2: Piazza del Popolo e Santa Maria del Popolo.\nPriorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.\n\nPraça gratuita. Consultar horários e regras da basílica; não prometer capelas abertas ou serviços gratuitos além da visita ordinária. Não há ingresso combinado com Galleria Borghese.\n\nMobilidade: Confirmar entrada sem degraus na igreja e a passagem para a área alta. O trajeto entre Popolo e Villa Borghese envolve desnível: prever transporte acessível se necessário.",
+      "day": 4,
+      "sequence": 2
+    },
+    {
+      "key": "roma-borghese",
+      "old_title": "Villa Borghese e Pincio",
+      "title": "Villa Borghese e Pincio",
+      "place": "Roma",
+      "start": "2026-10-31T12:00",
+      "end": "2026-10-31T13:00",
+      "description": "DIA 4 — REGIÃO NORTE | Parada 3: Villa Borghese e Pincio.\nPriorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.\n\nParque e passeios públicos não equivalem ao ingresso da Galleria. A entrada no museu exige reserva independente, inclusive em condições de gratuidade. Parque e museu possuem regras de acesso distintas.\n\nMobilidade: Terreno amplo, caminhos inclinados e superfícies variadas. Escolher percurso específico, não apenas “parque acessível”. Planejar banheiro, bateria da cadeira e possível transporte entre setores.",
+      "day": 4,
+      "sequence": 3
+    },
+    {
+      "key": "roma-galleria",
+      "old_title": "Galleria Borghese",
+      "title": "Galleria Borghese",
+      "place": "Roma",
+      "start": "2026-10-31T14:30",
+      "end": "2026-10-31T16:30",
+      "description": "DIA 4 — REGIÃO NORTE | Parada 4: Galleria Borghese.\nPriorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.\n\nMuseu com reserva obrigatória conforme disponibilidade. Primeiro domingo pode ter entrada gratuita com reserva, mas 31/10 é sábado. Confirmar tarifa vigente, documentos de deficiência/acompanhante e procedimento para seis; não presumir acesso por estar no parque.\n\nMobilidade: O museu informa equipamentos de acesso e cadeiras menores para uso em elevador. Confirmar dimensões, peso, pavimentos e eventual transferência da cadeira motorizada para a convencional antes de pagar. Se transferência não for possível, solicitar solução compatível ou substituir a visita.",
+      "day": 4,
+      "sequence": 4
+    },
+    {
+      "key": "toscana-rural",
+      "old_title": "Toscana rural: Montepulciano, vinícola e Pienza/Val d’Orcia",
+      "title": "Toscana rural — alternativa sem data",
+      "place": "Toscana — saída e retorno em Roma",
+      "start": "",
+      "end": "",
+      "description": "ALTERNATIVA SEM DATA — fora do roteiro principal dos quatro dias de Roma. Reagendar somente por decisão do administrador, sem somar às visitas já propostas. Guias, fotos e memórias preservados.",
+      "day": 0,
+      "sequence": 0
+    },
+    {
+      "key": "roma-trastevere",
+      "old_title": "Trastevere ao entardecer",
+      "title": "Trastevere — alternativa sem data",
+      "place": "Roma",
+      "start": "",
+      "end": "",
+      "description": "ALTERNATIVA SEM DATA — fora do roteiro principal dos quatro dias de Roma. Reagendar somente por decisão do administrador, sem somar às visitas já propostas. Guias, fotos e memórias preservados.",
+      "day": 0,
+      "sequence": 0
+    }
+  ]
+}

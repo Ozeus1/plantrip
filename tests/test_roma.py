@@ -28,6 +28,33 @@ class RomeMigration(unittest.TestCase):
             self.assertEqual(c.execute('SELECT title FROM entries WHERE id=10').fetchone()[0],'Nova edição do admin')
         finally:c.close()
 
+    def test_four_days_preserves_old_ids_and_unschedules_tuscany(self):
+        c=sqlite3.connect(':memory:')
+        try:
+            c.executescript('''CREATE TABLE migrations(name TEXT PRIMARY KEY);
+            CREATE TABLE trips(id INTEGER,name TEXT,start TEXT);
+            CREATE TABLE users(id INTEGER,role TEXT);
+            CREATE TABLE entries(id INTEGER PRIMARY KEY,kind TEXT,title TEXT,place TEXT,start TEXT,end TEXT,description TEXT,category TEXT,user_id INTEGER,trip_id INTEGER,guide_key TEXT,sort_order INTEGER,attraction_id INTEGER);
+            INSERT INTO trips VALUES(1,'Europa','2026-10-27');
+            INSERT INTO users VALUES(1,'admin');
+            INSERT INTO entries(id,kind,title,trip_id,guide_key,start) VALUES(10,'tour','Coliseu, Fórum Romano e Palatino',1,'roma-coliseu','2026-10-31T09:00');
+            INSERT INTO entries(id,kind,title,trip_id,attraction_id) VALUES(11,'diary','Memória antiga',1,10);
+            INSERT INTO entries(id,kind,title,trip_id,guide_key,start) VALUES(12,'tour','Toscana rural',1,'toscana-rural','2026-10-30T07:00');''')
+            args=('roma_four_days.json','europa-roma-four-days-202610-v1','roma-four-days')
+            apply_file(c,*args)
+            self.assertEqual(c.execute('SELECT start FROM entries WHERE id=10').fetchone()[0],'2026-10-29T15:00')
+            self.assertEqual(c.execute('SELECT attraction_id FROM entries WHERE id=11').fetchone()[0],10)
+            self.assertEqual(c.execute('SELECT start FROM entries WHERE id=12').fetchone()[0],'')
+            tours=list(c.execute("SELECT start,title FROM entries WHERE kind='tour' AND start<>'' ORDER BY start"))
+            self.assertEqual(len(tours),19)
+            self.assertEqual([len([r for r in tours if r[0].startswith('2026-10-'+d)]) for d in ['28','29','30','31']],[6,6,3,4])
+            self.assertEqual(tours[0][1],'Fontana di Trevi')
+            self.assertEqual(tours[-1][1],'Galleria Borghese')
+            c.execute("UPDATE entries SET start='2026-10-29T14:45' WHERE id=10")
+            apply_file(c,*args)
+            self.assertEqual(c.execute('SELECT start FROM entries WHERE id=10').fetchone()[0],'2026-10-29T14:45')
+        finally:c.close()
+
     def test_paris_keeps_arrival_and_existing_memories(self):
         c=sqlite3.connect(':memory:')
         try:

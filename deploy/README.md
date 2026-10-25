@@ -140,6 +140,19 @@ O arquivo é criado pelo usuário do terminal, com acesso privado e data no nome
 Abra `https://plantrip.orleibarbosa.com.br`, confira o certificado, faça login e teste uma foto/PDF, reprodução de vídeo e salvamento da ordem. Confira também os demais sites da VPS após recarregar o proxy. Nenhuma alteração remota é executada automaticamente por estes arquivos.
 # Atualização do roteiro Roma e Toscana — outubro de 2026
 
+## Roma reorganizada em quatro dias (atualização posterior)
+
+A migração `europa-roma-four-days-202610-v1` é aplicada uma única vez ao iniciar o aplicativo, depois dos roteiros anteriores. Faz backup `backup-before-roma-four-days-*.db` no diretório de dados e mantém os IDs antigos e seus arquivos, comentários e vínculos de memórias. Cria paradas individuais para completar as atrações das imagens:
+
+- 28/10: Trevi, Adriano, Pantheon, San Luigi, Navona e Campo de’ Fiori; início à tarde após chegada/descanso.
+- 29/10: Venezia, Vittoriano, Capitólio, Fórum, Palatino e Coliseu; horário do Coliseu condicionado à reserva e operação de inverno.
+- 30/10: São Pedro, Museus Vaticanos/Sistina e Castel Sant’Angelo; audiência papal não confirmada.
+- 31/10: Spagna, Popolo/Santa Maria del Popolo, Villa/Pincio e Galleria Borghese.
+
+Toscana e Trastevere permanecem como alternativas **sem data**, fora desses quatro dias. Paris, Londres, Madrid e transportes não são alterados. As 19 paradas têm ao menos duas fotos licenciadas; os guias compostos de Museus/Sistina e Popolo/basílica têm quatro. Incluem história, rotas, alimentação, reservas, fontes oficiais e observações para cadeira motorizada. Os quatro dias podem ser navegados nas páginas dos guias. O histórico do planejamento anterior fica recolhido em seção própria. Após a migração, edições manuais não são sobrescritas a cada reinício.
+
+Atualização na VPS: `git pull --ff-only origin main` e `docker compose up -d --build plantrip`. Não reimportar o banco local sobre o banco da VPS.
+
 O roteiro Paris/Champagne do PDF também é aplicado uma única vez pela migração `europa-paris-champagne-202611-v1`, com backup `backup-before-paris-*.db`. Mantém chegada em Paris em 01/11 às 23h (o PDF pressupunha chegada mais cedo), conserva a logística e os vínculos existentes, muda Louvre para 02/11 e inclui Champagne/Reims com Veuve Clicquot em 05/11. Versailles fica fora do programa principal como alternativa a reagendar, sem reserva. As páginas de Toscana e Champagne comparam produtoras/maisons com fontes oficiais, contatos e pendências de acessibilidade. A migração não realiza reservas nem envia mensagens aos estabelecimentos.
 
 A versão com `roma2026.py` adapta uma única vez os passeios da viagem Europa (27/10/2026): centro histórico em 28/10, Vaticano em 29/10, Toscana em 30/10 e Roma Antiga em 31/10. Ao iniciar o aplicativo, cria `backup-before-roma-*.db` no diretório de dados antes da alteração. IDs existentes, fotos, comentários e vínculos com memórias são preservados; observações anteriores ficam registradas no texto da etapa. Edições posteriores não são sobrescritas a cada reinício. Não reimporte o banco local sobre o banco em uso na VPS.

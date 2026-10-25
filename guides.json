@@ -1,112 +1,170 @@
 {
   "roma-centro": {
     "key": "roma-centro",
-    "title": "Centro histórico: Trevi, Spagna, Condotti e Colonna",
+    "title": "Fontana di Trevi",
     "city": "Roma",
-    "kicker": "Água, pedra e vida nas praças",
-    "intro": "Uma primeira caminhada para sentir Roma sem pressa: fontes barrocas, fachadas em tons quentes e a escadaria que liga a cidade ao Pincio. O passeio cabe na tarde da chegada e pode ser encurtado conforme o cansaço.",
+    "kicker": "Dia 1 · Centro histórico · Parada 1",
+    "intro": "A Fontana di Trevi é uma composição barroca em que água, escultura e arquitetura formam um grande cenário urbano. Projetada por Nicola Salvi e concluída no século XVIII, ocupa a fachada do Palazzo Poli. A figura central representa Oceano, acompanhado por cavalos marinhos e tritões: não se trata apenas de uma fonte isolada, mas de um teatro de pedra integrado à cidade.",
     "history": [
-      "A Fontana di Trevi transforma o término de um antigo sistema de abastecimento de água em um grande cenário barroco. O projeto de Nicola Salvi foi concluído no século XVIII: a fachada, as rochas e as figuras marinhas fazem a água parecer parte de um teatro.",
-      "Na Piazza di Spagna, a fonte da Barcaccia e a escadaria de Trinità dei Monti revelam outra escala de Roma: um espaço de encontro entre ruas comerciais e a colina. Observar os dois lugares em sequência ajuda a perceber como a cidade usa desníveis e água para criar perspectivas."
+      "A Fontana di Trevi é uma composição barroca em que água, escultura e arquitetura formam um grande cenário urbano. Projetada por Nicola Salvi e concluída no século XVIII, ocupa a fachada do Palazzo Poli. A figura central representa Oceano, acompanhado por cavalos marinhos e tritões: não se trata apenas de uma fonte isolada, mas de um teatro de pedra integrado à cidade.",
+      "A presença da água remete ao antigo abastecimento romano ligado à Aqua Virgo. Na praça, compare a monumentalidade da fachada com a escala das ruas que chegam ao local. A tradição de lançar uma moeda é parte da cultura turística, enquanto a leitura das figuras revela o programa artístico. Na tarde da chegada, uma observação tranquila pela parte superior pode ser mais adequada que descer ao perímetro interno."
     ],
     "stops": [
       {
-        "title": "Fontana di Trevi",
-        "text": "Observe a figura central, os cavalos e o contraste entre pedra esculpida e água. Procure a vista da praça antes de se aproximar do nível inferior."
+        "title": "Vista da praça",
+        "text": "Reconheça a fachada do Palazzo Poli antes de se aproximar da borda."
       },
       {
-        "title": "Piazza di Spagna",
-        "text": "Contorne a Barcaccia para apreciar sua forma de embarcação. A escadaria é o pano de fundo; a subida é opcional no primeiro dia."
+        "title": "Oceano e figuras marinhas",
+        "text": "Compare os cavalos e a movimentação dos tritões com as rochas e a água."
       },
       {
-        "title": "Via del Corso e ruas laterais",
-        "text": "Faça a ligação caminhando por trechos curtos, com uma pausa para café e tempo para se orientar no centro."
+        "title": "Rumo à Piazza di Pietra",
+        "text": "Siga para o Templo de Adriano, com tempo para piso de pedra e multidões."
       }
     ],
     "tips": [
-      "Dia da chegada às 06h: priorizar imigração, traslado, descanso e alimentação antes de sair. Percurso solicitado: Fontana di Trevi → Piazza di Spagna → Via Condotti → Piazza Colonna, continuando para Pantheon e Navona na etapa seguinte. A sequência exige alguns retornos entre ruas; ajustar o trajeto real às rampas e ao cansaço, sem compromisso de cumprir tudo. Não usar a escadaria de Spagna como passagem da cadeira. Almoço conforme chegada, perto do percurso: Armando al Pantheon, Da Gino al Parlamento ou Osteria del Grillo; estimativa do grupo €25–40 por pessoa. Confirmar acessibilidade antes de reservar.",
-      "Comece depois de deixar as malas e almoçar; o descanso da chegada tem prioridade.",
-      "Consulte as regras atuais de acesso ao perímetro da fonte e de uso da escadaria.",
-      "Evite reunir o grupo nos pontos de passagem; combine um encontro em uma rua lateral."
+      "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
     ],
-    "arrival": "Referência de chegada: estação Barberini ou Spagna; confirme a rota a partir do hotel.",
-    "duration": "2 a 3 horas, ritmo leve",
-    "booking": "Consulte o acesso oficial da Fontana di Trevi; não confunda a praça com o perímetro controlado da fonte.",
-    "accessibility": "Há calçamento irregular, multidões e escadas; a praça pode ser apreciada sem subir até Trinità dei Monti.",
-    "photo_tip": "Fotografe Trevi pelas laterais da praça e a Barcaccia em um enquadramento mais baixo, sem bloquear a circulação.",
+    "arrival": "Piazza di Trevi. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Evitar degraus até a borda; solicitar indicação do percurso permitido à cadeira motorizada. O piso pode estar molhado e a praça fica congestionada. A observação externa é alternativa válida.",
+    "duration": "14:00–14:35 no roteiro, incluindo observação e pausas",
+    "booking": "Visão a partir do espaço público e acesso ao perímetro interno são diferentes. Desde 02/02/2026, o perímetro interno tem ingresso de €2 para visitantes sujeitos à tarifa; verificar isenções de deficiência/acompanhante e procedimento oficial. O ingresso do perímetro interno não equivale à observação pela praça.",
+    "accessibility": "Evitar degraus até a borda; solicitar indicação do percurso permitido à cadeira motorizada. O piso pode estar molhado e a praça fica congestionada. A observação externa é alternativa válida.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
     "photo_titles": [
       "Trevi Fountain",
       "Spanish Steps"
     ],
     "photos": [
       {
-        "src": "/guide-photos/ac8549580d6d5b14.jpg",
-        "alt": "Trevi Fountain",
-        "author": "NikonZ7II",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg",
-        "caption": "Trevi Fountain",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/a0e5149d9f6d73216a5f.jpg",
+        "alt": "Fontana di Trevi — vista geral",
+        "caption": "Fontana di Trevi — outro olhar",
+        "author": "Diliff",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain,_Rome,_Italy_2_-_May_2007.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
       },
       {
-        "src": "/guide-photos/aa4c371932ef999a.jpg",
-        "alt": "Spanish Steps",
-        "author": "Arnaud 25",
-        "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Piazza_di_Spagna_%28Rome%29_0004.jpg",
-        "caption": "Spanish Steps",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/fcf8473f4b3219eb7cc3.jpg",
+        "alt": "Fontana di Trevi — detalhe e perspectiva",
+        "caption": "Fontana di Trevi — vista do local",
+        "author": "Wilfredor",
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Oceanus_(Trevi_fountain).jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "Fontana di Trevi — site oficial",
+        "title": "Trevi — visita e tarifas",
         "url": "https://www.fontanaditrevi.roma.it/en"
       },
       {
-        "title": "Piazza di Spagna — Turismo Roma",
-        "url": "https://www.turismoroma.it/it/luoghi/piazza-di-spagna"
+        "title": "Turismo Roma — novo acesso",
+        "url": "https://www.turismoroma.it/en/news/trevi-fountain-new-entry-fee-one-romes-symbols"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Trevi\" fountain",
+    "rome_day": 1,
+    "rome_sequence": 1,
+    "day_name": "Centro histórico",
+    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Refeição antes de sair e jantar após Campo de’ Fiori. Opções já sugeridas pelo grupo no centro: Armando al Pantheon e Da Gino al Parlamento. Orçamento inicial €25–40 por pessoa, sem cotação atual nem reserva; confirmar cardápio, degraus, largura e banheiro."
   },
   "roma-coliseu": {
     "key": "roma-coliseu",
-    "title": "Coliseu, Fórum Romano e Palatino",
+    "title": "Coliseu",
     "city": "Roma",
-    "kicker": "Dentro do mundo romano",
-    "intro": "Um percurso entre espetáculo, política e poder imperial. A manhã combina o anfiteatro com as ruínas do centro cívico de Roma e as vistas do Palatino.",
+    "kicker": "Dia 2 · Roma Antiga · Parada 6",
+    "intro": "Construído no século I pela dinastia Flávia, o Coliseu foi projetado para receber espetáculos públicos e grandes multidões. Sua organização de entradas, corredores e arquibancadas revela soluções de engenharia e uma estrutura social inscrita no próprio espaço. A imagem dos arcos externos é apenas a primeira camada da visita.",
     "history": [
-      "O Coliseu foi erguido no século I pela dinastia Flávia para receber espetáculos públicos, incluindo combates de gladiadores. A organização de corredores, arquibancadas e acessos mostra a capacidade da engenharia romana de administrar multidões.",
-      "O Fórum era o centro de decisões, cerimônias e vida pública da cidade. No Palatino, as residências imperiais traduziram o poder em arquitetura. Percorrer esses espaços em conjunto permite ir além da imagem isolada do Coliseu e entender a relação entre governantes, população e paisagem urbana."
+      "Construído no século I pela dinastia Flávia, o Coliseu foi projetado para receber espetáculos públicos e grandes multidões. Sua organização de entradas, corredores e arquibancadas revela soluções de engenharia e uma estrutura social inscrita no próprio espaço. A imagem dos arcos externos é apenas a primeira camada da visita.",
+      "No interior, a arena e as estruturas inferiores ajudam a compreender a preparação dos espetáculos e a relação entre público e poder imperial. Observe o edifício a partir das áreas autorizadas pelo ingresso, sem presumir que subsolo, arena ou níveis especiais façam parte de qualquer bilhete. Neste novo roteiro, o Coliseu encerra a Roma Antiga: seu horário confirmado determina o ritmo de toda a manhã."
     ],
     "stops": [
       {
-        "title": "Coliseu",
-        "text": "Identifique os níveis de arcos e observe a arena a partir do percurso permitido pelo seu ingresso. Subsolo e áreas especiais dependem da modalidade adquirida."
+        "title": "Chegada antecipada",
+        "text": "Reserva proposta às 15h; chegar com margem para documento e segurança."
       },
       {
-        "title": "Fórum Romano",
-        "text": "Use a Via Sacra como fio condutor e relacione arcos, templos e basílicas às funções da cidade antiga."
+        "title": "Percurso interno",
+        "text": "Reconhecer arena, galerias e arquibancadas pelo trajeto permitido."
       },
       {
-        "title": "Palatino",
-        "text": "Reserve energia para as subidas e para os mirantes sobre o Fórum. Escolha um ponto de pausa para comparar o sítio com um mapa histórico."
+        "title": "Encerramento",
+        "text": "Retornar ou jantar cedo; Monti pode ser opção de refeição, não nova visita obrigatória."
       }
     ],
     "tips": [
-      "Roma Antiga: começar pelo Coliseu por volta de 08h30/09h, conforme ingresso; depois Fórum Romano/Palatino, com percurso acessível confirmado. Um ingresso combinado, na modalidade escolhida; não pressupor acesso a todas as áreas especiais. Estimativa: Orlei, Elma/acompanhante e Aline €0 mediante regras; Arthur, Fernanda e Danielle €18 cada, total €54. Confirmar tarifas, documentação e janela de entrada na compra. Almoço em Monti: La Taverna dei Fori Imperiali, Taverna Romana ou La Carbonara, €20–40 por pessoa; a primeira é uma preferência do grupo pela localização, sem garantia de acessibilidade. Confirmar rampa, mesa, banheiro e percurso. Fonte: https://colosseo.it/en/tickets/regulation-for-visitors-and-terms-and-conditions-for-the-purchase-of-admission-tickets-to-the-archaeological-park-of-the-colosseum/",
-      "Marque o Coliseu como primeiro compromisso com horário fixo e deixe margem para a segurança.",
-      "Um guia credenciado ou audioguia ajuda a interpretar as ruínas; escolha idioma antes de comprar.",
-      "Leve água e calçado firme; planeje almoço e descanso antes do passeio da tarde."
+      "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais.",
+      "Na operação de inverno, conferir fechamento às 16h30 e última entrada às 15h30. A proposta às 15h exige pontualidade e reserva; se não houver sessão compatível, antecipar o ingresso e reduzir as etapas anteriores."
     ],
-    "arrival": "Referência: estação Colosseo. Confira no ingresso o portão de entrada de cada área.",
-    "duration": "3 a 4 horas",
-    "booking": "Escolha o ingresso no portal oficial e confira áreas incluídas, identificação exigida e regras de entrada.",
-    "accessibility": "O sítio tem trechos irregulares e desníveis; consulte os percursos acessíveis do parque antes da visita.",
-    "photo_tip": "Use o mirante do Palatino para uma vista ampla do Fórum; evite subir em estruturas arqueológicas.",
+    "arrival": "Piazza del Colosseo — portão no ingresso. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Confirmar entrada acessível e elevadores operacionais para a modalidade escolhida. O percurso tem controle de segurança e desníveis; subsolo e áreas especiais não têm acesso automaticamente equivalente ao circuito básico.",
+    "duration": "15:00–16:00 no roteiro, incluindo observação e pausas",
+    "booking": "15h é proposta, não ingresso comprado. Confirmar operação de outono e última entrada; se não houver sessão adequada, reajustar as etapas anteriores. Conferir bilhete combinado, identificação, gratuidade e áreas especiais. Não contar com o primeiro domingo em 29/10.",
+    "accessibility": "Confirmar entrada acessível e elevadores operacionais para a modalidade escolhida. O percurso tem controle de segurança e desníveis; subsolo e áreas especiais não têm acesso automaticamente equivalente ao circuito básico.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
     "photo_titles": [
       "Colosseum",
       "Roman Forum",
@@ -114,237 +172,415 @@
     ],
     "photos": [
       {
-        "src": "/guide-photos/4a33c1bffa777e2b.jpg",
-        "alt": "Colosseum",
-        "author": "FeaturedPics",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg",
-        "caption": "Colosseum",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/2ddeaad88478f1658d6c.jpg",
+        "alt": "Coliseu — vista geral",
+        "caption": "Coliseu — vista do local",
+        "author": "Diliff",
+        "license": "CC BY-SA 2.5",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
       },
       {
-        "src": "/guide-photos/d31bc0613074fdad.jpg",
-        "alt": "Roman Forum",
-        "author": "This Photo was taken by Wolfgang Moroder.",
-        "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Foro_Romano_Musei_Capitolini_Roma.jpg",
-        "caption": "Roman Forum",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
-      },
-      {
-        "src": "/guide-photos/94312ef79fef6ae6.jpg",
-        "alt": "Palatine Hill",
-        "author": "Lil Herodotus",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Palatine_Hill_from_across_the_Circus_Maximus_April_2019.jpg",
-        "caption": "Palatine Hill",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/14d0074873747c46b7e9.jpg",
+        "alt": "Coliseu — detalhe e perspectiva",
+        "caption": "Coliseu — outro olhar",
+        "author": "Jebulon",
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Cross_Colosseum_Rome_Italy.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "Coliseu — história e visita",
+        "title": "Parco — Coliseu",
         "url": "https://colosseo.it/en/area/the-colosseum/"
       },
       {
-        "title": "Fórum Romano",
-        "url": "https://colosseo.it/en/area/the-roman-forum/"
+        "title": "Parco — regras e ingressos",
+        "url": "https://colosseo.it/en/tickets/regulation-for-visitors-and-terms-and-conditions-for-the-purchase-of-admission-tickets-to-the-archaeological-park-of-the-colosseum/"
       },
       {
-        "title": "Ingressos e horários oficiais",
-        "url": "https://colosseo.it/en/opening-times-and-tickets/"
+        "title": "Parco — calendário e tarifas atualizados",
+        "url": "https://colosseo.it/orari-e-biglietti/"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Colosseum\"",
+    "rome_day": 2,
+    "rome_sequence": 6,
+    "day_name": "Roma Antiga",
+    "day_note": "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Pausa de almoço proposta entre 13h30 e 14h30, depois de Fórum/Palatino e antes do Coliseu. Opções do grupo na região: La Taverna dei Fori Imperiali, Taverna Romana e La Carbonara. Faixa inicial de planejamento €20–40 por pessoa, não preço confirmado; reservar somente após definir o ingresso e validar o acesso."
   },
   "roma-campidoglio": {
     "key": "roma-campidoglio",
-    "title": "Fori Imperiali, Piazza Venezia, Campidoglio e Monti",
+    "title": "Piazza Venezia",
     "city": "Roma",
-    "kicker": "Duas ideias de cidade monumental",
-    "intro": "Uma caminhada curta em distância, mas rica em camadas históricas: da praça renascentista desenhada por Michelangelo à escala do monumento dedicado à unificação italiana.",
+    "kicker": "Dia 2 · Roma Antiga · Parada 1",
+    "intro": "Piazza Venezia é um ponto de encontro entre eixos urbanos de épocas diferentes. A presença do Palazzo Venezia e do Vittoriano coloca lado a lado uma Roma de palácios e a representação monumental da Itália unificada. Em vez de tratá-la apenas como passagem, observe como avenidas, fachadas e circulação organizam a chegada ao centro arqueológico.",
     "history": [
-      "A colina Capitolina ocupa um lugar central na história política de Roma. No Renascimento, Michelangelo reorganizou a praça do Campidoglio como um conjunto coerente de fachadas, acessos e perspectiva, reinterpretando um espaço de origem antiga.",
-      "A vizinha Piazza Venezia apresenta uma Roma mais recente. O Vittoriano, dedicado a Vittorio Emanuele II, pertence ao imaginário da Itália unificada. A proximidade desses cenários permite comparar como épocas diferentes representaram a autoridade na cidade."
+      "Piazza Venezia é um ponto de encontro entre eixos urbanos de épocas diferentes. A presença do Palazzo Venezia e do Vittoriano coloca lado a lado uma Roma de palácios e a representação monumental da Itália unificada. Em vez de tratá-la apenas como passagem, observe como avenidas, fachadas e circulação organizam a chegada ao centro arqueológico.",
+      "O nome da praça se relaciona ao palácio associado historicamente a Veneza. O conjunto pode ser lido por fora sem transformar a manhã em uma sequência de museus. A proposta começa aqui e segue para o Altar da Pátria e o Capitólio, avançando depois para Fórum, Palatino e Coliseu. Obras e travessias podem exigir uma ligação diferente daquela sugerida por mapas comuns."
     ],
     "stops": [
       {
-        "title": "Cordonata e praça do Campidoglio",
-        "text": "Suba pela rampa monumental quando viável e observe como o espaço se abre entre os palácios."
+        "title": "Vista geral",
+        "text": "Identifique Palazzo Venezia e Vittoriano e a ligação com a Via del Corso."
       },
       {
-        "title": "Marco Aurélio e palácios",
-        "text": "A estátua equestre na praça é uma reprodução; o original integra os Museus Capitolinos. Compare os eixos e a composição das fachadas."
+        "title": "Travessia segura",
+        "text": "Use passagens sinalizadas e confirme desvios em vigor."
       },
       {
-        "title": "Piazza Venezia e Vittoriano",
-        "text": "Aprecie o monumento pelo exterior e escolha apenas um complemento interno ou mirante, se houver tempo e disponibilidade."
+        "title": "Rumo ao Vittoriano",
+        "text": "Não atravesse o trânsito pelo trajeto mais curto se ele não for acessível."
       }
     ],
     "tips": [
-      "Depois do complexo arqueológico e do almoço: Via dei Fori Imperiali → Piazza Venezia → Campidoglio → Monti. Manter o restante do dia nesta região e terminar em Monti. Confirmar rota para cadeira motorizada no Campidoglio; escadarias não são trajeto acessível e rampas podem ser íngremes. Mirantes e trechos adicionais apenas conforme energia, piso e condições do grupo; não é obrigatório completar todas as paradas.",
-      "O passeio da manhã já terá exigido caminhada: faça uma pausa antes da subida.",
-      "Museus Capitolinos e terraços são visitas independentes; não os trate como automaticamente incluídos.",
-      "Use travessias sinalizadas ao redor de Piazza Venezia e confira desvios locais."
+      "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
     ],
-    "arrival": "Chegue a pé a partir da região do Fórum; referência de destino: Piazza del Campidoglio.",
-    "duration": "1h30 a 2h30",
-    "booking": "A praça é um passeio externo; museus e acessos especiais devem ser consultados nos sites oficiais.",
-    "accessibility": "Há ladeiras, degraus e ruas movimentadas; consulte o acesso alternativo dos museus se necessário.",
-    "photo_tip": "Enquadre a praça da chegada da Cordonata e procure o panorama do Fórum atrás do Palazzo Senatorio.",
+    "arrival": "Piazza Venezia. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Trânsito intenso e possíveis obras. Confirmar rebaixamentos de calçada e travessia; guardar margem para desvios e não se reunir em ilhas apertadas.",
+    "duration": "09:00–09:20 no roteiro, incluindo observação e pausas",
+    "booking": "Observar a praça é gratuito. Palazzo Venezia, museus e terraços têm acesso próprio; escolher apenas o que cabe no horário do Coliseu.",
+    "accessibility": "Trânsito intenso e possíveis obras. Confirmar rebaixamentos de calçada e travessia; guardar margem para desvios e não se reunir em ilhas apertadas.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
     "photo_titles": [
       "Piazza del Campidoglio",
       "Victor Emmanuel II Monument"
     ],
     "photos": [
       {
-        "src": "/guide-photos/6d9bd337981ad9f7.jpg",
-        "alt": "Piazza del Campidoglio",
-        "author": "Kameister",
+        "src": "/guide-photos/8e536fdb2a016549a756.jpg",
+        "alt": "Piazza Venezia — vista geral",
+        "caption": "Piazza Venezia — vista do local",
+        "author": "Jordiferrer",
         "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campidoglio_2015.jpg",
-        "caption": "Piazza del Campidoglio",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2016_Rome_-_Piazza_Venezia.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
       },
       {
-        "src": "/guide-photos/bbc23f0f8194016e.jpg",
-        "alt": "Victor Emmanuel II Monument",
-        "author": "Max_Ryazanov",
+        "src": "/guide-photos/661979fa28074f87bd5b.jpg",
+        "alt": "Piazza Venezia — detalhe e perspectiva",
+        "caption": "Piazza Venezia — outro olhar",
+        "author": "Mariom990",
         "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Vittoriano_Altare_della_Patria_2013-09-16.jpg",
-        "caption": "Victor Emmanuel II Monument",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:View_of_Piazza_Venezia_in_Rome_from_Vittoriano.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "Museus Capitolinos",
-        "url": "https://www.museicapitolini.org/en"
+        "title": "Turismo Roma — Piazza Venezia",
+        "url": "https://www.turismoroma.it/it/luoghi/piazza-venezia"
       },
       {
-        "title": "Vittoriano — instituição oficial",
-        "url": "https://vive.cultura.gov.it/en"
+        "title": "VIVE — visita",
+        "url": "https://vive.cultura.gov.it/en/visit"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Piazza Venezia\"",
+    "rome_day": 2,
+    "rome_sequence": 1,
+    "day_name": "Roma Antiga",
+    "day_note": "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Pausa de almoço proposta entre 13h30 e 14h30, depois de Fórum/Palatino e antes do Coliseu. Opções do grupo na região: La Taverna dei Fori Imperiali, Taverna Romana e La Carbonara. Faixa inicial de planejamento €20–40 por pessoa, não preço confirmado; reservar somente após definir o ingresso e validar o acesso."
   },
   "vaticano-museus": {
     "key": "vaticano-museus",
     "title": "Museus Vaticanos e Capela Sistina",
     "city": "Roma",
-    "kicker": "Arte que transforma o olhar",
-    "intro": "Uma manhã de grandes coleções, corredores monumentais e pintura renascentista. O segredo é selecionar um percurso, em vez de tentar ver tudo.",
+    "kicker": "Dia 3 · Vaticano e arredores · Parada 2",
+    "intro": "Os Museus Vaticanos reúnem coleções formadas ao longo de séculos de patronato papal, combinando antiguidades, galerias e espaços decorados. A visita não deve ser pensada apenas como um corredor até a Capela Sistina: os ambientes revelam relações entre poder, conhecimento e arte. Selecionar destaques evita esgotar o grupo antes do final do percurso.",
     "history": [
-      "Os Museus Vaticanos reúnem coleções formadas ao longo de séculos sob o patrocínio dos papas. Esculturas antigas, mapas e salas decoradas revelam o diálogo entre o mundo clássico e a cultura cristã.",
-      "A Capela Sistina recebe o nome de Sisto IV. Sua decoração envolve artistas do século XV e as intervenções de Michelangelo: o teto, concluído em 1512, e o Juízo Final, realizado mais tarde. As pinturas fazem parte de uma capela em uso religioso, não apenas de uma sala de museu."
+      "Os Museus Vaticanos reúnem coleções formadas ao longo de séculos de patronato papal, combinando antiguidades, galerias e espaços decorados. A visita não deve ser pensada apenas como um corredor até a Capela Sistina: os ambientes revelam relações entre poder, conhecimento e arte. Selecionar destaques evita esgotar o grupo antes do final do percurso.",
+      "Na Capela Sistina, o teto e o Juízo Final de Michelangelo convivem com ciclos pictóricos de outros artistas. Escala, narrativa e uso religioso se encontram no mesmo espaço, cuja observação pede tempo e silêncio. As regras locais de fotografia devem ser respeitadas. O percurso acessível pode diferir do fluxo turístico padrão e precisa ser organizado previamente para a cadeira motorizada."
     ],
     "stops": [
       {
-        "title": "Coleções clássicas",
-        "text": "Selecione algumas esculturas e observe como os artistas do Renascimento retomaram os modelos antigos."
+        "title": "Entrada e percurso adaptado",
+        "text": "Reserva sugerida às 10h30, após trajeto externo desde São Pedro."
       },
       {
-        "title": "Galeria dos Mapas e salas decoradas",
-        "text": "Compare o caráter científico dos mapas com a exuberância de tetos e paredes; siga o fluxo indicado pelo museu."
+        "title": "Galerias prioritárias",
+        "text": "Escolher poucas coleções e pausas conforme orientação da equipe."
       },
       {
-        "title": "Capela Sistina",
-        "text": "Reserve um momento de silêncio para olhar o teto e a parede do altar. As regras de fotografia e comportamento devem ser respeitadas."
+        "title": "Capela Sistina e saída",
+        "text": "Seguir regras de silêncio/foto e prever almoço antes do castelo."
       }
     ],
     "tips": [
-      "Começar cedo pelos Museus Vaticanos e Capela Sistina, seguindo o percurso acessível orientado pela equipe. Estimativa do grupo: Orlei €0, Elma €0, Aline €10, Arthur €10, Fernanda €20 e Danielle €20; total €60 sem taxas. A gratuidade depende da certificação aceita pelos Museus; acompanhante gratuito quando comprovada a necessidade. Arthur deve apresentar matrícula universitária válida e identificação para a redução de estudante até 25 anos. Confirmar previamente dimensões/peso e percurso permitido para a cadeira motorizada: determinados equipamentos podem exigir transferência para cadeira convencional; não presumir acesso integral. Almoço em Prati após a visita: Osteria Ragno d’Oro, La Locanda di Pietro ou Taverna Bacchus, €25–40 por pessoa, com acesso a confirmar. Fontes: https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/accessibilita/agevolazioni-e-servizi-per-visitatori-con-disabilita-.html e https://www.museivaticani.va/content/museivaticani/en/organizza-visita/tariffe-e-biglietti/biglietto-ridotto-studenti.html",
-      "Compre no portal oficial e confirme o idioma se optar por guia ou audioguia.",
-      "Não programe o grupo para se separar sem definir ponto de reencontro: o percurso é extenso.",
-      "Use roupas adequadas aos espaços religiosos e confira o tamanho permitido de bolsas."
+      "Começar cedo por São Pedro. Planejar saída e trajeto externo até os Museus, com margem para filas e almoço.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
     ],
-    "arrival": "A entrada dos museus fica no Viale Vaticano; não é a entrada da Basílica de São Pedro.",
-    "duration": "3 a 4 horas",
-    "booking": "Reserva recomendada pelo portal oficial; confirme o calendário da data e a modalidade de visita.",
-    "accessibility": "Solicite informação sobre percurso acessível e elevadores: ele pode diferir do itinerário comum.",
-    "photo_tip": "Fotografe apenas onde permitido. Na Capela Sistina, guarde a câmera e concentre-se na observação.",
+    "arrival": "Viale Vaticano — entrada dos Museus. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Consultar previamente a admissibilidade da cadeira motorizada, medidas/peso e necessidade de transferência para cadeira convencional em algum trecho. Informar limitações de transferência antes da reserva. O percurso até a Sistina e a saída devem ser confirmados integralmente.",
+    "duration": "10:30–14:00 no roteiro, incluindo observação e pausas",
+    "booking": "CORREÇÃO DA IMAGEM: a regra habitual de domingo gratuito é o último domingo do mês, com exceções do calendário, e não o primeiro. Em 30/10, sexta, usar ingresso/reserva ou gratuidade individual elegível. Confirmar documentos de deficiência e acompanhante e matrícula de Arthur. Não confundir prioridade com visita sem procedimento. Referência oficial: integral €20 e reduzido €10; reserva online usual acrescenta €5 ao bilhete pago. Verificar procedimento específico das gratuidades; o horário das 10h30 ainda não foi reservado.",
+    "accessibility": "Consultar previamente a admissibilidade da cadeira motorizada, medidas/peso e necessidade de transferência para cadeira convencional em algum trecho. Informar limitações de transferência antes da reserva. O percurso até a Sistina e a saída devem ser confirmados integralmente.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
     "photo_titles": [
       "Vatican Museums",
       "Sistine Chapel"
     ],
     "photos": [
       {
-        "src": "/guide-photos/68e7c2883028571b.jpg",
-        "alt": "Vatican Museums",
-        "author": "Staselnik",
-        "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Museums_in_the_Vatican_City.jpg",
-        "caption": "Vatican Museums",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/bc6b2589e4f8d39d70b0.jpg",
+        "alt": "Museus Vaticanos e Capela Sistina — vista geral",
+        "caption": "Museus Vaticanos e Capela Sistina — vista do local",
+        "author": "Wilfredor",
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Spiral_staircase_in_the_Vatican_Museums_from_bottom_02.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
       },
       {
-        "src": "/guide-photos/3b62fcbfe13ecf0e.jpg",
-        "alt": "Sistine Chapel",
-        "author": "The original uploader was Snowdog at Italian Wikipedia.",
+        "src": "/guide-photos/665aae46160127608683.jpg",
+        "alt": "Museus Vaticanos e Capela Sistina — detalhe e perspectiva",
+        "caption": "Museus Vaticanos e Capela Sistina — outro olhar",
+        "author": "Alvesgaspar",
         "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "source": "https://commons.wikimedia.org/wiki/File:Sistina-interno.jpg",
-        "caption": "Sistine Chapel",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Two_Bacchantes_and_a_Bull_(Vatican_Museums)_September_2015.1a.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/d8215790aceaff21b486.jpg",
+        "alt": "Capela Sistina — vista geral",
+        "caption": "Capela Sistina — vista do local",
+        "author": "The Yorck Project (2002)       10.000 Meisterwerke der Malerei (DVD-ROM), distributed by DIRECTMEDIA Publishing GmbH.  ISBN:  3936122202. \n\n + Filip Maljković from Pancevo, Serbia",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Michelangelo_Buonarroti_014_%2B_Sistine_Chapel_ceiling_(3395223825).jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/12b5c893bd3959528cec.jpg",
+        "alt": "Capela Sistina — detalhe e perspectiva",
+        "caption": "Capela Sistina — outro olhar",
+        "author": "Michelangelo",
+        "license": "Public domain",
+        "license_url": "https://commons.wikimedia.org/wiki/File:Michelangelo_-_Sistine_Chapel_ceiling_-_bay_3.jpg#Licensing",
+        "source": "https://commons.wikimedia.org/wiki/File:Michelangelo_-_Sistine_Chapel_ceiling_-_bay_3.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "História da Capela Sistina",
-        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/storia-cappella-sistina.html"
+        "title": "Museus — abertura e fechamento",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/info/orari-musei-vaticani.html"
       },
       {
-        "title": "Informações e regras de visita",
-        "url": "https://www.museivaticani.va/content/museivaticani/en/organizza-visita.html"
+        "title": "Museus — acessibilidade",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/accessibilita/agevolazioni-e-servizi-per-visitatori-con-disabilita-.html"
       },
       {
-        "title": "Ingressos oficiais",
-        "url": "https://tickets.museivaticani.va/"
+        "title": "Museus — tarifas oficiais",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/tariffe-e-biglietti.html"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Vatican Museums\"",
+    "rome_day": 3,
+    "rome_sequence": 2,
+    "day_name": "Vaticano e arredores",
+    "day_note": "Começar cedo por São Pedro. Planejar saída e trajeto externo até os Museus, com margem para filas e almoço.",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Almoço e descanso entre Museus e castelo. Opções do grupo em Prati: Osteria Ragno d’Oro, La Locanda di Pietro e Taverna Bacchus. Previsão inicial €25–40 por pessoa, sujeita ao cardápio e sem acessibilidade garantida; não atravessar Roma para comer."
   },
   "vaticano-saopedro": {
     "key": "vaticano-saopedro",
-    "title": "Praça e Basílica de São Pedro",
+    "title": "Basílica e Praça de São Pedro",
     "city": "Roma",
-    "kicker": "A escala do encontro",
-    "intro": "Do abraço arquitetônico da praça ao interior monumental da basílica, uma visita para observar arte, espaço e tradição religiosa com tempo e respeito.",
+    "kicker": "Dia 3 · Vaticano e arredores · Parada 1",
+    "intro": "A Basílica de São Pedro reúne arquitetura, arte e a memória religiosa ligada ao apóstolo. O edifício renascentista e barroco sucedeu a antiga basílica e recebeu contribuições de grandes artistas. A cúpula, a escala da nave e o baldaquino ajudam a compreender a intenção de criar um espaço de grande força simbólica.",
     "history": [
-      "A atual Basílica de São Pedro foi construída sobre uma longa tradição de culto ligada ao apóstolo Pedro, substituindo a basílica da época de Constantino. Seu desenvolvimento reuniu gerações de arquitetos e artistas, entre eles Michelangelo e Bernini.",
-      "A praça de Bernini organiza a chegada por meio de grandes colunatas. No interior, esculturas, mosaicos e o baldaquino criam referências dentro de uma arquitetura de escala extraordinária. É importante distinguir a visita cultural das celebrações que continuam a orientar a vida do local."
+      "A Basílica de São Pedro reúne arquitetura, arte e a memória religiosa ligada ao apóstolo. O edifício renascentista e barroco sucedeu a antiga basílica e recebeu contribuições de grandes artistas. A cúpula, a escala da nave e o baldaquino ajudam a compreender a intenção de criar um espaço de grande força simbólica.",
+      "Na praça, a colunata de Bernini organiza a chegada dos visitantes e a relação com a fachada. A visita básica à basílica deve ser distinguida de cúpula, necrópole, visitas guiadas e outros serviços. A audiência papal citada na imagem não é parte automática deste passeio: depende do calendário pontifício, de procedimento próprio e de condições de acesso. Não há audiência confirmada para sexta-feira, 30/10."
     ],
     "stops": [
       {
-        "title": "Praça e colunatas",
-        "text": "Caminhe pelo contorno da praça e observe como as colunas mudam de alinhamento conforme a posição do visitante."
+        "title": "Praça",
+        "text": "Observar a colunata e combinar entrada e ponto de encontro."
       },
       {
-        "title": "Nave e obras de arte",
-        "text": "Procure a Pietà de Michelangelo e observe o baldaquino de Bernini sem interromper áreas de oração."
+        "title": "Basílica",
+        "text": "Selecionar obras e setores conforme abertura e fluxo do dia."
       },
       {
-        "title": "Cúpula, opcional",
-        "text": "A subida é uma atividade à parte, com condições físicas e acesso específicos. Só inclua se houver energia depois dos museus."
+        "title": "Saída para os Museus",
+        "text": "Usar rota externa confirmada; não presumir passagem direta pela Sistina."
       }
     ],
     "tips": [
-      "Depois do almoço: Basílica → Praça de São Pedro → Via della Conciliazione, seguindo para Castel Sant’Angelo. Visita básica à basílica gratuita, com controle de segurança; serviços adicionais, cúpula e visitas especiais podem ter cobrança e limites de acessibilidade. Confirmar entrada acessível e percurso externo entre Museus e Basílica: não presumir passagem direta pela Capela Sistina. Reservar pausas e adaptar ao tempo das filas.",
-      "Faça uma pausa para almoço entre os museus e a basílica.",
-      "Confirme celebrações, acessos e vestimenta antes de sair do hotel.",
-      "Não conte com passagem direta dos museus para a basílica; planeje o trajeto permitido."
+      "Começar cedo por São Pedro. Planejar saída e trajeto externo até os Museus, com margem para filas e almoço.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
     ],
-    "arrival": "Referência de chegada: Piazza San Pietro. Preveja fila e controle de segurança.",
-    "duration": "1h30 a 2h30; cúpula exige tempo adicional",
-    "booking": "Consulte serviços oficiais, reservas e regras de visita. Museu, cúpula e experiências especiais podem ter condições próprias.",
-    "accessibility": "O percurso da basílica e o da cúpula têm exigências diferentes; confirme adaptações disponíveis.",
-    "photo_tip": "Faça uma foto ampla da praça e fotografe o interior somente onde permitido, sem flash e sem interferir nas celebrações.",
+    "arrival": "Piazza San Pietro, Vaticano. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Confirmar o ponto de acolhimento para cadeira motorizada e o caminho sem escadas. Vestimenta compatível com templo religioso. A cúpula não deve ser considerada acessível como a nave.",
+    "duration": "08:00–09:30 no roteiro, incluindo observação e pausas",
+    "booking": "Entrada básica gratuita, sujeita à segurança e à liturgia. Serviços e áreas especiais podem ter cobrança/reserva. Audiência papal exige consulta ao calendário oficial e bilhete/procedimento próprios; não é garantida por visitar a basílica.",
+    "accessibility": "Confirmar o ponto de acolhimento para cadeira motorizada e o caminho sem escadas. Vestimenta compatível com templo religioso. A cúpula não deve ser considerada acessível como a nave.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
     "photo_titles": [
       "St. Peter's Basilica",
       "St. Peter's Square"
@@ -352,7 +588,7 @@
     "photos": [
       {
         "src": "/guide-photos/6e2c525cc1b8bf77.jpg",
-        "alt": "St. Peter's Basilica",
+        "alt": "Basílica e Praça de São Pedro — vista geral",
         "author": "Alvesgaspar",
         "license": "CC BY-SA 4.0",
         "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
@@ -361,63 +597,119 @@
         "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
       },
       {
-        "src": "/guide-photos/cbabb7cff48c230b.jpg",
-        "alt": "St. Peter's Square",
-        "author": "Diliff",
-        "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg",
-        "caption": "St. Peter's Square",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/e3b005bc8acf4b2d76a3.jpg",
+        "alt": "Basílica e Praça de São Pedro — detalhe e perspectiva",
+        "caption": "Basílica e Praça de São Pedro — outro olhar",
+        "author": "Mariordo (Mario Roberto Durán Ortiz)",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Saint_Peter_Basilica_05_2018_0001.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "Basílica de São Pedro — site oficial",
+        "title": "Basílica — site oficial",
         "url": "https://www.basilicasanpietro.va/en"
       },
       {
-        "title": "Visita virtual oficial",
-        "url": "https://virtual.basilicasanpietro.va/"
+        "title": "Casa Pontifícia — audiências",
+        "url": "https://www.vatican.va/content/vatican/en/prenotazione-celebrazioni-udienze.html"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Saint Peter\" basilica",
+    "rome_day": 3,
+    "rome_sequence": 1,
+    "day_name": "Vaticano e arredores",
+    "day_note": "Começar cedo por São Pedro. Planejar saída e trajeto externo até os Museus, com margem para filas e almoço.",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Almoço e descanso entre Museus e castelo. Opções do grupo em Prati: Osteria Ragno d’Oro, La Locanda di Pietro e Taverna Bacchus. Previsão inicial €25–40 por pessoa, sujeita ao cardápio e sem acessibilidade garantida; não atravessar Roma para comer."
   },
   "roma-pantheon": {
     "key": "roma-pantheon",
-    "title": "Pantheon e Piazza Navona",
+    "title": "Pantheon",
     "city": "Roma",
-    "kicker": "Da Roma antiga à cidade barroca",
-    "intro": "Um percurso a pé entre uma cúpula romana extraordinária, uma praça que conserva a forma de um estádio antigo e ruas de comércio e convivência.",
+    "kicker": "Dia 1 · Centro histórico · Parada 3",
+    "intro": "O Pantheon conserva uma das experiências espaciais mais impressionantes da Roma antiga: uma sala circular coberta por uma cúpula monumental, iluminada pelo óculo central. O edifício atual pertence à época de Adriano, embora a inscrição da fachada recorde Agripa. Observe como o pórtico de colunas anuncia uma arquitetura muito diferente do espaço que se revela no interior.",
     "history": [
-      "O Pantheon preserva uma das experiências espaciais mais marcantes da arquitetura romana: uma grande cúpula iluminada pelo óculo central. O edifício antigo foi convertido em igreja, o que ajuda a explicar sua permanência e a convivência de usos ao longo do tempo.",
-      "A Piazza Navona ocupa a área do antigo estádio de Domiciano. A forma alongada sobrevive na praça barroca, transformada por fontes e fachadas. Campo de’ Fiori oferece outro tipo de memória urbana: uma praça de mercado e encontro marcada pela estátua de Giordano Bruno."
+      "O Pantheon conserva uma das experiências espaciais mais impressionantes da Roma antiga: uma sala circular coberta por uma cúpula monumental, iluminada pelo óculo central. O edifício atual pertence à época de Adriano, embora a inscrição da fachada recorde Agripa. Observe como o pórtico de colunas anuncia uma arquitetura muito diferente do espaço que se revela no interior.",
+      "Transformado em igreja no século VII, o monumento ganhou continuidade de uso que contribuiu para sua preservação. A luz muda ao longo do dia, marcando a superfície da cúpula e o pavimento. O local também guarda sepulturas, entre elas a de Rafael. A visita deve respeitar tanto o patrimônio arqueológico quanto a função religiosa: celebrações podem alterar os horários turísticos."
     ],
     "stops": [
       {
-        "title": "Pantheon",
-        "text": "Observe o pórtico antes de entrar. No interior, acompanhe a luz do óculo e a relação entre cúpula e espaço circular."
+        "title": "Pórtico",
+        "text": "Leia a inscrição de Agripa e compare colunas e frontão com a rotunda."
       },
       {
-        "title": "Piazza Navona",
-        "text": "Percorra a extensão da praça e compare a Fontana dei Quattro Fiumi com as outras fontes e a fachada de Sant’Agnese."
+        "title": "Cúpula e óculo",
+        "text": "Observe a organização dos caixotões e a luz; não é necessário circular depressa para compreender o espaço."
       },
       {
-        "title": "Campo de’ Fiori",
-        "text": "Encerre pelas ruas próximas e escolha uma pausa para almoço; o aspecto da praça muda ao longo do dia."
+        "title": "Memória e culto",
+        "text": "Identifique os túmulos de interesse e mantenha silêncio antes de seguir a San Luigi."
       }
     ],
     "tips": [
-      "Continuação do centro histórico, sem nova travessia da cidade. Pantheon → Piazza Navona; Campo de’ Fiori deixa de ser compromisso obrigatório. Visita interna ao Pantheon opcional conforme descanso e ingresso. Estimativa: Orlei €0, Elma/acompanhante €0 e Aline €0 mediante elegibilidade; Arthur, Fernanda e Danielle €7 cada, total €21. Tarifa integral oficial €7 desde julho/2026. A redução etária é vinculada à cidadania UE, não apenas à condição de estudante brasileiro. Confirmar documentação e horário antes da compra. Fonte: https://direzionemuseiroma.cultura.gov.it/pantheon/",
-      "Reserve a entrada do Pantheon conforme o calendário oficial.",
-      "Leve um mapa e conecte os pontos pelas ruas menores, sem transformar o passeio em corrida.",
-      "Na visita à igreja, respeite vestimenta, silêncio e orientações do pessoal."
+      "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
     ],
-    "arrival": "Comece na Piazza della Rotonda e siga a pé por Navona até Campo de’ Fiori.",
-    "duration": "2h30 a 3 horas",
-    "booking": "O Pantheon tem ingresso e regras próprios; as praças são trechos externos do passeio.",
-    "accessibility": "Calçamento de pedra, pequenas irregularidades e trechos cheios; confira o acesso adaptado do Pantheon.",
-    "photo_tip": "Registre o óculo sem flash e procure um enquadramento que mostre a extensão de Piazza Navona.",
+    "arrival": "Piazza della Rotonda. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Solicitar à equipe a entrada acessível e confirmar o percurso; não usar a fila comum como garantia de acesso sem desnível. Prever piso molhado em chuva, multidões e tempo de segurança.",
+    "duration": "15:30–16:15 no roteiro, incluindo observação e pausas",
+    "booking": "Tarifa integral oficial de €7 desde julho/2026; menores de 18 anos e outras categorias têm isenções conforme regras. O benefício etário reduzido não decorre apenas de estudar no Brasil. Primeiro domingo: consultar condições; a visita proposta é quarta-feira, 28/10. Gratuidades de Orlei/Elma dependem de documentação aceita.",
+    "accessibility": "Solicitar à equipe a entrada acessível e confirmar o percurso; não usar a fila comum como garantia de acesso sem desnível. Prever piso molhado em chuva, multidões e tempo de segurança.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
     "photo_titles": [
       "Pantheon, Rome",
       "Piazza Navona",
@@ -425,51 +717,92 @@
     ],
     "photos": [
       {
-        "src": "/guide-photos/b036a3beefc577a0.jpg",
-        "alt": "Pantheon, Rome",
-        "author": "NikonZ7II",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Pantheon_%28Rome%29_-_Right_side_and_front.jpg",
-        "caption": "Pantheon, Rome",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
-      },
-      {
-        "src": "/guide-photos/33bb563a7fd28886.jpg",
-        "alt": "Piazza Navona",
-        "author": "NikonZ7II",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Piazza_Navona_%28Rome%29_at_night.jpg",
-        "caption": "Piazza Navona",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
-      },
-      {
-        "src": "/guide-photos/67a0cdbb0f44cf1c.jpg",
-        "alt": "Campo de' Fiori",
-        "author": "Myrabella",
+        "src": "/guide-photos/c3c288b50d9b17a35478.jpg",
+        "alt": "Pantheon — vista geral",
+        "caption": "Pantheon — vista do local",
+        "author": "CristianChirita",
         "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Campo_dei_Fiori.jpg",
-        "caption": "Campo de' Fiori",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Pantheon_Rome_2012_exterior_view_1.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/8a2a8523643f62eb8d36.jpg",
+        "alt": "Pantheon — detalhe e perspectiva",
+        "caption": "Pantheon — outro olhar",
+        "author": "John Samuel",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Pantheon_(Rome)_-_Exterior_01.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "Pantheon — Museu oficial",
-        "url": "https://direzionemuseiroma.cultura.gov.it/en/pantheon/"
+        "title": "Pantheon — horários e tarifas oficiais",
+        "url": "https://direzionemuseiroma.cultura.gov.it/pantheon/"
       },
       {
-        "title": "Piazza Navona — Turismo Roma",
-        "url": "https://www.turismoroma.it/it/luoghi/piazza-navona"
-      },
-      {
-        "title": "Campo de’ Fiori — Turismo Roma",
-        "url": "https://www.turismoroma.it/it/luoghi/campo-de%E2%80%99-fiori"
+        "title": "Ingressos oficiais Musei Italiani",
+        "url": "https://portale.museiitaliani.it/"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Pantheon\" Rome",
+    "rome_day": 1,
+    "rome_sequence": 3,
+    "day_name": "Centro histórico",
+    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Refeição antes de sair e jantar após Campo de’ Fiori. Opções já sugeridas pelo grupo no centro: Armando al Pantheon e Da Gino al Parlamento. Orçamento inicial €25–40 por pessoa, sem cotação atual nem reserva; confirmar cardápio, degraus, largura e banheiro."
   },
   "roma-trastevere": {
     "key": "roma-trastevere",
@@ -548,36 +881,38 @@
     "key": "roma-borghese",
     "title": "Villa Borghese e Pincio",
     "city": "Roma",
-    "kicker": "Um último olhar sobre Roma",
-    "intro": "Jardins, caminhos arborizados e um panorama sobre a cidade antes do deslocamento para Paris. A proposta é ficar ao ar livre e terminar com folga para o voo das 18h.",
+    "kicker": "Dia 4 · Região norte · Parada 3",
+    "intro": "Villa Borghese reúne jardins e percursos de uma antiga propriedade aristocrática transformada em espaço de uso público. O parque permite uma pausa em relação à densidade do centro e apresenta outra ideia de cidade: paisagem planejada, áreas de passeio e instituições culturais distribuídas em um terreno amplo.",
     "history": [
-      "Villa Borghese se desenvolveu a partir da propriedade da família Borghese e de seu conjunto de edifícios, jardins e coleções. A antiga paisagem de lazer aristocrático passou a integrar a vida pública da cidade no início do século XX.",
-      "O Pincio consolidou-se como passeio urbano e mirante, com caminhos e terraços voltados para Piazza del Popolo. A conexão entre parque e belvedere oferece uma leitura de Roma que contrasta com os monumentos visitados nos dias anteriores."
+      "Villa Borghese reúne jardins e percursos de uma antiga propriedade aristocrática transformada em espaço de uso público. O parque permite uma pausa em relação à densidade do centro e apresenta outra ideia de cidade: paisagem planejada, áreas de passeio e instituições culturais distribuídas em um terreno amplo.",
+      "O Pincio oferece uma relação visual com a Piazza del Popolo e com o tecido urbano, mas parque, mirante e museu não são a mesma visita. O roteiro escolhe um trecho curto e confortável, seguido de almoço, antes da Galleria Borghese. Evitar atravessar toda a área verde é essencial para preservar energia e chegar ao museu no horário reservado."
     ],
     "stops": [
       {
-        "title": "Caminhos de Villa Borghese",
-        "text": "Escolha um trecho de jardim e mantenha o percurso simples; o parque é extenso."
+        "title": "Trecho selecionado do parque",
+        "text": "Escolher alamedas firmes e adequadas à cadeira, evitando caminhos de terra após chuva."
       },
       {
-        "title": "Terraço do Pincio",
-        "text": "Observe Piazza del Popolo e procure a cúpula de São Pedro no horizonte."
+        "title": "Mirante, se viável",
+        "text": "O Pincio é opcional conforme rota e piso; não obrigar desvio longo."
       },
       {
-        "title": "Saída organizada",
-        "text": "Defina o ponto de encontro para retornar ao hotel, recolher as malas e seguir ao aeroporto."
+        "title": "Almoço e ida à Galleria",
+        "text": "Pausa de 13h–14h; confirmar distância e entrada real do museu."
       }
     ],
     "tips": [
-      "Não encaixe a Galleria Borghese sem reserva e sem recalcular o tempo do traslado.",
-      "Leve uma camada extra para a manhã de novembro.",
-      "Interrompa o passeio se o horário de saída do hotel exigir mais antecedência."
+      "Priorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
     ],
-    "arrival": "Referências: entrada próxima a Porta Pinciana ou região de Piazza del Popolo.",
-    "duration": "2 a 3 horas, com limite definido pelo traslado",
-    "booking": "O passeio proposto é nos jardins; a Galleria Borghese é visita separada com reserva.",
-    "accessibility": "Há caminhos em terra, inclinações e acessos por escadas; escolha entrada e saída adequadas ao grupo.",
-    "photo_tip": "Do Pincio, componha a praça em primeiro plano e a cidade ao fundo, sem subir no parapeito.",
+    "arrival": "Villa Borghese — definir entrada e setor do parque. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Terreno amplo, caminhos inclinados e superfícies variadas. Escolher percurso específico, não apenas “parque acessível”. Planejar banheiro, bateria da cadeira e possível transporte entre setores.",
+    "duration": "12:00–13:00 no roteiro, incluindo observação e pausas",
+    "booking": "Parque e passeios públicos não equivalem ao ingresso da Galleria. A entrada no museu exige reserva independente, inclusive em condições de gratuidade. A visita ao parque tem regras diferentes das do museu.",
+    "accessibility": "Terreno amplo, caminhos inclinados e superfícies variadas. Escolher percurso específico, não apenas “parque acessível”. Planejar banheiro, bateria da cadeira e possível transporte entre setores.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
     "photo_titles": [
       "Villa Borghese gardens",
       "Pincian Hill"
@@ -585,7 +920,7 @@
     "photos": [
       {
         "src": "/guide-photos/b7498840b49d29f5.jpg",
-        "alt": "Villa Borghese gardens",
+        "alt": "Villa Borghese e Pincio — vista geral",
         "author": "Oursana",
         "license": "CC BY-SA 4.0",
         "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -594,27 +929,82 @@
         "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
       },
       {
-        "src": "/guide-photos/917b00c864b694f6.jpg",
-        "alt": "Pincian Hill",
-        "author": "Sonse",
-        "license": "CC BY 2.0",
-        "license_url": "https://creativecommons.org/licenses/by/2.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Terrazza_del_Pincio_%2846397854832%29.jpg",
-        "caption": "Pincian Hill",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/36137a3c2fabff1d7216.jpg",
+        "alt": "Villa Borghese e Pincio — detalhe e perspectiva",
+        "caption": "Villa Borghese e Pincio — outro olhar",
+        "author": "Dror Feitelson",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rome-villa-borghese-gardens.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "Villa Borghese — patrimônio municipal",
-        "url": "https://www.sovraintendenzaroma.it/i_luoghi/ville_e_parchi_storici/ville_dei_nobili/villa_borghese"
+        "title": "Turismo Roma — Villa Borghese",
+        "url": "https://www.turismoroma.it/it/luoghi/villa-borghese"
       },
       {
-        "title": "Pincio — Turismo Roma",
-        "url": "https://www.turismoroma.it/it/luoghi/terrazza-e-passeggiata-del-pincio"
+        "title": "Galleria — informação de visita",
+        "url": "https://galleriaborghese.cultura.gov.it/en/visita/info-biglietti/"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Villa Borghese\" gardens",
+    "rome_day": 4,
+    "rome_sequence": 3,
+    "day_name": "Região norte",
+    "day_note": "Priorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Almoçar por volta de 13h, no setor escolhido entre Popolo e Borghese, deixando margem até a entrada da Galleria. Escolher restaurante após confirmar o acesso do museu e a rota real; prever €20–40 por pessoa como orçamento inicial, não cotação. Mesas externas não garantem banheiro acessível."
   },
   "paris-eiffel": {
     "key": "paris-eiffel",
@@ -2078,37 +2468,60 @@
   },
   "roma-castel": {
     "key": "roma-castel",
-    "title": "Via della Conciliazione e Castel Sant’Angelo",
+    "title": "Castel Sant’Angelo",
     "city": "Roma",
-    "kicker": "Roma e Toscana — outubro de 2026",
-    "intro": "Via della Conciliazione e Castel Sant’Angelo",
-    "photos": [],
+    "kicker": "Dia 3 · Vaticano e arredores · Parada 3",
+    "intro": "Castel Sant’Angelo nasceu como mausoléu de Adriano no século II e foi transformado sucessivamente em fortaleza, residência papal e prisão. Sua posição junto ao Tibre e perto de São Pedro ajuda a explicar a importância estratégica adquirida pelo monumento. A leitura do exterior já permite observar a massa circular antiga e as transformações defensivas.",
+    "photos": [
+      {
+        "src": "/guide-photos/69c3b10be820acbc.jpg",
+        "alt": "Castel Sant’Angelo — vista geral",
+        "author": "Livioandronico2013",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Castel_Sant%27Angelo_at_Night.jpg",
+        "caption": "Castel Sant'Angelo",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/5fb38b5f7303a79391ec.jpg",
+        "alt": "Castel Sant’Angelo — detalhe e perspectiva",
+        "caption": "Castel Sant’Angelo — outro olhar",
+        "author": "Stella aboaf",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Castel_Sant_Angelo_ingresso_dal_giardino_castel_San_Angelo_Roma.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
+      }
+    ],
     "history": [
-      "Construído no século II como mausoléu de Adriano, o edifício foi transformado em fortaleza, residência papal e prisão. Sua posição perto do Vaticano marcou os sucessivos usos do monumento ao longo dos séculos.",
-      "A antiga Mole Adriana tornou-se Museu Nacional em 1925. A visita permite observar a sobreposição de funções militares, religiosas e residenciais; o percurso interno exige confirmação das áreas acessíveis antes da reserva."
+      "Castel Sant’Angelo nasceu como mausoléu de Adriano no século II e foi transformado sucessivamente em fortaleza, residência papal e prisão. Sua posição junto ao Tibre e perto de São Pedro ajuda a explicar a importância estratégica adquirida pelo monumento. A leitura do exterior já permite observar a massa circular antiga e as transformações defensivas.",
+      "Os espaços internos mostram usos muito diferentes daqueles de um túmulo imperial. O castelo se liga à história do poder pontifício e hoje funciona como museu nacional. A visita após os Museus Vaticanos deve permanecer flexível: se houver cansaço ou incompatibilidade da rota interna com a cadeira, o entorno e a ponte oferecem uma experiência válida sem prometer acesso a todos os níveis."
     ],
     "stops": [
       {
-        "title": "Via della Conciliazione",
-        "text": "Prosseguir da Praça de São Pedro com pausas."
+        "title": "Chegada pelo entorno de São Pedro",
+        "text": "Almoço e descanso entre 14h e 15h; deslocamento com margem até o castelo."
       },
       {
-        "title": "Exterior e ponte",
-        "text": "Observar o monumento e o entorno sem pressupor acesso interno."
+        "title": "Mausoléu e fortaleza",
+        "text": "Observe o núcleo circular e as adaptações defensivas."
       },
       {
-        "title": "Museu — opcional",
-        "text": "Entrar somente com acessibilidade e ingresso confirmados."
+        "title": "Interior ou exterior",
+        "text": "Escolha a modalidade compatível com o grupo; não obrigar subida aos terraços."
       }
     ],
     "tips": [
-      "Continuação na mesma região pela Via della Conciliazione até Castel Sant’Angelo. Visita externa como alternativa; interior somente após confirmar rota, elevador e áreas efetivamente alcançáveis com a cadeira motorizada. Estimativa do grupo: Orlei, Elma/acompanhante e Aline €0 mediante regras/documentos; Arthur, Fernanda e Danielle €18 cada, total €54. Não pressupor desconto para Arthur por ser universitário brasileiro. Fonte oficial: https://direzionemuseiroma.cultura.gov.it/museo-nazionale-di-castel-santangelo/",
-      "Confirmar acesso da cadeira motorizada antes de contratar serviços.",
-      "Horários propostos: ajustar ao descanso e aos deslocamentos."
+      "Começar cedo por São Pedro. Planejar saída e trajeto externo até os Museus, com margem para filas e almoço.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
     ],
     "sources": [
       {
-        "title": "Museu Nacional de Castel Sant’Angelo",
+        "title": "Museu — informação oficial",
         "url": "https://direzionemuseiroma.cultura.gov.it/museo-nazionale-di-castel-santangelo/"
       },
       {
@@ -2116,12 +2529,67 @@
         "url": "https://portale.museiitaliani.it/"
       }
     ],
-    "arrival": "Roma",
-    "duration": "Conforme roteiro do grupo",
-    "booking": "Reservas, tarifas e disponibilidade a confirmar.",
-    "accessibility": "Confirmar percurso, rampas e banheiro para cadeira motorizada.",
-    "photo_tip": "Registre as paisagens e os momentos compartilhados.",
-    "reviewed": "2026-10-25"
+    "arrival": "Lungotevere Castello. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Confirmar quais pavimentos são alcançáveis, funcionamento dos equipamentos e compatibilidade da cadeira motorizada. Não anunciar o monumento inteiro como acessível; manter exterior e ponte como alternativa.",
+    "duration": "16:00–17:30 no roteiro, incluindo observação e pausas",
+    "booking": "Ingresso integral anunciado a €18 desde julho/2026; verificar isenções, documentação e eventual exposição. Em 30/10 não se aplica o primeiro domingo. A visita exterior não equivale ao ingresso no museu.",
+    "accessibility": "Confirmar quais pavimentos são alcançáveis, funcionamento dos equipamentos e compatibilidade da cadeira motorizada. Não anunciar o monumento inteiro como acessível; manter exterior e ponte como alternativa.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Castel Sant\" Angelo",
+    "rome_day": 3,
+    "rome_sequence": 3,
+    "day_name": "Vaticano e arredores",
+    "day_note": "Começar cedo por São Pedro. Planejar saída e trajeto externo até os Museus, com margem para filas e almoço.",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Almoço e descanso entre Museus e castelo. Opções do grupo em Prati: Osteria Ragno d’Oro, La Locanda di Pietro e Taverna Bacchus. Previsão inicial €25–40 por pessoa, sujeita ao cardápio e sem acessibilidade garantida; não atravessar Roma para comer."
   },
   "toscana-rural": {
     "key": "toscana-rural",
@@ -2284,5 +2752,1400 @@
         "url": "https://www.champagnemercier.com/en/visit-us"
       }
     ]
+  },
+  "roma-adriano": {
+    "key": "roma-adriano",
+    "title": "Templo de Adriano e Piazza di Pietra",
+    "city": "Roma",
+    "kicker": "Dia 1 · Centro histórico · Parada 2",
+    "intro": "As colunas do antigo templo dedicado a Adriano sobrevivem incorporadas a uma construção posterior na Piazza di Pietra. O monumento foi concluído sob Antonino Pio, sucessor do imperador, e mostra como Roma reutilizou estruturas antigas em edifícios de outras épocas. A escala das colunas ajuda a imaginar a presença do santuário no Campo de Marte.",
+    "history": [
+      "As colunas do antigo templo dedicado a Adriano sobrevivem incorporadas a uma construção posterior na Piazza di Pietra. O monumento foi concluído sob Antonino Pio, sucessor do imperador, e mostra como Roma reutilizou estruturas antigas em edifícios de outras épocas. A escala das colunas ajuda a imaginar a presença do santuário no Campo de Marte.",
+      "O local também é apresentado como Templo de Víbia Sabina e Adriano, recuperando a memória do casal imperial. Hoje o edifício está associado à Câmara de Comércio de Roma e recebe programação própria. Distinguir a leitura exterior das colunas de uma eventual exposição ou experiência interna evita comprar ingresso desnecessário ou assumir que o espaço esteja sempre aberto."
+    ],
+    "stops": [
+      {
+        "title": "Colunata",
+        "text": "Observe altura, capitéis e o contraste entre a pedra antiga e a fachada posterior."
+      },
+      {
+        "title": "Piazza di Pietra",
+        "text": "Use a praça para compreender a dimensão do edifício sem bloquear as passagens."
+      },
+      {
+        "title": "Interior, se disponível",
+        "text": "Somente se a programação e o acesso estiverem confirmados; seguir depois ao Pantheon."
+      }
+    ],
+    "tips": [
+      "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Piazza di Pietra. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Há piso irregular e diferenças de nível entre rua e ruínas. Para uma visita interna, confirmar soleira, rampa, circulação e banheiro; não inferir acessibilidade a partir da vista externa.",
+    "duration": "14:50–15:15 no roteiro, incluindo observação e pausas",
+    "booking": "Observar as colunas pelo exterior não exige ingresso de atração. A indicação de “pago” da imagem não vale automaticamente para a praça: exposições, eventos ou visitas internas têm regras próprias a consultar.",
+    "accessibility": "Há piso irregular e diferenças de nível entre rua e ruínas. Para uma visita interna, confirmar soleira, rampa, circulação e banheiro; não inferir acessibilidade a partir da vista externa.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Turismo Roma — Víbia Sabina e Adriano",
+        "url": "https://www.turismoroma.it/it/luoghi/tempio-di-vibia-sabina-e-adriano"
+      },
+      {
+        "title": "Câmara de Comércio — sala do templo",
+        "url": "https://www.rm.camcom.it/pagina81_sala-del-tempio-di-adriano.html"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Temple of Hadrian\"",
+    "rome_day": 1,
+    "rome_sequence": 2,
+    "day_name": "Centro histórico",
+    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "photos": [
+      {
+        "src": "/guide-photos/02b89aeb523c94465fb2.jpg",
+        "alt": "Templo de Adriano e Piazza di Pietra — vista geral",
+        "caption": "Templo de Adriano e Piazza di Pietra — vista do local",
+        "author": "Krzysztof Golik",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Temple_of_Hadrian_in_Rome_(1).jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/8c8f5316ce890b9de242.jpg",
+        "alt": "Templo de Adriano e Piazza di Pietra — detalhe e perspectiva",
+        "caption": "Templo de Adriano e Piazza di Pietra — outro olhar",
+        "author": "Nicholas Hartmann",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rome_Temple_of_Hadrian_2.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Refeição antes de sair e jantar após Campo de’ Fiori. Opções já sugeridas pelo grupo no centro: Armando al Pantheon e Da Gino al Parlamento. Orçamento inicial €25–40 por pessoa, sem cotação atual nem reserva; confirmar cardápio, degraus, largura e banheiro."
+  },
+  "roma-sanluigi": {
+    "key": "roma-sanluigi",
+    "title": "San Luigi dei Francesi",
+    "city": "Roma",
+    "kicker": "Dia 1 · Centro histórico · Parada 4",
+    "intro": "A igreja da comunidade francesa em Roma reúne arquitetura religiosa e uma visita decisiva para conhecer Caravaggio. Na Capela Contarelli, o pintor representou episódios da vida de São Mateus, aproximando o tema sagrado da experiência humana por meio da luz, dos gestos e das figuras. As telas foram realizadas na passagem do século XVI para o XVII.",
+    "history": [
+      "A igreja da comunidade francesa em Roma reúne arquitetura religiosa e uma visita decisiva para conhecer Caravaggio. Na Capela Contarelli, o pintor representou episódios da vida de São Mateus, aproximando o tema sagrado da experiência humana por meio da luz, dos gestos e das figuras. As telas foram realizadas na passagem do século XVI para o XVII.",
+      "A visita ganha profundidade quando se observa o conjunto, em vez de buscar uma única fotografia. Na Vocação de São Mateus, acompanhe a direção da luz e das mãos; nas demais obras, compare a tensão das cenas e a presença dos personagens. O espaço continua sendo uma igreja, com culto e possibilidade de interrupções. A entrada não substitui o respeito ao silêncio e à circulação dos fiéis."
+    ],
+    "stops": [
+      {
+        "title": "Nave",
+        "text": "Reconheça o ambiente e procure a Capela Contarelli sem atravessar áreas reservadas."
+      },
+      {
+        "title": "Ciclo de São Mateus",
+        "text": "Compare luz, gestos e narrativas das três pinturas de Caravaggio."
+      },
+      {
+        "title": "Saída para Navona",
+        "text": "Faça uma pausa curta; o próximo destino está no mesmo setor do centro."
+      }
+    ],
+    "tips": [
+      "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Piazza di San Luigi de’ Francesi, 5. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Confirmar com a igreja a solução de entrada sem degraus e a posição para ver as pinturas sentado. A capela pode ficar cheia; evitar apertar o grupo entre visitantes.",
+    "duration": "16:30–17:00 no roteiro, incluindo observação e pausas",
+    "booking": "Visita ordinária à igreja geralmente gratuita. Confirmar horários do dia, celebrações e acesso à capela; não programar entrada durante culto. Eventual iluminação ou serviço não equivale a bilhete geral.",
+    "accessibility": "Confirmar com a igreja a solução de entrada sem degraus e a posição para ver as pinturas sentado. A capela pode ficar cheia; evitar apertar o grupo entre visitantes.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Turismo Roma — igreja e Caravaggio",
+        "url": "https://www.turismoroma.it/it/luoghi/san-luigi-dei-francesi"
+      },
+      {
+        "title": "Turismo Roma — referências de visita",
+        "url": "https://www.turismoroma.it/"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"San Luigi dei Francesi\"",
+    "rome_day": 1,
+    "rome_sequence": 4,
+    "day_name": "Centro histórico",
+    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "photos": [
+      {
+        "src": "/guide-photos/31b195f4533acaa0.jpg",
+        "alt": "San Luigi dei Francesi — vista geral",
+        "author": "Chabe01",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:%C3%89glise_San_Luigi_Francesi_-_Rome_%28IT62%29_-_2021-08-28_-_2.jpg",
+        "caption": "San Luigi dei Francesi",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/2af0d8420a72c29c3fbf.jpg",
+        "alt": "San Luigi dei Francesi — detalhe e perspectiva",
+        "caption": "San Luigi dei Francesi — outro olhar",
+        "author": "Livioandronico2013",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Statue_of_St._Louis_of_the_French,San_Luigi_dei_Francesi_(Rome).jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Refeição antes de sair e jantar após Campo de’ Fiori. Opções já sugeridas pelo grupo no centro: Armando al Pantheon e Da Gino al Parlamento. Orçamento inicial €25–40 por pessoa, sem cotação atual nem reserva; confirmar cardápio, degraus, largura e banheiro."
+  },
+  "roma-navona": {
+    "key": "roma-navona",
+    "title": "Piazza Navona",
+    "city": "Roma",
+    "kicker": "Dia 1 · Centro histórico · Parada 5",
+    "intro": "A forma alongada da Piazza Navona conserva a memória do estádio de Domiciano, espaço de competições da Roma antiga. Sobre essa base, a cidade criou uma praça barroca de fontes, fachadas e vida cotidiana. A presença do passado não está apenas em uma ruína visível: ela organiza o desenho do lugar e a forma como se circula por ele.",
+    "history": [
+      "A forma alongada da Piazza Navona conserva a memória do estádio de Domiciano, espaço de competições da Roma antiga. Sobre essa base, a cidade criou uma praça barroca de fontes, fachadas e vida cotidiana. A presença do passado não está apenas em uma ruína visível: ela organiza o desenho do lugar e a forma como se circula por ele.",
+      "A Fonte dos Quatro Rios, de Bernini, dialoga com a igreja de Sant’Agnese in Agone e com outras fontes da praça. Compare esculturas, obelisco e perspectiva das fachadas. O melhor ritmo para o grupo é atravessar sem pressa, escolhendo pontos de observação e descanso. Áreas arqueológicas e interiores próximos são visitas independentes, não incluídas automaticamente em um passeio gratuito pela praça."
+    ],
+    "stops": [
+      {
+        "title": "Forma do estádio",
+        "text": "Observe o eixo comprido da praça e relacione-o ao antigo espaço de jogos."
+      },
+      {
+        "title": "Fontes e fachadas",
+        "text": "Compare o conjunto central com as fontes nas extremidades."
+      },
+      {
+        "title": "Pausa e continuação",
+        "text": "Escolha uma lateral menos movimentada antes de seguir ao Campo de’ Fiori."
+      }
+    ],
+    "tips": [
+      "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Piazza Navona. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Pavimentação de pedra, concentração de visitantes e obstáculos temporários. Preferir percurso nivelado pelo entorno das fontes e confirmar sanitário em local próximo.",
+    "duration": "17:10–17:45 no roteiro, incluindo observação e pausas",
+    "booking": "Praça pública sem ingresso geral. Estádio subterrâneo, exposições e serviços privados são cobrados separadamente, se escolhidos. Não há necessidade de comprá-los para conhecer a praça.",
+    "accessibility": "Pavimentação de pedra, concentração de visitantes e obstáculos temporários. Preferir percurso nivelado pelo entorno das fontes e confirmar sanitário em local próximo.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Turismo Roma — Piazza Navona",
+        "url": "https://www.turismoroma.it/it/luoghi/piazza-navona"
+      },
+      {
+        "title": "Turismo oficial de Roma",
+        "url": "https://www.turismoroma.it/"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Piazza Navona\"",
+    "rome_day": 1,
+    "rome_sequence": 5,
+    "day_name": "Centro histórico",
+    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "photos": [
+      {
+        "src": "/guide-photos/991c23a71ddabe934946.jpg",
+        "alt": "Piazza Navona — vista geral",
+        "caption": "Piazza Navona — vista do local",
+        "author": "Ank Kumar",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Fountain_of_the_Four_Rivers(Fontana_dei_Quattro_Fiumi)_at_Piazza_Navona_in_Rome,_Italy_(Ank_Kumar,_Infosys_Limited)_08.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/ec8a548353a7c00f183e.jpg",
+        "alt": "Piazza Navona — detalhe e perspectiva",
+        "caption": "Piazza Navona — outro olhar",
+        "author": "Ank Kumar",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Fountain_of_the_Four_Rivers(Fontana_dei_Quattro_Fiumi)_at_Piazza_Navona_in_Rome,_Italy_(Ank_Kumar,_Infosys_Limited)_04.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Refeição antes de sair e jantar após Campo de’ Fiori. Opções já sugeridas pelo grupo no centro: Armando al Pantheon e Da Gino al Parlamento. Orçamento inicial €25–40 por pessoa, sem cotação atual nem reserva; confirmar cardápio, degraus, largura e banheiro."
+  },
+  "roma-campo": {
+    "key": "roma-campo",
+    "title": "Campo de’ Fiori",
+    "city": "Roma",
+    "kicker": "Dia 1 · Centro histórico · Parada 6",
+    "intro": "Campo de’ Fiori oferece uma Roma de usos cotidianos, comércio e encontro, com um caráter diferente das praças dominadas por igrejas e palácios monumentais. Seu nome evoca uma paisagem anterior à urbanização consolidada. O mercado e o uso noturno fazem o mesmo espaço mudar de aparência conforme o horário.",
+    "history": [
+      "Campo de’ Fiori oferece uma Roma de usos cotidianos, comércio e encontro, com um caráter diferente das praças dominadas por igrejas e palácios monumentais. Seu nome evoca uma paisagem anterior à urbanização consolidada. O mercado e o uso noturno fazem o mesmo espaço mudar de aparência conforme o horário.",
+      "A estátua de Giordano Bruno recorda sua execução no local em 1600 e introduz uma reflexão sobre pensamento, poder e memória pública. Na visita proposta, já no fim da tarde, a experiência será de praça e entorno, não de mercado matinal em plena operação. Vale observar fachadas e ruas de ligação, sem acrescentar travessias longas no dia da chegada."
+    ],
+    "stops": [
+      {
+        "title": "Praça e ruas",
+        "text": "Reconheça a escala comercial e a ligação com o centro histórico."
+      },
+      {
+        "title": "Giordano Bruno",
+        "text": "Observe o monumento e seu papel na memória do lugar."
+      },
+      {
+        "title": "Fim do dia",
+        "text": "Jantar na região ou retorno ao hotel; descansar tem prioridade sobre novos desvios."
+      }
+    ],
+    "tips": [
+      "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Campo de’ Fiori. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Pedras, resíduos após o mercado, mesas e mudanças de circulação podem dificultar a cadeira. Escolher rota lateral confortável e restaurante com banheiro efetivamente acessível.",
+    "duration": "18:00–18:30 no roteiro, incluindo observação e pausas",
+    "booking": "Praça pública sem ingresso. O mercado é atividade de horário próprio; não prometer bancas abertas às 18h. Restaurantes ainda a escolher, com preço e acesso confirmados antes de reservar.",
+    "accessibility": "Pedras, resíduos após o mercado, mesas e mudanças de circulação podem dificultar a cadeira. Escolher rota lateral confortável e restaurante com banheiro efetivamente acessível.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Turismo Roma — Campo de’ Fiori",
+        "url": "https://www.turismoroma.it/it/node/1514"
+      },
+      {
+        "title": "Turismo oficial de Roma",
+        "url": "https://www.turismoroma.it/"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Campo de\" Fiori",
+    "rome_day": 1,
+    "rome_sequence": 6,
+    "day_name": "Centro histórico",
+    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "photos": [
+      {
+        "src": "/guide-photos/d31dbe6bc66f45dd27a9.jpg",
+        "alt": "Campo de’ Fiori — vista geral",
+        "caption": "Campo de’ Fiori — vista do local",
+        "author": "Daderot",
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Market_scene_-_Campo_de%27_Fiori_-_Rome,_Italy_-_DSC01657.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/2223a4a8f73e30d1c1e3.jpg",
+        "alt": "Campo de’ Fiori — detalhe e perspectiva",
+        "caption": "Campo de’ Fiori — outro olhar",
+        "author": "Victor R. Ruiz from Arinaga, Canary Islands, Spain",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Monument_to_Giordano_Bruno_in_Campo_de%27_Fiori_square_-_Rome,_Italy_-_25_July_2014_-_(2).jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Refeição antes de sair e jantar após Campo de’ Fiori. Opções já sugeridas pelo grupo no centro: Armando al Pantheon e Da Gino al Parlamento. Orçamento inicial €25–40 por pessoa, sem cotação atual nem reserva; confirmar cardápio, degraus, largura e banheiro."
+  },
+  "roma-vittoriano": {
+    "key": "roma-vittoriano",
+    "title": "Altar da Pátria e Vittoriano",
+    "city": "Roma",
+    "kicker": "Dia 2 · Roma Antiga · Parada 2",
+    "intro": "O Vittoriano foi concebido como monumento a Vittorio Emanuele II e à unidade italiana. Sua escala e o uso do mármore branco criam uma presença muito diferente das ruínas antigas que serão visitadas mais tarde. A composição organiza escadarias, colunas, esculturas e grandes perspectivas sobre a cidade.",
+    "history": [
+      "O Vittoriano foi concebido como monumento a Vittorio Emanuele II e à unidade italiana. Sua escala e o uso do mármore branco criam uma presença muito diferente das ruínas antigas que serão visitadas mais tarde. A composição organiza escadarias, colunas, esculturas e grandes perspectivas sobre a cidade.",
+      "O Altar da Pátria e o túmulo do Soldado Desconhecido agregam ao monumento uma dimensão cívica e de memória coletiva. O complexo também possui museu e terraço panorâmico, mas não é necessário visitar todas as áreas para compreender seu papel. Neste roteiro, a observação principal é breve; escolher o mirante exigirá mais tempo e possível redução de outras etapas, sem perder o horário reservado no Coliseu."
+    ],
+    "stops": [
+      {
+        "title": "Fachada e composição",
+        "text": "Compare a linguagem monumental com os edifícios ao redor."
+      },
+      {
+        "title": "Memória nacional",
+        "text": "Observe o altar com respeito a áreas cerimoniais e restrições locais."
+      },
+      {
+        "title": "Terraço opcional",
+        "text": "Somente se ingresso, elevador e tempo estiverem confirmados; não pressupor inclusão."
+      }
+    ],
+    "tips": [
+      "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Piazza Venezia — confirmar acesso Aracoeli. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. O VIVE informa acesso pelo lado Aracoeli com plataforma e elevador para a Terrazza Italia e elevadores panorâmicos. Confirmar operação, medidas, peso e entrada exata para a cadeira motorizada; não usar a escadaria principal.",
+    "duration": "09h30–10h05; visita breve, terraço apenas se couber no restante do roteiro",
+    "booking": "O Vittoriano e áreas públicas indicadas pelo VIVE têm entrada gratuita; terraço panorâmico e outros espaços do circuito têm bilhete próprio, com integral anunciado a €18. Conferir áreas incluídas, tarifa vigente e isenções. O primeiro domingo não se aplica a 29/10. Pessoa com deficiência e acompanhante elegível podem ter gratuidade, mediante documentação.",
+    "accessibility": "O VIVE informa acesso pelo lado Aracoeli com plataforma e elevador para a Terrazza Italia e elevadores panorâmicos. Confirmar operação, medidas, peso e entrada exata para a cadeira motorizada; não usar a escadaria principal.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "VIVE — ingresso e acessibilidade",
+        "url": "https://vive.cultura.gov.it/en/visit"
+      },
+      {
+        "title": "Terraço panorâmico",
+        "url": "https://vive.cultura.gov.it/it/vittoriano/cosa-vedere/terrazza-panoramica"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Vittoriano\"",
+    "rome_day": 2,
+    "rome_sequence": 2,
+    "day_name": "Roma Antiga",
+    "day_note": "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+    "photos": [
+      {
+        "src": "/guide-photos/63b399cfad3fca2ff9f8.jpg",
+        "alt": "Altar da Pátria e Vittoriano — vista geral",
+        "caption": "Altar da Pátria e Vittoriano — vista do local",
+        "author": "Paolo Costa Baldi",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Piazza_Venezia_-_Il_Vittoriano.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/53758d78da8f94e66176.jpg",
+        "alt": "Altar da Pátria e Vittoriano — detalhe e perspectiva",
+        "caption": "Altar da Pátria e Vittoriano — outro olhar",
+        "author": "This Photo was taken by Wolfgang Moroder.  \n\nFeel free to use my photos, but please mention me as the author and send me a  message. \n\n\n\nThis image is not in the public domain. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media, if applicable terms of the licenses listed here are not appropriate.\n\n\n\nPlease do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Quadriga_dell%27Unit%C3%A0_Vittoriano_Roma.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Pausa de almoço proposta entre 13h30 e 14h30, depois de Fórum/Palatino e antes do Coliseu. Opções do grupo na região: La Taverna dei Fori Imperiali, Taverna Romana e La Carbonara. Faixa inicial de planejamento €20–40 por pessoa, não preço confirmado; reservar somente após definir o ingresso e validar o acesso."
+  },
+  "roma-capitolino": {
+    "key": "roma-capitolino",
+    "title": "Monte Capitolino e Piazza del Campidoglio",
+    "city": "Roma",
+    "kicker": "Dia 2 · Roma Antiga · Parada 3",
+    "intro": "O Capitólio é uma das colinas históricas de Roma e um lugar fundamental para compreender a representação do poder na cidade. A praça atual foi reorganizada no Renascimento a partir de um projeto de Michelangelo, que criou uma relação entre fachadas, pavimento e perspectiva. O conjunto transforma a chegada à colina em uma experiência espacial deliberada.",
+    "history": [
+      "O Capitólio é uma das colinas históricas de Roma e um lugar fundamental para compreender a representação do poder na cidade. A praça atual foi reorganizada no Renascimento a partir de um projeto de Michelangelo, que criou uma relação entre fachadas, pavimento e perspectiva. O conjunto transforma a chegada à colina em uma experiência espacial deliberada.",
+      "A estátua equestre de Marco Aurélio ocupa o centro da composição; a peça ao ar livre é uma reprodução, enquanto o original pertence aos Museus Capitolinos. Os palácios preservam funções e coleções distintas, e a vista para o Fórum permite antecipar o próximo trecho. A visita proposta é à praça e ao entorno, sem ingresso automático nos museus."
+    ],
+    "stops": [
+      {
+        "title": "Chegada à colina",
+        "text": "Escolher a rota compatível com a cadeira, sem supor que toda rampa monumental seja confortável."
+      },
+      {
+        "title": "Praça e Marco Aurélio",
+        "text": "Observe o desenho e as relações entre os três palácios."
+      },
+      {
+        "title": "Ligação para o Fórum",
+        "text": "Mirante apenas se o trajeto for viável; confirmar entrada acessível do parque arqueológico."
+      }
+    ],
+    "tips": [
+      "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Piazza del Campidoglio. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. A Cordonata tem inclinação e irregularidades. Consultar alternativa pelas vias de acesso à colina; não confundir a escadaria de Aracoeli com rota para cadeira. Mirantes e acessos aos museus exigem conferência separada.",
+    "duration": "10:15–10:50 no roteiro, incluindo observação e pausas",
+    "booking": "A praça é visita externa gratuita. Museus Capitolinos são uma visita independente e não cabem como inclusão automática nesta manhã.",
+    "accessibility": "A Cordonata tem inclinação e irregularidades. Consultar alternativa pelas vias de acesso à colina; não confundir a escadaria de Aracoeli com rota para cadeira. Mirantes e acessos aos museus exigem conferência separada.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Museus Capitolinos — visita e entorno",
+        "url": "https://www.museicapitolini.org/en"
+      },
+      {
+        "title": "Turismo Roma — Campidoglio",
+        "url": "https://www.turismoroma.it/it/luoghi/piazza-del-campidoglio"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Piazza del Campidoglio\"",
+    "rome_day": 2,
+    "rome_sequence": 3,
+    "day_name": "Roma Antiga",
+    "day_note": "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+    "photos": [
+      {
+        "src": "/guide-photos/6bfbe55555e8f762e03b.jpg",
+        "alt": "Monte Capitolino e Piazza del Campidoglio — vista geral",
+        "caption": "Monte Capitolino e Piazza del Campidoglio — vista do local",
+        "author": "Diana Ringo",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Fountain_in_Piazza_del_Campidoglio_(Rome)_-_Nile.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/9eba3cb5bc7af46b5016.jpg",
+        "alt": "Monte Capitolino e Piazza del Campidoglio — detalhe e perspectiva",
+        "caption": "Monte Capitolino e Piazza del Campidoglio — outro olhar",
+        "author": "Cezar Suceveanu",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campidoglio_din_Roma7.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Pausa de almoço proposta entre 13h30 e 14h30, depois de Fórum/Palatino e antes do Coliseu. Opções do grupo na região: La Taverna dei Fori Imperiali, Taverna Romana e La Carbonara. Faixa inicial de planejamento €20–40 por pessoa, não preço confirmado; reservar somente após definir o ingresso e validar o acesso."
+  },
+  "roma-forum": {
+    "key": "roma-forum",
+    "title": "Fórum Romano",
+    "city": "Roma",
+    "kicker": "Dia 2 · Roma Antiga · Parada 4",
+    "intro": "O Fórum Romano foi o principal centro de vida pública da cidade antiga, reunindo atividade política, religiosa, judicial e cerimonial. Suas ruínas não correspondem a um único projeto: edifícios de épocas diferentes foram construídos, alterados e substituídos. Essa sobreposição explica por que um mapa histórico ou uma visita guiada faz tanta diferença na leitura do sítio.",
+    "history": [
+      "O Fórum Romano foi o principal centro de vida pública da cidade antiga, reunindo atividade política, religiosa, judicial e cerimonial. Suas ruínas não correspondem a um único projeto: edifícios de épocas diferentes foram construídos, alterados e substituídos. Essa sobreposição explica por que um mapa histórico ou uma visita guiada faz tanta diferença na leitura do sítio.",
+      "Observe a Via Sacra, os arcos, templos e basílicas como partes de uma rede de circulação e poder. A monumentalidade hoje fragmentada pede imaginação, mas também atenção aos vestígios reais. Para o grupo, o objetivo será um percurso selecionado e acessível, continuando dentro do mesmo complexo para o Palatino. Não é preciso alcançar todos os pontos para compreender o lugar."
+    ],
+    "stops": [
+      {
+        "title": "Entrada e orientação",
+        "text": "Conferir portão e percurso indicado pela equipe, usando mapa acessível."
+      },
+      {
+        "title": "Centro cívico",
+        "text": "Relacionar templos, basílicas e arcos às funções públicas."
+      },
+      {
+        "title": "Continuação ao Palatino",
+        "text": "Permanecer no complexo conforme regras do ingresso; pausa antes da subida."
+      }
+    ],
+    "tips": [
+      "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Área do Fórum Romano — portão conforme percurso acessível e ingresso. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Pedras antigas, inclinações e trechos expostos. Solicitar o percurso acessível efetivamente aberto; plataformas e elevadores precisam estar operacionais. Se o esforço for alto, reduzir o Palatino em favor do Coliseu reservado.",
+    "duration": "11:15–12:30 no roteiro, incluindo observação e pausas",
+    "booking": "Conferir ingresso combinado com Palatino/Coliseu e número de acessos permitidos. Não sair para almoçar supondo reentrada livre no Fórum/Palatino. O roteiro prevê refeição depois dessas duas etapas. Gratuidade de PCD/acompanhante e menor depende das regras oficiais.",
+    "accessibility": "Pedras antigas, inclinações e trechos expostos. Solicitar o percurso acessível efetivamente aberto; plataformas e elevadores precisam estar operacionais. Se o esforço for alto, reduzir o Palatino em favor do Coliseu reservado.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Parco del Colosseo — Fórum Romano",
+        "url": "https://colosseo.it/en/area/the-roman-forum/"
+      },
+      {
+        "title": "Parco — ingressos e horários",
+        "url": "https://colosseo.it/en/opening-times-and-tickets/"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Roman Forum\"",
+    "rome_day": 2,
+    "rome_sequence": 4,
+    "day_name": "Roma Antiga",
+    "day_note": "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+    "photos": [
+      {
+        "src": "/guide-photos/bf45009d1f46d52b312b.jpg",
+        "alt": "Fórum Romano — vista geral",
+        "caption": "Fórum Romano — vista do local",
+        "author": "Mr.Ajedrez",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Roman_Forum_at_Rome.JPG",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/85365bc60ba1c172c8f5.jpg",
+        "alt": "Fórum Romano — detalhe e perspectiva",
+        "caption": "Fórum Romano — outro olhar",
+        "author": "Carole Raddato from FRANKFURT, Germany",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Temple_of_Saturn,_Roman_Forum,_Rome_(31659982656).jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Pausa de almoço proposta entre 13h30 e 14h30, depois de Fórum/Palatino e antes do Coliseu. Opções do grupo na região: La Taverna dei Fori Imperiali, Taverna Romana e La Carbonara. Faixa inicial de planejamento €20–40 por pessoa, não preço confirmado; reservar somente após definir o ingresso e validar o acesso."
+  },
+  "roma-palatino": {
+    "key": "roma-palatino",
+    "title": "Monte Palatino",
+    "city": "Roma",
+    "kicker": "Dia 2 · Roma Antiga · Parada 5",
+    "intro": "O Palatino reúne o imaginário das origens de Roma e a materialidade das residências imperiais. Sua posição elevada, próxima ao Fórum e ao Circo Máximo, ajudou a fazer da colina um lugar privilegiado para a representação do governo. Ao longo do período imperial, palácios, jardins e áreas de cerimônia mudaram profundamente sua paisagem.",
+    "history": [
+      "O Palatino reúne o imaginário das origens de Roma e a materialidade das residências imperiais. Sua posição elevada, próxima ao Fórum e ao Circo Máximo, ajudou a fazer da colina um lugar privilegiado para a representação do governo. Ao longo do período imperial, palácios, jardins e áreas de cerimônia mudaram profundamente sua paisagem.",
+      "Mais que uma coleção de ruínas isoladas, a colina permite perceber a relação entre residência, administração e vista sobre a cidade. O passeio deve selecionar um setor e um ponto de observação viáveis, sem exigir a subida a todo mirante. Após a visita, a pausa de almoço deve respeitar a janela do Coliseu e as regras de saída do complexo."
+    ],
+    "stops": [
+      {
+        "title": "Percurso escolhido",
+        "text": "Seguir apenas a rota acessível indicada no dia."
+      },
+      {
+        "title": "Arquitetura imperial",
+        "text": "Relacionar pátios e estruturas aos usos residenciais e cerimoniais."
+      },
+      {
+        "title": "Saída e almoço",
+        "text": "Prever 13h30–14h30 para refeição e descanso, com deslocamento e segurança para o Coliseu."
+      }
+    ],
+    "tips": [
+      "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Área do Palatino — acesso pelo complexo Fórum/Palatino. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. É a etapa de maior ganho de altura da manhã. Verificar rampas/elevadores e autonomia da cadeira. Alternativa: abreviar a colina ou observar o Fórum por pontos viáveis, preservando o horário do Coliseu.",
+    "duration": "12:40–13:25 no roteiro, incluindo observação e pausas",
+    "booking": "Integra modalidades de ingresso do parque, mas salas e áreas especiais podem exigir bilhete específico. Confirmar o produto adquirido e os acessos; não presumir que todos os interiores estejam incluídos.",
+    "accessibility": "É a etapa de maior ganho de altura da manhã. Verificar rampas/elevadores e autonomia da cadeira. Alternativa: abreviar a colina ou observar o Fórum por pontos viáveis, preservando o horário do Coliseu.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Parco — Palatino",
+        "url": "https://colosseo.it/en/area/the-palatine/"
+      },
+      {
+        "title": "Parco — regras de visita",
+        "url": "https://colosseo.it/en/opening-times-and-tickets/"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Palatine Hill\"",
+    "rome_day": 2,
+    "rome_sequence": 5,
+    "day_name": "Roma Antiga",
+    "day_note": "Dia exigente. O Coliseu depende de horário marcado: ajustar as etapas anteriores a esse ingresso e à operação de outono.",
+    "photos": [
+      {
+        "src": "/guide-photos/94312ef79fef6ae6.jpg",
+        "alt": "Monte Palatino — vista geral",
+        "author": "Lil Herodotus",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Palatine_Hill_from_across_the_Circus_Maximus_April_2019.jpg",
+        "caption": "Palatine Hill",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/e19ca2f9bb46df3336c9.jpg",
+        "alt": "Monte Palatino — detalhe e perspectiva",
+        "caption": "Monte Palatino — outro olhar",
+        "author": "Livioandronico2013",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ruins_of_the_Domus_Augustana_on_Palatine_Hill..jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Pausa de almoço proposta entre 13h30 e 14h30, depois de Fórum/Palatino e antes do Coliseu. Opções do grupo na região: La Taverna dei Fori Imperiali, Taverna Romana e La Carbonara. Faixa inicial de planejamento €20–40 por pessoa, não preço confirmado; reservar somente após definir o ingresso e validar o acesso."
+  },
+  "roma-spagna": {
+    "key": "roma-spagna",
+    "title": "Piazza di Spagna",
+    "city": "Roma",
+    "kicker": "Dia 4 · Região norte · Parada 1",
+    "intro": "Piazza di Spagna é um encontro entre comércio, sociabilidade e paisagem monumental. A Barcaccia, de Pietro e Gian Lorenzo Bernini, ocupa o plano mais baixo, enquanto a escadaria conduz visualmente à igreja de Trinità dei Monti. O efeito depende do desnível: a praça pode ser plenamente compreendida sem subir seus degraus.",
+    "history": [
+      "Piazza di Spagna é um encontro entre comércio, sociabilidade e paisagem monumental. A Barcaccia, de Pietro e Gian Lorenzo Bernini, ocupa o plano mais baixo, enquanto a escadaria conduz visualmente à igreja de Trinità dei Monti. O efeito depende do desnível: a praça pode ser plenamente compreendida sem subir seus degraus.",
+      "A escadaria do século XVIII consolidou uma ligação entre a cidade e a colina, tornando-se uma imagem recorrente de Roma. Para o grupo, a sequência segue depois pela região norte, em direção à Piazza del Popolo, em vez de retornar ao centro do primeiro dia. Observe a fonte e as perspectivas a partir de locais que não interrompam a circulação."
+    ],
+    "stops": [
+      {
+        "title": "Barcaccia",
+        "text": "Observe a forma de embarcação e a água junto ao plano da praça."
+      },
+      {
+        "title": "Perspectiva da escadaria",
+        "text": "Apreciar a vista de baixo; não usar degraus como percurso."
+      },
+      {
+        "title": "Ligação ao Popolo",
+        "text": "Seguir pela região da Via del Babuino, confirmando calçadas e travessias."
+      }
+    ],
+    "tips": [
+      "Priorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Piazza di Spagna. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Visita proposta no nível inferior, sem subida pela escadaria. Para alcançar mirantes altos, usar rota/veículo acessível independente; não presumir acesso pelos mesmos caminhos de pedestres.",
+    "duration": "09:00–09:45 no roteiro, incluindo observação e pausas",
+    "booking": "Praça pública gratuita. Respeitar regras de uso da escadaria, sem sentar, comer ou bloquear passagens conforme sinalização. Não há necessidade de comprar ingresso para ver a praça.",
+    "accessibility": "Visita proposta no nível inferior, sem subida pela escadaria. Para alcançar mirantes altos, usar rota/veículo acessível independente; não presumir acesso pelos mesmos caminhos de pedestres.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Turismo Roma — Piazza di Spagna",
+        "url": "https://www.turismoroma.it/it/luoghi/piazza-di-spagna"
+      },
+      {
+        "title": "Turismo Roma — acessibilidade",
+        "url": "https://www.turismoroma.it/"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Piazza di Spagna\"",
+    "rome_day": 4,
+    "rome_sequence": 1,
+    "day_name": "Região norte",
+    "day_note": "Priorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.",
+    "photos": [
+      {
+        "src": "/guide-photos/3f631d53e974c4e490c9.jpg",
+        "alt": "Piazza di Spagna — vista geral",
+        "caption": "Piazza di Spagna — vista do local",
+        "author": "Arnaud 25",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Piazza_di_Spagna_(Rome)_0005.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/0cfea017ef6c823813aa.jpg",
+        "alt": "Piazza di Spagna — detalhe e perspectiva",
+        "caption": "Piazza di Spagna — outro olhar",
+        "author": "Mstyslav Chernov",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:The_Spanish_Steps,_as_seen_from_the_Fontana_della_Barcaccia_in_the_Piazza_di_Spagna,_Sallustiano_obelisk_against_background_of_the_Church_of_the_Santissima_Trinit%C3%A0_dei_Monti._Rome,_Italy.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Almoçar por volta de 13h, no setor escolhido entre Popolo e Borghese, deixando margem até a entrada da Galleria. Escolher restaurante após confirmar o acesso do museu e a rota real; prever €20–40 por pessoa como orçamento inicial, não cotação. Mesas externas não garantem banheiro acessível."
+  },
+  "roma-popolo": {
+    "key": "roma-popolo",
+    "title": "Piazza del Popolo e Santa Maria del Popolo",
+    "city": "Roma",
+    "kicker": "Dia 4 · Região norte · Parada 2",
+    "intro": "Piazza del Popolo organiza uma das grandes entradas históricas de Roma. O obelisco e a composição urbana ajudam a compreender a chegada de vias e perspectivas, enquanto a porta marca a relação com o antigo limite da cidade. A praça também serve como ligação para a paisagem do Pincio, que deve ser alcançada por uma rota viável para o grupo.",
+    "history": [
+      "Piazza del Popolo organiza uma das grandes entradas históricas de Roma. O obelisco e a composição urbana ajudam a compreender a chegada de vias e perspectivas, enquanto a porta marca a relação com o antigo limite da cidade. A praça também serve como ligação para a paisagem do Pincio, que deve ser alcançada por uma rota viável para o grupo.",
+      "Santa Maria del Popolo guarda um patrimônio artístico importante, incluindo obras de Caravaggio na Capela Cerasi. A igreja deve ser distinguida das chamadas igrejas gêmeas vistas em outra posição da praça. A visita interna depende de horários, culto e acesso às capelas; se não estiver disponível, o passeio externo continua fazendo sentido."
+    ],
+    "stops": [
+      {
+        "title": "Praça e obelisco",
+        "text": "Reconheça os eixos e a relação com a porta histórica."
+      },
+      {
+        "title": "Santa Maria del Popolo",
+        "text": "Consultar entrada e observar obras sem interromper o culto."
+      },
+      {
+        "title": "Ligação ao parque",
+        "text": "Não subir por escadas ao Pincio; confirmar via alternativa ou transporte."
+      }
+    ],
+    "tips": [
+      "Priorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Piazza del Popolo. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Confirmar entrada sem degraus na igreja e a passagem para a área alta. O trajeto entre Popolo e Villa Borghese envolve desnível: prever transporte acessível se necessário.",
+    "duration": "10:15–11:30 no roteiro, incluindo observação e pausas",
+    "booking": "Praça gratuita. Consultar horários e regras da basílica; não prometer capelas abertas ou serviços gratuitos além da visita ordinária. Não há ingresso combinado com Galleria Borghese.",
+    "accessibility": "Confirmar entrada sem degraus na igreja e a passagem para a área alta. O trajeto entre Popolo e Villa Borghese envolve desnível: prever transporte acessível se necessário.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Basílica — site oficial",
+        "url": "https://santamariadelpopoloroma.it/"
+      },
+      {
+        "title": "Ministério da Cultura — Santa Maria del Popolo",
+        "url": "https://cultura.gov.it/luogo/santa-maria-del-popolo"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Piazza del Popolo\"",
+    "rome_day": 4,
+    "rome_sequence": 2,
+    "day_name": "Região norte",
+    "day_note": "Priorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.",
+    "photos": [
+      {
+        "src": "/guide-photos/f6383831b4646e549aa1.jpg",
+        "alt": "Piazza del Popolo e Santa Maria del Popolo — vista geral",
+        "caption": "Piazza del Popolo e Santa Maria del Popolo — vista do local",
+        "author": "Jebulon",
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Fontana_del_Nettuno,_Piazza_del_Popolo,_Rome,_Italie.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/6691096a96e010250720.jpg",
+        "alt": "Piazza del Popolo e Santa Maria del Popolo — detalhe e perspectiva",
+        "caption": "Piazza del Popolo e Santa Maria del Popolo — outro olhar",
+        "author": "Krzysztof Golik",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Piazza_del_Popolo_3_in_Rome.jpg",
+        "modified": "Versão redimensionada do Commons para exibição; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/b29688dcfbf04fe6.jpg",
+        "alt": "Santa Maria del Popolo — vista geral",
+        "author": "Jakub Hałun",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:20140803_Basilica_of_Santa_Maria_del_Popolo_Rome_0191.jpg",
+        "caption": "Santa Maria del Popolo",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/ddd1164f28b577474658.jpg",
+        "alt": "Santa Maria del Popolo — detalhe e perspectiva",
+        "caption": "Santa Maria del Popolo — outro olhar",
+        "author": "Jebulon",
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Neque_Illic_Mortuus,_inside_of_Santa_Maria_del_Popolo,_Rome,_Italy.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Almoçar por volta de 13h, no setor escolhido entre Popolo e Borghese, deixando margem até a entrada da Galleria. Escolher restaurante após confirmar o acesso do museu e a rota real; prever €20–40 por pessoa como orçamento inicial, não cotação. Mesas externas não garantem banheiro acessível."
+  },
+  "roma-galleria": {
+    "key": "roma-galleria",
+    "title": "Galleria Borghese",
+    "city": "Roma",
+    "kicker": "Dia 4 · Região norte · Parada 4",
+    "intro": "A Galleria Borghese ocupa a villa ligada à coleção do cardeal Scipione Borghese, reunindo pintura e escultura em um ambiente concebido para exibir arte e prestígio. Obras de Bernini, Caravaggio e outros mestres permitem relacionar o colecionismo à produção artística de Roma. A escala relativamente concentrada favorece uma seleção atenta, em vez de uma maratona de salas.",
+    "history": [
+      "A Galleria Borghese ocupa a villa ligada à coleção do cardeal Scipione Borghese, reunindo pintura e escultura em um ambiente concebido para exibir arte e prestígio. Obras de Bernini, Caravaggio e outros mestres permitem relacionar o colecionismo à produção artística de Roma. A escala relativamente concentrada favorece uma seleção atenta, em vez de uma maratona de salas.",
+      "Nas esculturas, observe movimento, pontos de vista e transformação dos materiais; nas pinturas, compare luz e construção narrativa. Acesso aos pavimentos e condições de elevador precisam ser tratados com antecedência, pois uma cadeira motorizada pode não acompanhar todo o percurso sem adaptações. A visita deve ser planejada em função das necessidades reais de Orlei, inclusive a possibilidade ou não de transferência."
+    ],
+    "stops": [
+      {
+        "title": "Chegada com antecedência",
+        "text": "14h30 é proposta: confirmar turno disponível, ingresso e procedimento de acessibilidade."
+      },
+      {
+        "title": "Seleção de obras",
+        "text": "Escolher destaques de escultura e pintura conforme salas alcançáveis."
+      },
+      {
+        "title": "Encerramento",
+        "text": "Tempo para loja/saída apenas se confortável; retorno ao hotel e descanso."
+      }
+    ],
+    "tips": [
+      "Priorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.",
+      "Horário do roteiro é proposta. Confirme abertura, ingresso e entrada acessível no site oficial.",
+      "Combine ponto de encontro fora das passagens, leve água e reserve pausas e margem para a bateria da cadeira.",
+      "Restaurantes: confirmar entrada sem degraus, espaço à mesa e banheiro. Nenhuma reserva foi feita.",
+      "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
+    ],
+    "arrival": "Piazzale Scipione Borghese, 5. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. O museu informa equipamentos de acesso e cadeiras menores para uso em elevador. Confirmar dimensões, peso, pavimentos e eventual transferência da cadeira motorizada para a convencional antes de pagar. Se transferência não for possível, solicitar solução compatível ou substituir a visita.",
+    "duration": "14:30–16:30 no roteiro, incluindo observação e pausas",
+    "booking": "Ingresso integral publicado a €16, mais taxa de reserva de €2 quando aplicável; exposições e condições especiais podem alterar o preço. Reserva obrigatória inclusive para categorias gratuitas; há isenção da taxa para categorias específicas de deficiência/acompanhante, a validar. 31/10 é sábado, não primeiro domingo. Confirmar os seis bilhetes, documentos e acesso antes do pagamento.",
+    "accessibility": "O museu informa equipamentos de acesso e cadeiras menores para uso em elevador. Confirmar dimensões, peso, pavimentos e eventual transferência da cadeira motorizada para a convencional antes de pagar. Se transferência não for possível, solicitar solução compatível ou substituir a visita.",
+    "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
+    "sources": [
+      {
+        "title": "Galleria — ingressos oficiais",
+        "url": "https://galleriaborghese.cultura.gov.it/en/visita/info-biglietti/"
+      },
+      {
+        "title": "Galleria — acessibilidade",
+        "url": "https://galleriaborghese.cultura.gov.it/en/visita/accessibilita/"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "photo_query": "intitle:\"Galleria Borghese\"",
+    "rome_day": 4,
+    "rome_sequence": 4,
+    "day_name": "Região norte",
+    "day_note": "Priorizar deslocamento sem escadarias. Villa é parque público; Galleria é museu com reserva e condições próprias.",
+    "photos": [
+      {
+        "src": "/guide-photos/7149ed2804f8d43f.jpg",
+        "alt": "Galleria Borghese — vista geral",
+        "author": "Chabe01",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Galerie_Borgh%C3%A8se_-_Rome_%28IT62%29_-_2021-08-30_-_3.jpg",
+        "caption": "Galleria Borghese",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/0cef2183b108750ef3e6.jpg",
+        "alt": "Galleria Borghese — detalhe e perspectiva",
+        "caption": "Galleria Borghese — outro olhar",
+        "author": "Livioandronico2013",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ceinling_of_Galleria_Borghese_2.jpg",
+        "modified": "Redimensionamento da versão disponibilizada pelo Commons; enquadramento por CSS."
+      }
+    ],
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-10-28",
+        "title": "Centro histórico",
+        "places": [
+          "Fontana di Trevi",
+          "Templo de Adriano e Piazza di Pietra",
+          "Pantheon",
+          "San Luigi dei Francesi",
+          "Piazza Navona",
+          "Campo de’ Fiori"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-10-29",
+        "title": "Roma Antiga",
+        "places": [
+          "Piazza Venezia",
+          "Altar da Pátria e Vittoriano",
+          "Monte Capitolino e Piazza del Campidoglio",
+          "Fórum Romano",
+          "Monte Palatino",
+          "Coliseu"
+        ]
+      },
+      {
+        "day": 3,
+        "date": "2026-10-30",
+        "title": "Vaticano e arredores",
+        "places": [
+          "Basílica e Praça de São Pedro",
+          "Museus Vaticanos e Capela Sistina",
+          "Castel Sant’Angelo"
+        ]
+      },
+      {
+        "day": 4,
+        "date": "2026-10-31",
+        "title": "Região norte",
+        "places": [
+          "Piazza di Spagna",
+          "Piazza del Popolo e Santa Maria del Popolo",
+          "Villa Borghese e Pincio",
+          "Galleria Borghese"
+        ]
+      }
+    ],
+    "food": "Almoçar por volta de 13h, no setor escolhido entre Popolo e Borghese, deixando margem até a entrada da Galleria. Escolher restaurante após confirmar o acesso do museu e a rota real; prever €20–40 por pessoa como orçamento inicial, não cotação. Mesas externas não garantem banheiro acessível."
   }
 }
