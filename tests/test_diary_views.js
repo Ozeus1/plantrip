@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const elements=new Map(),timers=new Map();let timerId=0;
-function element(selector){if(!elements.has(selector))elements.set(selector,{open:false,value:selector==='#memorySpeed'?'4':'',checked:false,style:{},classList:{toggle(){},remove(){}},listeners:{},addEventListener(name,fn){this.listeners[name]=fn},setAttribute(){},showModal(){this.open=true},textContent:'',innerHTML:''});return elements.get(selector)}
+function element(selector){if(!elements.has(selector))elements.set(selector,{open:false,value:selector==='#memorySpeed'?'4':'',checked:false,style:{},classList:{toggle(){},remove(){}},listeners:{},addEventListener(name,fn){this.listeners[name]=fn},setAttribute(){},removeAttribute(){},load(){},pause(){this.paused=true},showModal(){this.open=true},textContent:'',innerHTML:''});return elements.get(selector)}
 const context=vm.createContext({console,Map,Date,setTimeout:fn=>{timers.set(++timerId,fn);return timerId},clearTimeout:id=>timers.delete(id),$:element,esc:s=>String(s??''),date:s=>s,memoryToday:()=> '2026-10-25',renderResults(){},renderPublicPosts(){},toast:s=>{throw Error(s)},document:{hidden:false,addEventListener(){},querySelectorAll:()=>[]}});
 vm.runInContext(fs.readFileSync('static/diary-views.js','utf8'),context);
 assert.equal(context.memoryDay('2026-10-25T22:00'),'2026-10-25');assert.equal(context.memoryDay(''), '');
@@ -25,3 +25,18 @@ advance();assert.equal(element('#memoryFrameCount').textContent,'3 / 3');advance
 element('#memoryPlayPause').onclick();assert.equal(element('#memoryFrameCount').textContent,'1 / 3');assert.equal(timers.size,1);
 element('#memoryViewer').open=false;element('#memoryViewer').listeners.close();assert.equal(timers.size,0);assert.equal(element('#memoryViewerStage').innerHTML,'');
 console.log('Calendário, locais, seleção de mídias e reprodução automática: OK');
+const mixed=[{...entries[0],files:[image(20),{id:21,mime:'video/mp4',name:'Video.mp4'},image(22)]}];
+assert.equal(context.memoryFramesFor(mixed).length,3);
+assert.equal(context.memoryFramesFor(mixed,true).length,2);
+context.presentMemories(mixed,true);assert.equal(element('#memoryFrameCount').textContent,'1 / 2');
+element('#memoryViewer').open=false;element('#memoryViewer').listeners.close();
+media.tagName='VIDEO';context.presentMemories(mixed,false,21);
+assert.equal(element('#memoryFrameCount').textContent,'2 / 3');
+assert.equal(timers.size,0);assert.ok(element('#memoryViewerStage').innerHTML.includes('controls playsinline preload="metadata"'));assert.ok(!element('#memoryViewerStage').innerHTML.includes('autoplay'));
+assert.equal(element('#memoryVideoOriginal').hidden,false);
+media.tagName='IMG';context.presentMemories(mixed,false,22);
+assert.equal(element('#memoryFrameCount').textContent,'3 / 3');
+element('#memoryPlayPause').onclick();assert.equal(element('#memoryFrameCount').textContent,'2 / 2');
+element('#memoryViewer').open=false;element('#memoryViewer').listeners.close();
+const gallery=context.memoryGallery(mixed[0]);assert.ok(gallery.includes('data-memory-file="21"'));assert.ok(gallery.includes('memory-video-badge'));assert.ok(!gallery.includes(' controls'));
+console.log('Miniaturas por item, vídeo manual e miniclipe apenas com fotos: OK');

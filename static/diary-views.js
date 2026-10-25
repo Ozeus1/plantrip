@@ -5,6 +5,7 @@ function memoryPlaceKey(e){return String(e.trip_id||'')+':'+String(e.place||'Loc
 function groupMemoryPlaces(entries){const map=new Map();for(const e of entries){const key=memoryPlaceKey(e);if(!map.has(key))map.set(key,{key,label:e.place||'Local não informado',entries:[]});map.get(key).entries.push(e)}return [...map.values()].sort((a,b)=>a.label.localeCompare(b.label,'pt-BR'))}
 function memoryMonthCells(year,month){const first=new Date(year,month,1),offset=(first.getDay()+6)%7,count=new Date(year,month+1,0).getDate();return Array.from({length:Math.ceil((offset+count)/7)*7},(_,i)=>{const day=i-offset+1;return day>0&&day<=count?`${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`:null})}
 function memoryViewerButtons(e){return `<div class="memory-view-buttons"><button type="button" data-memory-slides="${e.id}">▧ Ver slides</button><button type="button" data-memory-clip="${e.id}">▷ Ver miniclipe</button></div>`}
+function memoryGallery(e,editable=false){return `<div class="memory-thumbnail-grid">${(e.files||[]).map(f=>{const video=f.mime.startsWith('video/'),visual=video||f.mime.startsWith('image/');return `<div class="memory-thumbnail-item">${visual?`<button type="button" class="memory-thumbnail" data-memory-thumbnail="${e.id}" data-memory-file="${f.id}" aria-label="${video?'Reproduzir vídeo':'Abrir foto'}: ${esc(f.name)}">${video?`<video src="/media/${f.id}#t=0.1" preload="metadata" muted playsinline tabindex="-1" aria-hidden="true"></video><span class="memory-video-badge">▷ Vídeo</span>`:`<img src="/media/${f.id}" alt="${esc(f.name)}" loading="lazy">`}</button>`:media(f)}${editable?`<button type="button" class="text-btn danger" data-del-file="${f.id}">Remover arquivo</button>`:''}</div>`}).join('')}</div>`}
 function memoryModeToolbar(scope){const current=diaryBrowsers[scope].mode;return `<div class="memory-modes" role="group" aria-label="Visualização das memórias">${[['list','▧ Memórias'],['places','⌖ Por local'],['calendar','▦ Calendário']].map(([mode,label])=>`<button type="button" data-diary-mode="${mode}" data-diary-scope="${scope}" aria-pressed="${current===mode}">${label}</button>`).join('')}</div>`}
 function setMemoryMode(scope,mode){diaryBrowsers[scope].mode=mode;diaryBrowsers[scope].place=null;diaryBrowsers[scope].day=null;redrawMemoryBrowser(scope)}
 function redrawMemoryBrowser(scope){if(scope==='public')renderPublicPosts();else renderResults()}
@@ -40,18 +41,19 @@ function bindMemoryBrowser(entries,scope){
   bindMemoryViewerButtons(entries);
 }
 function bindMemoryViewerButtons(entries){
+  document.querySelectorAll('[data-memory-thumbnail]').forEach(b=>b.onclick=ev=>{ev.stopPropagation();presentMemories(entries.filter(e=>e.id===Number(b.dataset.memoryThumbnail)),false,Number(b.dataset.memoryFile))});
   document.querySelectorAll('[data-memory-slides]').forEach(b=>b.onclick=ev=>{ev.stopPropagation();presentMemories(entries.filter(e=>e.id===Number(b.dataset.memorySlides)),false)});
   document.querySelectorAll('[data-memory-clip]').forEach(b=>b.onclick=ev=>{ev.stopPropagation();presentMemories(entries.filter(e=>e.id===Number(b.dataset.memoryClip)),true)});
 }
 
-let memoryFrames=[],memoryFrameIndex=0,memoryPlaying=false,memoryTimer=null,memorySequence=0;
+let memoryFrames=[],memoryFrameIndex=0,memoryPlaying=false,memoryTimer=null,memorySequence=0,memoryPhotosOnly=false;
 function clearMemoryTimer(){if(memoryTimer!==null)clearTimeout(memoryTimer);memoryTimer=null}
-function memoryFramesFor(entries){return entries.flatMap(e=>(e.files||[]).filter(f=>/^(image|video)\//.test(f.mime)).map(f=>({entry:e,file:f})))}
-function presentMemories(entries,auto=false){
-  const frames=memoryFramesFor(entries);if(!frames.length)return toast('Esta seleção ainda não tem fotos ou vídeos para apresentar.');
-  clearMemoryTimer();memoryFrames=frames;memoryFrameIndex=0;memoryPlaying=auto;$('#memoryRepeat').checked=false;$('#memoryViewer').showModal();showMemoryFrame();
+function memoryFramesFor(entries,photosOnly=false){return entries.flatMap(e=>(e.files||[]).filter(f=>photosOnly?f.mime.startsWith('image/'):/^(image|video)\//.test(f.mime)).map(f=>({entry:e,file:f})))}
+function presentMemories(entries,auto=false,startFileId=null){
+  const frames=memoryFramesFor(entries,auto);if(!frames.length)return toast(auto?'Esta seleção não tem fotos para o miniclipe.':'Esta seleção ainda não tem fotos ou vídeos para apresentar.');
+  clearMemoryTimer();memoryFrames=frames;memoryPhotosOnly=auto;memoryFrameIndex=Math.max(0,frames.findIndex(x=>x.file.id===startFileId));memoryPlaying=auto;$('#memoryRepeat').checked=false;$('#memoryViewer').showModal();showMemoryFrame();
 }
-function updateMemoryPlaybackButton(){$('#memoryPlayPause').textContent=memoryPlaying?'Ⅱ Pausar':memoryFrameIndex===memoryFrames.length-1?'↻ Reproduzir novamente':'▷ Reproduzir';$('#memoryPlayPause').setAttribute('aria-pressed',String(memoryPlaying))}
+function updateMemoryPlaybackButton(){$('#memoryPlayPause').textContent=memoryPlaying?'Ⅱ Pausar':!memoryPhotosOnly?'▷ Miniclipe só de fotos':memoryFrameIndex===memoryFrames.length-1?'↻ Reproduzir novamente':'▷ Reproduzir';$('#memoryPlayPause').disabled=!memoryFrames.some(x=>x.file.mime.startsWith('image/'));$('#memoryPlayPause').setAttribute('aria-pressed',String(memoryPlaying))}
 function scheduleMemoryFrame(sequence){clearMemoryTimer();if(!memoryPlaying||!$('#memoryViewer').open||sequence!==memorySequence)return;const ms=Number($('#memorySpeed').value)*1000;memoryTimer=setTimeout(()=>advanceMemoryFrame(),ms)}
 function advanceMemoryFrame(){
   clearMemoryTimer();
@@ -60,23 +62,26 @@ function advanceMemoryFrame(){
   else{memoryPlaying=false;updateMemoryPlaybackButton();$('#memoryViewer').classList.remove('is-playing')}
 }
 function showMemoryFrame(){
+  stopMemoryMedia();
   clearMemoryTimer();const sequence=++memorySequence,{entry:e,file:f}=memoryFrames[memoryFrameIndex],video=f.mime.startsWith('video/');
   $('#memoryViewer').classList.toggle('is-playing',memoryPlaying);
-  $('#memoryViewerStage').innerHTML=video?`<video id="memoryFrameMedia" src="/media/${f.id}" controls playsinline ${memoryPlaying?'autoplay muted':''}></video>`:`<img id="memoryFrameMedia" src="/media/${f.id}" alt="${esc(f.name)}">`;
+  $('#memoryViewerStage').innerHTML=video?`<video id="memoryFrameMedia" src="/media/${f.id}" controls playsinline preload="metadata" aria-label="${esc(f.name)}"></video>`:`<img id="memoryFrameMedia" src="/media/${f.id}" alt="${esc(f.name)}">`;
+  $('#memoryVideoOriginal').hidden=!video;$('#memoryVideoOriginal').href=`/media/${f.id}`;
   $('#memoryFrameTitle').textContent=e.title;$('#memoryFrameCaption').textContent=`${e.place||'Nossa viagem'} · ${date(e.start)} · ${e.author}`;
   $('#memoryFrameCount').textContent=`${memoryFrameIndex+1} / ${memoryFrames.length}`;$('#memoryFramePrev').disabled=memoryFrameIndex===0;$('#memoryFrameNext').disabled=memoryFrameIndex===memoryFrames.length-1;
   $('#memoryFrameProgress').style.width=`${(memoryFrameIndex+1)/memoryFrames.length*100}%`;updateMemoryPlaybackButton();
   const media=$('#memoryFrameMedia');
   media.onerror=()=>{if(sequence!==memorySequence)return;$('#memoryFrameCaption').textContent+=' · Não foi possível carregar este arquivo.';scheduleMemoryFrame(sequence)};
-  if(video){media.onended=()=>{if(memoryPlaying&&sequence===memorySequence)advanceMemoryFrame()};if(memoryPlaying)media.play().catch(()=>{if(sequence===memorySequence){memoryPlaying=false;updateMemoryPlaybackButton();$('#memoryViewer').classList.remove('is-playing')}})}
+  if(video){memoryPlaying=false;clearMemoryTimer();updateMemoryPlaybackButton();$('#memoryViewer').classList.remove('is-playing')}
   else{media.onload=()=>scheduleMemoryFrame(sequence);if(media.complete)scheduleMemoryFrame(sequence)}
 }
+function stopMemoryMedia(){const previous=$('#memoryFrameMedia');if(previous?.tagName==='VIDEO'){previous.pause();previous.removeAttribute('src');previous.load()}}
 function initMemoryViewer(){
   $('#memoryFramePrev').onclick=()=>{if(memoryFrameIndex>0){memoryFrameIndex--;showMemoryFrame()}};
   $('#memoryFrameNext').onclick=()=>{if(memoryFrameIndex<memoryFrames.length-1){memoryFrameIndex++;showMemoryFrame()}};
-  $('#memoryPlayPause').onclick=()=>{memoryPlaying=!memoryPlaying;if(memoryPlaying&&memoryFrameIndex===memoryFrames.length-1)memoryFrameIndex=0;showMemoryFrame()};
+  $('#memoryPlayPause').onclick=()=>{if(!memoryPhotosOnly){const current=memoryFrames[memoryFrameIndex]?.file.id;memoryFrames=memoryFrames.filter(x=>x.file.mime.startsWith('image/'));memoryFrameIndex=Math.max(0,memoryFrames.findIndex(x=>x.file.id===current));memoryPhotosOnly=true;if(!memoryFrames.length)return;memoryPlaying=true}else{memoryPlaying=!memoryPlaying;if(memoryPlaying&&memoryFrameIndex===memoryFrames.length-1)memoryFrameIndex=0}showMemoryFrame()};
   $('#memorySpeed').onchange=()=>{if(memoryPlaying&&$('#memoryFrameMedia')?.tagName==='IMG')scheduleMemoryFrame(memorySequence)};
-  $('#memoryViewer').addEventListener('close',()=>{memoryPlaying=false;memorySequence++;clearMemoryTimer();$('#memoryViewerStage').innerHTML='';memoryFrames=[];$('#memoryViewer').classList.remove('is-playing')});
+  $('#memoryViewer').addEventListener('close',()=>{memoryPlaying=false;memorySequence++;clearMemoryTimer();stopMemoryMedia();$('#memoryViewerStage').innerHTML='';memoryFrames=[];$('#memoryViewer').classList.remove('is-playing')});
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&$('#memoryViewer').open&&memoryPlaying){memoryPlaying=false;clearMemoryTimer();const video=$('#memoryFrameMedia');if(video?.tagName==='VIDEO')video.pause();$('#memoryViewer').classList.remove('is-playing');updateMemoryPlaybackButton()}});
   document.addEventListener('keydown',e=>{if(!$('#memoryViewer').open||['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName))return;if(e.key==='ArrowRight'){$('#memoryFrameNext').click();e.preventDefault()}if(e.key==='ArrowLeft'){$('#memoryFramePrev').click();e.preventDefault()}});
 }

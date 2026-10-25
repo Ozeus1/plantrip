@@ -24,6 +24,19 @@ def db():
 def password(value, salt):
     return hashlib.pbkdf2_hmac('sha256', value.encode(), bytes.fromhex(salt), 200000).hex()
 
+def byte_range(value,size):
+    match=re.fullmatch(r'bytes=(\d*)-(\d*)',value or '')
+    if not match or not any(match.groups()):return None
+    first,last=match.groups()
+    if len(first)>20 or len(last)>20:raise ValueError('Range inválido')
+    if not first:
+        count=int(last)
+        if count<=0 or size==0:raise ValueError('Range inválido')
+        return max(0,size-count),size-1
+    start=int(first);end=int(last) if last else size-1
+    if start>=size or end<start:raise ValueError('Range inválido')
+    return start,min(end,size-1)
+
 def init():
     with db() as c:
         c.executescript('''
@@ -69,7 +82,32 @@ class Handler(BaseHTTPRequestHandler):
         body=json.dumps(data,ensure_ascii=False).encode()
         self.send_response(status); self.send_header('Content-Type','application/json; charset=utf-8'); self.send_header('Content-Length',str(len(body)))
         for name,value in (headers or {}).items():self.send_header(name,value)
-        self.send_header('Cache-Control','no-store'); self.end_headers(); self.wfile.write(body)
+        self.send_header('Cache-Control','no-store'); self.end_headers()
+        if self.command!='HEAD':self.wfile.write(body)
+
+    def do_HEAD(self):self.do_GET()
+
+    def send_file(self,target,mime,private=False):
+        with target.open('rb') as stream:
+            size=os.fstat(stream.fileno()).st_size;start=0;end=size-1;status=200
+            if self.command=='GET' and not self.headers.get('If-Range'):
+                try:requested=byte_range(self.headers.get('Range'),size)
+                except ValueError:
+                    self.send_response(416);self.send_header('Content-Range',f'bytes */{size}');self.send_header('Content-Length','0');self.send_header('Accept-Ranges','bytes');self.send_header('Cache-Control','no-store');self.end_headers();return
+                if requested is not None:start,end=requested;status=206
+            self.send_response(status);self.send_header('Content-Type',mime);self.send_header('Accept-Ranges','bytes')
+            self.send_header('X-Content-Type-Options','nosniff');self.send_header('Content-Length',str(max(0,end-start+1)))
+            if private:self.send_header('Cache-Control','private, no-store')
+            if status==206:self.send_header('Content-Range',f'bytes {start}-{end}/{size}')
+            self.end_headers()
+            if self.command=='HEAD':return
+            stream.seek(start);remaining=end-start+1
+            try:
+                while remaining>0:
+                    chunk=stream.read(min(256*1024,remaining))
+                    if not chunk:break
+                    self.wfile.write(chunk);remaining-=len(chunk)
+            except (BrokenPipeError,ConnectionResetError):pass
 
     def user(self,c):
         cookie=SimpleCookie(); cookie.load(self.headers.get('Cookie',''))
@@ -128,10 +166,7 @@ class Handler(BaseHTTPRequestHandler):
                 if not target.resolve().is_relative_to((ROOT/'static').resolve()):return self.respond({'error':'Inválido'},404)
                 mime=mimetypes.guess_type(str(target))[0] or 'application/octet-stream'
             if not target.is_file():return self.respond({'error':'Não encontrado'},404)
-            body=target.read_bytes(); self.send_response(200); self.send_header('Content-Type',mime)
-            if path.startswith('/media/'):self.send_header('Cache-Control','private, no-store')
-            self.send_header('X-Content-Type-Options','nosniff')
-            self.send_header('Content-Length',str(len(body))); self.end_headers(); self.wfile.write(body)
+            self.send_file(target,mime,path.startswith('/media/'))
 
     def do_POST(self):
         try:
