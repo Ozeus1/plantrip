@@ -23,7 +23,7 @@ function initPasswordControls(){
   $('#resetPasswordForm').onsubmit=async ev=>{
     ev.preventDefault();if(!resetPasswordUser)return;
     const b=$('#resetPasswordGenerate');b.disabled=true;$('#resetPasswordError').textContent='';
-    try{const result=await api('/api/users/reset-password',{user_id:resetPasswordUser.id});$('#generatedPassword').textContent=result.password;$('#resetPasswordResult').hidden=false;b.hidden=true;toast('Nova senha gerada. As sessões anteriores foram encerradas.')}
+    try{const result=await api('/api/users/reset-password',{user_id:resetPasswordUser.id});$('#generatedPassword').textContent=result.password;$('#resetPasswordResult').hidden=false;b.hidden=true;const updated=await api('/api/state'+(selectedTrip?'?trip_id='+selectedTrip:''));state.password_requests=updated.password_requests;recoveryBadge();if(view==='users')renderManagement();toast('Nova senha gerada. As sessões anteriores foram encerradas.')}
     catch(ex){$('#resetPasswordError').textContent=ex.message;b.disabled=false}
   };
   $('#copyGeneratedPassword').onclick=async()=>{try{await navigator.clipboard.writeText($('#generatedPassword').textContent);toast('Senha copiada. Compartilhe diretamente com o usuário.')}catch{toast('Selecione a senha exibida e copie manualmente.')}};

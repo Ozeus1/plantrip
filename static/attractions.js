@@ -38,7 +38,7 @@ function renderAttraction(e,g){
   document.querySelectorAll('[data-guide-nav]').forEach(b=>b.onclick=()=>openAttraction(b.dataset.guideNav));
   if($('#listenHistory'))$('#listenHistory').onclick=()=>{const b=$('#listenHistory');if(speechSynthesis.speaking){speechSynthesis.cancel();b.textContent='◖ Ouvir história';return}const utterance=new SpeechSynthesisUtterance(guide.history.join(' '));utterance.lang='pt-BR';utterance.onend=()=>b.textContent='◖ Ouvir história';speechSynthesis.speak(utterance);b.textContent='■ Parar leitura'};
   if($('#editGuideEntry'))$('#editGuideEntry').onclick=()=>openEditor(e);
-  $('#publishGuideMemory').onclick=()=>{openEditor(null,'diary');const f=$('#entryForm');f.elements.attraction_id.value=e.id;f.elements.title.value='Memórias: '+e.title;f.elements.place.value=e.place;f.elements.start.value=e.start?.length>10?e.start:''};
+  $('#publishGuideMemory').onclick=()=>openMemoryEditor(null,e);
   $('#guideCommentForm').onsubmit=async ev=>{ev.preventDefault();const b=ev.target.querySelector('button');b.disabled=true;try{await api('/api/comments',{entry_id:e.id,body:ev.target.elements.body.value});await load();$('#guide-community').scrollIntoView({behavior:'smooth'});toast('Comentário enviado.')}catch(ex){$('#guideCommentError').textContent=ex.message;b.disabled=false}};
   bindActions();
 }

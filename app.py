@@ -37,6 +37,8 @@ def init():
         CREATE TABLE IF NOT EXISTS trips(id INTEGER PRIMARY KEY,name TEXT NOT NULL,start TEXT NOT NULL,end TEXT NOT NULL,places TEXT NOT NULL,notes TEXT NOT NULL DEFAULT '');
         CREATE TABLE IF NOT EXISTS trip_members(trip_id INTEGER REFERENCES trips(id) ON DELETE CASCADE,user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,PRIMARY KEY(trip_id,user_id));
         CREATE TABLE IF NOT EXISTS migrations(name TEXT PRIMARY KEY);
+        CREATE TABLE IF NOT EXISTS password_requests(id INTEGER PRIMARY KEY,user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,created TEXT NOT NULL,status TEXT NOT NULL DEFAULT 'pending',resolved_by INTEGER REFERENCES users(id));
+        CREATE UNIQUE INDEX IF NOT EXISTS one_pending_password_request ON password_requests(user_id) WHERE status='pending';
         ''')
         if 'trip_id' not in {r['name'] for r in c.execute('PRAGMA table_info(entries)')}:
             c.execute('ALTER TABLE entries ADD COLUMN trip_id INTEGER REFERENCES trips(id)')
@@ -100,7 +102,8 @@ class Handler(BaseHTTPRequestHandler):
                     e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
                 members=[dict(r) for r in c.execute('SELECT id,name,role FROM users WHERE id IN (SELECT user_id FROM trip_members WHERE trip_id=?)',(trip_id,))]
                 users=[dict(r) for r in c.execute('SELECT id,name,email,role FROM users ORDER BY name')] if u['role']=='admin' else []
-                return self.respond({'user':{k:u[k] for k in ('id','name','role')},'entries':entries,'members':members,'users':users,'trips':trips,'trip_id':trip_id})
+                requests=[dict(r) for r in c.execute("SELECT p.id,p.user_id,p.created,u.name,u.email FROM password_requests p JOIN users u ON u.id=p.user_id WHERE p.status='pending' ORDER BY p.created")] if u['role']=='admin' else []
+                return self.respond({'user':{k:u[k] for k in ('id','name','role')},'entries':entries,'members':members,'users':users,'trips':trips,'trip_id':trip_id,'password_requests':requests})
             if path.startswith('/api/attractions/'):
                 if not u:return self.respond({'error':'Faça login para consultar esta atração'},401)
                 eid=path.rsplit('/',1)[-1]
@@ -140,6 +143,17 @@ class Handler(BaseHTTPRequestHandler):
             payload=json.loads(raw) if self.headers.get('Content-Type','').startswith('application/json') else {}
             with db() as c:
                 u=self.user(c); path=self.path
+                if path=='/api/password-requests':
+                    email=payload.get('email','')
+                    if not isinstance(email,str) or '@' not in email or len(email)>254:raise ValueError('Informe um e-mail válido')
+                    c.execute('BEGIN IMMEDIATE')
+                    account=c.execute('SELECT id FROM users WHERE email=?',(email.strip().lower(),)).fetchone()
+                    if account:
+                        last=c.execute('SELECT created FROM password_requests WHERE user_id=? ORDER BY id DESC LIMIT 1',(account['id'],)).fetchone()
+                        now=datetime.now(timezone.utc)
+                        if not last or datetime.fromisoformat(last['created'])<now-timedelta(minutes=10):
+                            c.execute('INSERT OR IGNORE INTO password_requests(user_id,created) VALUES(?,?)',(account['id'],now.isoformat()))
+                    return self.respond({'ok':True,'message':'Se o e-mail estiver cadastrado, a solicitação ficará disponível para o administrador no painel do site.'})
                 if path in ('/api/setup','/api/login'):
                     if path.endswith('setup'):
                         if os.environ.get('ALLOW_SETUP','1')!='1':return self.respond({'error':'Cadastro inicial desabilitado. O administrador deve ser criado no servidor.'},403)
@@ -157,6 +171,11 @@ class Handler(BaseHTTPRequestHandler):
                     self.send_header('Set-Cookie',f'session={token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=604800'+('; Secure' if os.environ.get('COOKIE_SECURE')=='1' else ''))
                     self.send_header('Content-Type','application/json'); self.end_headers(); self.wfile.write(b'{}'); return
                 if not u:return self.respond({'error':'Faça login'},401)
+                if path=='/api/password-requests/resolve':
+                    if u['role']!='admin':return self.respond({'error':'Apenas administrador'},403)
+                    result=c.execute("UPDATE password_requests SET status='resolved',resolved_by=? WHERE id=? AND status='pending'",(u['id'],payload.get('request_id')))
+                    if not result.rowcount:raise ValueError('Solicitação inexistente ou já atendida')
+                    return self.respond({'ok':True})
                 if path=='/api/logout':
                     cookie=SimpleCookie(); cookie.load(self.headers.get('Cookie','')); c.execute('DELETE FROM sessions WHERE token=?',(cookie['session'].value,)); return self.respond({'ok':True})
                 if path=='/api/account/password':
@@ -171,6 +190,7 @@ class Handler(BaseHTTPRequestHandler):
                     salt=secrets.token_hex(16)
                     c.execute('UPDATE users SET password=?,salt=? WHERE id=?',(password(new,salt),salt,u['id']))
                     c.execute('DELETE FROM sessions WHERE user_id=?',(u['id'],))
+                    c.execute("UPDATE password_requests SET status='resolved',resolved_by=? WHERE user_id=? AND status='pending'",(u['id'],u['id']))
                     return self.respond({'ok':True},headers={'Set-Cookie':'session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0'})
                 if path=='/api/users/reset-password':
                     c.execute('BEGIN IMMEDIATE');u=self.user(c)
@@ -183,6 +203,7 @@ class Handler(BaseHTTPRequestHandler):
                     new=''.join(secrets.choice(alphabet) for _ in range(14));salt=secrets.token_hex(16)
                     c.execute('UPDATE users SET password=?,salt=? WHERE id=?',(password(new,salt),salt,target['id']))
                     c.execute('DELETE FROM sessions WHERE user_id=?',(target['id'],))
+                    c.execute("UPDATE password_requests SET status='resolved',resolved_by=? WHERE user_id=? AND status='pending'",(u['id'],target['id']))
                     return self.respond({'ok':True,'name':target['name'],'password':new})
                 if path=='/api/members':
                     if u['role']!='admin':return self.respond({'error':'Apenas administrador'},403)
@@ -247,10 +268,11 @@ class Handler(BaseHTTPRequestHandler):
                     title=payload.get('title','').strip()
                     if not title:raise ValueError('Informe o título')
                     start=payload.get('start',''); end=payload.get('end','')
+                    if kind=='diary' and u['role']!='admin':start=start[:10];end=''
                     if start:datetime.fromisoformat(start)
                     if end and (not start or datetime.fromisoformat(end)<datetime.fromisoformat(start)):raise ValueError('O término deve ser posterior ao início')
-                    values=(kind,title,payload.get('place',''),start,end,payload.get('description',''),payload.get('category',''))
-                    attraction_id=payload.get('attraction_id') or (old['attraction_id'] if old else None)
+                    values=(kind,title,payload.get('place',''),start,end,payload.get('description',''),'Memória' if kind=='diary' and u['role']!='admin' else payload.get('category',''))
+                    attraction_id=(payload.get('attraction_id') or None) if 'attraction_id' in payload else (old['attraction_id'] if old else None)
                     if attraction_id:
                         parent=c.execute("SELECT trip_id FROM entries WHERE id=? AND kind='tour'",(attraction_id,)).fetchone()
                         if kind!='diary' or not parent or str(parent['trip_id'])!=str(tid):raise ValueError('Atração inválida para esta memória')
