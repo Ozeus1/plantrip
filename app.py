@@ -1,4 +1,4 @@
-import os, json, sqlite3, secrets, hashlib, hmac, mimetypes, re, string
+import os, json, sqlite3, secrets, hashlib, hmac, mimetypes, re, string, base64, binascii
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
@@ -63,6 +63,10 @@ def init():
             c.execute('ALTER TABLE entries ADD COLUMN sort_order INTEGER')
         if 'public_diary' not in {r['name'] for r in c.execute('PRAGMA table_info(trips)')}:
             c.execute('ALTER TABLE trips ADD COLUMN public_diary INTEGER NOT NULL DEFAULT 0')
+        for column in ('login','photo'):
+            if column not in {r['name'] for r in c.execute('PRAGMA table_info(users)')}:
+                c.execute(f"ALTER TABLE users ADD COLUMN {column} TEXT NOT NULL DEFAULT ''")
+        c.execute("CREATE UNIQUE INDEX IF NOT EXISTS users_unique_login ON users(login COLLATE NOCASE) WHERE login<>''")
         from europe import seed
         seed(c)
         from attractions import attach_guides
@@ -120,10 +124,10 @@ class Handler(BaseHTTPRequestHandler):
             u=self.user(c)
             if path=='/api/public/diary':
                 trips=[dict(r) for r in c.execute('SELECT id,name FROM trips WHERE public_diary=1 ORDER BY start,id')]
-                entries=[dict(r) for r in c.execute("SELECT e.id,e.trip_id,e.title,e.place,e.start,e.description,u.name author FROM entries e JOIN trips t ON t.id=e.trip_id JOIN users u ON u.id=e.user_id WHERE e.kind='diary' AND t.public_diary=1 ORDER BY e.start DESC,e.id DESC")]
+                entries=[dict(r) for r in c.execute("SELECT e.id,e.trip_id,e.title,e.place,e.start,e.description,u.name author,u.photo author_photo FROM entries e JOIN trips t ON t.id=e.trip_id JOIN users u ON u.id=e.user_id WHERE e.kind='diary' AND t.public_diary=1 ORDER BY e.start DESC,e.id DESC")]
                 for e in entries:
                     e['files']=[dict(r) for r in c.execute("SELECT id,name,mime FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%')",(e['id'],))]
-                    e['comments']=[dict(r) for r in c.execute('SELECT u.name author,c.body,c.created FROM comments c JOIN users u ON u.id=c.user_id WHERE c.entry_id=? ORDER BY c.id',(e['id'],))]
+                    e['comments']=[dict(r) for r in c.execute('SELECT u.name author,u.photo author_photo,c.body,c.created FROM comments c JOIN users u ON u.id=c.user_id WHERE c.entry_id=? ORDER BY c.id',(e['id'],))]
                 return self.respond({'trips':trips,'entries':entries})
             if path=='/api/state':
                 if not u:
@@ -132,25 +136,25 @@ class Handler(BaseHTTPRequestHandler):
                 requested=parse_qs(urlsplit(self.path).query).get('trip_id',[None])[0]
                 trip_id=next((t['id'] for t in trips if str(t['id'])==requested),None) if requested else (trips[0]['id'] if trips else None)
                 if requested and trip_id is None:return self.respond({'error':'Sem acesso a esta viagem'},403)
-                entries=[dict(r) for r in c.execute('SELECT e.*,u.name author FROM entries e JOIN users u ON u.id=e.user_id WHERE e.trip_id=? ORDER BY CASE WHEN sort_order IS NULL THEN 1 ELSE 0 END,sort_order,start,id',(trip_id,))]
+                entries=[dict(r) for r in c.execute('SELECT e.*,u.name author,u.photo author_photo FROM entries e JOIN users u ON u.id=e.user_id WHERE e.trip_id=? ORDER BY CASE WHEN sort_order IS NULL THEN 1 ELSE 0 END,sort_order,start,id',(trip_id,))]
                 for e in entries:
                     from attractions import preview
                     e['guide']=preview(e)
                     e['files']=[dict(r) for r in c.execute('SELECT id,name,mime FROM files WHERE entry_id=?',(e['id'],))]
-                    e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
-                members=[dict(r) for r in c.execute('SELECT id,name,role FROM users WHERE id IN (SELECT user_id FROM trip_members WHERE trip_id=?)',(trip_id,))]
-                users=[dict(r) for r in c.execute('SELECT id,name,email,role FROM users ORDER BY name')] if u['role']=='admin' else []
+                    e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author,u.photo author_photo FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
+                members=[dict(r) for r in c.execute('SELECT id,name,role,login,photo FROM users WHERE id IN (SELECT user_id FROM trip_members WHERE trip_id=?)',(trip_id,))]
+                users=[dict(r) for r in c.execute('SELECT id,name,email,role,login,photo FROM users ORDER BY name')] if u['role']=='admin' else []
                 requests=[dict(r) for r in c.execute("SELECT p.id,p.user_id,p.created,u.name,u.email FROM password_requests p JOIN users u ON u.id=p.user_id WHERE p.status='pending' ORDER BY p.created")] if u['role']=='admin' else []
-                return self.respond({'user':{k:u[k] for k in ('id','name','role')},'entries':entries,'members':members,'users':users,'trips':trips,'trip_id':trip_id,'password_requests':requests})
+                return self.respond({'user':{k:u[k] for k in ('id','name','role','login','photo')},'entries':entries,'members':members,'users':users,'trips':trips,'trip_id':trip_id,'password_requests':requests})
             if path.startswith('/api/attractions/'):
                 if not u:return self.respond({'error':'Faça login para consultar esta atração'},401)
                 eid=path.rsplit('/',1)[-1]
-                entry=c.execute("SELECT e.*,u.name author FROM entries e JOIN users u ON u.id=e.user_id WHERE e.id=? AND e.kind='tour'",(eid,)).fetchone()
+                entry=c.execute("SELECT e.*,u.name author,u.photo author_photo FROM entries e JOIN users u ON u.id=e.user_id WHERE e.id=? AND e.kind='tour'",(eid,)).fetchone()
                 if not entry:return self.respond({'error':'Passeio não encontrado'},404)
                 if not allowed(c,u,entry['trip_id']):return self.respond({'error':'Sem acesso a esta viagem'},403)
                 e=dict(entry)
                 e['files']=[dict(r) for r in c.execute('SELECT id,name,mime FROM files WHERE entry_id=?',(e['id'],))]
-                e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
+                e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author,u.photo author_photo FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
                 from attractions import guide_for
                 return self.respond({'entry':e,'guide':guide_for(entry)})
             if path.startswith('/media/'):
@@ -198,8 +202,8 @@ class Handler(BaseHTTPRequestHandler):
                         seed(c)
                         from attractions import attach_guides
                         attach_guides(c)
-                    row=c.execute('SELECT * FROM users WHERE email=?',(payload.get('email','').strip().lower(),)).fetchone()
-                    if not row or not hmac.compare_digest(password(payload.get('password',''),row['salt']),row['password']):return self.respond({'error':'E-mail ou senha inválidos'},401)
+                    row=c.execute("SELECT * FROM users WHERE email=? COLLATE NOCASE OR (login<>'' AND login=? COLLATE NOCASE)",(payload.get('email','').strip().lower(),payload.get('email','').strip().lower())).fetchone()
+                    if not row or not hmac.compare_digest(password(payload.get('password',''),row['salt']),row['password']):return self.respond({'error':'Login, e-mail ou senha inválidos'},401)
                     token=secrets.token_hex(32)
                     c.execute('INSERT INTO sessions VALUES(?,?,?)',(token,row['id'],(datetime.now(timezone.utc)+timedelta(days=7)).isoformat()))
                     c.commit(); self.send_response(200)
@@ -254,7 +258,8 @@ class Handler(BaseHTTPRequestHandler):
                     if not c.execute('SELECT 1 FROM users WHERE id=?',(uid,)).fetchone():raise ValueError('Usuário inexistente')
                     name=payload.get('name','').strip(); email=payload.get('email','').strip().lower()
                     if not name or '@' not in email:raise ValueError('Informe nome e e-mail válidos')
-                    c.execute('UPDATE users SET name=?,email=? WHERE id=?',(name,email,uid))
+                    login,photo=self.account_fields(c,payload,uid)
+                    c.execute('UPDATE users SET name=?,email=?,login=?,photo=? WHERE id=?',(name,email,login,photo,uid))
                     return self.respond({'id':uid})
                 if path=='/api/trips':
                     if u['role']!='admin':return self.respond({'error':'Apenas administrador'},403)
@@ -294,7 +299,7 @@ class Handler(BaseHTTPRequestHandler):
                     return self.respond({'ok':True})
                 if path=='/api/entries':
                     kind=payload.get('kind'); eid=payload.get('id')
-                    if kind not in ('logistics','tour','diary'):raise ValueError('Tipo inválido')
+                    if kind not in ('logistics','tour','diary','documents'):raise ValueError('Tipo inválido')
                     old=c.execute('SELECT * FROM entries WHERE id=?',(eid,)).fetchone() if eid else None
                     tid=old['trip_id'] if old else payload.get('trip_id')
                     if not tid:raise ValueError('Selecione uma viagem')
@@ -304,6 +309,7 @@ class Handler(BaseHTTPRequestHandler):
                     if not title:raise ValueError('Informe o título')
                     start=payload.get('start',''); end=payload.get('end','')
                     if kind=='diary' and u['role']!='admin':start=start[:10];end=''
+                    if kind=='documents':start=end=''
                     if start:datetime.fromisoformat(start)
                     if end and (not start or datetime.fromisoformat(end)<datetime.fromisoformat(start)):raise ValueError('O término deve ser posterior ao início')
                     values=(kind,title,payload.get('place',''),start,end,payload.get('description',''),'Memória' if kind=='diary' and u['role']!='admin' else payload.get('category',''))
@@ -342,18 +348,38 @@ class Handler(BaseHTTPRequestHandler):
                     from urllib.parse import unquote
                     name=unquote(name); ext=Path(name).suffix.lower()
                     mime_types={'.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.webp':'image/webp','.gif':'image/gif','.mp4':'video/mp4','.webm':'video/webm','.mov':'video/quicktime','.pdf':'application/pdf'}
+                    if entry['kind']=='documents' and ext not in ('.jpg','.jpeg','.png','.webp','.gif','.pdf'):raise ValueError('Documentação aceita PDF e imagens')
                     if ext not in mime_types:raise ValueError('Use imagem, vídeo MP4/WebM/MOV ou PDF')
                     filename=secrets.token_hex(24)+ext; (DATA/'uploads'/filename).write_bytes(raw)
                     c.execute('INSERT INTO files(entry_id,name,path,mime) VALUES(?,?,?,?)',(eid,name,filename,mime_types[ext])); return self.respond({'ok':True})
                 return self.respond({'error':'Rota inexistente'},404)
-        except (ValueError,KeyError,sqlite3.IntegrityError) as ex:self.respond({'error':str(ex) if not isinstance(ex,sqlite3.IntegrityError) else 'Este e-mail já está cadastrado'},400)
+        except (ValueError,KeyError,sqlite3.IntegrityError) as ex:self.respond({'error':str(ex) if not isinstance(ex,sqlite3.IntegrityError) else 'Este e-mail ou login já está cadastrado'},400)
+
+    def account_fields(self,c,p,uid=None):
+        old=c.execute('SELECT login,photo FROM users WHERE id=?',(uid,)).fetchone() if uid else None
+        login=p.get('login',old['login'] if old else '')
+        photo=p.get('photo',old['photo'] if old else '')
+        if not isinstance(login,str) or not isinstance(photo,str):raise ValueError('Login ou foto inválidos')
+        login=login.strip().lower()
+        if login and not re.fullmatch(r'[a-z0-9][a-z0-9._-]{2,29}',login):raise ValueError('Login: use de 3 a 30 letras, números, ponto, hífen ou sublinhado')
+        if login and c.execute('SELECT 1 FROM users WHERE login=? COLLATE NOCASE AND id<>?',(login,uid or 0)).fetchone():raise ValueError('Este login já está cadastrado')
+        if photo:
+            if len(photo)>350000:raise ValueError('Foto muito grande; selecione outra imagem')
+            match=re.fullmatch(r'data:image/(jpeg|png|webp);base64,([A-Za-z0-9+/=]+)',photo)
+            if not match:raise ValueError('Use uma foto JPEG, PNG ou WebP')
+            try:raw=base64.b64decode(match[2],validate=True)
+            except (ValueError,binascii.Error):raise ValueError('Foto inválida')
+            valid=(match[1]=='jpeg' and raw.startswith(b'\xff\xd8\xff')) or (match[1]=='png' and raw.startswith(b'\x89PNG\r\n\x1a\n')) or (match[1]=='webp' and raw.startswith(b'RIFF') and raw[8:12]==b'WEBP')
+            if not valid:raise ValueError('Conteúdo da foto inválido')
+        return login,photo
 
     def add_user(self,c,p,role):
         minimum=8 if role=='admin' else 5
         if len(p.get('password',''))<minimum:raise ValueError(f'Use uma senha com pelo menos {minimum} caracteres')
         if not p.get('name','').strip() or '@' not in p.get('email',''):raise ValueError('Informe nome e e-mail válidos')
         salt=secrets.token_hex(16)
-        return c.execute('INSERT INTO users(name,email,password,salt,role) VALUES(?,?,?,?,?)',(p['name'].strip(),p['email'].strip().lower(),password(p['password'],salt),salt,role)).lastrowid
+        login,photo=self.account_fields(c,p)
+        return c.execute('INSERT INTO users(name,email,password,salt,role,login,photo) VALUES(?,?,?,?,?,?,?)',(p['name'].strip(),p['email'].strip().lower(),password(p['password'],salt),salt,role,login,photo)).lastrowid
 
 if __name__=='__main__':
     init()
