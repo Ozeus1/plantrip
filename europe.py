@@ -137,3 +137,4 @@ def seed(c):
     apply_file(c,'roma_four_days.json','europa-roma-four-days-202610-v1','roma-four-days')
     apply_file(c,'london_two_days.json','europa-london-two-days-202611-v1','london-two-days')
     apply_file(c,'london_without_museums.json','europa-london-no-museums-v1','london-no-museums')
+    apply_file(c,'paris_five_days.json','europa-paris-five-days-202611-v1','paris-five-days')

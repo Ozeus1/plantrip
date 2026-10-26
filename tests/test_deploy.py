@@ -18,7 +18,7 @@ class Deployment(unittest.TestCase):
                     module.main()
                 with app.db() as c:
                     self.assertEqual(c.execute("SELECT count(*) FROM users WHERE role='admin'").fetchone()[0],1)
-                    self.assertEqual(c.execute("SELECT count(*) FROM entries WHERE guide_key IS NOT NULL").fetchone()[0],51)
+                    self.assertEqual(c.execute("SELECT count(*) FROM entries WHERE guide_key IS NOT NULL").fetchone()[0],67)
                     user=c.execute('SELECT * FROM users').fetchone()
                     self.assertEqual(user['password'],app.password('test-password-123',user['salt']))
             finally:app.DATA=original

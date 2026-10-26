@@ -140,6 +140,18 @@ O arquivo é criado pelo usuário do terminal, com acesso privado e data no nome
 Abra `https://plantrip.orleibarbosa.com.br`, confira o certificado, faça login e teste uma foto/PDF, reprodução de vídeo e salvamento da ordem. Confira também os demais sites da VPS após recarregar o proxy. Nenhuma alteração remota é executada automaticamente por estes arquivos.
 # Atualização do roteiro Roma e Toscana — outubro de 2026
 
+## Paris em cinco dias — 02 a 06/11/2026
+
+A migração `europa-paris-five-days-202611-v1` reorganiza os passeios com backup `backup-before-paris-five-days-*.db`, preservando IDs antigos, arquivos, comentários e memórias. Não altera chegada em 01/11 às 23h, saída em 08/11 às 23h nem outras cidades.
+
+- 02/11: Eiffel/Champ de Mars, Pont d’Iéna, Trocadéro, Sena, Notre-Dame e Marais opcional.
+- 03/11: Sacré-Cœur/Montmartre, Moulin Rouge exterior, café Deux Moulins, Garnier exterior ou interior substituindo complementos, Tuileries, Concorde, trecho de Champs-Élysées e Arco exterior.
+- 04/11: Reims, Veuve Clicquot e Ruinart, sem reserva automática nem garantia de percurso integral para cadeira. Almoço entre as duas casas; menor sem degustação alcoólica. Panorama de vinhedos só se houver tempo e parada segura, sem adicionar Épernay.
+- 05/11: Versalhes e Parly 2 opcional, próximo do palácio.
+- 06/11: Louvre selecionado, Sainte-Croix/Jaja como opção de almoço, Pompidou somente exterior, Panthéon e Quartier Latin.
+
+Louvre foi mantido por pedido expresso para Paris, deslocado para o dia 5 para não acumular Versalhes, outlet e museu. O Centre Pompidou de Beaubourg está fechado para renovação em 2026. La Vallée Village fica em Serris, longe de Versalhes: guia sem data para possível 07/11. Gare du Nord é guia logístico sem data; não pressupõe o modal de saída para Londres. “Gaton” permanece pendente de nome/endereço, sem estabelecimento inventado. 07/11 fica livre e 08/11 prioriza saída. Horários e restaurantes são propostas, não reservas. Atualizar com `git pull --ff-only origin main` e `docker compose up -d --build plantrip`; não reimportar o banco local.
+
 Atualização posterior: `europa-london-no-museums-v1` retira Tate e British Museum da agenda, preservando os guias, fotos, comentários e memórias. Sherlock Holmes e Madame Tussauds deixam de aparecer nas sugestões. Após o almoço, segue-se ao Millennium Bridge (14h45) e St Paul’s (15h15), com interior opcional sujeito a reserva e acesso confirmado. Mantém os monumentos e transportes; faz backup antes de aplicar uma única vez. Para instalar: `git pull --ff-only origin main` e `docker compose up -d --build plantrip`.
 
 ## Londres em dois dias — 09 e 10/11/2026

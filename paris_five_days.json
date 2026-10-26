@@ -1,0 +1,295 @@
+{
+  "common": "Paris em cinco dias, de 02 a 06/11/2026. Chegada mantida em 01/11 às 23h; 07/11 livre para descanso/alternativas e 08/11 para saída às 23h, conforme transporte ainda a confirmar. Horários locais e propostas, não reservas. Grupo de seis com cadeira motorizada: validar medidas, peso, necessidade de transferência, banheiro, rampas e elevadores; prever transporte acessível e pausas. Louvre mantido porque foi pedido expressamente para Paris; deslocado para a manhã do dia 5, pois não cabe junto de Versalhes e outlet no dia 4. Pompidou fechado para renovação: somente exterior se obras permitirem. Gare du Nord é alternativa de transporte, sem supor que a viagem para Londres sairá de lá. Duas maisons de Champagne em Reims, Veuve Clicquot e Ruinart, condicionadas à aceitação da cadeira e disponibilidade para seis, incluindo adolescente sem álcool.",
+  "stages": [
+    {
+      "key": "paris-eiffel",
+      "title": "Torre Eiffel",
+      "old_title": "Trocadéro, Torre Eiffel, Champ de Mars e Invalides",
+      "place": "Paris",
+      "start": "2026-11-02T09:30",
+      "end": "2026-11-02T11:00",
+      "description": "DIA 1 — EIFFEL, SENA, NOTRE-DAME E MARAIS | Parada 1: Torre Eiffel.\n\nVisita paga, preço conforme andar e modalidade; exterior não exige ingresso da torre. A instituição permite cadeira nos primeiros níveis por elevador, mas não no cume. 09h30 é proposta; confirmar horário e dimensões antes de pagar.\n\nMobilidade: Confirmar entrada, elevadores e aceitação da cadeira motorizada. Não reservar bilhete de escadas. Prever filas e condições do tempo.",
+      "day": 1
+    },
+    {
+      "key": "paris-champmars",
+      "title": "Champ de Mars",
+      "old_title": "Champ de Mars",
+      "place": "Paris",
+      "start": "2026-11-02T11:10",
+      "end": "2026-11-02T11:35",
+      "description": "DIA 1 — EIFFEL, SENA, NOTRE-DAME E MARAIS | Parada 2: Champ de Mars.\n\nÁrea pública sem ingresso geral; eventos ou áreas isoladas podem mudar a circulação.\n\nMobilidade: Preferir pavimento firme, verificar poças, obras e áreas fechadas; reservar pausa sem exigir trânsito sobre grama.",
+      "day": 1
+    },
+    {
+      "key": "paris-iena",
+      "title": "Pont d’Iéna",
+      "old_title": "Pont d’Iéna",
+      "place": "Paris",
+      "start": "2026-11-02T11:45",
+      "end": "2026-11-02T12:05",
+      "description": "DIA 1 — EIFFEL, SENA, NOTRE-DAME E MARAIS | Parada 3: Pont d’Iéna.\n\nPonte pública sem ingresso. Condições de circulação podem mudar; o mapa não confirma a rota acessível da data.\n\nMobilidade: Conferir rebaixamentos, travessias e inclinações. A ligação até a esplanada alta do Trocadéro é distinta da travessia da ponte.",
+      "day": 1
+    },
+    {
+      "key": "paris-trocadero",
+      "title": "Trocadéro",
+      "old_title": "Trocadéro",
+      "place": "Paris",
+      "start": "2026-11-02T12:20",
+      "end": "2026-11-02T12:45",
+      "description": "DIA 1 — EIFFEL, SENA, NOTRE-DAME E MARAIS | Parada 4: Trocadéro.\n\nEsplanada e observação externa sem ingresso de atração; interiores e museus têm cobrança/regras independentes.\n\nMobilidade: Evitar escadarias entre jardins e esplanada; prever via em rampa ou veículo acessível. Não assumir que a estação Trocadéro tenha percurso adequado para a cadeira.",
+      "day": 1
+    },
+    {
+      "key": "paris-sena",
+      "title": "Rio Sena — passeio panorâmico e cruzeiro opcional",
+      "old_title": "Sena ao entardecer — cruzeiro opcional acessível",
+      "place": "Paris",
+      "start": "2026-11-02T14:00",
+      "end": "2026-11-02T15:00",
+      "description": "DIA 1 — EIFFEL, SENA, NOTRE-DAME E MARAIS | Parada 5: Rio Sena — passeio panorâmico e cruzeiro opcional.\n\nPasseio por espaço público pode ser gratuito; cruzeiro é pago. Operador, preço, cais e percurso ainda não escolhidos. Não prometer desembarque em Notre-Dame como se todo cruzeiro fosse transporte fluvial.\n\nMobilidade: Confirmar rampa, largura, inclinação conforme nível do rio, espaço interno e sanitário do barco; caso contrário, optar por transporte terrestre adaptado.",
+      "day": 1
+    },
+    {
+      "key": "paris-cite",
+      "title": "Catedral de Notre-Dame e Île de la Cité",
+      "old_title": "Pont Neuf, Île de la Cité e Notre-Dame",
+      "place": "Paris",
+      "start": "2026-11-02T15:45",
+      "end": "2026-11-02T17:00",
+      "description": "DIA 1 — EIFFEL, SENA, NOTRE-DAME E MARAIS | Parada 6: Catedral de Notre-Dame e Île de la Cité.\n\nEntrada na catedral gratuita. A página de deficiência física informa acesso dedicado e dispensa de reserva para esse procedimento; confirmar para o grupo e acompanhantes. Reservas gerais gratuitas não tornam torres/serviços automaticamente incluídos.\n\nMobilidade: Portal central com acesso para cadeira segundo a instituição; confirmar acolhimento e banheiro alternativo, pois os sanitários do parvis indicados no site não são acessíveis a cadeiras. A catedral não fornece cadeira de empréstimo.",
+      "day": 1
+    },
+    {
+      "key": "paris-marais",
+      "title": "Marais ao entardecer — passeio opcional",
+      "old_title": "Marais, Hôtel de Ville e Place des Vosges",
+      "place": "Paris",
+      "start": "2026-11-02T18:00",
+      "end": "2026-11-02T19:30",
+      "description": "DIA 1 — EIFFEL, SENA, NOTRE-DAME E MARAIS | Parada 7: Marais ao entardecer — passeio opcional.\n\nPasseio urbano sem ingresso geral. Bares, restaurantes e eventos possuem consumo/regras próprios; nenhuma reserva foi efetuada.\n\nMobilidade: Calçadas estreitas, soleiras e multidões podem exigir desvios. Confirmar banheiro e entrada do restaurante antes de decidir pela noite no bairro.",
+      "day": 1
+    },
+    {
+      "key": "paris-sacre",
+      "title": "Basílica de Sacré-Cœur",
+      "old_title": "Basílica de Sacré-Cœur",
+      "place": "Paris",
+      "start": "2026-11-03T09:00",
+      "end": "2026-11-03T09:45",
+      "description": "DIA 2 — MONTMARTRE E EIXO MONUMENTAL | Parada 1: Basílica de Sacré-Cœur.\n\nNave com entrada gratuita segundo a visita ordinária; setores especiais seguem regras próprias. Confirmar celebrações e uso do acesso adaptado.\n\nMobilidade: A instituição indica elevador pelo 35 rue du Chevalier de la Barre. Confirmar acolhimento, medidas e funcionamento para a cadeira motorizada; não presumir acesso à cúpula.",
+      "day": 2
+    },
+    {
+      "key": "paris-montmartre",
+      "title": "Montmartre e Place du Tertre",
+      "old_title": "Montmartre e Sacré-Cœur — ou Passages Couverts",
+      "place": "Paris",
+      "start": "2026-11-03T10:00",
+      "end": "2026-11-03T10:45",
+      "description": "DIA 2 — MONTMARTRE E EIXO MONUMENTAL | Parada 2: Montmartre e Place du Tertre.\n\nPasseio urbano sem ingresso. Retratos, lojas, cafés e atrações específicas são serviços pagos à parte.\n\nMobilidade: É o trecho mais delicado em relevo e pavimentação. Não usar Rue Foyatier ou outras escadarias como ligação da cadeira; confirmar veículo e ponto de embarque.",
+      "day": 2
+    },
+    {
+      "key": "paris-moulin",
+      "title": "Moulin Rouge — exterior",
+      "old_title": "Moulin Rouge — exterior",
+      "place": "Paris",
+      "start": "2026-11-03T11:15",
+      "end": "2026-11-03T11:35",
+      "description": "DIA 2 — MONTMARTRE E EIXO MONUMENTAL | Parada 3: Moulin Rouge — exterior.\n\nExterior sem ingresso. Show não reservado nem incluído; se desejado, consultar idade mínima, conteúdo, preço, mesa, vestimenta e acesso diretamente.\n\nMobilidade: Confirmar a rota e evitar aglomeração na calçada. Para espetáculo, comunicar a cadeira e necessidades à equipe de reservas antes de pagar.",
+      "day": 2
+    },
+    {
+      "key": "paris-deuxmoulins",
+      "title": "Café des Deux Moulins — pausa opcional",
+      "old_title": "Café des Deux Moulins — pausa opcional",
+      "place": "Paris",
+      "start": "2026-11-03T11:50",
+      "end": "2026-11-03T12:50",
+      "description": "DIA 2 — MONTMARTRE E EIXO MONUMENTAL | Parada 4: Café des Deux Moulins — pausa opcional.\n\nConsumo conforme cardápio vigente; nenhuma mesa ou preço foi reservado. A pausa pode ser feita em outro café acessível sem prejuízo do roteiro.\n\nMobilidade: Solicitar confirmação de entrada, largura, mesa e banheiro. Não assumir que um estabelecimento tradicional de bairro tenha todos os ambientes acessíveis.",
+      "day": 2
+    },
+    {
+      "key": "paris-opera",
+      "title": "Palais Garnier — Opéra de Paris",
+      "old_title": "Opéra Garnier, Galeries Lafayette e Grands Boulevards",
+      "place": "Paris",
+      "start": "2026-11-03T13:40",
+      "end": "2026-11-03T14:20",
+      "description": "DIA 2 — MONTMARTRE E EIXO MONUMENTAL | Parada 5: Palais Garnier — Opéra de Paris.\n\nExterior gratuito; interior pago e sujeito à operação artística. O intervalo de 40 minutos é principalmente para observação externa. Não comprar visita completa sem redistribuir a tarde.\n\nMobilidade: A Opéra informa elevador PMR e atendimento específico. Confirmar ingresso/procedimento correto para visita turística e a cadeira, separadamente de regras de espetáculos.",
+      "day": 2
+    },
+    {
+      "key": "paris-tuileries",
+      "title": "Jardim das Tuileries",
+      "old_title": "Palais Royal e Louvre exterior — alternativa leve",
+      "place": "Paris",
+      "start": "2026-11-03T15:00",
+      "end": "2026-11-03T15:30",
+      "description": "DIA 2 — MONTMARTRE E EIXO MONUMENTAL | Parada 6: Jardim das Tuileries.\n\nJardim público com horários próprios, sem ingresso geral. Confirmar fechamento de novembro e possíveis áreas isoladas; não relacionar entrada no jardim ao ingresso do Louvre.\n\nMobilidade: Preferir alamedas firmes; verificar piso solto, poças e rebaixamentos nos portões. Não planejar visita após o horário de fechamento.",
+      "day": 2
+    },
+    {
+      "key": "paris-concorde",
+      "title": "Place de la Concorde",
+      "old_title": "Place de la Concorde",
+      "place": "Paris",
+      "start": "2026-11-03T15:40",
+      "end": "2026-11-03T16:00",
+      "description": "DIA 2 — MONTMARTRE E EIXO MONUMENTAL | Parada 7: Place de la Concorde.\n\nPraça pública sem ingresso de atração. Não exige entrar em edifícios ou contratar passeio privado.\n\nMobilidade: Praça ampla, trânsito e possíveis desvios; confirmar rebaixamentos e travessias. Evitar rotas que cruzem várias faixas apenas para uma foto.",
+      "day": 2
+    },
+    {
+      "key": "paris-champs",
+      "title": "Champs-Élysées — trecho selecionado",
+      "old_title": "Champs-Élysées — trecho selecionado",
+      "place": "Paris",
+      "start": "2026-11-03T16:30",
+      "end": "2026-11-03T17:00",
+      "description": "DIA 2 — MONTMARTRE E EIXO MONUMENTAL | Parada 8: Champs-Élysées — trecho selecionado.\n\nPasseio público sem ingresso geral; consumo e lojas independentes. Não reservar serviços de compra como se fossem necessários ao passeio.\n\nMobilidade: Reduzir distâncias, conferir calçadas e travessias. Obras, portas e estabelecimentos podem ter barreiras; não supor acesso uniforme.",
+      "day": 2
+    },
+    {
+      "key": "paris-arco",
+      "title": "Arco do Triunfo — exterior",
+      "old_title": "Champs-Élysées e Arco — alternativa fora do roteiro principal",
+      "place": "Paris",
+      "start": "2026-11-03T17:10",
+      "end": "2026-11-03T17:40",
+      "description": "DIA 2 — MONTMARTRE E EIXO MONUMENTAL | Parada 9: Arco do Triunfo — exterior.\n\nExterior como proposta principal. Interior/cobertura pagos e sujeitos a condições próprias; não prometer panorama acessível sem confirmação.\n\nMobilidade: Consultar acesso em nível e operação de elevadores/passagens. Evitar escadas subterrâneas como única ligação da cadeira.",
+      "day": 2
+    },
+    {
+      "key": "paris-reims",
+      "title": "Reims e catedral — chegada à Champagne",
+      "old_title": "Reims e catedral — chegada à Champagne",
+      "place": "Reims — Champagne",
+      "start": "2026-11-04T09:30",
+      "end": "2026-11-04T10:10",
+      "description": "DIA 3 — CHAMPAGNE: DUAS MAISONS EM REIMS | Parada 1: Reims e catedral — chegada à Champagne.\n\nPanorama urbano sem ingresso geral. Transporte, duas visitas e alimentação são custos separados; sessão e veículo ainda não reservados.\n\nMobilidade: Confirmar banheiro na chegada, desembarque e rota sem degraus. Não adicionar Épernay ao dia de duas casas.",
+      "day": 3
+    },
+    {
+      "key": "champagne-reims",
+      "title": "Veuve Clicquot — primeira maison",
+      "old_title": "Champagne: Reims, Veuve Clicquot e Montagne de Reims",
+      "place": "Reims — Champagne",
+      "start": "2026-11-04T10:30",
+      "end": "2026-11-04T12:00",
+      "description": "DIA 3 — CHAMPAGNE: DUAS MAISONS EM REIMS | Parada 2: Veuve Clicquot — primeira maison.\n\n04/11/2026 é quarta-feira, dentro do período publicado de visitas de quarta a domingo a partir de 04/11. Isso não garante vaga. Consultar modalidade, preço, menor e acompanhante antes de comprar. Referência de experiência básica anteriormente anunciada a €36 deve ser reconfirmada.\n\nMobilidade: A maison anuncia acesso mediante aviso. Confirmar dimensões/peso, elevador, piso, banheiro e se toda a visita aceita a cadeira motorizada. Contato: visitscenter@veuve-clicquot.fr, +33 3 26 89 53 90.",
+      "day": 3
+    },
+    {
+      "key": "champagne-ruinart",
+      "title": "Ruinart — segunda maison",
+      "old_title": "Ruinart — segunda maison",
+      "place": "Reims — Champagne",
+      "start": "2026-11-04T14:30",
+      "end": "2026-11-04T16:00",
+      "description": "DIA 3 — CHAMPAGNE: DUAS MAISONS EM REIMS | Parada 3: Ruinart — segunda maison.\n\nSegunda visita proposta, não reservada. Cotar a modalidade de 04/11 e política para acompanhante. A FAQ informa acolhimento de crianças, tarifa de 7–17 anos e alternativa sem álcool; confirmar os seis participantes na sessão escolhida.\n\nMobilidade: Confirmar caves, piso, elevador, banheiro e cadeira motorizada. Contato publicado: visites@ruinart.com / +33 1 57 32 42 78; conferir canal na página da experiência antes de reservar.",
+      "day": 3
+    },
+    {
+      "key": "paris-versalhes",
+      "title": "Château de Versailles — palácio e jardins selecionados",
+      "old_title": "Versalhes — alternativa não incluída no roteiro principal",
+      "place": "Paris",
+      "start": "2026-11-05T09:30",
+      "end": "2026-11-05T15:30",
+      "description": "DIA 4 — VERSALHES E COMPRAS OPCIONAIS | Parada 1: Château de Versailles — palácio e jardins selecionados.\n\n05/11 é quinta-feira; palácio normalmente aberto de terça a domingo e, no período de novembro, até 17h30 conforme instituição. Confirmar modalidade de ingresso, horário, deficiência/acompanhante e áreas incluídas. Não usar gratuidade como dispensa automática de reserva.\n\nMobilidade: Conferir acesso adaptado, pátios de pedra, elevadores, banheiro e transporte no domínio. Contato: versaillespourtous@crm.chateauversailles.fr. Não presumir que todos os jardins tenham piso e relevo iguais.",
+      "day": 4
+    },
+    {
+      "key": "paris-parly2",
+      "title": "Westfield Parly 2 — compras opcionais após Versalhes",
+      "old_title": "Westfield Parly 2 — compras opcionais após Versalhes",
+      "place": "Paris",
+      "start": "2026-11-05T16:00",
+      "end": "2026-11-05T17:30",
+      "description": "DIA 4 — VERSALHES E COMPRAS OPCIONAIS | Parada 2: Westfield Parly 2 — compras opcionais após Versalhes.\n\nEntrada em centro comercial sem bilhete de atração; compras são opcionais e individuais. Conferir lojas e horário do dia. La Vallée Village fica em Serris e permanece como alternativa separada sem data.\n\nMobilidade: Confirmar estacionamento/desembarque, elevadores, banheiro e operação das lojas. Não presumir que qualquer ônibus entre palácio e shopping comporte a cadeira sem verificação.",
+      "day": 4
+    },
+    {
+      "key": "paris-louvre",
+      "title": "Museu do Louvre — visita selecionada",
+      "old_title": "Museu do Louvre — visita selecionada",
+      "place": "Paris",
+      "start": "2026-11-06T09:00",
+      "end": "2026-11-06T11:30",
+      "description": "DIA 5 — LOUVRE, MARAIS E QUARTIER LATIN | Parada 1: Museu do Louvre — visita selecionada.\n\nVisita turística paga ou gratuita para categorias elegíveis, com reserva/procedimento a confirmar. Tarifas podem variar por categoria e condição do visitante em 2026: consultar o portal oficial sem aplicar automaticamente valor europeu ao grupo brasileiro. Não é reserva efetuada.\n\nMobilidade: Consultar entrada prioritária, elevadores em serviço, banheiro e circulação entre alas. Não presumir acesso a todas as salas; adaptar a seleção conforme orientação.",
+      "day": 5
+    },
+    {
+      "key": "paris-saintecroix",
+      "title": "Sainte-Croix de la Bretonnerie e Jaja",
+      "old_title": "Sainte-Croix de la Bretonnerie e Jaja",
+      "place": "Paris",
+      "start": "2026-11-06T12:15",
+      "end": "2026-11-06T14:00",
+      "description": "DIA 5 — LOUVRE, MARAIS E QUARTIER LATIN | Parada 2: Sainte-Croix de la Bretonnerie e Jaja.\n\nRua pública sem ingresso. Jaja: 3 rue Sainte-Croix de la Bretonnerie, e-mail contact@jaja-resto.com e telefone +33 1 42 74 71 52. Cardápio, preço, horário e mesa devem ser confirmados. Não foi feita reserva.\n\nMobilidade: Confirmar soleira, rampa, largura de circulação e banheiro do restaurante; não presumir acessibilidade apenas por haver mesas no térreo.",
+      "day": 5
+    },
+    {
+      "key": "paris-pompidou",
+      "title": "Centre Georges Pompidou — exterior e entorno",
+      "old_title": "Centre Georges Pompidou — exterior e entorno",
+      "place": "Paris",
+      "start": "2026-11-06T14:15",
+      "end": "2026-11-06T14:40",
+      "description": "DIA 5 — LOUVRE, MARAIS E QUARTIER LATIN | Parada 3: Centre Georges Pompidou — exterior e entorno.\n\nSem visita interna: edifício fechado para renovação. Não comprar ingresso de suposta coleção/terraço em Beaubourg para esta data. A programação fora da sede depende de outro endereço e não está incluída.\n\nMobilidade: Obras podem mudar calçadas e passagens. Se o entorno não estiver confortável, dispensar a parada e seguir à próxima região.",
+      "day": 5
+    },
+    {
+      "key": "paris-pantheon",
+      "title": "Panthéon de Paris",
+      "old_title": "Panthéon de Paris",
+      "place": "Paris",
+      "start": "2026-11-06T15:30",
+      "end": "2026-11-06T16:30",
+      "description": "DIA 5 — LOUVRE, MARAIS E QUARTIER LATIN | Parada 4: Panthéon de Paris.\n\nIngresso e categorias de gratuidade a confirmar no CMN. Consultar operação de novembro e última entrada para 06/11; não presumir acesso a panorama ou cripta com a modalidade básica.\n\nMobilidade: Confirmar rampa/entrada, equipamento operacional, banheiro e setores alcançáveis com cadeira motorizada. Não programar escadas ou transferência sem consentimento e possibilidade real do viajante.",
+      "day": 5
+    },
+    {
+      "key": "paris-luxemburgo",
+      "title": "Quartier Latin e Saint-Germain — fim do dia",
+      "old_title": "Saint-Germain, Luxemburgo e Quartier Latin",
+      "place": "Paris",
+      "start": "2026-11-06T16:45",
+      "end": "2026-11-06T18:00",
+      "description": "DIA 5 — LOUVRE, MARAIS E QUARTIER LATIN | Parada 5: Quartier Latin e Saint-Germain — fim do dia.\n\nPasseio urbano sem ingresso geral. “Gaton” ainda sem nome/endereço confirmados; nenhuma reserva ou recomendação específica foi feita sob esse nome.\n\nMobilidade: Conferir calçadas, inclinação e acesso ao restaurante. Evitar transformar o passeio em uma travessia longa até todos os pontos de Saint-Germain e Luxemburgo.",
+      "day": 5
+    },
+    {
+      "key": "paris-garenord",
+      "title": "Gare du Nord — alternativa logística, sem data",
+      "old_title": "Gare du Nord — alternativa logística, sem data",
+      "place": "Paris",
+      "start": "",
+      "end": "",
+      "description": "ALTERNATIVA SEM DATA — fora dos cinco dias principais.\n\nSem visita programada. Bilhetes, assistência e exigências do embarque devem ser consultados no operador real. Não pressupor estação ou trem noturno para a saída informada às 23h.\n\nMobilidade: Confirmar elevadores, percurso até plataforma, assistência e dimensões da cadeira antes de comprar transporte.",
+      "day": 0
+    },
+    {
+      "key": "paris-outlet",
+      "title": "La Vallée Village — alternativa sem data",
+      "old_title": "La Vallée Village — alternativa sem data",
+      "place": "Paris",
+      "start": "",
+      "end": "",
+      "description": "ALTERNATIVA SEM DATA — fora dos cinco dias principais.\n\nSem ingresso geral de atração; compras e transporte à parte. Não agendado no dia de Versalhes. Endereço oficial em Serris, não próximo do palácio.\n\nMobilidade: Consultar desembarque, circulação, sanitário e serviços diretamente; a indicação de RER A não garante por si só um trajeto acessível em todas as etapas.",
+      "day": 0
+    },
+    {
+      "key": "paris-orsay",
+      "title": "Musée d’Orsay — alternativa sem data",
+      "old_title": "Musée d’Orsay — alternativa ao Quartier Latin",
+      "place": "Paris",
+      "start": "",
+      "end": "",
+      "description": "Fora dos cinco dias principais. Louvre é o museu selecionado neste pedido; guia e memórias de Orsay foram preservados para consulta.",
+      "day": 0
+    }
+  ]
+}
