@@ -31,6 +31,6 @@ for key,v in g.items():
  v['alternatives']=[a for a in v.get('alternatives',[]) if not any(x in a['name'] for x in ('British Museum','Sherlock','Madame Tussauds'))]
  v['alternatives_intro']='Museus retirados do roteiro. O segundo dia termina em St Paul’s com tempo para visita interna opcional ou descanso.'
  v['route_footnote']=source['common']+' Museus retirados a pedido do grupo; tarde do dia 10 antecipada para St Paul’s. Guias antigos mantidos apenas como acervo.'
- v['food']=v['food']
+ v['food']=v['food'].replace('13h a 14h','13h30 a 14h15') if v['london_day']==2 else v['food']
 p.write_text(json.dumps(g,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 (ROOT/'london_without_museums.json').write_text(json.dumps(dict(common='Ajuste solicitado: Londres sem museus. Preservar arquivos, comentários e vínculos; sem alterações em transportes ou nas outras cidades.',stages=stages),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
