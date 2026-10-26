@@ -140,6 +140,8 @@ O arquivo é criado pelo usuário do terminal, com acesso privado e data no nome
 Abra `https://plantrip.orleibarbosa.com.br`, confira o certificado, faça login e teste uma foto/PDF, reprodução de vídeo e salvamento da ordem. Confira também os demais sites da VPS após recarregar o proxy. Nenhuma alteração remota é executada automaticamente por estes arquivos.
 # Atualização do roteiro Roma e Toscana — outubro de 2026
 
+Atualização posterior: `europa-london-no-museums-v1` retira Tate e British Museum da agenda, preservando os guias, fotos, comentários e memórias. Sherlock Holmes e Madame Tussauds deixam de aparecer nas sugestões. Após o almoço, segue-se ao Millennium Bridge (14h45) e St Paul’s (15h15), com interior opcional sujeito a reserva e acesso confirmado. Mantém os monumentos e transportes; faz backup antes de aplicar uma única vez. Para instalar: `git pull --ff-only origin main` e `docker compose up -d --build plantrip`.
+
 ## Londres em dois dias — 09 e 10/11/2026
 
 A migração `europa-london-two-days-202611-v1` faz backup `backup-before-london-two-days-*.db`, preserva IDs existentes, arquivos, comentários e memórias, e reorganiza 13 paradas:

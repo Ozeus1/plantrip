@@ -1,0 +1,41 @@
+{
+  "common": "Ajuste solicitado: Londres sem museus. Preservar arquivos, comentários e vínculos; sem alterações em transportes ou nas outras cidades.",
+  "stages": [
+    {
+      "key": "londres-tate",
+      "title": "Tate Modern — fora do roteiro, sem data",
+      "old_title": "Tate Modern — visita curta opcional",
+      "place": "Londres",
+      "start": "",
+      "end": "",
+      "description": "FORA DO ROTEIRO — museus retirados a pedido do grupo. Sem data ou visita programada. Guia e memórias existentes preservados."
+    },
+    {
+      "key": "londres-british",
+      "title": "British Museum — fora do roteiro, sem data",
+      "old_title": "British Museum",
+      "place": "Londres",
+      "start": "",
+      "end": "",
+      "description": "FORA DO ROTEIRO — museus retirados a pedido do grupo. Sem data ou visita programada. Guia e memórias existentes preservados."
+    },
+    {
+      "key": "londres-millennium",
+      "title": "Millennium Bridge — ligação para St Paul’s",
+      "old_title": "Millennium Bridge — ligação para St Paul’s",
+      "place": "Londres",
+      "start": "2026-11-10T14:45",
+      "end": "2026-11-10T15:05",
+      "description": "Tarde reorganizada sem museus. Após London Bridge e almoço, seguir por Bankside ao Millennium Bridge e à Catedral de St Paul’s. Interior da catedral opcional, sujeito a ingresso e acesso confirmados. Reservar tempo para segurança, pausas e trajeto sem escadas; não é reserva efetuada."
+    },
+    {
+      "key": "londres-city",
+      "title": "St Paul’s Cathedral — exterior e visita interna opcional",
+      "old_title": "St Paul’s Cathedral — exterior; interior como alternativa",
+      "place": "Londres",
+      "start": "2026-11-10T15:15",
+      "end": "2026-11-10T16:15",
+      "description": "Tarde reorganizada sem museus. Após London Bridge e almoço, seguir por Bankside ao Millennium Bridge e à Catedral de St Paul’s. Interior da catedral opcional, sujeito a ingresso e acesso confirmados. Reservar tempo para segurança, pausas e trajeto sem escadas; não é reserva efetuada."
+    }
+  ]
+}

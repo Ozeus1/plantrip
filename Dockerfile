@@ -6,6 +6,7 @@ COPY roma2026.py roma2026.json ./
 COPY paris2026.json ./
 COPY roma_four_days.json ./
 COPY london_two_days.json ./
+COPY london_without_museums.json ./
 COPY attractions.py guides.json ./
 COPY static ./static
 COPY scripts/create_admin.py ./scripts/create_admin.py

@@ -33,14 +33,24 @@ class LondonItinerary(unittest.TestCase):
     def test_guides_document_selection_and_access_limitations(self):
         guides=json.loads((ROOT/'guides.json').read_text(encoding='utf-8'))
         london=[g for g in guides.values() if g.get('london_day')]
-        self.assertEqual(len(london),13)
+        self.assertEqual(len(london),12)
         for g in london:
             self.assertGreaterEqual(len({p['source'] for p in g['photos']}),2)
             self.assertEqual(len(g['route_summary']),2)
-            self.assertGreaterEqual(len(g['alternatives']),10)
+            self.assertGreaterEqual(len(g['alternatives']),8)
             self.assertTrue(g['accessibility'])
-        self.assertIn('SOMENTE exterior',guides['londres-city']['booking'])
+        self.assertIn('15h15',guides['londres-city']['booking'])
         self.assertTrue(any('09' in g['route_summary'][0]['date'] for g in london))
         alternatives=guides['londres-city']['alternatives']
         self.assertTrue(any('Fifteen' in a['name'] and 'fechou' in a['text'] for a in alternatives))
-        self.assertTrue(any('Sherlock' in a['name'] and 'nenhum elevador' in a['text'] for a in alternatives))
+        self.assertFalse(any(any(x in a['name'] for x in ('British Museum','Sherlock','Madame Tussauds')) for a in alternatives))
+
+    def test_no_museums_migration_preserves_entry_and_updates_afternoon(self):
+        data=json.loads((ROOT/'london_without_museums.json').read_text(encoding='utf-8'))
+        stages={s['key']:s for s in data['stages']}
+        self.assertEqual(stages['londres-tate']['start'],'')
+        self.assertEqual(stages['londres-british']['start'],'')
+        self.assertEqual(stages['londres-city']['start'],'2026-11-10T15:15')
+        guides=json.loads((ROOT/'guides.json').read_text(encoding='utf-8'))
+        self.assertGreaterEqual(len(guides['londres-tate']['photos']),2)
+        self.assertNotIn('london_day',guides['londres-tate'])
