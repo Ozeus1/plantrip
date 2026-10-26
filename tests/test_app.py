@@ -45,7 +45,7 @@ class Integration(unittest.TestCase):
         stages=[e['title'] for e in initial['entries'] if e['kind']=='logistics']
         for title in ['Voo Fortaleza → Madrid','Voo Madrid → Roma','Hotel Roma','Viagem Roma → Paris','Hotel Paris','Viagem Paris → Londres','Hotel Londres','Viagem Londres → Madrid','Hotel Madrid','Viagem Madrid → Fortaleza']:self.assertEqual(stages.count(title),1,title)
         self.assertNotIn('Chegada a Paris',stages)
-        self.assertEqual(len([e for e in initial['entries'] if e['kind']=='tour']),42)
+        self.assertEqual(len([e for e in initial['entries'] if e['kind']=='tour']),51)
         tours=[e for e in initial['entries'] if e['kind']=='tour']
         for tour in tours:
             guide=call(a,f"/api/attractions/{tour['id']}")
@@ -171,7 +171,7 @@ class Migration(unittest.TestCase):
                 app.init();app.init()
                 with app.db() as c:
                     self.assertEqual(c.execute('SELECT count(*) FROM trips').fetchone()[0],2)
-                    self.assertEqual(c.execute("SELECT count(*) FROM entries WHERE kind='tour'").fetchone()[0],42)
+                    self.assertEqual(c.execute("SELECT count(*) FROM entries WHERE kind='tour'").fetchone()[0],51)
                     row=c.execute('SELECT t.name FROM entries e JOIN trips t ON t.id=e.trip_id WHERE e.id=1').fetchone()
                     self.assertEqual(row[0],'Minha viagem anterior')
                     self.assertEqual(c.execute("SELECT count(*) FROM entries WHERE kind='logistics' AND title LIKE 'Hotel %'").fetchone()[0],4)

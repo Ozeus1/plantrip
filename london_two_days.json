@@ -1,0 +1,155 @@
+{
+  "common": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+  "stages": [
+    {
+      "key": "londres-buckingham",
+      "title": "Palácio de Buckingham — exterior",
+      "old_title": "Palácio de Buckingham — exterior",
+      "place": "Londres",
+      "start": "2026-11-09T10:00",
+      "end": "2026-11-09T10:35",
+      "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 1: Palácio de Buckingham — exterior.\n\nExterior gratuito. A abertura de verão dos State Rooms em 2026 vai de 09/07 a 27/09; qualquer visita especial de novembro exigiria confirmação separada e substituição de parte do roteiro. Troca da guarda não garantida para 09/11.\n\nMobilidade: Escolher a vista do nível da rua; multidões e bloqueios cerimoniais podem alterar o percurso. Não programar a cadeira sobre degraus do monumento. Manter a opção de encurtar esta primeira parada.",
+      "day": 1
+    },
+    {
+      "key": "londres-stjames",
+      "title": "St James’s Park",
+      "old_title": "St James’s Park",
+      "place": "Londres",
+      "start": "2026-11-09T10:45",
+      "end": "2026-11-09T11:20",
+      "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 2: St James’s Park.\n\nParque público sem ingresso geral. Cafés, atividades e serviços têm funcionamento próprio. Não depender de uma instalação específica sem conferir abertura e banheiro.\n\nMobilidade: Usar caminhos pavimentados e evitar atalhos enlameados ou degraus. Conferir inclinações de pontes e sanitários no mapa oficial. Reduzir a parada se houver atraso na chegada a Londres.",
+      "day": 1
+    },
+    {
+      "key": "londres-westminster",
+      "title": "Abadia de Westminster",
+      "old_title": "Westminster, Big Ben e St James’s Park",
+      "place": "Londres",
+      "start": "2026-11-09T11:45",
+      "end": "2026-11-09T13:00",
+      "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 3: Abadia de Westminster.\n\nVisita turística normalmente paga e sujeita a calendário de culto. 11h45 é proposta, não bilhete comprado. Consultar tarifa e política de deficiência/acompanhante; não reservar enquanto chegada a Londres estiver indefinida. Participar de culto não equivale a ingresso turístico gratuito.\n\nMobilidade: A instituição informa acesso sem degraus pela North Door. Confirmar a rota completa da cadeira motorizada e setores não atendidos; há diferenças de nível e áreas especiais. Contato: visitor.experience@westminster-abbey.org.",
+      "day": 1
+    },
+    {
+      "key": "londres-cabines",
+      "title": "Cabines telefônicas de Westminster",
+      "old_title": "Cabines telefônicas de Westminster",
+      "place": "Londres",
+      "start": "2026-11-09T14:00",
+      "end": "2026-11-09T14:15",
+      "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 4: Cabines telefônicas de Westminster.\n\nParada externa gratuita, sujeita a obras, manutenção e acesso da rua. Não há necessidade de entrar na cabine nem de contratar fotografia para conhecê-la.\n\nMobilidade: Usar a cabine como fundo a partir de uma área nivelada. Soleiras e largura interna não são adequadas para presumir acesso da cadeira motorizada; respeitar rebaixamentos e circulação.",
+      "day": 1
+    },
+    {
+      "key": "londres-bigben",
+      "title": "Big Ben e Elizabeth Tower — exterior",
+      "old_title": "Big Ben e Elizabeth Tower — exterior",
+      "place": "Londres",
+      "start": "2026-11-09T14:20",
+      "end": "2026-11-09T14:40",
+      "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 5: Big Ben e Elizabeth Tower — exterior.\n\nExterior gratuito. Tour interno de Big Ben não incluído e depende de reserva, condições de segurança e modalidade apropriada. O Parlamento informa tours acessíveis específicos; consultar antes de planejar qualquer acesso interno.\n\nMobilidade: A proposta dispensa subida. Para tour especial, confirmar requisitos e trajeto com visitparliament@parliament.uk; não inferir que o circuito padrão seja compatível com a cadeira motorizada.",
+      "day": 1
+    },
+    {
+      "key": "londres-parlamento",
+      "title": "Parlamento Britânico — exterior",
+      "old_title": "Parlamento Britânico — exterior",
+      "place": "Londres",
+      "start": "2026-11-09T14:40",
+      "end": "2026-11-09T15:00",
+      "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 6: Parlamento Britânico — exterior.\n\nExterior gratuito. Interior não agendado: tours e modalidades de visita dependem da atividade parlamentar, reserva e acessibilidade confirmadas. Não considerar disponível apenas por ser segunda-feira.\n\nMobilidade: Usar calçadas e travessias sinalizadas. Westminster Bridge tem fluxo e inclinações; escolher acesso em nível e evitar escadas para margens inferiores. Transporte adaptado é alternativa se o trajeto não estiver confortável.",
+      "day": 1
+    },
+    {
+      "key": "londres-southbank",
+      "title": "London Eye e South Bank",
+      "old_title": "South Bank às margens do Tâmisa",
+      "place": "Londres",
+      "start": "2026-11-09T15:30",
+      "end": "2026-11-09T16:30",
+      "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 7: London Eye e South Bank.\n\nIngresso pago com preços variáveis por data/modalidade. Conferir abertura em 09/11, bilhete do visitante e reserva específica para cadeira/acompanhante. Sem confirmação, manter apenas South Bank exterior, sem cobrança de atração.\n\nMobilidade: A atração informa acessibilidade e capacidade limitada para cadeiras por cápsula. Confirmar medidas, peso, equipamento motorizado e documentação do acompanhante diretamente; regras do River Cruise são diferentes e não se aplicam automaticamente à roda.",
+      "day": 1
+    },
+    {
+      "key": "londres-tower",
+      "title": "Torre de Londres",
+      "old_title": "Tower of London e Tower Bridge",
+      "place": "Londres",
+      "start": "2026-11-10T09:00",
+      "end": "2026-11-10T12:00",
+      "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 1: Torre de Londres.\n\nPrincipal visita paga do segundo dia, com cerca de três horas. Confirmar tarifa, horário de 10/11 e política de acompanhante. Não comprar outras visitas extensas para a mesma manhã. A Tower of London é diferente de Tower Bridge.\n\nMobilidade: A HRP alerta para pedras irregulares, portas baixas, escadas e áreas com restrição. Confirmar o percurso às Joias e demais setores, rampas e sanitários. Não prometer visita integral à White Tower ou muralhas com cadeira motorizada.",
+      "day": 2
+    },
+    {
+      "key": "londres-towerbridge",
+      "title": "Tower Bridge — exterior",
+      "old_title": "Tower Bridge — exterior",
+      "place": "Londres",
+      "start": "2026-11-10T12:15",
+      "end": "2026-11-10T12:45",
+      "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 2: Tower Bridge — exterior.\n\nContemplação externa sem ingresso de exposição. O interior de Tower Bridge não está incluído; só substituir parte da tarde por ele se houver interesse, reserva e tempo. Não confundir com London Bridge.\n\nMobilidade: A instituição informa elevadores para a exposição e acesso a salas de máquinas, mas confirmar operação e o percurso contratado. Na visita externa, escolher calçada em nível, verificando vento, inclinação e obras.",
+      "day": 2
+    },
+    {
+      "key": "londres-londonbridge",
+      "title": "London Bridge e entorno de Borough",
+      "old_title": "London Bridge e entorno de Borough",
+      "place": "Londres",
+      "start": "2026-11-10T13:15",
+      "end": "2026-11-10T13:30",
+      "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 3: London Bridge e entorno de Borough.\n\nPonte pública sem ingresso geral. London Bridge Experience é uma atração paga diferente e não está no roteiro. Mercado/restaurantes seguem operação e preços próprios.\n\nMobilidade: Usar calçadas e acessos à margem com rampa ou elevador operacional; verificar o trajeto real até Borough e Tate. Margem à beira-rio não significa continuidade totalmente sem degraus.",
+      "day": 2
+    },
+    {
+      "key": "londres-tate",
+      "title": "Tate Modern — visita curta opcional",
+      "old_title": "Tate Modern — visita curta opcional",
+      "place": "Londres",
+      "start": "2026-11-10T14:40",
+      "end": "2026-11-10T15:30",
+      "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 4: Tate Modern — visita curta opcional.\n\nColeções de acesso geral gratuitas; exposições especiais podem cobrar. Consulta no site oficial necessária para 10/11 e eventuais reservas. Visita de 50 minutos é opcional e selecionada; não equivale a conhecer todo o museu.\n\nMobilidade: Confirmar entrada sem degraus, elevadores em serviço e sanitário no mapa da Tate. Não contar com terraço panorâmico ou piso específico sem verificar sua abertura. Chuva pode tornar a parada interna uma boa alternativa a trechos externos.",
+      "day": 2
+    },
+    {
+      "key": "londres-millennium",
+      "title": "Millennium Bridge — ligação para St Paul’s",
+      "old_title": "Millennium Bridge — ligação para St Paul’s",
+      "place": "Londres",
+      "start": "2026-11-10T15:40",
+      "end": "2026-11-10T16:00",
+      "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 5: Millennium Bridge — ligação para St Paul’s.\n\nTravessia pública gratuita, sujeita a restrições temporárias e condições do tempo. Não é uma ponte para passagem de veículos.\n\nMobilidade: Inclinações, vento e superfícies molhadas podem exigir mais tempo. Confirmar acessos em ambas as margens e funcionamento de eventual equipamento; não depender exclusivamente de elevador sem conferir operação.",
+      "day": 2
+    },
+    {
+      "key": "londres-city",
+      "title": "St Paul’s Cathedral — exterior; interior como alternativa",
+      "old_title": "City e arredores de St Paul’s",
+      "place": "Londres",
+      "start": "2026-11-10T16:10",
+      "end": "2026-11-10T16:40",
+      "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 6: St Paul’s Cathedral — exterior; interior como alternativa.\n\nExterior gratuito. Interior turístico pago: tarifa publicada £27 adulto e £10,50 criança, com categorias de gratuidade e concessão; confirmar regras e preço na compra. Última entrada turística habitual às 16h e término cerca de 16h30. O culto é gratuito, mas não substitui visita turística. A proposta principal das 16h10 é SOMENTE exterior.\n\nMobilidade: Há soluções de acesso à nave e cripta; confirmar porta acessível e elevadores. Não presumir acesso da cadeira à cúpula/galerias altas. Se desejar interior, planejar desde o início do dia e confirmar medidas e necessidades com a equipe.",
+      "day": 2
+    },
+    {
+      "key": "londres-british",
+      "title": "British Museum — alternativa sem data",
+      "old_title": "British Museum",
+      "place": "Londres",
+      "start": "",
+      "end": "",
+      "description": "ALTERNATIVA SEM DATA. Fora dos dois dias principais; escolher como substituição de parte do roteiro ou reagendar para 11/11 se houver disposição. Não realizar junto com todo o circuito Torre–Bankside. Preservados guia, anexos, comentários e memórias.",
+      "day": 0
+    },
+    {
+      "key": "londres-covent",
+      "title": "Covent Garden e Soho — alternativa sem data",
+      "old_title": "Covent Garden, Soho e despedida de Londres",
+      "place": "Londres",
+      "start": "",
+      "end": "",
+      "description": "ALTERNATIVA SEM DATA. Fora dos dois dias principais; escolher como substituição de parte do roteiro ou reagendar para 11/11 se houver disposição. Não realizar junto com todo o circuito Torre–Bankside. Preservados guia, anexos, comentários e memórias.",
+      "day": 0
+    }
+  ]
+}

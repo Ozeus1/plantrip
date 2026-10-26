@@ -1892,182 +1892,391 @@
   },
   "londres-westminster": {
     "key": "londres-westminster",
-    "title": "Westminster, Big Ben e St James’s Park",
+    "title": "Abadia de Westminster",
     "city": "Londres",
-    "kicker": "Símbolos à beira do Tâmisa",
-    "intro": "Uma primeira leitura de Londres entre Parlamento, abadia e parque. Como a chegada ainda não tem horário confirmado, esta caminhada deve se ajustar ao descanso e ao transporte do grupo.",
+    "kicker": "Dia 1 · Londres · Parada 3",
+    "intro": "A Abadia de Westminster reúne arquitetura gótica, memória dinástica e uma longa tradição de cerimônias nacionais. Coroações, sepulturas e monumentos fazem do edifício um lugar onde história religiosa e história política se cruzam. O interior merece uma visita selecionada, com tempo para compreender a nave e alguns memoriais, sem tentar examinar cada detalhe.",
     "history": [
-      "Westminster reúne referências centrais da história política e religiosa britânica. O Palácio de Westminster é a sede do Parlamento; sua arquitetura atual se desenvolveu após o incêndio do século XIX. A torre do relógio é conhecida mundialmente pela associação ao Big Ben, nome do grande sino.",
-      "St James’s Park conecta a área institucional a uma paisagem de lago, árvores e vistas para o eixo real. O contraste entre monumentos e parque ajuda a tornar a chegada mais leve, sem exigir uma sequência de visitas internas."
+      "A Abadia de Westminster reúne arquitetura gótica, memória dinástica e uma longa tradição de cerimônias nacionais. Coroações, sepulturas e monumentos fazem do edifício um lugar onde história religiosa e história política se cruzam. O interior merece uma visita selecionada, com tempo para compreender a nave e alguns memoriais, sem tentar examinar cada detalhe.",
+      "A Abadia é um templo em atividade e não deve ser confundida com a Catedral de Westminster, que fica em outro local. Culto e visita turística possuem procedimentos diferentes. O grupo deve confirmar o acesso pela North Door, selecionar o percurso possível e reservar o almoço logo depois; galerias superiores e visitas especiais não estão automaticamente incluídas no circuito acessível básico."
     ],
     "stops": [
       {
-        "title": "Parlamento e torre do relógio",
-        "text": "Observe o conjunto pela praça e pela ponte, com cuidado para não bloquear as passagens."
+        "title": "Entrada acessível",
+        "text": "Chegar antes do turno e confirmar North Door, segurança e documentação."
       },
       {
-        "title": "Westminster Abbey pelo exterior",
-        "text": "Aprecie a fachada; visita interna é opcional e depende de ingresso e programação religiosa."
+        "title": "Nave e memoriais",
+        "text": "Escolher os pontos de maior interesse sem ocupar toda a tarde."
       },
       {
-        "title": "St James’s Park",
-        "text": "Faça um circuito curto junto ao lago e escolha um ponto de pausa antes de voltar ao hotel ou seguir ao rio."
+        "title": "Almoço",
+        "text": "Pausa de 13h–14h no entorno, com mesa e banheiro confirmados."
       }
     ],
     "tips": [
-      "Reduza ou adie o passeio se a chegada de Paris ocorrer tarde ou com atraso.",
-      "Não conte com troca da guarda: calendário e condições devem ser conferidos separadamente.",
-      "Use camadas de roupa e tenha opção de pausa coberta em novembro."
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
     ],
-    "arrival": "Referência: estação Westminster. Ajuste o trajeto ao hotel e ao horário real de chegada.",
-    "duration": "2 a 3 horas, reduzível",
-    "booking": "Percurso externo; Parlamento, Big Ben e abadia têm modalidades de visita independentes.",
-    "accessibility": "A região tem travessias movimentadas; verifique acessos sem degraus nas estações e monumentos.",
-    "photo_tip": "Da Westminster Bridge, procure o conjunto do Parlamento; no parque, fotografe vistas do lago sem se aproximar dos animais.",
+    "arrival": "Westminster Abbey, Dean’s Yard. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "11:45–13:00 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Visita turística normalmente paga e sujeita a calendário de culto. 11h45 é proposta, não bilhete comprado. Consultar tarifa e política de deficiência/acompanhante; não reservar enquanto chegada a Londres estiver indefinida. Participar de culto não equivale a ingresso turístico gratuito.",
+    "accessibility": "A instituição informa acesso sem degraus pela North Door. Confirmar a rota completa da cadeira motorizada e setores não atendidos; há diferenças de nível e áreas especiais. Contato: visitor.experience@westminster-abbey.org.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
     "photo_titles": [
       "Palace of Westminster",
       "St James's Park"
     ],
     "photos": [
       {
-        "src": "/guide-photos/78ffb9f0002beb5c.jpg",
-        "alt": "Palace of Westminster",
-        "author": "ThatsTheBoss",
-        "license": "Domínio público / CC0",
-        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Palace_of_Westminster_as_seen_from_Westminster_Bridge.jpg",
-        "caption": "Palace of Westminster",
+        "src": "/guide-photos/c50bef7d4fa27eb7.jpg",
+        "alt": "Abadia de Westminster — vista geral",
+        "author": "Antiquary",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Westminster_Abbey%2C_Westminster.jpg",
+        "caption": "Abadia de Westminster — vista geral",
         "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
       },
       {
-        "src": "/guide-photos/a0264cbd3cfa5be0.jpg",
-        "alt": "St James's Park",
-        "author": "Colin",
+        "src": "/guide-photos/24332f9b15518a3b821b.jpg",
+        "alt": "Abadia de Westminster — perspectiva e detalhe",
+        "caption": "Abadia de Westminster — outro olhar",
+        "author": "jeffwarder",
         "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:St_James%27s_Park_Lake_%E2%80%93_East_from_the_Blue_Bridge_-_2012-10-06.jpg",
-        "caption": "St James's Park",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:London_Westminster_Abbey_(facade)_-_panoramio.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "Big Ben — Parlamento britânico",
-        "url": "https://www.parliament.uk/about/living-heritage/building/palace/big-ben/"
+        "title": "Abadia — visita",
+        "url": "https://www.westminster-abbey.org/visit-us"
       },
       {
-        "title": "St James’s Park — Royal Parks",
-        "url": "https://www.royalparks.org.uk/visit/parks/st-jamess-park"
+        "title": "Abadia — acessibilidade",
+        "url": "https://www.westminster-abbey.org/accessibility"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=215s"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_article": "Westminster Abbey",
+    "photo_query": "intitle:\"Westminster Abbey\" London exterior",
+    "food": "Almoço proposto de 13h a 14h no entorno de Victoria Street/Westminster, antes das cabines e do rio. Escolher após confirmar a entrada da Abadia; conferir acesso nivelado, mesa e sanitário. Reservar uma hora e prever £20–35 por pessoa como orçamento inicial, não cotação. Jantar próximo ao hotel, evitando novo deslocamento longo.",
+    "route_day": 1,
+    "route_sequence": 3,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 1,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Westminster Abbey, Dean’s Yard, London"
   },
   "londres-southbank": {
     "key": "londres-southbank",
-    "title": "South Bank às margens do Tâmisa",
+    "title": "London Eye e South Bank",
     "city": "Londres",
-    "kicker": "A cidade como promenade",
-    "intro": "Uma caminhada pela margem sul para ver pontes, espaços culturais e o perfil de Londres. A extensão deve acompanhar a disposição do grupo depois da chegada.",
+    "kicker": "Dia 1 · Londres · Parada 7",
+    "intro": "O London Eye oferece uma leitura panorâmica da cidade a partir de cápsulas sobre o rio. Implantado na margem sul, tornou-se um marco da Londres contemporânea e um contraponto às torres históricas de Westminster. A experiência combina vista, movimento lento e a possibilidade de reconhecer o percurso realizado durante o dia.",
     "history": [
-      "A margem sul do Tâmisa passou por grandes transformações ao longo do século XX. O Festival of Britain de 1951 ajudou a redefinir a área como espaço cultural, com o Royal Festival Hall como referência duradoura.",
-      "A caminhada atual conecta instituições culturais, áreas de lazer e vistas para a margem oposta. O valor do passeio está no percurso: acompanhar o rio permite perceber como estruturas históricas e equipamentos modernos compõem a paisagem londrina."
+      "O London Eye oferece uma leitura panorâmica da cidade a partir de cápsulas sobre o rio. Implantado na margem sul, tornou-se um marco da Londres contemporânea e um contraponto às torres históricas de Westminster. A experiência combina vista, movimento lento e a possibilidade de reconhecer o percurso realizado durante o dia.",
+      "O passeio precisa incluir o tempo de fila e embarque, não apenas a rotação. Em novembro, céu, luz e operação interferem na experiência; a parada externa em South Bank continua válida se o ingresso não estiver confirmado. Para a cadeira motorizada, reserva do espaço e compatibilidade do equipamento devem ser resolvidas antes do pagamento, de acordo com a política da atração."
     ],
     "stops": [
       {
-        "title": "Westminster Bridge e margem sul",
-        "text": "Comece pelo panorama do Parlamento e siga pelo caminho de pedestres junto ao rio."
+        "title": "Check-in e embarque",
+        "text": "15h30 é proposta, sujeita à abertura em 09/11 e ao slot acessível."
       },
       {
-        "title": "Área do Southbank Centre",
-        "text": "Observe a arquitetura dos espaços culturais e confira o que está aberto sem compromisso de ingresso."
+        "title": "Panorama",
+        "text": "Relacionar rio, Parlamento e marcos do centro, respeitando o espaço da cápsula."
       },
       {
-        "title": "Pontes e ponto de retorno",
-        "text": "Escolha uma ponte ou estação como limite do passeio. Estender até muito longe pode comprometer o descanso da chegada."
+        "title": "Fim do dia",
+        "text": "Retorno ao hotel ou jantar próximo; não acrescentar museu distante."
       }
     ],
     "tips": [
-      "O passeio é opcional se a manhã de chegada já tiver sido cansativa.",
-      "Confira vento e chuva antes de seguir por um trecho longo ao ar livre.",
-      "London Eye e atrações pagas não estão incluídos; decida separadamente."
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
     ],
-    "arrival": "Referências: Westminster Bridge, Waterloo ou Embankment, conforme o sentido escolhido.",
-    "duration": "1h30 a 2 horas",
-    "booking": "Passeio externo; apresentações, rodas panorâmicas e exposições têm condições próprias.",
-    "accessibility": "A promenade tem trechos amplos, mas acessos às pontes e obras podem alterar o percurso sem degraus.",
-    "photo_tip": "Explore reflexos no rio e a sequência das pontes; evite fotografar perto da borda em trechos congestionados.",
+    "arrival": "Riverside Building, County Hall, South Bank. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "15:30–16:30 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Ingresso pago com preços variáveis por data/modalidade. Conferir abertura em 09/11, bilhete do visitante e reserva específica para cadeira/acompanhante. Sem confirmação, manter apenas South Bank exterior, sem cobrança de atração.",
+    "accessibility": "A atração informa acessibilidade e capacidade limitada para cadeiras por cápsula. Confirmar medidas, peso, equipamento motorizado e documentação do acompanhante diretamente; regras do River Cruise são diferentes e não se aplicam automaticamente à roda.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
     "photo_titles": [
       "South Bank",
       "Royal Festival Hall"
     ],
     "photos": [
       {
-        "src": "/guide-photos/7296e07b25100f47.jpg",
-        "alt": "South Bank",
-        "author": "Diliff",
+        "src": "/guide-photos/00779b214e34f9ed.jpg",
+        "alt": "London Eye e South Bank — vista geral",
+        "author": "Khamtran",
         "license": "CC BY-SA 3.0",
         "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:London_Eye_Jan_2006.jpg",
-        "caption": "South Bank",
+        "source": "https://commons.wikimedia.org/wiki/File:London-Eye-2009.JPG",
+        "caption": "London Eye e South Bank — vista geral",
         "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
       },
       {
-        "src": "/guide-photos/687dbd51ac50e6b7.jpg",
-        "alt": "Royal Festival Hall",
-        "author": "Stephen Richards",
-        "license": "CC BY-SA 2.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/2.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Royal_Festival_Hall%2C_Belvedere_Road_%281%29.jpg",
-        "caption": "Royal Festival Hall",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/bb893fa5cd231fd5d32c.jpg",
+        "alt": "London Eye e South Bank — perspectiva e detalhe",
+        "caption": "London Eye e South Bank — outro olhar",
+        "author": "User:Diliff",
+        "license": "CC BY 2.5",
+        "license_url": "https://creativecommons.org/licenses/by/2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:London_Eye_Twilight_April_2006.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "História do Southbank Centre",
-        "url": "https://www.southbankcentre.co.uk/about-us/history/"
+        "title": "London Eye — acessibilidade oficial",
+        "url": "https://www.londoneye.com/plan-your-visit/before-you-visit/accessibility-information/"
       },
       {
-        "title": "South Bank — turismo de Londres",
-        "url": "https://www.visitlondon.com/things-to-do/london-areas/south-bank"
+        "title": "London Eye — planejar visita",
+        "url": "https://www.londoneye.com/plan-your-visit/"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_article": "London Eye",
+    "photo_query": "intitle:\"London Eye\" capsule",
+    "food": "Almoço proposto de 13h a 14h no entorno de Victoria Street/Westminster, antes das cabines e do rio. Escolher após confirmar a entrada da Abadia; conferir acesso nivelado, mesa e sanitário. Reservar uma hora e prever £20–35 por pessoa como orçamento inicial, não cotação. Jantar próximo ao hotel, evitando novo deslocamento longo.",
+    "route_day": 1,
+    "route_sequence": 7,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 1,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Riverside Building, County Hall, South Bank, London"
   },
   "londres-tower": {
     "key": "londres-tower",
-    "title": "Tower of London e Tower Bridge",
+    "title": "Torre de Londres",
     "city": "Londres",
-    "kicker": "Fortaleza, rio e engenharia",
-    "intro": "Uma manhã que aproxima dois marcos de épocas diferentes: a fortaleza ligada à monarquia e a ponte vitoriana que se tornou símbolo de Londres.",
+    "kicker": "Dia 2 · Londres · Parada 1",
+    "intro": "A Torre de Londres é um complexo de fortificação, residência e poder, e não apenas uma torre isolada. Sua história se relaciona à consolidação do domínio normando e a usos posteriores como prisão, arsenal e guarda de objetos preciosos. Pátios, muralhas e edifícios de épocas diferentes revelam a transformação do conjunto ao longo dos séculos.",
     "history": [
-      "A Tower of London tem origem na conquista normanda e na construção da White Tower. Ao longo dos séculos, o conjunto exerceu funções de residência, fortaleza, prisão e lugar de guarda de tesouros e símbolos reais.",
-      "A Tower Bridge foi inaugurada no fim do século XIX para conciliar o tráfego urbano com a passagem de embarcações no Tâmisa. Suas torres e mecanismos contam uma história de engenharia distinta da fortaleza vizinha, apesar da aparência monumental que aproxima os dois edifícios."
+      "A Torre de Londres é um complexo de fortificação, residência e poder, e não apenas uma torre isolada. Sua história se relaciona à consolidação do domínio normando e a usos posteriores como prisão, arsenal e guarda de objetos preciosos. Pátios, muralhas e edifícios de épocas diferentes revelam a transformação do conjunto ao longo dos séculos.",
+      "As Joias da Coroa estão entre os principais motivos de visita, mas o percurso deve ser selecionado conforme o acesso real. A White Tower e os circuitos de muralhas não têm as mesmas condições de circulação de todas as áreas baixas. Para o grupo, o melhor uso da manhã é priorizar setores compatíveis com a cadeira e interpretar o conjunto, sem exigir escadas para completar uma lista."
     ],
     "stops": [
       {
-        "title": "Tower of London",
-        "text": "Escolha os espaços prioritários e consulte os percursos oficiais. Filas para as Joias da Coroa podem exigir reorganização da visita."
+        "title": "Entrada e orientação",
+        "text": "Proposta às 09h, após confirmar abertura de terça, ingresso e percurso acessível."
       },
       {
-        "title": "Exterior e margem do rio",
-        "text": "Faça uma pausa fora da fortaleza e observe a relação entre muros, água e cidade."
+        "title": "Joias e setores prioritários",
+        "text": "Seguir orientação da equipe e conhecer as limitações das demais áreas."
       },
       {
-        "title": "Tower Bridge",
-        "text": "Caminhe pela ponte no nível da rua. Passarelas superiores e salas das máquinas fazem parte de uma visita separada."
+        "title": "Saída para Tower Bridge",
+        "text": "Almoço será mais adiante; fazer pausa e usar banheiro antes de sair se disponível."
       }
     ],
     "tips": [
-      "Planeje a fortaleza como principal compromisso da manhã.",
-      "Visitas dos Yeoman Warders dependem do calendário e são oferecidas nas condições oficiais; confira idioma.",
-      "Não prometa ver a ponte abrir: consulte a programação se isso for uma prioridade."
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
     ],
-    "arrival": "Referência: estação Tower Hill para a fortaleza; siga a pé até a ponte.",
-    "duration": "3 a 4 horas",
-    "booking": "Torre e exposição da Tower Bridge têm ingressos separados; confira áreas incluídas.",
-    "accessibility": "A fortaleza tem escadas e superfícies históricas; consulte percursos acessíveis de ambos os locais.",
-    "photo_tip": "Da margem sul, a ponte rende um panorama completo; na fortaleza, siga as proibições de fotografia em áreas específicas.",
+    "arrival": "Tower of London, entrada conforme ingresso. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "09:00–12:00 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Principal visita paga do segundo dia, com cerca de três horas. Confirmar tarifa, horário de 10/11 e política de acompanhante. Não comprar outras visitas extensas para a mesma manhã. A Tower of London é diferente de Tower Bridge.",
+    "accessibility": "A HRP alerta para pedras irregulares, portas baixas, escadas e áreas com restrição. Confirmar o percurso às Joias e demais setores, rampas e sanitários. Não prometer visita integral à White Tower ou muralhas com cadeira motorizada.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
     "photo_titles": [
       "Tower of London",
       "Tower Bridge"
@@ -2075,108 +2284,319 @@
     "photos": [
       {
         "src": "/guide-photos/f19a7ba00a6d18da.jpg",
-        "alt": "Tower of London",
+        "alt": "Torre de Londres — vista geral",
         "author": "[Duncan] from Nottingham, UK",
         "license": "CC BY 2.0",
         "license_url": "https://creativecommons.org/licenses/by/2.0/deed.en",
         "source": "https://commons.wikimedia.org/wiki/File:Tower_of_London_from_the_Shard_%288515883950%29.jpg",
-        "caption": "Tower of London",
+        "caption": "Torre de Londres — vista geral",
         "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
       },
       {
-        "src": "/guide-photos/9eb9b3f408f11147.jpg",
-        "alt": "Tower Bridge",
-        "author": "Fuzzypiggy",
-        "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_at_Dawn.jpg",
-        "caption": "Tower Bridge",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/2697f13477aef4339fa2.jpg",
+        "alt": "Torre de Londres — perspectiva e detalhe",
+        "caption": "Torre de Londres — outro olhar",
+        "author": "Dietmar Rabich",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:London,_Tower_of_London,_White_Tower_--_2016_--_4678.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "Tower of London — Historic Royal Palaces",
-        "url": "https://www.hrp.org.uk/tower-of-london/"
+        "title": "HRP — visita à Torre",
+        "url": "https://www.hrp.org.uk/tower-of-london/visit/"
       },
       {
-        "title": "Tower Bridge — site oficial",
-        "url": "https://www.towerbridge.org.uk/"
+        "title": "HRP — acessibilidade",
+        "url": "https://www.hrp.org.uk/tower-of-london/visit/accessibility/"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=467s"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_article": "Tower of London",
+    "photo_query": "intitle:\"Tower of London\" White Tower",
+    "food": "Almoço proposto de 13h30 a 14h15 na região London Bridge/Borough/Bankside, conforme rota e lotação; prever mais tempo se houver fila. Não depender de comer em pé no mercado: reservar mesa com banheiro acessível ou escolher restaurante no trajeto. Orçamento inicial £20–35 por pessoa, sujeito ao cardápio. O Fifteen citado no vídeo fechou e não é opção de reserva.",
+    "route_day": 2,
+    "route_sequence": 1,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 2,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Tower of London, entrada conforme ingresso, London"
   },
   "londres-city": {
     "key": "londres-city",
-    "title": "City e arredores de St Paul’s",
+    "title": "St Paul’s Cathedral — exterior; interior como alternativa",
     "city": "Londres",
-    "kicker": "Uma cidade que se reconstrói",
-    "intro": "Um percurso pela City para observar contrastes entre igrejas históricas, ruas de comércio e edifícios contemporâneos. A visita interna à catedral é uma escolha adicional.",
+    "kicker": "Dia 2 · Londres · Parada 6",
+    "intro": "A catedral de St Paul’s, associada a Christopher Wren e à reconstrução após o Grande Incêndio de Londres, ocupa um lugar central na paisagem da City. Sua cúpula organiza vistas de diversos pontos do rio e dialoga diretamente com a perspectiva do Millennium Bridge. A observação externa no fim do dia encerra esse eixo de arquitetura e história.",
     "history": [
-      "A City preserva a memória do núcleo histórico de Londres e de suas funções comerciais e financeiras. O Grande Incêndio de 1666 alterou profundamente essa paisagem e abriu caminho para reconstruções que ainda definem sua imagem.",
-      "A atual Catedral de St Paul’s, projetada por Christopher Wren, é uma das expressões mais marcantes desse processo. Sua cúpula funciona como referência visual, inclusive em contraste com as construções recentes. A caminhada ajuda a ler Londres como uma cidade de substituições, permanências e recomeços."
+      "A catedral de St Paul’s, associada a Christopher Wren e à reconstrução após o Grande Incêndio de Londres, ocupa um lugar central na paisagem da City. Sua cúpula organiza vistas de diversos pontos do rio e dialoga diretamente com a perspectiva do Millennium Bridge. A observação externa no fim do dia encerra esse eixo de arquitetura e história.",
+      "O interior inclui nave, áreas de memória e cripta, mas a subida à cúpula possui condições muito diferentes do percurso em nível. O roteiro principal chega tarde para uma visita turística completa: a entrada de sightseeing costuma encerrar às 16h. Para conhecer o interior, será necessário retirar a Tate e antecipar St Paul’s para aproximadamente 14h45–16h, com reserva e acesso confirmados. Não comprar ingresso supondo entrada às 16h10."
     ],
     "stops": [
       {
-        "title": "St Paul’s pelo exterior",
-        "text": "Dê uma volta possível ao redor do edifício para perceber sua volumetria e a relação com as ruas próximas."
+        "title": "Fachada e cúpula",
+        "text": "No roteiro principal, observação externa e fotografias."
       },
       {
-        "title": "Interior, opcional",
-        "text": "Se reservado, observe nave, mosaicos e espaços de memória. Galerias superiores exigem condições e tempo adicionais."
+        "title": "Alternativa de interior",
+        "text": "Se prioridade, retirar Tate, abreviar London Bridge e chegar por transporte/rota acessível antes do limite."
       },
       {
-        "title": "Millennium Bridge e entorno",
-        "text": "Escolha um pequeno trecho até o rio para comparar a cúpula com a paisagem contemporânea."
+        "title": "Retorno e descanso",
+        "text": "Não somar British Museum ou Baker Street no mesmo fim de tarde."
       }
     ],
     "tips": [
-      "Depois da manhã na fortaleza, avalie se o grupo ainda quer outra visita interna.",
-      "Confira horários de visita e serviços religiosos da catedral.",
-      "Para vistas elevadas, verifique a quantidade de escadas e não trate a subida como obrigatória."
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
     ],
-    "arrival": "Referências: St Paul’s ou chegada a pé a partir da região da Tower, conforme o percurso escolhido.",
-    "duration": "2 a 3 horas",
-    "booking": "Passeio externo livre de reserva; visita turística interna depende das condições oficiais.",
-    "accessibility": "A catedral e suas galerias têm acessos diferentes; consulte a rota adaptada e limite o circuito se necessário.",
-    "photo_tip": "O eixo da Millennium Bridge oferece uma vista da cúpula; pare em local que não obstrua a passagem.",
+    "arrival": "St Paul’s Churchyard. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "16:10–16:40 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Exterior gratuito. Interior turístico pago: tarifa publicada £27 adulto e £10,50 criança, com categorias de gratuidade e concessão; confirmar regras e preço na compra. Última entrada turística habitual às 16h e término cerca de 16h30. O culto é gratuito, mas não substitui visita turística. A proposta principal das 16h10 é SOMENTE exterior.",
+    "accessibility": "Há soluções de acesso à nave e cripta; confirmar porta acessível e elevadores. Não presumir acesso da cadeira à cúpula/galerias altas. Se desejar interior, planejar desde o início do dia e confirmar medidas e necessidades com a equipe.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
     "photo_titles": [
       "St Paul's Cathedral",
       "Millennium Bridge, London"
     ],
     "photos": [
       {
-        "src": "/guide-photos/cac5fd12de67e2ba.jpg",
-        "alt": "St Paul's Cathedral",
+        "src": "/guide-photos/203a67b45642ee8b.jpg",
+        "alt": "St Paul’s Cathedral — exterior; interior como alternativa — vista geral",
         "author": "Mark Fosh",
         "license": "CC BY-SA 4.0",
         "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
         "source": "https://commons.wikimedia.org/wiki/File:St_Pauls_aerial_%28cropped%29.jpg",
-        "caption": "St Paul's Cathedral",
+        "caption": "St Paul’s Cathedral — exterior; interior como alternativa — vista geral",
         "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
       },
       {
-        "src": "/guide-photos/7b03651f3f2a2c67.jpg",
-        "alt": "Millennium Bridge, London",
-        "author": "Ibex73",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Millenium_bridge_2015.jpg",
-        "caption": "Millennium Bridge, London",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/71ac90c8fc9d1358a350.jpg",
+        "alt": "St Paul’s Cathedral — exterior; interior como alternativa — perspectiva e detalhe",
+        "caption": "Interior de St Paul’s — referência para a alternativa de visita antecipada",
+        "author": "jeffwarder",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:London_-_St.Paul%27s_Cathedral_-_inside_-_panoramio.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
       }
     ],
     "sources": [
       {
-        "title": "St Paul’s — história e visita",
-        "url": "https://www.stpauls.co.uk/"
+        "title": "Catedral — horários, tarifas e visita",
+        "url": "https://www.stpauls.co.uk/visit-us"
       },
       {
-        "title": "City — turismo oficial",
-        "url": "https://www.visitlondon.com/things-to-do/london-areas/city-of-london"
+        "title": "Catedral — planejar visita",
+        "url": "https://www.stpauls.co.uk/plan-your-visit"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=575s"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-10-25",
+    "photo_article": "St Paul’s Cathedral",
+    "photo_query": "intitle:\"St Paul\" cathedral London exterior",
+    "food": "Almoço proposto de 13h30 a 14h15 na região London Bridge/Borough/Bankside, conforme rota e lotação; prever mais tempo se houver fila. Não depender de comer em pé no mercado: reservar mesa com banheiro acessível ou escolher restaurante no trajeto. Orçamento inicial £20–35 por pessoa, sujeito ao cardápio. O Fifteen citado no vídeo fechou e não é opção de reserva.",
+    "route_day": 2,
+    "route_sequence": 6,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 2,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "St Paul’s Churchyard, London"
   },
   "londres-british": {
     "key": "londres-british",
@@ -4147,5 +4567,1563 @@
       }
     ],
     "food": "Almoçar por volta de 13h, no setor escolhido entre Popolo e Borghese, deixando margem até a entrada da Galleria. Escolher restaurante após confirmar o acesso do museu e a rota real; prever €20–40 por pessoa como orçamento inicial, não cotação. Mesas externas não garantem banheiro acessível."
+  },
+  "londres-buckingham": {
+    "key": "londres-buckingham",
+    "title": "Palácio de Buckingham — exterior",
+    "city": "Londres",
+    "kicker": "Dia 1 · Londres · Parada 1",
+    "intro": "O Palácio de Buckingham é um dos grandes símbolos da monarquia britânica, mas a visita turística tem modalidades muito diferentes. A observação da fachada, dos portões e do Victoria Memorial pertence ao espaço urbano; entrar nos State Rooms é uma experiência com calendário e ingresso próprios. Neste roteiro de novembro, a proposta é o exterior, sem prometer a abertura interna de verão.",
+    "history": [
+      "O Palácio de Buckingham é um dos grandes símbolos da monarquia britânica, mas a visita turística tem modalidades muito diferentes. A observação da fachada, dos portões e do Victoria Memorial pertence ao espaço urbano; entrar nos State Rooms é uma experiência com calendário e ingresso próprios. Neste roteiro de novembro, a proposta é o exterior, sem prometer a abertura interna de verão.",
+      "A relação entre palácio, The Mall e parques ajuda a entender a dimensão cerimonial da região. O Victoria Memorial organiza a perspectiva da fachada, enquanto os portões e o fluxo de visitantes revelam o uso contemporâneo do conjunto. A troca da guarda não foi agendada: depende de calendário e pode causar grande concentração de pessoas. Não vale comprometer a Abadia para esperar uma cerimônia sem confirmação."
+    ],
+    "stops": [
+      {
+        "title": "Portões e fachada",
+        "text": "Apreciar a vista do espaço público, sem ingresso para os State Rooms."
+      },
+      {
+        "title": "Victoria Memorial",
+        "text": "Observar o eixo cerimonial sem subir degraus com a cadeira."
+      },
+      {
+        "title": "Ligação ao parque",
+        "text": "Seguir por acesso nivelado para St James’s, com pausa se a chegada tiver sido cansativa."
+      }
+    ],
+    "tips": [
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
+    ],
+    "arrival": "Buckingham Palace / Victoria Memorial. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "10:00–10:35 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Exterior gratuito. A abertura de verão dos State Rooms em 2026 vai de 09/07 a 27/09; qualquer visita especial de novembro exigiria confirmação separada e substituição de parte do roteiro. Troca da guarda não garantida para 09/11.",
+    "accessibility": "Escolher a vista do nível da rua; multidões e bloqueios cerimoniais podem alterar o percurso. Não programar a cadeira sobre degraus do monumento. Manter a opção de encurtar esta primeira parada.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/0c368c4a90ccddf0.jpg",
+        "alt": "Palácio de Buckingham — exterior — vista geral",
+        "author": "Julian Herzog (Website)",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Buckingham_Palace_London_Morning_2020_01_%28cropped%29.jpg",
+        "caption": "Palácio de Buckingham — exterior — vista geral",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/663a200f1b2bfb0047b8.jpg",
+        "alt": "Palácio de Buckingham — exterior — perspectiva e detalhe",
+        "caption": "Palácio de Buckingham — exterior — outro olhar",
+        "author": "Txllxt TxllxT",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:London_-_Constitution_Hill_-_Panorama_View_of_Buckingham_Palace_-_The_present_fa%C3%A7ade_dates_from_1913_and_was_redesigned_by_Sir_Aston_Webb_-_The_Mall_%26_Palace_fence_dates_from_1911,_designed_by_Sir_Aston_Webb_01.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_article": "Buckingham Palace",
+    "photo_query": "intitle:\"Buckingham Palace\" facade",
+    "food": "Almoço proposto de 13h a 14h no entorno de Victoria Street/Westminster, antes das cabines e do rio. Escolher após confirmar a entrada da Abadia; conferir acesso nivelado, mesa e sanitário. Reservar uma hora e prever £20–35 por pessoa como orçamento inicial, não cotação. Jantar próximo ao hotel, evitando novo deslocamento longo.",
+    "sources": [
+      {
+        "title": "Royal Collection — Buckingham Palace",
+        "url": "https://www.rct.uk/visit/buckingham-palace"
+      },
+      {
+        "title": "Royal Parks — St James’s Park",
+        "url": "https://www.royalparks.org.uk/visit/parks/st-jamess-park"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=177s"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "route_day": 1,
+    "route_sequence": 1,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 1,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Buckingham Palace / Victoria Memorial, London"
+  },
+  "londres-stjames": {
+    "key": "londres-stjames",
+    "title": "St James’s Park",
+    "city": "Londres",
+    "kicker": "Dia 1 · Londres · Parada 2",
+    "intro": "St James’s Park liga o ambiente cerimonial de Buckingham à região política de Westminster. Lago, vegetação e perspectivas sobre edifícios próximos criam uma pausa em uma das áreas mais movimentadas de Londres. É um parque real com história própria, não apenas um atalho entre atrações.",
+    "history": [
+      "St James’s Park liga o ambiente cerimonial de Buckingham à região política de Westminster. Lago, vegetação e perspectivas sobre edifícios próximos criam uma pausa em uma das áreas mais movimentadas de Londres. É um parque real com história própria, não apenas um atalho entre atrações.",
+      "O percurso deve selecionar uma alameda e um ponto de vista, em vez de atravessar todos os recantos. Observe a relação entre água, pontes e fachadas distantes, respeitando a fauna e os espaços de circulação. Em novembro, folhas molhadas, vento e chuva pedem mais atenção; uma parada curta e confortável é mais útil ao grupo que uma volta extensa antes da Abadia."
+    ],
+    "stops": [
+      {
+        "title": "Alameda principal",
+        "text": "Escolher piso firme e caminho direto no sentido de Westminster."
+      },
+      {
+        "title": "Lago e perspectiva",
+        "text": "Pausa para fotos; a Blue Bridge é opcional conforme inclinação e lotação."
+      },
+      {
+        "title": "Saída para Westminster",
+        "text": "Guardar margem para segurança e entrada acessível na Abadia."
+      }
+    ],
+    "tips": [
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
+    ],
+    "arrival": "St James’s Park. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "10:45–11:20 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Parque público sem ingresso geral. Cafés, atividades e serviços têm funcionamento próprio. Não depender de uma instalação específica sem conferir abertura e banheiro.",
+    "accessibility": "Usar caminhos pavimentados e evitar atalhos enlameados ou degraus. Conferir inclinações de pontes e sanitários no mapa oficial. Reduzir a parada se houver atraso na chegada a Londres.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/a0264cbd3cfa5be0.jpg",
+        "alt": "St James’s Park — vista geral",
+        "author": "Colin",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:St_James%27s_Park_Lake_%E2%80%93_East_from_the_Blue_Bridge_-_2012-10-06.jpg",
+        "caption": "St James’s Park — vista geral",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/054b27dd09bf64bc7324.jpg",
+        "alt": "St James’s Park — perspectiva e detalhe",
+        "caption": "St James’s Park — outro olhar",
+        "author": "jeffwarder",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:London_St_James%27s_Park_-_the_lake_in_the_winter_sunset_-_panoramio.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_article": "St James’s Park",
+    "photo_query": "intitle:\"St James\" intitle:\"Park\" London lake",
+    "food": "Almoço proposto de 13h a 14h no entorno de Victoria Street/Westminster, antes das cabines e do rio. Escolher após confirmar a entrada da Abadia; conferir acesso nivelado, mesa e sanitário. Reservar uma hora e prever £20–35 por pessoa como orçamento inicial, não cotação. Jantar próximo ao hotel, evitando novo deslocamento longo.",
+    "sources": [
+      {
+        "title": "Royal Parks — visita",
+        "url": "https://www.royalparks.org.uk/visit/parks/st-jamess-park"
+      },
+      {
+        "title": "Royal Parks — perguntas frequentes",
+        "url": "https://www.royalparks.org.uk/visit/parks/st-jamess-park/faqs"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=188s"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "route_day": 1,
+    "route_sequence": 2,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 1,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "St James’s Park, London"
+  },
+  "londres-cabines": {
+    "key": "londres-cabines",
+    "title": "Cabines telefônicas de Westminster",
+    "city": "Londres",
+    "kicker": "Dia 1 · Londres · Parada 4",
+    "intro": "As cabines vermelhas tornaram-se parte do imaginário de Londres e do desenho de seu mobiliário urbano. Os modelos históricos relacionados a Giles Gilbert Scott combinam utilidade pública e uma linguagem visual reconhecível. Hoje, funções e estado de conservação variam: uma cabine pode permanecer como marco da rua mesmo sem operar como telefone.",
+    "history": [
+      "As cabines vermelhas tornaram-se parte do imaginário de Londres e do desenho de seu mobiliário urbano. Os modelos históricos relacionados a Giles Gilbert Scott combinam utilidade pública e uma linguagem visual reconhecível. Hoje, funções e estado de conservação variam: uma cabine pode permanecer como marco da rua mesmo sem operar como telefone.",
+      "Na região de Westminster, a visita é uma parada fotográfica breve no trajeto, não uma atração com ingresso e horário fixo. Observe a relação entre o objeto e a arquitetura ao fundo. A fotografia deve acontecer sem ocupar a calçada inteira, sem formar fila do grupo em travessias e sem exigir a entrada da cadeira em um espaço estreito."
+    ],
+    "stops": [
+      {
+        "title": "Localização no trajeto",
+        "text": "Procurar cabine na região de Parliament Square/Great George Street, sem prometer posição livre."
+      },
+      {
+        "title": "Foto pelo exterior",
+        "text": "Fazer revezamento e manter a passagem dos pedestres."
+      },
+      {
+        "title": "Continuar ao relógio",
+        "text": "Big Ben e Parlamento ficam no mesmo conjunto urbano."
+      }
+    ],
+    "tips": [
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
+    ],
+    "arrival": "Entorno de Parliament Square / Great George Street. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "14:00–14:15 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Parada externa gratuita, sujeita a obras, manutenção e acesso da rua. Não há necessidade de entrar na cabine nem de contratar fotografia para conhecê-la.",
+    "accessibility": "Usar a cabine como fundo a partir de uma área nivelada. Soleiras e largura interna não são adequadas para presumir acesso da cadeira motorizada; respeitar rebaixamentos e circulação.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/7a9d103f98306e97d426.jpg",
+        "alt": "Cabines telefônicas de Westminster — vista geral",
+        "caption": "Cabines telefônicas de Westminster — vista geral",
+        "author": "traveljunction",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Red_telephone_booth,_Big_Ben,_Parliament,_Westminster,_London,_UK,_KW_(15105737453).jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/e94a59bd2d1839ac9955.jpg",
+        "alt": "Cabines telefônicas de Westminster — perspectiva e detalhe",
+        "caption": "Cabines telefônicas de Westminster — outro olhar",
+        "author": "Joseolgon",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Telephone_box_in_the_City_of_Westminster.JPG",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_article": "Red telephone box",
+    "photo_query": "intitle:\"telephone\" intitle:\"Westminster\"",
+    "food": "Almoço proposto de 13h a 14h no entorno de Victoria Street/Westminster, antes das cabines e do rio. Escolher após confirmar a entrada da Abadia; conferir acesso nivelado, mesa e sanitário. Reservar uma hora e prever £20–35 por pessoa como orçamento inicial, não cotação. Jantar próximo ao hotel, evitando novo deslocamento longo.",
+    "sources": [
+      {
+        "title": "Historic England — patrimônio das cabines",
+        "url": "https://historicengland.org.uk/"
+      },
+      {
+        "title": "Visit London — Westminster",
+        "url": "https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/big-ben"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=228s"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "route_day": 1,
+    "route_sequence": 4,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 1,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Entorno de Parliament Square / Great George Street, London"
+  },
+  "londres-bigben": {
+    "key": "londres-bigben",
+    "title": "Big Ben e Elizabeth Tower — exterior",
+    "city": "Londres",
+    "kicker": "Dia 1 · Londres · Parada 5",
+    "intro": "Big Ben é o nome associado ao grande sino, embora no uso cotidiano designe também o relógio e a torre. A Elizabeth Tower integra o Palácio de Westminster, e sua presença junto ao rio tornou-se uma das imagens mais conhecidas da cidade. Ver o relógio e situá-lo no conjunto do Parlamento já permite compreender parte de sua função simbólica.",
+    "history": [
+      "Big Ben é o nome associado ao grande sino, embora no uso cotidiano designe também o relógio e a torre. A Elizabeth Tower integra o Palácio de Westminster, e sua presença junto ao rio tornou-se uma das imagens mais conhecidas da cidade. Ver o relógio e situá-lo no conjunto do Parlamento já permite compreender parte de sua função simbólica.",
+      "A visita externa oferece perspectivas diferentes de Parliament Square e da ponte, com mudança de luz e fluxo de pessoas. Não é necessário subir à torre para apreciar o monumento. Tours internos seguem regras próprias; uma eventual modalidade acessível precisa ser tratada diretamente com o Parlamento e substituir outra atividade, sem ser presumida a partir da observação na rua."
+    ],
+    "stops": [
+      {
+        "title": "Vista do relógio",
+        "text": "Reconhecer a torre e sua relação com o Palácio de Westminster."
+      },
+      {
+        "title": "Perspectiva do rio",
+        "text": "Fotografar de local seguro e sem bloquear a ponte."
+      },
+      {
+        "title": "Parlamento",
+        "text": "Continuar a observação do mesmo conjunto, sem deslocamento longo."
+      }
+    ],
+    "tips": [
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
+    ],
+    "arrival": "Parliament Square / Elizabeth Tower. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "14:20–14:40 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Exterior gratuito. Tour interno de Big Ben não incluído e depende de reserva, condições de segurança e modalidade apropriada. O Parlamento informa tours acessíveis específicos; consultar antes de planejar qualquer acesso interno.",
+    "accessibility": "A proposta dispensa subida. Para tour especial, confirmar requisitos e trajeto com visitparliament@parliament.uk; não inferir que o circuito padrão seja compatível com a cadeira motorizada.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/362253f1028bdd41.jpg",
+        "alt": "Big Ben e Elizabeth Tower — exterior — vista geral",
+        "author": "Christian David",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster%2C_London.jpg",
+        "caption": "Big Ben e Elizabeth Tower — exterior — vista geral",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/b836619851971fc6ec19.jpg",
+        "alt": "Big Ben e Elizabeth Tower — exterior — perspectiva e detalhe",
+        "caption": "Big Ben e Elizabeth Tower — exterior — outro olhar",
+        "author": "Celsoazevedo",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Big_Ben,_Elizabeth_Tower,_Evening_November_2024.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_article": "Big Ben",
+    "photo_query": "intitle:\"Elizabeth Tower\" London",
+    "food": "Almoço proposto de 13h a 14h no entorno de Victoria Street/Westminster, antes das cabines e do rio. Escolher após confirmar a entrada da Abadia; conferir acesso nivelado, mesa e sanitário. Reservar uma hora e prever £20–35 por pessoa como orçamento inicial, não cotação. Jantar próximo ao hotel, evitando novo deslocamento longo.",
+    "sources": [
+      {
+        "title": "Parlamento — Big Ben",
+        "url": "https://www.parliament.uk/visiting/visiting-and-tours/big-ben-tour/"
+      },
+      {
+        "title": "Parlamento — tours acessíveis",
+        "url": "https://www.parliament.uk/visiting/access/disabled-access/take-an-accessible-tour/"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=248s"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "route_day": 1,
+    "route_sequence": 5,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 1,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Parliament Square / Elizabeth Tower, London"
+  },
+  "londres-parlamento": {
+    "key": "londres-parlamento",
+    "title": "Parlamento Britânico — exterior",
+    "city": "Londres",
+    "kicker": "Dia 1 · Londres · Parada 6",
+    "intro": "O Palácio de Westminster abriga as duas casas do Parlamento e organiza uma das principais fachadas do Tâmisa. A reconstrução do século XIX consolidou a imagem neogótica do conjunto, enquanto Westminster Hall remete a uma camada muito mais antiga. Observar o exterior revela a dimensão do edifício e sua relação com a cidade e o rio.",
+    "history": [
+      "O Palácio de Westminster abriga as duas casas do Parlamento e organiza uma das principais fachadas do Tâmisa. A reconstrução do século XIX consolidou a imagem neogótica do conjunto, enquanto Westminster Hall remete a uma camada muito mais antiga. Observar o exterior revela a dimensão do edifício e sua relação com a cidade e o rio.",
+      "No percurso de dois dias, a visita é externa: a leitura de torres, fachadas e implantação já oferece contexto para a história política britânica. Tours internos, sessões e procedimentos de segurança têm calendários distintos e não devem ser acrescentados como se fossem parte automática do passeio a pé. Ao final, a travessia para South Bank deve preservar tempo para o London Eye."
+    ],
+    "stops": [
+      {
+        "title": "Fachadas e torres",
+        "text": "Observar o conjunto sem tentar entrar por acessos parlamentares."
+      },
+      {
+        "title": "Relação com o Tâmisa",
+        "text": "Comparar a vista da praça com a perspectiva do rio."
+      },
+      {
+        "title": "Travessia a South Bank",
+        "text": "Prever aproximadamente 20–30 minutos com paradas, conforme fluxo e acesso real."
+      }
+    ],
+    "tips": [
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
+    ],
+    "arrival": "Palace of Westminster / Westminster Bridge. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "14:40–15:00 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Exterior gratuito. Interior não agendado: tours e modalidades de visita dependem da atividade parlamentar, reserva e acessibilidade confirmadas. Não considerar disponível apenas por ser segunda-feira.",
+    "accessibility": "Usar calçadas e travessias sinalizadas. Westminster Bridge tem fluxo e inclinações; escolher acesso em nível e evitar escadas para margens inferiores. Transporte adaptado é alternativa se o trajeto não estiver confortável.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/78ffb9f0002beb5c.jpg",
+        "alt": "Parlamento Britânico — exterior — vista geral",
+        "author": "ThatsTheBoss",
+        "license": "Domínio público / CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Palace_of_Westminster_as_seen_from_Westminster_Bridge.jpg",
+        "caption": "Parlamento Britânico — exterior — vista geral",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/3d916211e044ab54a61a.jpg",
+        "alt": "Parlamento Britânico — exterior — perspectiva e detalhe",
+        "caption": "Parlamento Britânico — exterior — outro olhar",
+        "author": "Diliff",
+        "license": "CC BY-SA 2.5",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Palace_of_Westminster,_London_-_Feb_2007.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_article": "Palace of Westminster",
+    "photo_query": "intitle:\"Palace of Westminster\" river",
+    "food": "Almoço proposto de 13h a 14h no entorno de Victoria Street/Westminster, antes das cabines e do rio. Escolher após confirmar a entrada da Abadia; conferir acesso nivelado, mesa e sanitário. Reservar uma hora e prever £20–35 por pessoa como orçamento inicial, não cotação. Jantar próximo ao hotel, evitando novo deslocamento longo.",
+    "sources": [
+      {
+        "title": "Parlamento — visitas",
+        "url": "https://www.parliament.uk/visiting/"
+      },
+      {
+        "title": "Parlamento — acesso",
+        "url": "https://www.parliament.uk/visiting/access/disabled-access/take-an-accessible-tour/"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=262s"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "route_day": 1,
+    "route_sequence": 6,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 1,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Palace of Westminster / Westminster Bridge, London"
+  },
+  "londres-towerbridge": {
+    "key": "londres-towerbridge",
+    "title": "Tower Bridge — exterior",
+    "city": "Londres",
+    "kicker": "Dia 2 · Londres · Parada 2",
+    "intro": "Tower Bridge é a ponte de torres e vãos móveis que se tornou um dos símbolos de Londres. Construída no fim do século XIX, responde à necessidade de conciliar travessia urbana e navegação no Tâmisa. Sua aparência monumental esconde uma infraestrutura de engenharia, distinta da London Bridge que será vista depois.",
+    "history": [
+      "Tower Bridge é a ponte de torres e vãos móveis que se tornou um dos símbolos de Londres. Construída no fim do século XIX, responde à necessidade de conciliar travessia urbana e navegação no Tâmisa. Sua aparência monumental esconde uma infraestrutura de engenharia, distinta da London Bridge que será vista depois.",
+      "A observação pelo exterior é suficiente para identificar as torres e o funcionamento dos vãos. A exposição, as passarelas altas e as salas de máquinas constituem visita própria e demandam ingresso e tempo adicional. Nesta seleção, a ponte é uma parada externa após a Torre de Londres, preservando almoço e o percurso de Bankside."
+    ],
+    "stops": [
+      {
+        "title": "Vista a partir de Tower Hill",
+        "text": "Observar as duas torres e o rio sem descer por escadas."
+      },
+      {
+        "title": "Fotos e movimento",
+        "text": "Aberturas dos vãos seguem agenda, não estão garantidas no horário."
+      },
+      {
+        "title": "Seguir a London Bridge",
+        "text": "Prever aproximadamente 30 minutos ou mais pela rota escolhida; transporte adaptado se necessário."
+      }
+    ],
+    "tips": [
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
+    ],
+    "arrival": "Tower Bridge Road / entorno norte da ponte. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "12:15–12:45 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Contemplação externa sem ingresso de exposição. O interior de Tower Bridge não está incluído; só substituir parte da tarde por ele se houver interesse, reserva e tempo. Não confundir com London Bridge.",
+    "accessibility": "A instituição informa elevadores para a exposição e acesso a salas de máquinas, mas confirmar operação e o percurso contratado. Na visita externa, escolher calçada em nível, verificando vento, inclinação e obras.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/9eb9b3f408f11147.jpg",
+        "alt": "Tower Bridge — exterior — vista geral",
+        "author": "Fuzzypiggy",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_at_Dawn.jpg",
+        "caption": "Tower Bridge — exterior — vista geral",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/1d4bea902fde4d9e334a.jpg",
+        "alt": "Tower Bridge — exterior — perspectiva e detalhe",
+        "caption": "Tower Bridge — exterior — outro olhar",
+        "author": "Dronepicr",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:London_Tower_Bridge_22.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_article": "Tower Bridge",
+    "photo_query": "intitle:\"Tower Bridge\" London",
+    "food": "Almoço proposto de 13h30 a 14h15 na região London Bridge/Borough/Bankside, conforme rota e lotação; prever mais tempo se houver fila. Não depender de comer em pé no mercado: reservar mesa com banheiro acessível ou escolher restaurante no trajeto. Orçamento inicial £20–35 por pessoa, sujeito ao cardápio. O Fifteen citado no vídeo fechou e não é opção de reserva.",
+    "sources": [
+      {
+        "title": "Tower Bridge — site oficial",
+        "url": "https://www.towerbridge.org.uk/"
+      },
+      {
+        "title": "Tower Bridge — acesso",
+        "url": "https://www.towerbridge.org.uk/access"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "route_day": 2,
+    "route_sequence": 2,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 2,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Tower Bridge Road / entorno norte da ponte, London"
+  },
+  "londres-londonbridge": {
+    "key": "londres-londonbridge",
+    "title": "London Bridge e entorno de Borough",
+    "city": "Londres",
+    "kicker": "Dia 2 · Londres · Parada 3",
+    "intro": "London Bridge ocupa um ponto histórico de travessia do Tâmisa, com sucessivas pontes no mesmo setor ao longo do tempo. A estrutura atual possui aparência funcional e discreta, diferente das torres e vãos móveis de Tower Bridge. Essa distinção evita a confusão frequente entre o nome da ponte e a imagem mais famosa da cidade.",
+    "history": [
+      "London Bridge ocupa um ponto histórico de travessia do Tâmisa, com sucessivas pontes no mesmo setor ao longo do tempo. A estrutura atual possui aparência funcional e discreta, diferente das torres e vãos móveis de Tower Bridge. Essa distinção evita a confusão frequente entre o nome da ponte e a imagem mais famosa da cidade.",
+      "A parada é breve, para observar o rio e a relação entre a City e Southwark. O entorno de Borough serve como referência de almoço e ligação para Bankside. Não se trata de visitar uma exposição ou de percorrer novamente toda a margem: a prioridade é manter um caminho confortável até a Tate e a travessia do Millennium Bridge."
+    ],
+    "stops": [
+      {
+        "title": "Rio e travessia",
+        "text": "Reconhecer a ponte atual e vistas possíveis para Tower Bridge."
+      },
+      {
+        "title": "Borough e almoço",
+        "text": "Pausa de 13h30–14h15, com mesa e banheiro compatíveis."
+      },
+      {
+        "title": "Ligação à Tate",
+        "text": "Prever aproximadamente 25 minutos ou mais, conforme rota e lotação; não usar escadas da margem."
+      }
+    ],
+    "tips": [
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
+    ],
+    "arrival": "London Bridge / Southwark. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "13:15–13:30 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Ponte pública sem ingresso geral. London Bridge Experience é uma atração paga diferente e não está no roteiro. Mercado/restaurantes seguem operação e preços próprios.",
+    "accessibility": "Usar calçadas e acessos à margem com rampa ou elevador operacional; verificar o trajeto real até Borough e Tate. Margem à beira-rio não significa continuidade totalmente sem degraus.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/916921afa7bef95e.jpg",
+        "alt": "London Bridge e entorno de Borough — vista geral",
+        "author": "Jordiferrer",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:London_Bridge_from_St_Olaf_Stairs.jpg",
+        "caption": "London Bridge e entorno de Borough — vista geral",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/83828796da8a257b58ae.jpg",
+        "alt": "London Bridge e entorno de Borough — perspectiva e detalhe",
+        "caption": "London Bridge e entorno de Borough — outro olhar",
+        "author": "Christine Matthews",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:The_Shard_and_London_Bridge_from_the_North_Bank_-_geograph.org.uk_-_6342322.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_article": "London Bridge",
+    "photo_query": "intitle:\"London Bridge\" current",
+    "food": "Almoço proposto de 13h30 a 14h15 na região London Bridge/Borough/Bankside, conforme rota e lotação; prever mais tempo se houver fila. Não depender de comer em pé no mercado: reservar mesa com banheiro acessível ou escolher restaurante no trajeto. Orçamento inicial £20–35 por pessoa, sujeito ao cardápio. O Fifteen citado no vídeo fechou e não é opção de reserva.",
+    "sources": [
+      {
+        "title": "City Bridge Foundation — pontes de Londres",
+        "url": "https://www.citybridgefoundation.org.uk/"
+      },
+      {
+        "title": "Borough Market — visita",
+        "url": "https://boroughmarket.org.uk/visit-us/"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=511s"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "route_day": 2,
+    "route_sequence": 3,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 2,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "London Bridge / Southwark, London"
+  },
+  "londres-tate": {
+    "key": "londres-tate",
+    "title": "Tate Modern — visita curta opcional",
+    "city": "Londres",
+    "kicker": "Dia 2 · Londres · Parada 4",
+    "intro": "A Tate Modern ocupa a antiga central elétrica de Bankside e transforma arquitetura industrial em espaço de arte moderna e contemporânea. A escala da Turbine Hall é parte da experiência, mesmo antes de entrar em galerias de coleção. A visita mostra uma Londres diferente do circuito real e medieval da manhã.",
+    "history": [
+      "A Tate Modern ocupa a antiga central elétrica de Bankside e transforma arquitetura industrial em espaço de arte moderna e contemporânea. A escala da Turbine Hall é parte da experiência, mesmo antes de entrar em galerias de coleção. A visita mostra uma Londres diferente do circuito real e medieval da manhã.",
+      "A seleção de dois dias permite apenas uma introdução, não um percurso completo do museu. Escolher um setor ou a grande área de entrada preserva energia e tempo para St Paul’s. Exposições especiais e áreas temporariamente fechadas têm condições próprias. Se houver atraso, a Tate será observada pelo exterior; se a prioridade for o interior pago de St Paul’s, retirar esta visita curta e antecipar a travessia."
+    ],
+    "stops": [
+      {
+        "title": "Edifício e Turbine Hall",
+        "text": "Confirmar entrada acessível, horários e setor em operação."
+      },
+      {
+        "title": "Uma seleção de arte",
+        "text": "Visitar poucas obras ou uma galeria, sem ingresso de mostra especial obrigatório."
+      },
+      {
+        "title": "Saída para o Millennium Bridge",
+        "text": "Reduzir a parada se estiver tarde; não comprometer a opção de St Paul’s."
+      }
+    ],
+    "tips": [
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
+    ],
+    "arrival": "Tate Modern, Bankside. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "14:40–15:30 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Coleções de acesso geral gratuitas; exposições especiais podem cobrar. Consulta no site oficial necessária para 10/11 e eventuais reservas. Visita de 50 minutos é opcional e selecionada; não equivale a conhecer todo o museu.",
+    "accessibility": "Confirmar entrada sem degraus, elevadores em serviço e sanitário no mapa da Tate. Não contar com terraço panorâmico ou piso específico sem verificar sua abertura. Chuva pode tornar a parada interna uma boa alternativa a trechos externos.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/df5b18cb0e676999.jpg",
+        "alt": "Tate Modern — visita curta opcional — vista geral",
+        "author": "Acabashi",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Tate_Modern_-_Bankside_Power_Station.jpg",
+        "caption": "Tate Modern — visita curta opcional — vista geral",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/5f21059522f62090557e.jpg",
+        "alt": "Tate Modern — visita curta opcional — perspectiva e detalhe",
+        "caption": "Tate Modern — visita curta opcional — outro olhar",
+        "author": "Txllxt TxllxT",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:London_-_Bankside_-_Jubilee_Walkway_-_View_SE_on_Tate_Modern_1947-63_(Bankside_Power_Station)_by_Sir_Giles_Gilbert_Scott.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_article": "Tate Modern",
+    "photo_query": "intitle:\"Tate Modern\" Bankside",
+    "food": "Almoço proposto de 13h30 a 14h15 na região London Bridge/Borough/Bankside, conforme rota e lotação; prever mais tempo se houver fila. Não depender de comer em pé no mercado: reservar mesa com banheiro acessível ou escolher restaurante no trajeto. Orçamento inicial £20–35 por pessoa, sujeito ao cardápio. O Fifteen citado no vídeo fechou e não é opção de reserva.",
+    "sources": [
+      {
+        "title": "Tate — visita oficial",
+        "url": "https://www.tate.org.uk/visit/tate-modern"
+      },
+      {
+        "title": "Tate — mapa oficial com acessibilidade",
+        "url": "https://media.tate.org.uk/aztate-prd-ew-dg-wgtail-st1-ctr-data/galleries/TM_map.pdf"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "Vídeo indicado pelo grupo — referência visual",
+        "url": "https://www.youtube.com/watch?v=LGAZXjAX-8s&t=538s"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "route_day": 2,
+    "route_sequence": 4,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 2,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Tate Modern, Bankside, London"
+  },
+  "londres-millennium": {
+    "key": "londres-millennium",
+    "title": "Millennium Bridge — ligação para St Paul’s",
+    "city": "Londres",
+    "kicker": "Dia 2 · Londres · Parada 5",
+    "intro": "O Millennium Bridge liga Bankside à City e cria uma perspectiva direta entre a Tate e a cúpula de St Paul’s. Sua estrutura de pedestres pertence à renovação urbana da região na virada do milênio. A travessia também funciona como pausa de observação do rio e da relação entre arquiteturas de épocas distintas.",
+    "history": [
+      "O Millennium Bridge liga Bankside à City e cria uma perspectiva direta entre a Tate e a cúpula de St Paul’s. Sua estrutura de pedestres pertence à renovação urbana da região na virada do milênio. A travessia também funciona como pausa de observação do rio e da relação entre arquiteturas de épocas distintas.",
+      "Neste roteiro, a ponte é principalmente uma ligação, não uma nova visita com ingresso. A experiência deve respeitar vento, chuva e fluxo de pedestres, evitando parar o grupo em trechos estreitos. A chegada à margem norte exige atenção aos acessos; o caminho mais curto indicado para pedestres pode incluir degraus e não ser o melhor para a cadeira motorizada."
+    ],
+    "stops": [
+      {
+        "title": "Saída de Bankside",
+        "text": "Escolher o acesso por rampa e conferir condições do piso."
+      },
+      {
+        "title": "Perspectiva da catedral",
+        "text": "Fotografar sem interromper o fluxo."
+      },
+      {
+        "title": "Margem norte",
+        "text": "Usar a rota sem escadas confirmada até St Paul’s; se não viável, solicitar transporte."
+      }
+    ],
+    "tips": [
+      "Horários propostos: reservar apenas depois de confirmar operação na data, hotel e transporte de chegada.",
+      "Usar o planejamento acessível da TfL e conferir elevadores em serviço; reservar veículo que acomode seis e a cadeira, se necessário.",
+      "Levar agasalho e proteção de chuva; evitar margens inferiores com escadas e piso escorregadio. Prever pausas, banheiro e bateria da cadeira.",
+      "Gratuidade de acompanhante e reduções variam por instituição e dependem de documentação aceita; não aplicar regras de Roma ao Reino Unido."
+    ],
+    "arrival": "Millennium Bridge, Bankside–City. Horários locais. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "15:40–16:00 no roteiro; ajustar ao ritmo e às reservas.",
+    "booking": "Travessia pública gratuita, sujeita a restrições temporárias e condições do tempo. Não é uma ponte para passagem de veículos.",
+    "accessibility": "Inclinações, vento e superfícies molhadas podem exigir mais tempo. Confirmar acessos em ambas as margens e funcionamento de eventual equipamento; não depender exclusivamente de elevador sem conferir operação.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança, áreas restritas e regras de fotografia. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/7b03651f3f2a2c67.jpg",
+        "alt": "Millennium Bridge — ligação para St Paul’s — vista geral",
+        "author": "Ibex73",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Millenium_bridge_2015.jpg",
+        "caption": "Millennium Bridge — ligação para St Paul’s — vista geral",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/2bfa3cd0bfec604ea978.jpg",
+        "alt": "Millennium Bridge — ligação para St Paul’s — perspectiva e detalhe",
+        "caption": "Millennium Bridge — ligação para St Paul’s — outro olhar",
+        "author": "Txllxt TxllxT",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:London_-_Millennium_Bridge_-_Focus_on_St_Paul%27s_Cathedral.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_article": "Millennium Bridge, London",
+    "photo_query": "intitle:\"Millennium Bridge\" London St Paul",
+    "food": "Almoço proposto de 13h30 a 14h15 na região London Bridge/Borough/Bankside, conforme rota e lotação; prever mais tempo se houver fila. Não depender de comer em pé no mercado: reservar mesa com banheiro acessível ou escolher restaurante no trajeto. Orçamento inicial £20–35 por pessoa, sujeito ao cardápio. O Fifteen citado no vídeo fechou e não é opção de reserva.",
+    "sources": [
+      {
+        "title": "City Bridge Foundation — pontes e manutenção",
+        "url": "https://www.citybridgefoundation.org.uk/"
+      },
+      {
+        "title": "TfL — acessibilidade",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      },
+      {
+        "title": "TfL — transporte acessível",
+        "url": "https://tfl.gov.uk/transport-accessibility/"
+      }
+    ],
+    "reviewed": "2026-10-25",
+    "route_day": 2,
+    "route_sequence": 5,
+    "route_title": "Londres em dois dias",
+    "route_footnote": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data.",
+    "london_day": 2,
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-09",
+        "title": "Buckingham, Westminster e South Bank",
+        "places": [
+          "Palácio de Buckingham — exterior",
+          "St James’s Park",
+          "Abadia de Westminster",
+          "Cabines telefônicas de Westminster",
+          "Big Ben e Elizabeth Tower — exterior",
+          "Parlamento Britânico — exterior",
+          "London Eye e South Bank"
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2026-11-10",
+        "title": "Torre de Londres, pontes e Bankside",
+        "places": [
+          "Torre de Londres",
+          "Tower Bridge — exterior",
+          "London Bridge e entorno de Borough",
+          "Tate Modern — visita curta opcional",
+          "Millennium Bridge — ligação para St Paul’s",
+          "St Paul’s Cathedral — exterior; interior como alternativa"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "name": "British Museum — melhor substituição para um dia de chuva",
+        "text": "Exige ao menos 2–3 horas e deslocamento para Bloomsbury. Substituir parte relevante do segundo dia, ou reagendar para 11/11; não adicionar ao circuito completo Torre–Bankside. Coleção geral gratuita, mostras podem cobrar; consultar slot, elevadores e assistência.",
+        "url": "https://www.britishmuseum.org/visit",
+        "guide_key": "londres-british"
+      },
+      {
+        "name": "Sherlock Holmes Museum — incompatível com visita interna de cadeira",
+        "text": "O museu informa ausência de acesso para cadeira: vários pavimentos, escadas estreitas e nenhum elevador. A loja tem degrau. Não recomendar compra para Orlei sem solução expressamente confirmada; foto externa seria passeio separado em Baker Street.",
+        "url": "https://www.sherlock-holmes.co.uk/plan-your-visit/access-information/"
+      },
+      {
+        "name": "Madame Tussauds — alternativa, não complemento",
+        "text": "Visita paga em Baker Street. Exige tempo e reserva específica de acessibilidade, com capacidade limitada por slot. Pode substituir a tarde de Bankside se for prioridade do grupo; confirmar a cadeira motorizada antes de pagar.",
+        "url": "https://www.madametussauds.com/london/plan-your-visit/before-you-visit/accessibility-guide/"
+      },
+      {
+        "name": "Plataforma 9¾ em King’s Cross",
+        "text": "É o ponto fotográfico na estação, com possíveis filas; não é passeio de trem nem entrada nos estúdios. Pode ser alternativa curta somente se hotel/deslocamento favorecer, preferencialmente em 11/11, sem atravessar Londres após St Paul’s.",
+        "url": "https://www.kingscross.co.uk/harry-potters-platform-9-34"
+      },
+      {
+        "name": "Hogwarts Express / Warner Bros. Studio Tour",
+        "text": "O cenário do trem fica no Studio Tour em Leavesden, fora do centro. Requer ingresso antecipado, deslocamento e grande parte do dia. Não cabe como parada rápida no segundo dia. Não confundir com King’s Cross nem com o trem dos parques da Universal.",
+        "url": "https://www.wbstudiotour.co.uk/the-experience/explore-the-tour/sets/platform-9-%C2%BE/"
+      },
+      {
+        "name": "Hyde Park",
+        "text": "Parque interessante, mas fora do eixo do segundo dia; St James’s já oferece pausa verde no primeiro. Em novembro, priorizar o trecho curto próximo ao hotel se houver tempo livre, sem incluí-lo como obrigação.",
+        "url": "https://www.royalparks.org.uk/visit/parks/hyde-park"
+      },
+      {
+        "name": "Windsor Castle — fora deste roteiro",
+        "text": "Bate-volta fora de Londres. O calendário habitual fecha às terças e quartas, e 10/11/2026 é terça-feira: não agendar interior nessa data sem alteração oficial expressa. Mesmo em dia aberto, substituiria boa parte de um dia, com transporte e acesso a confirmar.",
+        "url": "https://www.rct.uk/visit/windsor-castle"
+      },
+      {
+        "name": "Stonehenge — excursão independente",
+        "text": "Não é uma atração do centro de Londres. Transporte e visita tomam grande parte do dia; combinar com Oxford e Windsor seria inadequado para este roteiro de dois dias e para o ritmo desejado. Consultar acesso do visitante e transporte interno em planejamento separado.",
+        "url": "https://www.english-heritage.org.uk/visit/places/stonehenge/"
+      },
+      {
+        "name": "Oxford — outro destino",
+        "text": "Cidade universitária que merece deslocamento e passeio próprios. Não cabe depois dos museus de Londres. Se for prioridade, trocar um dia inteiro e confirmar quais colleges estarão abertos e sua acessibilidade.",
+        "url": "https://www.experienceoxfordshire.org/"
+      },
+      {
+        "name": "Jamie Oliver’s Fifteen — fechado",
+        "text": "O Fifteen de Londres citado no vídeo fechou em maio de 2019. Não usar a referência antiga para planejar almoço ou reserva. Escolher restaurante em funcionamento no próprio trajeto e confirmar banheiro e acesso.",
+        "url": "https://cdn.jamieoliver.com/jog/uploads/2019/08/Jamie-Oliver-Social-Impact-Report-2018.pdf"
+      },
+      {
+        "name": "Covent Garden e Soho",
+        "text": "Visita anterior mantida como alternativa sem data. Pode ser opção para 11/11 conforme energia, com jantar cedo e preparação para a saída às 06h do dia 12; não somar ao circuito do segundo dia.",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/covent-garden",
+        "guide_key": "londres-covent"
+      }
+    ],
+    "map_query": "Millennium Bridge, Bankside–City, London"
   }
 }

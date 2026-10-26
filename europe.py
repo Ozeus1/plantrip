@@ -135,3 +135,4 @@ def seed(c):
     from roma2026 import apply_file
     apply_file(c,'paris2026.json','europa-paris-champagne-202611-v1','paris')
     apply_file(c,'roma_four_days.json','europa-roma-four-days-202610-v1','roma-four-days')
+    apply_file(c,'london_two_days.json','europa-london-two-days-202611-v1','london-two-days')

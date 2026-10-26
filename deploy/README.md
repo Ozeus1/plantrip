@@ -140,6 +140,15 @@ O arquivo é criado pelo usuário do terminal, com acesso privado e data no nome
 Abra `https://plantrip.orleibarbosa.com.br`, confira o certificado, faça login e teste uma foto/PDF, reprodução de vídeo e salvamento da ordem. Confira também os demais sites da VPS após recarregar o proxy. Nenhuma alteração remota é executada automaticamente por estes arquivos.
 # Atualização do roteiro Roma e Toscana — outubro de 2026
 
+## Londres em dois dias — 09 e 10/11/2026
+
+A migração `europa-london-two-days-202611-v1` faz backup `backup-before-london-two-days-*.db`, preserva IDs existentes, arquivos, comentários e memórias, e reorganiza 13 paradas:
+
+- 09/11: Buckingham exterior, St James’s Park, Abadia de Westminster, cabines, Big Ben, Parlamento exterior e London Eye/South Bank.
+- 10/11: Torre de Londres, Tower Bridge exterior, London Bridge, Tate Modern como visita curta opcional, Millennium Bridge e St Paul’s exterior. Para entrar em St Paul’s, é preciso retirar Tate e antecipar a visita; o circuito completo chega depois da última entrada turística habitual.
+
+British Museum e Covent Garden/Soho ficam como alternativas sem data, deixando 11/11 livre. Chegada a Londres continua a confirmar após saída de Paris em 08/11 às 23h; não comprar ingressos matinais sem resolver essa logística. Transporte de saída para Madrid em 12/11 às 06h permanece intacto. O Fifteen fechado, restrição de cadeira no Sherlock Holmes Museum, fechamento habitual de Windsor às terças, diferença entre Tower/London Bridge e entre King’s Cross/Studio Tour estão documentados nas alternativas. As páginas têm fotos licenciadas, história, fontes, mobilidade e navegação dos dois dias. A lista/timestamps fornecidos pelo grupo servem de referência ao vídeo; informações operacionais foram pesquisadas nas instituições responsáveis.
+
 ## Roma reorganizada em quatro dias (atualização posterior)
 
 A migração `europa-roma-four-days-202610-v1` é aplicada uma única vez ao iniciar o aplicativo, depois dos roteiros anteriores. Faz backup `backup-before-roma-four-days-*.db` no diretório de dados e mantém os IDs antigos e seus arquivos, comentários e vínculos de memórias. Cria paradas individuais para completar as atrações das imagens:

@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class GuideContent(unittest.TestCase):
     def test_complete_guides_with_local_licensed_photos(self):
         guides=json.loads((ROOT/'guides.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(guides),42)
+        self.assertEqual(len(guides),51)
         for key,g in guides.items():
             with self.subTest(guide=key):
                 if key in ('toscana-rural','champagne-reims'):
