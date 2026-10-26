@@ -4,7 +4,7 @@ COPY app.py .
 COPY europe.py .
 COPY roma2026.py roma2026.json ./
 COPY paris2026.json ./
-COPY roma_four_days.json ./
+COPY roma_four_days.json roma_rescheduled.json ./
 COPY london_two_days.json ./
 COPY london_without_museums.json ./
 COPY paris_five_days.json ./

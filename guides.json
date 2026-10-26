@@ -76,11 +76,11 @@
     "rome_day": 1,
     "rome_sequence": 1,
     "day_name": "Centro histórico",
-    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "day_note": "Primeiro dia do roteiro: manhã livre e passeio após o almoço, com pausas conforme a disposição do grupo.",
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -93,7 +93,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -106,7 +106,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -116,7 +116,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -215,7 +215,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -228,7 +228,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -241,7 +241,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -251,7 +251,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -344,7 +344,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -357,7 +357,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -370,7 +370,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -380,7 +380,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -497,7 +497,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -510,7 +510,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -523,7 +523,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -533,7 +533,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -626,7 +626,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -639,7 +639,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -652,7 +652,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -662,7 +662,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -707,7 +707,7 @@
     ],
     "arrival": "Piazza della Rotonda. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. Solicitar à equipe a entrada acessível e confirmar o percurso; não usar a fila comum como garantia de acesso sem desnível. Prever piso molhado em chuva, multidões e tempo de segurança.",
     "duration": "15:30–16:15 no roteiro, incluindo observação e pausas",
-    "booking": "Tarifa integral oficial de €7 desde julho/2026; menores de 18 anos e outras categorias têm isenções conforme regras. O benefício etário reduzido não decorre apenas de estudar no Brasil. Primeiro domingo: consultar condições; a visita proposta é quarta-feira, 28/10. Gratuidades de Orlei/Elma dependem de documentação aceita.",
+    "booking": "Tarifa integral oficial de €7 desde julho/2026; menores de 18 anos e outras categorias têm isenções conforme regras. O benefício etário reduzido não decorre apenas de estudar no Brasil. Primeiro domingo: consultar condições; a visita proposta é quinta-feira, 29/10. Gratuidades de Orlei/Elma dependem de documentação aceita.",
     "accessibility": "Solicitar à equipe a entrada acessível e confirmar o percurso; não usar a fila comum como garantia de acesso sem desnível. Prever piso molhado em chuva, multidões e tempo de segurança.",
     "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
     "photo_titles": [
@@ -752,11 +752,11 @@
     "rome_day": 1,
     "rome_sequence": 3,
     "day_name": "Centro histórico",
-    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "day_note": "Primeiro dia do roteiro: manhã livre e passeio após o almoço, com pausas conforme a disposição do grupo.",
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -769,7 +769,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -782,7 +782,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -792,7 +792,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -958,7 +958,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -971,7 +971,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -984,7 +984,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -994,7 +994,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -4053,7 +4053,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -4066,7 +4066,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -4079,7 +4079,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -4089,7 +4089,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -4404,7 +4404,7 @@
     "rome_day": 1,
     "rome_sequence": 2,
     "day_name": "Centro histórico",
-    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "day_note": "Primeiro dia do roteiro: manhã livre e passeio após o almoço, com pausas conforme a disposição do grupo.",
     "photos": [
       {
         "src": "/guide-photos/02b89aeb523c94465fb2.jpg",
@@ -4430,7 +4430,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -4443,7 +4443,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -4456,7 +4456,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -4466,7 +4466,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -4529,7 +4529,7 @@
     "rome_day": 1,
     "rome_sequence": 4,
     "day_name": "Centro histórico",
-    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "day_note": "Primeiro dia do roteiro: manhã livre e passeio após o almoço, com pausas conforme a disposição do grupo.",
     "photos": [
       {
         "src": "/guide-photos/31b195f4533acaa0.jpg",
@@ -4555,7 +4555,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -4568,7 +4568,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -4581,7 +4581,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -4591,7 +4591,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -4654,7 +4654,7 @@
     "rome_day": 1,
     "rome_sequence": 5,
     "day_name": "Centro histórico",
-    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "day_note": "Primeiro dia do roteiro: manhã livre e passeio após o almoço, com pausas conforme a disposição do grupo.",
     "photos": [
       {
         "src": "/guide-photos/991c23a71ddabe934946.jpg",
@@ -4680,7 +4680,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -4693,7 +4693,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -4706,7 +4706,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -4716,7 +4716,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -4779,7 +4779,7 @@
     "rome_day": 1,
     "rome_sequence": 6,
     "day_name": "Centro histórico",
-    "day_note": "Chegada às 06h: deixar malas, almoçar e descansar. Começar apenas se houver disposição; reduzir o roteiro se necessário.",
+    "day_note": "Primeiro dia do roteiro: manhã livre e passeio após o almoço, com pausas conforme a disposição do grupo.",
     "photos": [
       {
         "src": "/guide-photos/d31dbe6bc66f45dd27a9.jpg",
@@ -4805,7 +4805,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -4818,7 +4818,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -4831,7 +4831,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -4841,7 +4841,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -4930,7 +4930,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -4943,7 +4943,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -4956,7 +4956,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -4966,7 +4966,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -5055,7 +5055,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -5068,7 +5068,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -5081,7 +5081,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -5091,7 +5091,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -5180,7 +5180,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -5193,7 +5193,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -5206,7 +5206,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -5216,7 +5216,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -5305,7 +5305,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -5318,7 +5318,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -5331,7 +5331,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -5341,7 +5341,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -5430,7 +5430,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -5443,7 +5443,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -5456,7 +5456,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -5466,7 +5466,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -5575,7 +5575,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -5588,7 +5588,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -5601,7 +5601,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -5611,7 +5611,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",
@@ -5636,7 +5636,7 @@
     "stops": [
       {
         "title": "Chegada com antecedência",
-        "text": "14h30 é proposta: confirmar turno disponível, ingresso e procedimento de acessibilidade."
+        "text": "14h00 é proposta: confirmar turno disponível, ingresso e procedimento de acessibilidade."
       },
       {
         "title": "Seleção de obras",
@@ -5655,8 +5655,8 @@
       "Gratuidades dependem de regras e documentação de cada instituição. O primeiro domingo é 01/11, fora das quatro datas principais."
     ],
     "arrival": "Piazzale Scipione Borghese, 5. Horários locais de Roma. O mapa indica o local, não garante uma rota acessível. O museu informa equipamentos de acesso e cadeiras menores para uso em elevador. Confirmar dimensões, peso, pavimentos e eventual transferência da cadeira motorizada para a convencional antes de pagar. Se transferência não for possível, solicitar solução compatível ou substituir a visita.",
-    "duration": "14:30–16:30 no roteiro, incluindo observação e pausas",
-    "booking": "Ingresso integral publicado a €16, mais taxa de reserva de €2 quando aplicável; exposições e condições especiais podem alterar o preço. Reserva obrigatória inclusive para categorias gratuitas; há isenção da taxa para categorias específicas de deficiência/acompanhante, a validar. 31/10 é sábado, não primeiro domingo. Confirmar os seis bilhetes, documentos e acesso antes do pagamento.",
+    "duration": "14:00–16:00 no roteiro, incluindo observação e pausas",
+    "booking": "Visita proposta em 01/11/2026, primeiro domingo. Confirmar ingresso e disponibilidade nos canais oficiais. Reserva obrigatória inclusive para categorias gratuitas.",
     "accessibility": "O museu informa equipamentos de acesso e cadeiras menores para uso em elevador. Confirmar dimensões, peso, pavimentos e eventual transferência da cadeira motorizada para a convencional antes de pagar. Se transferência não for possível, solicitar solução compatível ou substituir a visita.",
     "photo_tip": "Observe uma vista geral e um detalhe. Fotografe sem bloquear o percurso e respeite as regras do local; as fotos do guia são referências, não registros da viagem.",
     "sources": [
@@ -5700,7 +5700,7 @@
     "route_summary": [
       {
         "day": 1,
-        "date": "2026-10-28",
+        "date": "2026-10-29",
         "title": "Centro histórico",
         "places": [
           "Fontana di Trevi",
@@ -5713,7 +5713,7 @@
       },
       {
         "day": 2,
-        "date": "2026-10-29",
+        "date": "2026-10-30",
         "title": "Roma Antiga",
         "places": [
           "Piazza Venezia",
@@ -5726,7 +5726,7 @@
       },
       {
         "day": 3,
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "title": "Vaticano e arredores",
         "places": [
           "Basílica e Praça de São Pedro",
@@ -5736,7 +5736,7 @@
       },
       {
         "day": 4,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "title": "Região norte",
         "places": [
           "Piazza di Spagna",

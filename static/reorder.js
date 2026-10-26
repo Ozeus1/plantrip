@@ -15,7 +15,7 @@ function renderOrderedSteps(rows){
   for(const e of rows){
     const day=e.start?e.start.slice(0,10):'';
     if(day!==lastDay){if(lastDay!==null)html+='</div>';html+=`<h2 class="day-heading">${day?new Date(day+'T12:00').toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'}):'Sem data definida'}</h2><div class="list-stack">`;lastDay=day}
-    html+=`<article class="entry-card ordered-step" data-step-id="${e.id}" data-detail="${e.id}" tabindex="0" role="button">${admin?`<button type="button" class="drag-handle" draggable="false" ${canDrag?'':'disabled'} aria-label="Reordenar ${esc(e.title)}" title="Arraste para mover. Pelo teclado, use Alt + seta para cima ou para baixo.">⠿</button>`:''}<div class="date-box">${date(e.start)}<strong>${time(e.start)||'—'}</strong></div><div class="step-description"><span class="tag">${esc(e.category)}</span><h3>${esc(e.title)}</h3><p>⌖ ${esc(e.place||'Local a definir')}${e.end&&e.start&&e.end.slice(0,10)!==e.start.slice(0,10)?' · até '+date(e.end):''} · ${e.files.length} arquivos · ${e.comments.length} comentários</p>${e.kind==='tour'?`<a class="guide-open-link" href="/attractions/${e.id}" data-open-guide="${e.id}">Conhecer a atração · Guia completo ↗</a>`:''}</div>${e.kind==='tour'&&e.guide?.photos?.[0]?`<img class="tour-thumb" src="${esc(e.guide.photos[0].src)}" alt="${esc(e.guide.photos[0].alt)}" loading="lazy">`:''}</article>`;
+    html+=`<article class="entry-card ordered-step" data-step-id="${e.id}" data-detail="${e.id}" tabindex="0" role="button">${admin?`<button type="button" class="drag-handle" draggable="false" ${canDrag?'':'disabled'} aria-label="Reordenar ${esc(e.title)}" title="Arraste para mover. Pelo teclado, use Alt + seta para cima ou para baixo.">⠿</button>`:''}<div class="date-box">${stepEditable(e,"start",date(e.start)+"<strong>"+(time(e.start)||"—")+"</strong>")}</div><div class="step-description"><span class="tag">${esc(e.category)}</span><h3>${stepEditable(e,"title",esc(e.title))}</h3><p>⌖ ${esc(e.place||'Local a definir')}${e.end&&e.start&&e.end.slice(0,10)!==e.start.slice(0,10)?' · até '+date(e.end):''} · ${e.files.length} arquivos · ${e.comments.length} comentários</p>${e.kind==='tour'?`<a class="guide-open-link" href="/attractions/${e.id}" data-open-guide="${e.id}">Conhecer a atração · Guia completo ↗</a>`:''}</div>${admin?`<button type="button" class="text-btn danger" data-remove-step="${e.id}">Excluir ponto</button>`:""}${e.kind==='tour'&&e.guide?.photos?.[0]?`<img class="tour-thumb" src="${esc(e.guide.photos[0].src)}" alt="${esc(e.guide.photos[0].alt)}" loading="lazy">`:''}</article>`;
   }
   return controls+html+(rows.length?'</div>':'');
 }
@@ -91,4 +91,36 @@ function bindStepOrdering(){
     handle.onlostpointercapture=e=>finishPointer(e,true);
   });
   if($('#resetStepOrder'))$('#resetStepOrder').onclick=()=>saveStepOrder([],null,true);
+}
+
+function stepEditable(e,field,label){
+  return state.user.role==='admin'?`<button type="button" class="inline-step" data-inline-step="${e.id}" data-field="${field}" title="Clique para editar" aria-label="Editar ${field==='title'?'título':'data e horário'} de ${esc(e.title)}">${label}</button>`:label;
+}
+function bindInlineSteps(){
+  document.querySelectorAll('[data-inline-step]').forEach(button=>{
+    button.onkeydown=ev=>ev.stopPropagation();
+    button.onclick=ev=>{
+      ev.stopPropagation();if(state.user.role!=='admin')return;
+      const entry=state.entries.find(e=>e.id===Number(button.dataset.inlineStep)),field=button.dataset.field;
+      const form=document.createElement('form');form.className='inline-step-form';
+      form.innerHTML=`<input aria-label="${field==='title'?'Título':'Data e horário'}" type="${field==='title'?'text':entry[field]?.length===10?'date':'datetime-local'}" value="${esc(entry[field])}" required><button type="submit">Salvar</button><button type="button">Cancelar</button>`;
+      form.onclick=e=>e.stopPropagation();form.onkeydown=e=>{e.stopPropagation();if(e.key==='Escape'){e.preventDefault();form.replaceWith(button)}};
+      form.querySelector('button[type=button]').onclick=()=>form.replaceWith(button);
+      form.onsubmit=async event=>{
+        event.preventDefault();const value=form.querySelector('input').value.trim();if(!value)return;
+        const payload={...entry,[field]:value};
+        if(field==='start'&&entry.end&&entry.start){
+          const delta=new Date(value)-new Date(entry.start);
+          const end=new Date(new Date(entry.end).getTime()+delta);
+          if(Number.isFinite(end.getTime())){const local=new Date(end.getTime()-end.getTimezoneOffset()*60000).toISOString();payload.end=local.slice(0,entry.end.length===10?10:16)}
+        }
+        form.querySelectorAll('button').forEach(b=>b.disabled=true);
+        try{await api('/api/entries',payload);await load();toast('Etapa atualizada.')}catch(error){toast(error.message);form.querySelectorAll('button').forEach(b=>b.disabled=false)}
+      };
+      button.replaceWith(form);form.querySelector('input').focus();
+    };
+  });
+  document.querySelectorAll('[data-remove-step]').forEach(button=>{
+    button.onkeydown=ev=>ev.stopPropagation();button.onclick=async ev=>{ev.stopPropagation();if(state.user.role!=='admin'||!confirm('Excluir este ponto e seus arquivos e comentários?'))return;try{await api('/api/delete',{entry_id:Number(button.dataset.removeStep)});await load()}catch(error){toast(error.message)}};
+  });
 }
