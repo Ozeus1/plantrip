@@ -19,4 +19,4 @@ def guide_for(entry):
 
 def preview(entry):
     g=guide_for(entry)
-    return {'key':g['key'],'intro':g['intro'],'photos':g['photos'],'history':g['history']} if g else None
+    return {'key':g['key'],'intro':g['intro'],'photos':g['photos'],'history':g['history'],'map_query':g.get('map_query','')} if g else None
