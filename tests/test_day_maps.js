@@ -4,13 +4,14 @@ const vm=require('node:vm');
 const entry=(id,title,day='2026-10-29',place='Roma')=>({id,title,start:day+'T09:00',place,kind:'tour',trip_id:1});
 const stops=[entry(3,'Pantheon'),entry(1,'Fontana di Trevi'),entry(2,'Piazza Navona')];
 const link={setAttribute(){}};
+const segmentsButton={};
 const classes=()=>({toggle(){}});
 const cards=[{dataset:{mapDay:'2026-10-29'},classList:classes()},{dataset:{mapDay:'2026-10-30'},classList:classes()}];
 const buttons=cards.map(c=>({dataset:{selectMapDay:c.dataset.mapDay},setAttribute(){}}));
 const context=vm.createContext({URLSearchParams,encodeURIComponent,console,
   memoryDay:s=>s?.slice(0,10),esc:String,
   state:{entries:[...stops,entry(4,'Coliseu','2026-10-30'),entry(5,'Paris','2026-10-29','Paris'),{...entry(6,'Outra viagem'),trip_id:2}]},
-  $:()=>link,navigator:{userAgent:'desktop'},
+  $:selector=>selector==='#guideMapSegments'?segmentsButton:link,navigator:{userAgent:'desktop'},
   document:{querySelectorAll:selector=>selector==='[data-map-day]'?cards:selector==='[data-select-map-day]'?buttons:[]},
 });
 vm.runInContext(fs.readFileSync('static/attractions.js','utf8'),context);
@@ -41,4 +42,30 @@ vm.runInContext(`guideMapSelection={mode:'place',date:'2026-10-29',id:3}`,contex
 context.bindGuideDayMap(stops[0],guide);
 assert.equal(new URL(link.href).searchParams.get('query'),'Pantheon Roma');
 assert.ok(!new URL(link.href).searchParams.has('waypoints'));
+assert.equal(segmentsButton.hidden,true);
+// A mobile day with seven stops must open Maps directly, just like desktop.
+// The secondary action offers the ordered list and shorter compatible segments.
+context.state.entries=many.slice(0,7);
+vm.runInContext(`guideMapSelection={mode:'day',date:'2026-10-29',id:0}`,context);
+context.navigator.userAgent='Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X)';
+context.bindGuideDayMap(context.state.entries[0],guide);
+assert.equal(link.target,'_self');
+assert.ok(context.guideDayMapLink('2026-10-29').includes('target="_self"'));
+assert.ok(context.guideDayMapLink('2026-10-29').includes('data-day-map-link'));
+let prevented=false;
+link.onclick({preventDefault(){prevented=true}});
+assert.equal(prevented,false);
+assert.equal(new URL(link.href).searchParams.get('waypoints').split('|').length,5);
+assert.equal(segmentsButton.hidden,false);
+const mobileUrl=link.href;
+context.navigator.userAgent='Mozilla/5.0 (Windows NT 10.0)';
+context.bindGuideDayMap(context.state.entries[0],guide);
+assert.equal(link.href,mobileUrl);
+assert.equal(link.target,'_blank');
+context.navigator.userAgent='Mozilla/5.0 (Linux; Android 14)';
+assert.equal(context.guideMapTarget(),'_self');
+context.navigator.userAgent='Mozilla/5.0 (Macintosh; Intel Mac OS X)';
+context.navigator.maxTouchPoints=5;
+assert.equal(context.guideMapTarget(),'_self');
+assert.equal(context.guideDayMapLink('2099-01-01'),'');
 console.log('Mapas por dia e por atração, sequência personalizada e trechos completos: OK');

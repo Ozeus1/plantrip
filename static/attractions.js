@@ -9,6 +9,14 @@ function guideDayEntries(day){
 }
 function guideMapQuery(entry){return entry.guide?.map_query||((attractionData?.entry.id===entry.id&&attractionData?.guide?.map_query)||`${entry.title} ${entry.place}`)}
 function guidePlaceMapUrl(entry){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(guideMapQuery(entry))}
+function guideMapTarget(){
+  const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Macintosh/i.test(navigator.userAgent));
+  return mobile?'_self':'_blank';
+}
+function guideDayMapLink(day){
+  const entries=guideDayEntries(day);
+  return entries.length?`<a class="map-button day-map-open" data-day-map-link href="${esc(guideDayMapUrl(entries))}" target="${guideMapTarget()}" rel="noopener">⌖ Abrir mapa deste dia</a>`:'';
+}
 function guideDayMapUrl(entries){
   if(!entries.length)return '';
   if(entries.length===1)return guidePlaceMapUrl(entries[0]);
@@ -33,33 +41,43 @@ function showGuideMapSegments(entries,maxPoints){
   const segments=guideMapSegments(entries,maxPoints);
   dialog.innerHTML=`<div class="modal-heading"><h2>Mapa do dia · ${fullDate(guideMapSelection.date)}</h2><button type="button" class="close" aria-label="Fechar mapa">×</button></div><p>Abra os trechos na ordem abaixo para percorrer todos os pontos. A última parada de um trecho inicia o próximo.</p><ol>${entries.map(e=>`<li><a href="${esc(guidePlaceMapUrl(e))}" target="_blank" rel="noopener">${esc(e.title)}</a></li>`).join('')}</ol><div class="day-map-segments">${segments.map((segment,i)=>`<a class="map-button" href="${esc(guideDayMapUrl(segment.entries))}" target="_blank" rel="noopener">Trecho ${i+1} · pontos ${segment.start+1} a ${segment.start+segment.entries.length} ↗</a>`).join('')}</div>`;
   dialog.querySelector('.close').onclick=()=>dialog.close();
+  dialog.querySelectorAll('a').forEach(a=>a.target=guideMapTarget());
   dialog.addEventListener('close',()=>dialog.remove(),{once:true});document.body.append(dialog);dialog.showModal();
 }
 function bindGuideDayMap(entry,guide){
   const link=$('#guideMap');
   if(!link)return;
   const days=guide.route_summary||[];
+  let segmentsButton=$('#guideMapSegments');
+  if(!segmentsButton){
+    segmentsButton=document.createElement('button');segmentsButton.id='guideMapSegments';segmentsButton.type='button';
+    segmentsButton.className='text-btn';segmentsButton.textContent='Ver percurso e trechos para celular';
+    link.after(segmentsButton);
+  }
   if(!guideMapSelection)guideMapSelection={mode:'day',date:memoryDay(entry.start),id:entry.id};
   if(!days.some(day=>day.date===guideMapSelection.date))guideMapSelection.mode='place';
   function update(){
     const selection=guideMapSelection,isDay=selection.mode==='day',entries=isDay?guideDayEntries(selection.date):[entry];
     link.textContent=isDay?'⌖ Abrir mapa do dia':'⌖ Abrir mapa da atração';
     link.href=isDay?guideDayMapUrl(entries):guidePlaceMapUrl(entry);
+    link.target=guideMapTarget();
     link.setAttribute('aria-disabled',String(!entries.length));
     link.title=isDay?`${entries.length} pontos na sequência do quadro`:entry.title;
+    segmentsButton.hidden=!isDay||entries.length<2;
+    segmentsButton.onclick=()=>showGuideMapSegments(entries,5);
     document.querySelectorAll('[data-map-day]').forEach(card=>card.classList.toggle('current',card.dataset.mapDay===selection.date));
     document.querySelectorAll('[data-select-map-day]').forEach(button=>button.setAttribute('aria-pressed',String(isDay&&button.dataset.selectMapDay===selection.date)));
     document.querySelectorAll('[data-map-place]').forEach(button=>button.classList.toggle('map-place-selected',!isDay&&Number(button.dataset.mapPlace)===entry.id));
     link.onclick=ev=>{
       if(!entries.length){ev.preventDefault();toast('Este dia ainda não tem pontos no roteiro.');return}
       if(!isDay)return;
-      const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Macintosh/i.test(navigator.userAgent));
-      const maxPoints=mobile?5:11;
-      if(guideMapSegments(entries,maxPoints).length>1){ev.preventDefault();showGuideMapSegments(entries,maxPoints)}
+      // The main action opens the same complete route on desktop and mobile.
+      // Smaller, browser-compatible segments remain available as a separate action.
+      if(guideMapSegments(entries,11).length>1){ev.preventDefault();showGuideMapSegments(entries,11)}
     };
   }
   document.querySelectorAll('[data-map-day]').forEach(card=>card.onclick=ev=>{
-    if(ev.target.closest('[data-guide-nav]'))return;
+    if(ev.target.closest('[data-guide-nav], [data-day-map-link]'))return;
     guideMapSelection={mode:'day',date:card.dataset.mapDay,id:entry.id};update();
   });
   update();
@@ -67,7 +85,7 @@ function bindGuideDayMap(entry,guide){
 function officialLinks(g){return g.sources.map(s=>`<a class="source-link" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)} <span>↗</span></a>`).join('')}
 function planningNotes(value){const parts=String(value||'O administrador ainda não adicionou observações para esta etapa.').split('\n\nRegistro anterior do planejamento (substituído pelo roteiro acima):\n');return `<p class="detail-description">${esc(parts.shift())}</p>${parts.length?`<details class="guide-previous-plan"><summary>Consultar histórico do planejamento anterior</summary><p class="detail-description">${esc(parts.join('\n\n'))}</p></details>`:''}`}
 function guideAlternatives(g){if(!g.alternatives?.length)return '';return `<section class="guide-section guide-alternatives"><span class="eyebrow">ESCOLHAS PARA O SEU TEMPO</span><h2>O que cabe — e o que fica para outra ocasião</h2><p>${esc(g.alternatives_intro||'Consulte as alternativas antes de alterar o roteiro.')}</p><details><summary>Ver alternativas, restrições e motivos da seleção</summary>${g.alternatives.map(a=>{const entry=state.entries.find(e=>e.kind==='tour'&&e.guide_key===a.guide_key);return `<article><h3>${esc(a.name)}</h3><p>${esc(a.text)}</p>${entry?`<button type="button" class="text-btn" data-guide-nav="${entry.id}">Consultar guia preservado ↗</button>`:''}<a class="source-link" href="${esc(a.url)}" target="_blank" rel="noopener">Conferir referência <span>↗</span></a></article>`}).join('')}</details></section>`}
-function romeDayOverview(g){if(!g.route_summary)return '';const routeDay=g.route_day||g.rome_day,routeSequence=g.route_sequence||g.rome_sequence,routeTitle=g.route_title||'Roma em quatro dias';return `<section class="rome-day-overview${g.route_summary.length===2?' route-two-days':''}" aria-label="${esc(routeTitle)}"><div class="guide-section-heading"><div><span class="eyebrow">${esc(routeTitle.toLocaleUpperCase('pt-BR'))}</span><h2>Um percurso por região.</h2></div><span class="tag">Você está no dia ${routeDay} · parada ${routeSequence}</span></div><div class="rome-days-grid">${g.route_summary.map(day=>`<article data-map-day="${esc(day.date)}" class="rome-day${routeDay===day.day?' current':''}"><span class="eyebrow">DIA ${day.day} · ${fullDate(day.date)}</span><h3><button type="button" class="day-map-select" data-select-map-day="${esc(day.date)}" aria-pressed="false">${esc(day.title)}</button></h3><ol>${guideDayEntries(day.date).map(entry=>`<li><button type="button" class="text-btn" data-guide-nav="${entry.id}" data-map-place="${entry.id}">${esc(entry.title)} <small>${time(entry.start)}${entry.end?' – '+time(entry.end):''}</small></button></li>`).join('')}</ol></article>`).join('')}</div><p class="guide-muted">Clique no quadro para selecionar o mapa do dia ou em uma atração para mostrar apenas esse ponto. Sequência sugerida e editável. Ingressos com hora marcada, abertura e percurso acessível precisam ser confirmados. ${esc(g.route_footnote||'Toscana e Trastevere ficam como alternativas sem data.')}</p></section>`}
+function romeDayOverview(g){if(!g.route_summary)return '';const routeDay=g.route_day||g.rome_day,routeSequence=g.route_sequence||g.rome_sequence,routeTitle=g.route_title||'Roma em quatro dias';return `<section class="rome-day-overview${g.route_summary.length===2?' route-two-days':''}" aria-label="${esc(routeTitle)}"><div class="guide-section-heading"><div><span class="eyebrow">${esc(routeTitle.toLocaleUpperCase('pt-BR'))}</span><h2>Um percurso por região.</h2></div><span class="tag">Você está no dia ${routeDay} · parada ${routeSequence}</span></div><div class="rome-days-grid">${g.route_summary.map(day=>`<article data-map-day="${esc(day.date)}" class="rome-day${routeDay===day.day?' current':''}"><span class="eyebrow">DIA ${day.day} · ${fullDate(day.date)}</span><h3><button type="button" class="day-map-select" data-select-map-day="${esc(day.date)}" aria-pressed="false">${esc(day.title)}</button></h3><ol>${guideDayEntries(day.date).map(entry=>`<li><button type="button" class="text-btn" data-guide-nav="${entry.id}" data-map-place="${entry.id}">${esc(entry.title)} <small>${time(entry.start)}${entry.end?' – '+time(entry.end):''}</small></button></li>`).join('')}</ol>${guideDayMapLink(day.date)}</article>`).join('')}</div><p class="guide-muted">Clique no quadro para selecionar o mapa do dia ou em uma atração para mostrar apenas esse ponto. Sequência sugerida e editável. Ingressos com hora marcada, abertura e percurso acessível precisam ser confirmados. ${esc(g.route_footnote||'Toscana e Trastevere ficam como alternativas sem data.')}</p></section>`}
 async function openAttraction(id,push=true,mapMode='day'){
   try{
     const result=await api('/api/attractions/'+id),e=result.entry;
