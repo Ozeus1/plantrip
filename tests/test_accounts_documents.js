@@ -30,4 +30,30 @@ assert.ok(!node('#documentResults').innerHTML.includes('Passaportes'));
 context.state.user.role='member';context.renderDocuments();assert.equal(node('#add').hidden,true);
 assert.ok(context.avatarHtml({name:'Ana',photo:'data:image/png;base64,abc'}).includes('<img'));
 assert.ok(context.avatarHtml({name:'Ana'}).includes('>A</span>'));
+// The logistics editor must keep uploads visible, including when editing an existing entry.
+const uploadLabel={hidden:true},dateRow={},categoryLabel={};
+node('#entryForm').elements={
+  start:{closest:()=>dateRow},category:{closest:()=>categoryLabel},
+  files:{closest:()=>uploadLabel,value:'selected.pdf'},id:{value:'2'},kind:{value:'logistics'},
+};
+context.configureEntryEditor('logistics');
+assert.equal(uploadLabel.hidden,false);
+assert.equal(node('#entryForm').elements.files.value,'selected.pdf');
+assert.equal(dateRow.hidden,false);
+context.configureEntryEditor('documents');assert.equal(dateRow.hidden,true);
+context.configureEntryEditor('logistics');assert.equal(uploadLabel.hidden,false);
+// Render the actual detail function to ensure the upload controls appear directly in Logistics.
+const appSource=fs.readFileSync('static/app.js','utf8');
+vm.runInContext(appSource.slice(appSource.indexOf('function detail(id)'),appSource.indexOf("$('#memberForm').onsubmit")),context);
+context.view='logistics';context.state.user.role='admin';
+context.state.entries[1].comments=[];
+context.date=String;context.time=()=>'';context.media=()=>'<a>reserva.pdf</a>';
+context.canEdit=()=>context.state.user.role==='admin';
+node('#detail').showModal=()=>{};
+context.detail(2);
+assert.ok(node('#detailContent').innerHTML.includes('id="docFiles" multiple'));
+assert.ok(node('#detailContent').innerHTML.includes('id="docSend"'));
+assert.ok(node('#detailContent').innerHTML.includes('reserva.pdf'));
+context.state.user.role='member';context.detail(2);
+assert.ok(!node('#detailContent').innerHTML.includes('id="docSend"'));
 console.log('Documentação: anexos antigos, busca, acesso e fotos: OK');

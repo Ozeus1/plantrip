@@ -28,8 +28,7 @@ function configureEntryEditor(kind){
   const f=$('#entryForm'),docs=kind==='documents';
   f.elements.start.closest('.form-row').hidden=docs;
   f.elements.category.closest('label').hidden=docs;
-  f.elements.files.closest('label').hidden=kind==='logistics';
-  if(kind==='logistics')f.elements.files.value='';
+  f.elements.files.closest('label').hidden=false;
   f.elements.files.accept=docs?'image/jpeg,image/png,image/webp,image/gif,application/pdf':'image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/quicktime,application/pdf';
   $('#editorTitle').textContent=docs?(f.elements.id.value?'Editar documentação':'Adicionar documentação'):(f.elements.id.value?'Editar etapa':'Um novo passo na viagem');
   f.elements.kind.onchange=()=>configureEntryEditor(f.elements.kind.value);
