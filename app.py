@@ -52,6 +52,7 @@ def init():
         CREATE TABLE IF NOT EXISTS migrations(name TEXT PRIMARY KEY);
         CREATE TABLE IF NOT EXISTS password_requests(id INTEGER PRIMARY KEY,user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,created TEXT NOT NULL,status TEXT NOT NULL DEFAULT 'pending',resolved_by INTEGER REFERENCES users(id));
         CREATE UNIQUE INDEX IF NOT EXISTS one_pending_password_request ON password_requests(user_id) WHERE status='pending';
+        CREATE TABLE IF NOT EXISTS upload_links(token TEXT PRIMARY KEY,trip_id INTEGER NOT NULL REFERENCES trips(id) ON DELETE CASCADE,user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,created TEXT NOT NULL,UNIQUE(trip_id,user_id));
         ''')
         if 'trip_id' not in {r['name'] for r in c.execute('PRAGMA table_info(entries)')}:
             c.execute('ALTER TABLE entries ADD COLUMN trip_id INTEGER REFERENCES trips(id)')
@@ -80,6 +81,16 @@ def available_trips(c,u):
     trips=[dict(r) for r in rows]
     for trip in trips:trip['member_ids']=[r[0] for r in c.execute('SELECT user_id FROM trip_members WHERE trip_id=?',(trip['id'],))]
     return trips
+
+UPLOAD_TYPES={'.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.webp':'image/webp','.gif':'image/gif','.heic':'image/heic','.heif':'image/heif','.mp4':'video/mp4','.webm':'video/webm','.mov':'video/quicktime'}
+
+def upload_link(c,token):
+    '''Link individual de envio de fotos: vale enquanto o participante pertencer à viagem.'''
+    if not isinstance(token,str) or not re.fullmatch(r'[A-Za-z0-9_-]{20,64}',token):return None
+    return c.execute('SELECT l.token,l.trip_id,l.user_id,t.name trip_name,t.start trip_start,t.end trip_end,u.name user_name,u.photo user_photo FROM upload_links l JOIN trips t ON t.id=l.trip_id JOIN users u ON u.id=l.user_id JOIN trip_members m ON m.trip_id=l.trip_id AND m.user_id=l.user_id WHERE l.token=?',(token,)).fetchone()
+
+def upload_places(c,trip_id):
+    return [dict(r) for r in c.execute("SELECT id,title,place,start FROM entries WHERE trip_id=? AND kind='tour' ORDER BY CASE WHEN sort_order IS NULL THEN 1 ELSE 0 END,sort_order,start,id",(trip_id,))]
 
 class Handler(BaseHTTPRequestHandler):
     def respond(self, data, status=200, headers=None):
@@ -129,6 +140,10 @@ class Handler(BaseHTTPRequestHandler):
                     e['files']=[dict(r) for r in c.execute("SELECT id,name,mime FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%')",(e['id'],))]
                     e['comments']=[dict(r) for r in c.execute('SELECT u.name author,u.photo author_photo,c.body,c.created FROM comments c JOIN users u ON u.id=c.user_id WHERE c.entry_id=? ORDER BY c.id',(e['id'],))]
                 return self.respond({'trips':trips,'entries':entries})
+            if path.startswith('/api/u/'):
+                link=upload_link(c,path[len('/api/u/'):])
+                if not link:return self.respond({'error':'Este QR-code não é mais válido. Peça um novo ao organizador da viagem.'},404)
+                return self.respond({'trip':{'id':link['trip_id'],'name':link['trip_name'],'start':link['trip_start'],'end':link['trip_end']},'participant':{'name':link['user_name'],'photo':link['user_photo']},'places':upload_places(c,link['trip_id'])})
             if path=='/api/state':
                 if not u:
                     return self.respond({'user':None,'setup':os.environ.get('ALLOW_SETUP','1')=='1' and c.execute('SELECT count(*) FROM users').fetchone()[0]==0})
@@ -166,7 +181,7 @@ class Handler(BaseHTTPRequestHandler):
                 if not public and (not entry or not allowed(c,u,entry['trip_id'])):return self.respond({'error':'Sem acesso a esta viagem'},403)
                 target=DATA/'uploads'/f['path']; mime=f['mime']
             else:
-                target=ROOT/'static'/('index.html' if path in ('/','/diary') or re.fullmatch(r'/attractions/\d+/?',path) else path.lstrip('/'))
+                target=ROOT/'static'/('index.html' if path in ('/','/diary') or re.fullmatch(r'/attractions/\d+/?',path) else 'upload.html' if re.fullmatch(r'/u/[A-Za-z0-9_-]+/?',path) else path.lstrip('/'))
                 if not target.resolve().is_relative_to((ROOT/'static').resolve()):return self.respond({'error':'Inválido'},404)
                 mime=mimetypes.guess_type(str(target))[0] or 'application/octet-stream'
             if not target.is_file():return self.respond({'error':'Não encontrado'},404)
@@ -209,7 +224,18 @@ class Handler(BaseHTTPRequestHandler):
                     c.commit(); self.send_response(200)
                     self.send_header('Set-Cookie',f'session={token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=604800'+('; Secure' if os.environ.get('COOKIE_SECURE')=='1' else ''))
                     self.send_header('Content-Type','application/json'); self.end_headers(); self.wfile.write(b'{}'); return
+                if path.startswith('/api/u/'):return self.public_upload(c,path,payload,raw)
                 if not u:return self.respond({'error':'Faça login'},401)
+                if path=='/api/upload-links':
+                    tid=payload.get('trip_id');uid=payload.get('user_id')
+                    if type(tid) is not int or type(uid) is not int:raise ValueError('Viagem ou participante inválido')
+                    if u['role']!='admin' and uid!=u['id']:return self.respond({'error':'Você só pode ver o seu próprio QR-code'},403)
+                    if payload.get('regenerate') is True and u['role']!='admin':return self.respond({'error':'Apenas o administrador pode gerar um novo QR-code'},403)
+                    if not allowed(c,u,tid) or not c.execute('SELECT 1 FROM trip_members WHERE trip_id=? AND user_id=?',(tid,uid)).fetchone():return self.respond({'error':'Participante não pertence a esta viagem'},404)
+                    if payload.get('regenerate') is True:c.execute('DELETE FROM upload_links WHERE trip_id=? AND user_id=?',(tid,uid))
+                    c.execute('INSERT OR IGNORE INTO upload_links VALUES(?,?,?,?)',(secrets.token_urlsafe(24),tid,uid,datetime.now(timezone.utc).isoformat()))
+                    token=c.execute('SELECT token FROM upload_links WHERE trip_id=? AND user_id=?',(tid,uid)).fetchone()['token']
+                    return self.respond({'token':token,'path':'/u/'+token})
                 if path=='/api/password-requests/resolve':
                     if u['role']!='admin':return self.respond({'error':'Apenas administrador'},403)
                     result=c.execute("UPDATE password_requests SET status='resolved',resolved_by=? WHERE id=? AND status='pending'",(u['id'],payload.get('request_id')))
@@ -354,6 +380,38 @@ class Handler(BaseHTTPRequestHandler):
                     c.execute('INSERT INTO files(entry_id,name,path,mime) VALUES(?,?,?,?)',(eid,name,filename,mime_types[ext])); return self.respond({'ok':True})
                 return self.respond({'error':'Rota inexistente'},404)
         except (ValueError,KeyError,sqlite3.IntegrityError) as ex:self.respond({'error':str(ex) if not isinstance(ex,sqlite3.IntegrityError) else 'Este e-mail ou login já está cadastrado'},400)
+
+    def public_upload(self,c,path,payload,raw):
+        parts=path.split('/')
+        link=upload_link(c,parts[3]) if len(parts)==5 else None
+        if not link:return self.respond({'error':'Este QR-code não é mais válido. Peça um novo ao organizador da viagem.'},404)
+        tid=link['trip_id'];uid=link['user_id']
+        if parts[4]=='memory':
+            attraction_id=payload.get('attraction_id');new_place=payload.get('new_place')
+            title=payload.get('title','');description=payload.get('description','')
+            if not all(isinstance(v,str) for v in (title,description)) or len(title)>200 or len(description)>4000:raise ValueError('Título ou descrição inválidos')
+            now=datetime.now().strftime('%Y-%m-%dT%H:%M')
+            if new_place is not None:
+                if not isinstance(new_place,str) or not 2<=len(new_place.strip())<=120:raise ValueError('Informe o nome do novo local (2 a 120 caracteres)')
+                new_place=new_place.strip()
+                existing=c.execute("SELECT id FROM entries WHERE trip_id=? AND kind='tour' AND title=? COLLATE NOCASE",(tid,new_place)).fetchone()
+                attraction_id=existing['id'] if existing else c.execute("INSERT INTO entries(kind,title,place,start,end,description,category,user_id,trip_id) VALUES('tour',?,?,?,'','','Passeio',?,?)",(new_place,new_place,now[:10],uid,tid)).lastrowid
+            if type(attraction_id) is not int:raise ValueError('Escolha o local da viagem')
+            parent=c.execute("SELECT title,place FROM entries WHERE id=? AND trip_id=? AND kind='tour'",(attraction_id,tid)).fetchone()
+            if not parent:raise ValueError('Local inexistente nesta viagem')
+            eid=c.execute("INSERT INTO entries(kind,title,place,start,end,description,category,user_id,trip_id,attraction_id) VALUES('diary',?,?,?,'',?,'Memória',?,?,?)",(title.strip() or parent['title'],parent['place'] or parent['title'],now,description.strip(),uid,tid,attraction_id)).lastrowid
+            return self.respond({'id':eid,'attraction_id':attraction_id})
+        if parts[4]=='upload':
+            entry=c.execute("SELECT id FROM entries WHERE id=? AND kind='diary' AND trip_id=? AND user_id=?",(int(self.headers.get('X-Entry-Id') or 0),tid,uid)).fetchone()
+            if not entry:raise ValueError('Memória inexistente')
+            from urllib.parse import unquote
+            name=Path(unquote(self.headers.get('X-File-Name','foto'))).name[:200] or 'foto';ext=Path(name).suffix.lower()
+            if ext not in UPLOAD_TYPES:raise ValueError('Envie fotos (JPG, PNG, WebP, HEIC) ou vídeos (MP4, MOV, WebM)')
+            if not raw:raise ValueError('Arquivo vazio')
+            filename=secrets.token_hex(24)+ext;(DATA/'uploads'/filename).write_bytes(raw)
+            c.execute('INSERT INTO files(entry_id,name,path,mime) VALUES(?,?,?,?)',(entry['id'],name,filename,UPLOAD_TYPES[ext]))
+            return self.respond({'ok':True})
+        return self.respond({'error':'Rota inexistente'},404)
 
     def account_fields(self,c,p,uid=None):
         old=c.execute('SELECT login,photo FROM users WHERE id=?',(uid,)).fetchone() if uid else None

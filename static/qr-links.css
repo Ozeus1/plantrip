@@ -1,0 +1,11 @@
+#qrDialog{max-width:460px}
+.qr-person{display:flex;align-items:center;gap:14px;margin:6px 0 14px}
+.qr-person small{display:block;color:var(--muted)}
+.qr-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;place-items:center;min-height:220px;color:var(--muted)}
+.qr-box svg{width:100%;max-width:280px;height:auto;display:block}
+.qr-link{font-size:12px;color:var(--muted);margin-top:12px}
+.qr-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.qr-actions .primary{width:auto;flex:1 1 auto;padding:12px 15px;font-size:12px}
+.secondary-btn{flex:1 1 auto;margin-top:15px;background:#fff;color:var(--green);border:1px solid #cfdcd2;border-radius:7px;padding:12px 15px;font-size:12px;font-weight:500}
+.qr-warning{font-size:12px;margin:14px 0 6px}
+.member .text-btn[data-qr]{display:block;margin-top:6px;padding:0}

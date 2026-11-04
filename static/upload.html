@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta name="referrer" content="no-referrer"><title>Plantrip — enviar fotos</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/upload.css"></head><body class="upload-page">
+<main class="up-wrap">
+  <a class="brand" href="/diary">plantrip<span class="dot">✳</span></a>
+  <section id="upLoading" class="up-card"><p>Carregando…</p></section>
+  <section id="upInvalid" class="up-card" hidden><span class="up-icon">⌖</span><h1>Link indisponível</h1><p id="upInvalidMsg"></p></section>
+  <form id="upForm" class="up-card" hidden>
+    <div class="up-hello"><span class="avatar user-photo" id="upAvatar"></span><div><span class="eyebrow" id="upTrip"></span><h1 id="upTitle">Olá!</h1></div></div>
+    <p>Escolha onde essas fotos foram tiradas e envie para o diário da viagem.</p>
+
+    <h2 class="up-step"><span>1</span> Em que local?</h2>
+    <input id="upSearch" type="search" placeholder="Buscar passeio…" autocomplete="off" aria-label="Buscar passeio">
+    <div id="upPlaces" class="up-places" role="radiogroup" aria-label="Locais da viagem"></div>
+    <label class="up-place up-new"><input type="radio" name="place" value="new"><span><strong>＋ Novo local</strong><small>O lugar não está na lista? Crie um.</small></span></label>
+    <div id="upNewWrap" hidden><label>Nome do novo local<input id="upNewPlace" maxlength="120" placeholder="Ex.: Trattoria perto do hotel"></label></div>
+
+    <h2 class="up-step"><span>2</span> Suas fotos</h2>
+    <label class="up-drop" for="upFiles"><span>▧</span><strong>Toque para escolher fotos ou vídeos</strong><small>Da galeria ou da câmera · até 100 MB por arquivo</small></label>
+    <input id="upFiles" type="file" accept="image/*,video/*" multiple hidden>
+    <div id="upPreview" class="up-preview"></div>
+
+    <h2 class="up-step"><span>3</span> Conte algo (opcional)</h2>
+    <label>Título<input id="upTitleInput" maxlength="200" placeholder="Usaremos o nome do local se ficar em branco"></label>
+    <label>Descrição<textarea id="upDescription" rows="3" maxlength="4000" placeholder="Como foi esse momento?"></textarea></label>
+
+    <p class="error" id="upError" role="alert"></p>
+    <button class="primary" id="upSend">Enviar fotos</button>
+    <div id="upProgress" class="up-progress" hidden><div><span id="upBar"></span></div><small id="upStatus"></small></div>
+  </form>
+  <section id="upDone" class="up-card" hidden><span class="up-icon">✳</span><h1>Fotos enviadas!</h1><p id="upDoneMsg"></p><button type="button" class="primary" id="upAgain">Enviar mais fotos</button><a class="text-btn up-diary" href="/">Abrir o diário da viagem ↗</a></section>
+</main>
+<script src="/upload.js"></script>
+</body></html>
