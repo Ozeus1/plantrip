@@ -8,9 +8,9 @@ function memoryViewerButtons(e){return `<div class="memory-view-buttons"><button
 function memoryGallery(e,editable=false){return `<div class="memory-thumbnail-grid">${(e.files||[]).map(f=>{const video=f.mime.startsWith('video/'),visual=video||f.mime.startsWith('image/');return `<div class="memory-thumbnail-item">${visual?`<button type="button" class="memory-thumbnail" data-memory-thumbnail="${e.id}" data-memory-file="${f.id}" aria-label="${video?'Reproduzir vídeo':'Abrir foto'}: ${esc(f.name)}">${video?`<video src="/media/${f.id}#t=0.1" preload="metadata" muted playsinline tabindex="-1" aria-hidden="true"></video><span class="memory-video-badge">▷ Vídeo</span>`:`<img src="/media/${f.id}" alt="${esc(f.name)}" loading="lazy">`}</button>`:media(f)}${editable?`<button type="button" class="text-btn danger" data-del-file="${f.id}">Remover arquivo</button>`:''}</div>`}).join('')}</div>`}
 function memoryModeToolbar(scope){const current=diaryBrowsers[scope].mode;return `<div class="memory-modes" role="group" aria-label="Visualização das memórias">${[['list','▧ Memórias'],['places','⌖ Por local'],['calendar','▦ Calendário']].map(([mode,label])=>`<button type="button" data-diary-mode="${mode}" data-diary-scope="${scope}" aria-pressed="${current===mode}">${label}</button>`).join('')}</div>`}
 function setMemoryMode(scope,mode){diaryBrowsers[scope].mode=mode;diaryBrowsers[scope].place=null;diaryBrowsers[scope].day=null;redrawMemoryBrowser(scope)}
-function redrawMemoryBrowser(scope){if(scope==='public')renderPublicPosts();else renderResults()}
-function renderMemoryBrowser(entries,scope,renderPosts){
-  const ui=diaryBrowsers[scope];let html=memoryModeToolbar(scope);
+function redrawMemoryBrowser(scope){if(scope==='home')return render();if(scope==='public')renderPublicPosts();else renderResults()}
+function renderMemoryBrowser(entries,scope,renderPosts,toolbar=true){
+  const ui=diaryBrowsers[scope];let html=toolbar?memoryModeToolbar(scope):'';
   if(ui.mode==='list')return html+renderPosts(entries);
   if(ui.mode==='places'){
     const groups=groupMemoryPlaces(entries),selected=groups.find(g=>g.key===ui.place);

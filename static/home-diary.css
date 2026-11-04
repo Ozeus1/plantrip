@@ -1,0 +1,30 @@
+.home-diary{background:linear-gradient(180deg,#eef4ec,#f7f8f4 70%);border:1px solid #dfe8dc;border-radius:18px;padding:26px 28px 30px;margin:6px 0 34px}
+.home-diary-heading{align-items:flex-end;gap:18px;flex-wrap:wrap;margin:0 0 22px}
+.home-diary-heading h2{font-size:28px;margin:4px 0 4px}
+.home-diary-heading p{margin:0;font-size:13px}
+.home-diary-tools{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.home-diary-tools .memory-modes{margin:0}
+.home-diary-more{display:block;margin:18px auto 0;font-size:13px}
+.home-diary-list{padding:6px 20px}
+.home-diary-row{display:grid;grid-template-columns:64px minmax(0,1fr) auto auto;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.home-diary-row:last-child{border-bottom:0}
+.home-diary-row:hover h3{color:var(--green)}
+.home-diary-row>img,.home-diary-thumb{width:64px;height:64px;border-radius:10px;object-fit:cover;background:#e9efe1;display:grid;place-items:center;color:#819776;font-size:22px}
+.home-diary-copy h3{margin:0 0 3px;font-size:16px;overflow-wrap:anywhere}
+.home-diary-copy p{margin:0;font-size:12px}
+.home-diary-row>small{color:var(--muted);font-size:11px;white-space:nowrap}
+.home-diary-row .author-label{font-size:12px;color:var(--green)}
+.home-diary-calendar .memory-calendar{max-width:none}
+.home-route .section-title{margin-top:0}
+@media(max-width:700px){
+  .home-diary{padding:18px 14px 22px;border-radius:14px;margin:0 -2px 26px}
+  .home-diary-heading h2{font-size:23px}
+  .home-diary-tools{width:100%}
+  .home-diary-tools .memory-modes{width:100%}
+  .home-diary-tools .memory-modes button{flex:1}
+  .home-diary-list{padding:2px 12px}
+  .home-diary-row{grid-template-columns:52px minmax(0,1fr);gap:4px 12px}
+  .home-diary-row>img,.home-diary-thumb{width:52px;height:52px;grid-row:span 2}
+  .home-diary-row .author-label,.home-diary-row>small{grid-column:2;font-size:11px}
+  .home-diary-row>small{display:none}
+}
