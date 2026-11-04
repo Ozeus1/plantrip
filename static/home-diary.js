@@ -3,16 +3,18 @@ const HOME_DIARY_LIMIT=6;
 diaryBrowsers.home={mode:'calendar',place:null,month:null,day:null};
 let homeDiaryMode=(()=>{try{return localStorage.getItem('plantrip-home-diary')||'cards'}catch{return 'cards'}})();
 
-function newestFirst(entries){return [...entries].sort((a,b)=>String(b.start||'').localeCompare(String(a.start||''))||b.id-a.id)}
+// Ordem crescente de data (mais antiga primeiro); sem data vai para o fim.
+function byDateAsc(entries){return [...entries].sort((a,b)=>(!a.start)-(!b.start)||String(a.start||'').localeCompare(String(b.start||''))||a.id-b.id)}
 function homeDiaryRow(e){
   const cover=(e.files||[]).find(f=>f.mime.startsWith('image/')),media=(e.files||[]).filter(f=>/^(image|video)\//.test(f.mime)).length;
   return `<article class="home-diary-row" data-detail="${e.id}" tabindex="0" role="button">${cover?`<img src="/media/${cover.id}" alt="" loading="lazy">`:'<span class="home-diary-thumb">▧</span>'}<div class="home-diary-copy"><h3>${esc(e.title)}</h3><p>⌖ ${esc(e.place||'Local não informado')} · ${date(e.start)}</p></div><span class="author-label">${avatarHtml({name:e.author,photo:e.author_photo})}<span>${esc(e.author)}</span></span><small>${media} ${media===1?'foto/vídeo':'fotos/vídeos'}</small></article>`;
 }
 function homeDiaryBody(diary){
   if(!diary.length)return `<div class="panel">${empty('Os melhores momentos vão morar aqui.','Publique uma foto, um vídeo ou uma história para o grupo.','diary')}</div>`;
-  const recent=newestFirst(diary).slice(0,HOME_DIARY_LIMIT),more=diary.length>HOME_DIARY_LIMIT?`<button class="text-btn home-diary-more" data-go="diary">Ver todas as ${diary.length} memórias ↗</button>`:'';
+  // As 6 memórias mais recentes, exibidas em ordem crescente de data.
+  const recent=byDateAsc(diary).slice(-HOME_DIARY_LIMIT),more=diary.length>HOME_DIARY_LIMIT?`<button class="text-btn home-diary-more" data-go="diary">Ver todas as ${diary.length} memórias ↗</button>`:'';
   if(homeDiaryMode==='list')return `<div class="panel home-diary-list">${recent.map(homeDiaryRow).join('')}</div>`+more;
-  if(homeDiaryMode==='calendar')return `<div class="home-diary-calendar">${renderMemoryBrowser(diary,'home',posts=>`<div class="card-grid">${newestFirst(posts).map(card).join('')}</div>`,false)}</div>`;
+  if(homeDiaryMode==='calendar')return `<div class="home-diary-calendar">${renderMemoryBrowser(diary,'home',posts=>`<div class="card-grid">${byDateAsc(posts).map(card).join('')}</div>`,false)}</div>`;
   return `<div class="card-grid home-diary-cards">${recent.map(card).join('')}</div>`+more;
 }
 function homeDiaryHtml(diary){
@@ -21,6 +23,6 @@ function homeDiaryHtml(diary){
 }
 function bindHomeDiary(diary){
   document.querySelectorAll('[data-home-diary]').forEach(b=>b.onclick=()=>{homeDiaryMode=b.dataset.homeDiary;try{localStorage.setItem('plantrip-home-diary',homeDiaryMode)}catch{}render()});
-  if($('#homeDiaryClip'))$('#homeDiaryClip').onclick=()=>presentMemories(newestFirst(diary),true);
+  if($('#homeDiaryClip'))$('#homeDiaryClip').onclick=()=>presentMemories(byDateAsc(diary),true);
   if(homeDiaryMode==='calendar'&&diary.length)bindMemoryBrowser(diary,'home');
 }
