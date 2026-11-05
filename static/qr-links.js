@@ -1,7 +1,8 @@
 // QR-code individual de cada participante: leva à página pública /u/<token> para envio de fotos.
 let qrMember=null,qrUrl='';
 function qrButtonHtml(m){
-  if(!state?.trip_id||(state.user.role!=='admin'&&m.id!==state.user.id))return '';
+  // Só para quem participa da viagem ativa (o QR é por viagem).
+  if(!state?.trip_id||!state.members.some(x=>x.id===m.id)||(state.user.role!=='admin'&&m.id!==state.user.id))return '';
   return `<button class="text-btn" data-qr="${m.id}">▦ QR-code de fotos</button>`;
 }
 function bindQrButtons(){
