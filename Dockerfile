@@ -8,7 +8,7 @@ COPY roma_four_days.json roma_rescheduled.json ./
 COPY london_two_days.json ./
 COPY london_without_museums.json ./
 COPY paris_five_days.json ./
-COPY attractions.py guides.json ./
+COPY attractions.py geo.py guides.json places.json ./
 COPY static ./static
 COPY scripts/create_admin.py ./scripts/create_admin.py
 COPY scripts/import_members.py ./scripts/import_members.py

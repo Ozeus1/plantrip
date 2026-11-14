@@ -1,0 +1,327 @@
+{
+ "cities": {
+  "Roma": {
+   "lat": 41.9028,
+   "lng": 12.4964,
+   "aliases": [
+    "roma",
+    "rome"
+   ]
+  },
+  "Paris": {
+   "lat": 48.8566,
+   "lng": 2.3522,
+   "aliases": [
+    "paris"
+   ]
+  },
+  "Londres": {
+   "lat": 51.5074,
+   "lng": -0.1278,
+   "aliases": [
+    "londres",
+    "london"
+   ]
+  },
+  "Madrid": {
+   "lat": 40.4168,
+   "lng": -3.7038,
+   "aliases": [
+    "madrid"
+   ]
+  },
+  "Reims": {
+   "lat": 49.2583,
+   "lng": 4.0317,
+   "aliases": [
+    "reims",
+    "champagne"
+   ]
+  },
+  "Toscana": {
+   "lat": 43.0987,
+   "lng": 11.7822,
+   "aliases": [
+    "toscana",
+    "tuscany"
+   ]
+  },
+  "Fortaleza": {
+   "lat": -3.7319,
+   "lng": -38.5267,
+   "aliases": [
+    "fortaleza"
+   ]
+  }
+ },
+ "guides": {
+  "roma-centro": [
+   41.9009,
+   12.4833
+  ],
+  "roma-coliseu": [
+   41.8902,
+   12.4922
+  ],
+  "roma-campidoglio": [
+   41.8956,
+   12.4823
+  ],
+  "vaticano-museus": [
+   41.9065,
+   12.4536
+  ],
+  "vaticano-saopedro": [
+   41.9022,
+   12.4539
+  ],
+  "roma-pantheon": [
+   41.8986,
+   12.4769
+  ],
+  "roma-trastevere": [
+   41.8889,
+   12.4694
+  ],
+  "roma-borghese": [
+   41.9115,
+   12.4864
+  ],
+  "roma-castel": [
+   41.9031,
+   12.4663
+  ],
+  "roma-adriano": [
+   41.8999,
+   12.4795
+  ],
+  "roma-sanluigi": [
+   41.8991,
+   12.4748
+  ],
+  "roma-navona": [
+   41.8992,
+   12.4731
+  ],
+  "roma-campo": [
+   41.8956,
+   12.4722
+  ],
+  "roma-vittoriano": [
+   41.8946,
+   12.4831
+  ],
+  "roma-capitolino": [
+   41.8933,
+   12.4828
+  ],
+  "roma-forum": [
+   41.8925,
+   12.4853
+  ],
+  "roma-palatino": [
+   41.8893,
+   12.4875
+  ],
+  "roma-spagna": [
+   41.906,
+   12.4828
+  ],
+  "roma-popolo": [
+   41.9107,
+   12.4766
+  ],
+  "roma-galleria": [
+   41.9142,
+   12.4923
+  ],
+  "paris-eiffel": [
+   48.8584,
+   2.2945
+  ],
+  "paris-sena": [
+   48.8606,
+   2.33
+  ],
+  "paris-louvre": [
+   48.8606,
+   2.3376
+  ],
+  "paris-tuileries": [
+   48.8635,
+   2.3275
+  ],
+  "paris-cite": [
+   48.853,
+   2.3499
+  ],
+  "paris-luxemburgo": [
+   48.8462,
+   2.3371
+  ],
+  "paris-versalhes": [
+   48.8049,
+   2.1204
+  ],
+  "paris-montmartre": [
+   48.8864,
+   2.3406
+  ],
+  "paris-opera": [
+   48.8719,
+   2.3316
+  ],
+  "paris-orsay": [
+   48.86,
+   2.3266
+  ],
+  "paris-arco": [
+   48.8738,
+   2.295
+  ],
+  "paris-marais": [
+   48.8555,
+   2.3656
+  ],
+  "paris-champmars": [
+   48.8556,
+   2.2986
+  ],
+  "paris-iena": [
+   48.8587,
+   2.2893
+  ],
+  "paris-trocadero": [
+   48.8616,
+   2.2893
+  ],
+  "paris-sacre": [
+   48.8867,
+   2.3431
+  ],
+  "paris-moulin": [
+   48.8841,
+   2.3323
+  ],
+  "paris-deuxmoulins": [
+   48.8847,
+   2.3339
+  ],
+  "paris-concorde": [
+   48.8656,
+   2.3212
+  ],
+  "paris-champs": [
+   48.8698,
+   2.3078
+  ],
+  "paris-reims": [
+   49.2536,
+   4.034
+  ],
+  "paris-parly2": [
+   48.8266,
+   2.1288
+  ],
+  "paris-saintecroix": [
+   48.857,
+   2.356
+  ],
+  "paris-pompidou": [
+   48.8607,
+   2.3522
+  ],
+  "paris-pantheon": [
+   48.8462,
+   2.3464
+  ],
+  "paris-garenord": [
+   48.8809,
+   2.3553
+  ],
+  "paris-outlet": [
+   48.8486,
+   2.8041
+  ],
+  "champagne-reims": [
+   49.2475,
+   4.027
+  ],
+  "champagne-ruinart": [
+   49.2405,
+   4.047
+  ],
+  "londres-westminster": [
+   51.4993,
+   -0.1273
+  ],
+  "londres-southbank": [
+   51.5033,
+   -0.1196
+  ],
+  "londres-tower": [
+   51.5081,
+   -0.0759
+  ],
+  "londres-city": [
+   51.5138,
+   -0.0984
+  ],
+  "londres-british": [
+   51.5194,
+   -0.127
+  ],
+  "londres-covent": [
+   51.5129,
+   -0.1243
+  ],
+  "londres-buckingham": [
+   51.5014,
+   -0.1419
+  ],
+  "londres-stjames": [
+   51.5025,
+   -0.1348
+  ],
+  "londres-cabines": [
+   51.4999,
+   -0.126
+  ],
+  "londres-bigben": [
+   51.5007,
+   -0.1246
+  ],
+  "londres-parlamento": [
+   51.4995,
+   -0.1248
+  ],
+  "londres-towerbridge": [
+   51.5055,
+   -0.0754
+  ],
+  "londres-londonbridge": [
+   51.5045,
+   -0.0865
+  ],
+  "londres-tate": [
+   51.5076,
+   -0.0994
+  ],
+  "londres-millennium": [
+   51.5095,
+   -0.0985
+  ],
+  "madrid-centro": [
+   40.4169,
+   -3.7035
+  ],
+  "madrid-retiro": [
+   40.4153,
+   -3.6844
+  ],
+  "toscana-rural": [
+   43.0987,
+   11.7822
+  ]
+ }
+}

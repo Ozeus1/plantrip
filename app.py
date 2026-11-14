@@ -135,11 +135,12 @@ class Handler(BaseHTTPRequestHandler):
             u=self.user(c)
             if path=='/api/public/diary':
                 trips=[dict(r) for r in c.execute('SELECT id,name FROM trips WHERE public_diary=1 ORDER BY start,id')]
-                entries=[dict(r) for r in c.execute("SELECT e.id,e.trip_id,e.title,e.place,e.start,e.description,u.name author,u.photo author_photo FROM entries e JOIN trips t ON t.id=e.trip_id JOIN users u ON u.id=e.user_id WHERE e.kind='diary' AND t.public_diary=1 ORDER BY e.start DESC,e.id DESC")]
+                entries=[dict(r) for r in c.execute("SELECT e.id,e.trip_id,e.title,e.place,e.start,e.description,e.attraction_id,u.name author,u.photo author_photo FROM entries e JOIN trips t ON t.id=e.trip_id JOIN users u ON u.id=e.user_id WHERE e.kind='diary' AND t.public_diary=1 ORDER BY e.start DESC,e.id DESC")]
                 for e in entries:
                     e['files']=[dict(r) for r in c.execute("SELECT id,name,mime FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%')",(e['id'],))]
                     e['comments']=[dict(r) for r in c.execute('SELECT u.name author,u.photo author_photo,c.body,c.created FROM comments c JOIN users u ON u.id=c.user_id WHERE c.entry_id=? ORDER BY c.id',(e['id'],))]
-                return self.respond({'trips':trips,'entries':entries})
+                from geo import build_map
+                return self.respond({'trips':trips,'entries':entries,'map':build_map(c,[e for e in entries if e['files']])})
             if path.startswith('/api/u/'):
                 link=upload_link(c,path[len('/api/u/'):])
                 if not link:return self.respond({'error':'Este QR-code não é mais válido. Peça um novo ao organizador da viagem.'},404)

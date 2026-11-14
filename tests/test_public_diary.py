@@ -38,4 +38,38 @@ class PublicDiary(test_app.Integration):
         with self.assertRaises(urllib.error.HTTPError) as ex:call(guest,f'/media/{photo}')
         self.assertEqual(ex.exception.code,401)
 
+
+class PublicMap(test_app.Integration):
+    def test_complete_trip_and_access(self):
+        call=self.call;a=self.admin;guest=self.client()
+        call(a,'/api/setup',{'name':'Admin','email':'admin@map.test','password':'abcdefgh'})
+        state=call(a,'/api/state');trip=state['trips'][0];tid=trip['id']
+        tour=next(e for e in state['entries'] if e['kind']=='tour' and e['guide_key']=='roma-coliseu')
+        def memory(title,place,**extra):
+            eid=call(a,'/api/entries',{'kind':'diary','title':title,'place':place,'trip_id':tid,'start':'2026-10-30T10:00',**extra})['id']
+            call(a,'/api/upload',b'image-data',{'X-Entry-Id':str(eid),'X-File-Name':'photo.jpg'})
+            return eid
+        linked=memory('Tarde antiga','texto livre',attraction_id=tour['id'])
+        by_text=memory('Coliseu de manhã','coliseu')
+        city=memory('Jantar','Londres')
+        nowhere=memory('Sem pista','Marte')
+        no_photo=call(a,'/api/entries',{'kind':'diary','title':'Sem foto','place':'Paris','trip_id':tid})['id']
+        self.assertEqual(call(guest,'/api/public/diary')['map']['points'],[])
+        call(a,'/api/trips',{**trip,'public_diary':True})
+        data=call(guest,'/api/public/diary')['map']
+        points={p['id']:p for p in data['points']}
+        coliseu=next(p for p in data['points'] if p['level']=='attraction' and p['name']=='Coliseu')
+        self.assertEqual(sorted(coliseu['entry_ids']),sorted([linked,by_text]))
+        self.assertAlmostEqual(coliseu['lat'],41.8902,3)
+        roma=next(p for p in data['points'] if p['level']=='city' and p['name']=='Roma')
+        self.assertEqual(sorted(roma['entry_ids']),sorted([linked,by_text]))
+        london=next(p for p in data['points'] if p['level']=='attraction' and p['name'].startswith('Londres'))
+        self.assertEqual(london['entry_ids'],[city])
+        europe=next(p for p in data['points'] if p['level']=='trip')
+        self.assertEqual(sorted(europe['entry_ids']),sorted([linked,by_text,city]))
+        self.assertEqual(data['unlocated'],[nowhere])
+        self.assertNotIn(no_photo,[i for p in data['points'] for i in p['entry_ids']])
+        self.assertNotIn('password',str(data))
+
+
 if __name__=='__main__':unittest.main()
