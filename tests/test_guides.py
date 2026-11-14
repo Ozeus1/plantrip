@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class GuideContent(unittest.TestCase):
     def test_complete_guides_with_local_licensed_photos(self):
         guides=json.loads((ROOT/'guides.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(guides),67)
+        self.assertEqual(len(guides),80)
         for key,g in guides.items():
             with self.subTest(guide=key):
                 if key in ('toscana-rural',):
@@ -30,8 +30,8 @@ class GuideContent(unittest.TestCase):
     def test_all_rome_stops_have_distinct_photos_and_four_day_navigation(self):
         guides=json.loads((ROOT/'guides.json').read_text(encoding='utf-8'))
         rome=[g for g in guides.values() if g.get('rome_day')]
-        self.assertEqual(len(rome),19)
-        self.assertEqual([len([g for g in rome if g['rome_day']==d]) for d in range(1,5)],[6,6,3,4])
+        self.assertEqual(len(rome),20)
+        self.assertEqual([len([g for g in rome if g['rome_day']==d]) for d in range(1,5)],[7,6,3,4])
         for g in rome:
             self.assertGreaterEqual(len({p['source'] for p in g['photos']}),2)
             self.assertEqual(len(g['route_summary']),4)

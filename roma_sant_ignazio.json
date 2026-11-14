@@ -1,0 +1,78 @@
+{
+ "common": "Ajuste do roteiro de Roma: Igreja de Santo Inácio de Loyola incluída no dia 1 (29/10), entre a Piazza di Pietra e o Pantheon; as paradas seguintes foram deslocadas em 30 minutos. O Altar da Pátria e Vittoriano já consta em 30/10. Horários sugeridos, sujeitos a confirmação.",
+ "stages": [
+  {
+   "key": "roma-centro",
+   "old_title": "Fontana di Trevi",
+   "title": "Fontana di Trevi",
+   "place": "Roma",
+   "start": "2026-10-29T14:00",
+   "end": "2026-10-29T14:35",
+   "parada": 1
+  },
+  {
+   "key": "roma-adriano",
+   "old_title": "Templo de Adriano e Piazza di Pietra",
+   "title": "Templo de Adriano e Piazza di Pietra",
+   "place": "Roma",
+   "start": "2026-10-29T14:50",
+   "end": "2026-10-29T15:15",
+   "parada": 2
+  },
+  {
+   "key": "roma-santignazio",
+   "old_title": "Igreja de Santo Inácio de Loyola (Sant’Ignazio)",
+   "title": "Igreja de Santo Inácio de Loyola (Sant’Ignazio)",
+   "place": "Roma",
+   "start": "2026-10-29T15:25",
+   "end": "2026-10-29T15:50",
+   "parada": 3,
+   "description": "DIA 1 — CENTRO HISTÓRICO | Parada 3: Igreja de Santo Inácio de Loyola (Sant’Ignazio).\n\nVisita ordinária à igreja geralmente gratuita; é local de culto, com horários e missas próprios. Confirmar a abertura em 29/10 (quinta-feira) e evitar entrar durante celebração. A visita guiada de cerca de 1 hora indicada pelo grupo é um produto de terceiros: conferir preço, idioma, ponto de encontro e acessibilidade antes de reservar; não é necessária para a visita livre.\n\nMobilidade: Confirmar com a igreja a entrada sem degraus e o piso interno. A praça tem pavimento irregular. Em dias concorridos, escolher um ponto lateral na nave para ver o teto sem bloquear a passagem."
+  },
+  {
+   "key": "roma-pantheon",
+   "old_title": "Pantheon",
+   "title": "Pantheon",
+   "place": "Roma",
+   "start": "2026-10-29T16:00",
+   "end": "2026-10-29T16:45",
+   "parada": 4
+  },
+  {
+   "key": "roma-sanluigi",
+   "old_title": "San Luigi dei Francesi",
+   "title": "San Luigi dei Francesi",
+   "place": "Roma",
+   "start": "2026-10-29T17:00",
+   "end": "2026-10-29T17:30",
+   "parada": 5
+  },
+  {
+   "key": "roma-navona",
+   "old_title": "Piazza Navona",
+   "title": "Piazza Navona",
+   "place": "Roma",
+   "start": "2026-10-29T17:40",
+   "end": "2026-10-29T18:15",
+   "parada": 6
+  },
+  {
+   "key": "roma-campo",
+   "old_title": "Campo de’ Fiori",
+   "title": "Campo de’ Fiori",
+   "place": "Roma",
+   "start": "2026-10-29T18:30",
+   "end": "2026-10-29T19:00",
+   "parada": 7
+  },
+  {
+   "key": "roma-vittoriano",
+   "old_title": "Altar da Pátria e Vittoriano",
+   "title": "Altar da Pátria e Vittoriano",
+   "place": "Roma",
+   "start": "2026-10-30T09:30",
+   "end": "2026-10-30T10:05",
+   "append": "Dados consultados pelo grupo no Google Maps: telefone +39 06 6999 4211; o horário exibido na consulta indicava abertura até 19h30 — confirmar no dia."
+  }
+ ]
+}

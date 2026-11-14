@@ -1,0 +1,239 @@
+{
+ "common": "Londres em dois dias, 09 e 10/11/2026. Horários locais de Londres e propostas, não reservas. Chegada após saída de Paris em 08/11 às 23h ainda sem horário/modal confirmados: o primeiro dia depende de chegada, check-in e descanso. Se houver atraso, abreviar Buckingham/parque e priorizar Westminster; não comprar ingresso matinal sem confirmar o transporte. Grupo de seis com cadeira motorizada: conferir medidas/peso, autonomia, embarque, rotas sem escadas, banheiro e funcionamento de elevadores. Reservar pausas e veículo adaptado quando necessário. Não presumir que todas as estações de metrô sejam acessíveis. Saída para Madrid mantida em 12/11 às 06h; 11/11 fica livre, com antigas visitas como alternativas sem data. Museus retirados a pedido do grupo; tarde do dia 10 antecipada para St Paul’s. Guias antigos mantidos apenas como acervo. Roteiro mesclado com os roteiros de referência a pé indicados pelo grupo (Whitehall e South Bank no dia 9; Potters Fields, Bankside e St Paul’s no dia 10); a visita ao museu do segundo roteiro de referência não foi incluída porque museus foram retirados do roteiro.",
+ "stages": [
+  {
+   "key": "londres-buckingham",
+   "old_title": "Palácio de Buckingham — exterior",
+   "title": "Palácio de Buckingham — exterior",
+   "place": "Londres",
+   "start": "2026-11-09T10:00",
+   "end": "2026-11-09T10:35",
+   "parada": 1
+  },
+  {
+   "key": "londres-stjames",
+   "old_title": "St James’s Park",
+   "title": "St James’s Park",
+   "place": "Londres",
+   "start": "2026-11-09T10:45",
+   "end": "2026-11-09T11:20",
+   "parada": 2
+  },
+  {
+   "key": "londres-mall",
+   "old_title": "The Mall e Admiralty Arch",
+   "title": "The Mall e Admiralty Arch",
+   "place": "Londres",
+   "start": "2026-11-09T11:30",
+   "end": "2026-11-09T11:45",
+   "parada": 3,
+   "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 3: The Mall e Admiralty Arch.\n\nPercurso externo em via pública, sem ingresso e sem horário de abertura. A visita interna ao Admiralty Arch não faz parte do roteiro. Em dias de cerimônia, ensaio ou evento, trechos da avenida podem ser fechados; confirmar avisos locais antes de sair.\n\nMobilidade: Calçadas largas na avenida, mas com cruzamentos movimentados e meios-fios; escolher travessias com rebaixamento. Em caso de chuva ou cansaço, encurtar o trecho e seguir de táxi adaptado até Trafalgar Square."
+  },
+  {
+   "key": "londres-trafalgar",
+   "old_title": "Trafalgar Square e National Gallery — exterior",
+   "title": "Trafalgar Square e National Gallery — exterior",
+   "place": "Londres",
+   "start": "2026-11-09T11:50",
+   "end": "2026-11-09T12:50",
+   "parada": 4,
+   "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 4: Trafalgar Square e National Gallery — exterior.\n\nPraça pública sem ingresso. A National Gallery tem acervo permanente gratuito, mas museus foram retirados do roteiro: só o exterior está previsto. Manifestações, eventos e montagens podem fechar partes da praça. Almoço sem reserva: orçamento inicial £20–35 por pessoa, não cotação.\n\nMobilidade: A praça tem desníveis e escadarias, com rampas e travessias em nível em partes; confirmar o caminho mais plano no local. Verificar acesso, largura da mesa e sanitário do restaurante antes de sentar; evitar fila longa em pé."
+  },
+  {
+   "key": "londres-horseguards",
+   "old_title": "Horse Guards (Whitehall)",
+   "title": "Horse Guards (Whitehall)",
+   "place": "Londres",
+   "start": "2026-11-09T13:00",
+   "end": "2026-11-09T13:10",
+   "parada": 5,
+   "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 5: Horse Guards (Whitehall).\n\nExterior gratuito, sem ingresso. Cerimônias, trocas de guarda e ensaios têm calendário próprio e não estão garantidos para 09/11; conferir antes. Não tocar nos cavalos nem entrar em áreas militares; seguir as orientações dos soldados e da polícia.\n\nMobilidade: Calçada plana em Whitehall, mas com aglomeração perto das guaritas e cavalos próximos; manter distância e espaço para a cadeira. Preferir travessias com semáforo e rebaixamento; evitar a pista."
+  },
+  {
+   "key": "londres-downing",
+   "old_title": "Downing Street — vista de Whitehall",
+   "title": "Downing Street — vista de Whitehall",
+   "place": "Londres",
+   "start": "2026-11-09T13:15",
+   "end": "2026-11-09T13:25",
+   "parada": 6,
+   "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 6: Downing Street — vista de Whitehall.\n\nSem ingresso e sem visita: a rua é fechada ao público e o acesso depende de decisão de segurança. A vista limita-se ao portão em Whitehall e pode ser restrita em dias de evento. Não é necessário reservar nada.\n\nMobilidade: Calçadas planas em Whitehall, mas com tráfego intenso e policiamento; usar somente travessias sinalizadas. A parada é curta e pode ser cortada se a calçada estiver lotada."
+  },
+  {
+   "key": "londres-westminster",
+   "old_title": "Abadia de Westminster",
+   "title": "Abadia de Westminster",
+   "place": "Londres",
+   "start": "2026-11-09T13:35",
+   "end": "2026-11-09T14:50",
+   "parada": 7,
+   "replace": [
+    [
+     "Visita turística normalmente paga e sujeita a calendário de culto. 11h45 é proposta, não bilhete comprado. Consultar tarifa e política de deficiência/acompanhante; não reservar enquanto chegada a Londres estiver indefinida. Participar de culto não equivale a ingresso turístico gratuito.",
+     "Visita turística normalmente paga e sujeita a calendário de culto. 13h35 é proposta, não bilhete comprado. Consultar tarifa e política de deficiência/acompanhante; não reservar enquanto chegada a Londres estiver indefinida. Participar de culto não equivale a ingresso turístico gratuito. A última entrada turística costuma ocorrer no meio da tarde; confirmar para 09/11 e reduzir a visita ao exterior, como no roteiro de referência, se o dia atrasar."
+    ]
+   ]
+  },
+  {
+   "key": "londres-cabines",
+   "old_title": "Cabines telefônicas de Westminster",
+   "title": "Cabines telefônicas de Westminster",
+   "place": "Londres",
+   "start": "2026-11-09T15:00",
+   "end": "2026-11-09T15:10",
+   "parada": 8
+  },
+  {
+   "key": "londres-bigben",
+   "old_title": "Big Ben e Elizabeth Tower — exterior",
+   "title": "Big Ben e Elizabeth Tower — exterior",
+   "place": "Londres",
+   "start": "2026-11-09T15:10",
+   "end": "2026-11-09T15:25",
+   "parada": 9
+  },
+  {
+   "key": "londres-parlamento",
+   "old_title": "Parlamento Britânico — exterior",
+   "title": "Parlamento Britânico — exterior",
+   "place": "Londres",
+   "start": "2026-11-09T15:25",
+   "end": "2026-11-09T15:40",
+   "parada": 10
+  },
+  {
+   "key": "londres-westminsterbridge",
+   "old_title": "Westminster Bridge",
+   "title": "Westminster Bridge",
+   "place": "Londres",
+   "start": "2026-11-09T15:45",
+   "end": "2026-11-09T16:00",
+   "parada": 11,
+   "description": "DIA 1 — BUCKINGHAM, WESTMINSTER E SOUTH BANK | Parada 11: Westminster Bridge.\n\nPonte pública sem ingresso, aberta a pedestres. Travessia curta, de cerca de 250 m, sem horário. Obras, eventos e filas de visitantes podem estreitar a calçada; conferir avisos locais e reservar tempo extra em horários de pico.\n\nMobilidade: A calçada é plana, mas pode ser estreita e movimentada; há travessias de rua com semáforo nas duas pontas. Conferir a rampa até a margem sul e evitar as escadas laterais; táxi adaptado é alternativa se o trecho estiver lotado."
+  },
+  {
+   "key": "londres-southbank",
+   "old_title": "London Eye e South Bank",
+   "title": "London Eye e South Bank",
+   "place": "Londres",
+   "start": "2026-11-09T16:10",
+   "end": "2026-11-09T17:30",
+   "parada": 12
+  },
+  {
+   "key": "londres-potters",
+   "old_title": "Potters Fields Park",
+   "title": "Potters Fields Park",
+   "place": "Londres",
+   "start": "2026-11-10T09:00",
+   "end": "2026-11-10T09:10",
+   "parada": 1,
+   "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 1: Potters Fields Park.\n\nParque público sem ingresso. Eventos, obras ou manutenção podem fechar áreas; conferir a sinalização local. Cafés e banheiros próximos têm funcionamento próprio — confirmar antes de depender deles.\n\nMobilidade: Caminhos pavimentados, mas a grama pode estar úmida em novembro; ficar nos trechos de calçada. Confirmar banheiro acessível próximo antes de seguir; a saída é pela margem para a Tower Bridge, em piso plano."
+  },
+  {
+   "key": "londres-towerbridge",
+   "old_title": "Tower Bridge — exterior",
+   "title": "Tower Bridge — exterior",
+   "place": "Londres",
+   "start": "2026-11-10T09:15",
+   "end": "2026-11-10T09:40",
+   "parada": 2
+  },
+  {
+   "key": "londres-stkatharine",
+   "old_title": "St Katharine Docks",
+   "title": "St Katharine Docks",
+   "place": "Londres",
+   "start": "2026-11-10T09:45",
+   "end": "2026-11-10T09:55",
+   "parada": 3,
+   "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 3: St Katharine Docks.\n\nÁrea pública de acesso livre, sem ingresso. Restaurantes, cafés e banheiros têm horários próprios; eventos e feiras podem alterar a circulação. Não é necessário reservar para o passeio breve.\n\nMobilidade: Caminhos pavimentados em torno das docas, mas com pequenos desníveis, pontes e bordas de água; usar apenas trechos largos e planos e manter distância da água. Conferir sanitário acessível próximo antes de seguir."
+  },
+  {
+   "key": "londres-tower",
+   "old_title": "Torre de Londres",
+   "title": "Torre de Londres",
+   "place": "Londres",
+   "start": "2026-11-10T10:10",
+   "end": "2026-11-10T12:30",
+   "parada": 4
+  },
+  {
+   "key": "londres-londonbridge",
+   "old_title": "London Bridge e entorno de Borough",
+   "title": "London Bridge e entorno de Borough",
+   "place": "Londres",
+   "start": "2026-11-10T12:45",
+   "end": "2026-11-10T13:00",
+   "parada": 5
+  },
+  {
+   "key": "londres-southwark",
+   "old_title": "Catedral de Southwark",
+   "title": "Catedral de Southwark",
+   "place": "Londres",
+   "start": "2026-11-10T13:05",
+   "end": "2026-11-10T13:20",
+   "parada": 6,
+   "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 6: Catedral de Southwark.\n\nVisita geralmente gratuita, com doação sugerida; a catedral é local de culto e pode fechar para serviços ou eventos. Confirmar o horário de 10/11 no site oficial e evitar entrar durante celebração. Fotografar sem flash e conforme as regras do local.\n\nMobilidade: Confirmar com a catedral a entrada sem degraus e o percurso interno no dia. Evitar cruzar a nave durante cerimônias. As calçadas externas ficam movimentadas na hora do almoço."
+  },
+  {
+   "key": "londres-borough",
+   "old_title": "Borough Market — almoço",
+   "title": "Borough Market — almoço",
+   "place": "Londres",
+   "start": "2026-11-10T13:25",
+   "end": "2026-11-10T14:10",
+   "parada": 7,
+   "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 7: Borough Market — almoço.\n\nEntrada livre, sem ingresso; preços e funcionamento das bancas variam. 10/11 é terça-feira, quando o mercado pode ter menos bancas ou horário reduzido: confirmar no site oficial. Orçamento inicial £20–35 por pessoa, não cotação; considerar reserva em restaurante vizinho se o grupo quiser sentar.\n\nMobilidade: O piso é nivelado em boa parte, mas os corredores podem ser estreitos e lotados; escolher horário ou bancas com espaço. Confirmar banheiro acessível e mesa adequada antes de sentar. Se o mercado estiver cheio, usar restaurante vizinho com acesso nivelado."
+  },
+  {
+   "key": "londres-clink",
+   "old_title": "Golden Hinde e Clink Street",
+   "title": "Golden Hinde e Clink Street",
+   "place": "Londres",
+   "start": "2026-11-10T14:15",
+   "end": "2026-11-10T14:25",
+   "parada": 8,
+   "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 8: Golden Hinde e Clink Street.\n\nParada externa gratuita. A visita a bordo da Golden Hinde e o museu da prisão têm ingressos próprios e não fazem parte do roteiro. Conferir se a rua está aberta em 10/11 e se há eventos que alterem o fluxo.\n\nMobilidade: Clink Street é estreita, com calçadas curtas e fluxo de pedestres; escolher o lado mais livre e avaliar se a passagem é confortável com a cadeira. Evitar desníveis no cais; se a rua estiver cheia, seguir pela orla até o Globe."
+  },
+  {
+   "key": "londres-globe",
+   "old_title": "Shakespeare’s Globe",
+   "title": "Shakespeare’s Globe",
+   "place": "Londres",
+   "start": "2026-11-10T14:30",
+   "end": "2026-11-10T14:40",
+   "parada": 9,
+   "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 9: Shakespeare’s Globe.\n\nExterior gratuito. Visitas guiadas e espetáculos têm ingresso, calendário e política de acessibilidade próprios; não estão incluídos. Para assistir a uma peça, consultar a programação oficial e a reserva de espaço para cadeira de rodas.\n\nMobilidade: A orla de Bankside é plana, mas tem movimento de pedestres; usar o trecho mais largo. Se houver interesse em visita ou espetáculo, confirmar com o teatro as condições de acesso e de lugares para cadeiras motorizadas."
+  },
+  {
+   "key": "londres-millennium",
+   "old_title": "Millennium Bridge — ligação para St Paul’s",
+   "title": "Millennium Bridge — ligação para St Paul’s",
+   "place": "Londres",
+   "start": "2026-11-10T14:45",
+   "end": "2026-11-10T15:05",
+   "parada": 10
+  },
+  {
+   "key": "londres-city",
+   "old_title": "St Paul’s Cathedral — exterior e visita interna opcional",
+   "title": "St Paul’s Cathedral — exterior e visita interna opcional",
+   "place": "Londres",
+   "start": "2026-11-10T15:15",
+   "end": "2026-11-10T16:15",
+   "parada": 11
+  },
+  {
+   "key": "londres-onenewchange",
+   "old_title": "One New Change — terraço",
+   "title": "One New Change — terraço",
+   "place": "Londres",
+   "start": "2026-11-10T16:20",
+   "end": "2026-11-10T16:40",
+   "parada": 12,
+   "description": "DIA 2 — TORRE DE LONDRES, PONTES E BANKSIDE | Parada 12: One New Change — terraço.\n\nTerraço público de acesso livre, sem ingresso, mas com horário e acesso sujeitos à administração do centro comercial. Confirmar a abertura em 10/11 e o funcionamento do elevador. Lojas e restaurantes têm horários próprios; o terraço pode fechar por vento ou evento.\n\nMobilidade: O acesso ao terraço é feito por elevador ou escada; confirmar, antes de subir, que o elevador está em serviço e comporta a cadeira. Os corredores do centro comercial são amplos, mas o terraço pode ter piso úmido e ventoso em novembro."
+  }
+ ]
+}

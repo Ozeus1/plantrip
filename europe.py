@@ -139,3 +139,6 @@ def seed(c):
     apply_file(c,'london_without_museums.json','europa-london-no-museums-v1','london-no-museums')
     apply_file(c,'paris_five_days.json','europa-paris-five-days-202611-v1','paris-five-days')
     apply_file(c,'roma_rescheduled.json','europa-roma-oct29-nov01-v1','roma-rescheduled')
+    from roma2026 import apply_merge
+    apply_merge(c,'roma_sant_ignazio.json','europa-roma-santignazio-v1','roma-santignazio')
+    apply_merge(c,'london_merged.json','europa-london-merged-v1','london-merged')

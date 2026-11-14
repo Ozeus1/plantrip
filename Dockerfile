@@ -7,6 +7,7 @@ COPY paris2026.json ./
 COPY roma_four_days.json roma_rescheduled.json ./
 COPY london_two_days.json ./
 COPY london_without_museums.json ./
+COPY roma_sant_ignazio.json london_merged.json ./
 COPY paris_five_days.json ./
 COPY attractions.py geo.py guides.json places.json ./
 COPY static ./static

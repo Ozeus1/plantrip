@@ -322,6 +322,58 @@
   "toscana-rural": [
    43.0987,
    11.7822
+  ],
+  "roma-santignazio": [
+   41.8989,
+   12.48
+  ],
+  "londres-mall": [
+   51.5068,
+   -0.1281
+  ],
+  "londres-trafalgar": [
+   51.508,
+   -0.1281
+  ],
+  "londres-horseguards": [
+   51.5047,
+   -0.1266
+  ],
+  "londres-downing": [
+   51.5034,
+   -0.1276
+  ],
+  "londres-westminsterbridge": [
+   51.5008,
+   -0.1219
+  ],
+  "londres-potters": [
+   51.5039,
+   -0.0797
+  ],
+  "londres-stkatharine": [
+   51.5067,
+   -0.0724
+  ],
+  "londres-southwark": [
+   51.5063,
+   -0.0894
+  ],
+  "londres-borough": [
+   51.5055,
+   -0.091
+  ],
+  "londres-clink": [
+   51.5071,
+   -0.0925
+  ],
+  "londres-globe": [
+   51.5081,
+   -0.0972
+  ],
+  "londres-onenewchange": [
+   51.5135,
+   -0.0955
   ]
  }
 }
