@@ -6,14 +6,16 @@
    "aliases": [
     "roma",
     "rome"
-   ]
+   ],
+   "country": "Itália"
   },
   "Paris": {
    "lat": 48.8566,
    "lng": 2.3522,
    "aliases": [
     "paris"
-   ]
+   ],
+   "country": "França"
   },
   "Londres": {
    "lat": 51.5074,
@@ -21,14 +23,16 @@
    "aliases": [
     "londres",
     "london"
-   ]
+   ],
+   "country": "Reino Unido"
   },
   "Madrid": {
    "lat": 40.4168,
    "lng": -3.7038,
    "aliases": [
     "madrid"
-   ]
+   ],
+   "country": "Espanha"
   },
   "Reims": {
    "lat": 49.2583,
@@ -36,7 +40,8 @@
    "aliases": [
     "reims",
     "champagne"
-   ]
+   ],
+   "country": "França"
   },
   "Toscana": {
    "lat": 43.0987,
@@ -44,14 +49,16 @@
    "aliases": [
     "toscana",
     "tuscany"
-   ]
+   ],
+   "country": "Itália"
   },
   "Fortaleza": {
    "lat": -3.7319,
    "lng": -38.5267,
    "aliases": [
     "fortaleza"
-   ]
+   ],
+   "country": "Brasil"
   }
  },
  "guides": {
@@ -375,5 +382,30 @@
    51.5135,
    -0.0955
   ]
+ },
+ "trips": {
+  "Europa": {
+   "origin": {
+    "city": "Fortaleza",
+    "text": "Ponto de partida da viagem: o voo Fortaleza → Madrid abre o roteiro em 27/10."
+   },
+   "interest": [
+    {
+     "id": "saint-denis",
+     "name": "Saint-Denis",
+     "city": "Paris",
+     "lat": 48.9356,
+     "lng": 2.3599,
+     "aliases": [
+      "saint denis",
+      "saint denys",
+      "basilica de saint denis",
+      "basilique de saint denis",
+      "basilica de saint denys"
+     ],
+     "text": "A Basílica de Saint-Denis, ao norte de Paris, é a necrópole dos reis da França e um marco do nascimento da arquitetura gótica, no século XII."
+    }
+   ]
+  }
  }
 }

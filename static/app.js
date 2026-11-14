@@ -28,6 +28,8 @@ function filtered(){return state.entries.filter(e=>e.kind===view&&(!person||Stri
 function renderResults(){
   const rows=filtered();
   if(!rows.length){$('#results').innerHTML=empty(filter||person?'Nenhum resultado por aqui.':'O primeiro passo é seu.','As etapas e memórias adicionadas aparecerão aqui.',filter||person?'':(view==='diary'||state.user.role==='admin'?view:''));bindActions();return}
+  const canvas=$('#privateMapCanvas');
+  if(view==='diary'&&diaryBrowsers.private.mode==='map'&&canvas&&privateMapCtx.map?.getContainer()===canvas){updateMap(privateMapCtx,rows);return}
   $('#results').innerHTML=view==='diary'?renderMemoryBrowser(rows,'private',posts=>`<div class="card-grid">${[...posts].reverse().map(card).join('')}</div>`):renderOrderedSteps(rows);
   bindActions();if(view==='diary')bindMemoryBrowser(rows,'private');
 }

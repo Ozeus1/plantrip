@@ -70,6 +70,21 @@ class PublicMap(test_app.Integration):
         self.assertEqual(data['unlocated'],[nowhere])
         self.assertNotIn(no_photo,[i for p in data['points'] for i in p['entry_ids']])
         self.assertNotIn('password',str(data))
+        poi=next(p for p in data['points'] if p.get('kind')=='poi')
+        self.assertEqual((poi['name'],poi['city']),('Saint-Denis','Paris'));self.assertEqual(poi['entry_ids'],[])
+        origin=next(p for p in data['points'] if p['level']=='origin')
+        self.assertEqual(origin['name'],'Fortaleza')
+        meta=data['trips'][0]
+        self.assertEqual((meta['start'],meta['end']),(trip['start'],trip['end']))
+        self.assertEqual(meta['countries'],['Itália','Reino Unido','França']);self.assertEqual(meta['origin']['country'],'Brasil');self.assertEqual(meta['route'],[])
+        self.assertNotIn('Brasil',meta['countries'])
+        private=call(a,'/api/state')['map']
+        self.assertGreater(len([p for p in private['points'] if p['level']=='attraction' and not p['entry_ids']]),20)
+        self.assertEqual(private['trips'][0]['route'],['Roma','Paris','Londres','Madrid'])
+        self.assertIn('Espanha',private['trips'][0]['countries'])
+        photo=memory('Basílica','Saint-Denis')
+        again=call(a,'/api/state')['map']
+        self.assertEqual(next(p for p in again['points'] if p.get('kind')=='poi')['entry_ids'],[photo])
 
 
 if __name__=='__main__':unittest.main()

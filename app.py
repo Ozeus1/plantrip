@@ -161,7 +161,9 @@ class Handler(BaseHTTPRequestHandler):
                 members=[dict(r) for r in c.execute('SELECT id,name,role,login,photo FROM users WHERE id IN (SELECT user_id FROM trip_members WHERE trip_id=?)',(trip_id,))]
                 users=[dict(r) for r in c.execute('SELECT id,name,email,role,login,photo FROM users ORDER BY name')] if u['role']=='admin' else []
                 requests=[dict(r) for r in c.execute("SELECT p.id,p.user_id,p.created,u.name,u.email FROM password_requests p JOIN users u ON u.id=p.user_id WHERE p.status='pending' ORDER BY p.created")] if u['role']=='admin' else []
-                return self.respond({'user':{k:u[k] for k in ('id','name','role','login','photo')},'entries':entries,'members':members,'users':users,'trips':trips,'trip_id':trip_id,'password_requests':requests})
+                from geo import build_map
+                diary=[e for e in entries if e['kind']=='diary' and any(f['mime'].startswith(('image/','video/')) for f in e['files'])]
+                return self.respond({'user':{k:u[k] for k in ('id','name','role','login','photo')},'entries':entries,'members':members,'users':users,'trips':trips,'trip_id':trip_id,'password_requests':requests,'map':build_map(c,diary,trip_ids=[trip_id] if trip_id else [],detailed=True)})
             if path.startswith('/api/attractions/'):
                 if not u:return self.respond({'error':'Faça login para consultar esta atração'},401)
                 eid=path.rsplit('/',1)[-1]
