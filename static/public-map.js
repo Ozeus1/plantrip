@@ -43,13 +43,7 @@ function updatePublicMap(posts){
   publicMapPosts=posts;if(!publicMapReady||!publicMap)return;
   Object.values(publicMapLayers).forEach(layer=>layer.clearLayers());
   const rows=visiblePublicMapPoints(posts);
-  for(const {point,entries} of rows){
-    const count=mapMediaCount(entries),[w,h]=mapPinSize(point.level);
-    const marker=L.marker([point.lat,point.lng],{icon:L.divIcon({html:`<span class="map-pin map-pin-${point.level}"><b>${count}</b></span>`,className:'map-pin-wrap',iconSize:[w,h],iconAnchor:[w/2,h/2]}),title:`${point.name} · ${memoryPostCount(entries.length)}`,alt:point.name,riseOnHover:true});
-    marker.bindTooltip(`${esc(point.name)} · ${count} ${count===1?'foto/vídeo':'fotos/vídeos'}`,{direction:'top',offset:[0,-h/2]});
-    marker.on('click',()=>openMapGallery(point,entries));
-    publicMapLayers[point.level].addLayer(marker);
-  }
+  for(const {point,entries} of rows)publicMapLayers[point.level].addLayer(mapMarker(point,entries,()=>point.level==='attraction'?openMapGallery(point,entries):openMapDetail(point)));
   const trip=$('#publicTrip')?.value||'';
   if(publicMapTrip!==trip){
     const first=publicMapTrip===null;publicMapTrip=trip;
@@ -58,6 +52,42 @@ function updatePublicMap(posts){
   syncPublicMapLevels();
   const hidden=publicDiaryData.map.unlocated.filter(id=>posts.some(e=>e.id===id)).length;
   $('#publicMapStatus').textContent=!rows.length?'Nenhuma memória com localização reconhecida para esta busca.':`${rows.filter(x=>x.point.level==='attraction').length} pontos com fotos no mapa. Aproxime para ver cidades e locais visitados.`+(hidden?` ${hidden} ${hidden===1?'memória sem localização reconhecida aparece':'memórias sem localização reconhecida aparecem'} apenas na lista.`:'');
+}
+function mapCountLabel(count){return `${count} ${count===1?'foto/vídeo':'fotos/vídeos'}`}
+function mapMarker(point,entries,onClick){
+  const count=mapMediaCount(entries),[w,h]=mapPinSize(point.level);
+  const marker=L.marker([point.lat,point.lng],{icon:L.divIcon({html:`<span class="map-pin map-pin-${point.level}"><b>${count}</b></span>`,className:'map-pin-wrap',iconSize:[w,h],iconAnchor:[w/2,h/2]}),title:`${point.name} · ${memoryPostCount(entries.length)}`,alt:point.name,riseOnHover:true});
+  marker.bindTooltip(`${esc(point.name)} · ${mapCountLabel(count)}`,{direction:'top',offset:[0,-h/2]});
+  marker.on('click',onClick);
+  return marker;
+}
+let mapDetailMap=null;
+function mapDetailChildren(point){
+  const rows=visiblePublicMapPoints(publicMapPosts);
+  return point.level==='trip'?rows.filter(x=>x.point.level==='city'&&x.point.trip_id===point.trip_id):rows.filter(x=>x.point.level==='attraction'&&x.point.trip_id===point.trip_id&&x.point.city===point.name);
+}
+function openMapDetail(point){
+  const self=visiblePublicMapPoints(publicMapPosts).find(x=>x.point.id===point.id);if(!self)return;
+  const children=mapDetailChildren(point),parent=point.level==='city'?visiblePublicMapPoints(publicMapPosts).find(x=>x.point.level==='trip'&&x.point.trip_id===point.trip_id):null;
+  let dialog=$('#mapDetail');
+  if(!dialog){dialog=document.createElement('dialog');dialog.id='mapDetail';dialog.className='map-detail';document.body.append(dialog);dialog.addEventListener('close',()=>{mapDetailMap?.remove();mapDetailMap=null})}
+  dialog.setAttribute('aria-label',`Mapa de ${point.name}`);
+  const total=mapMediaCount(self.entries),childLabel=point.level==='trip'?'Cidades':'Pontos visitados';
+  dialog.innerHTML=`<div class="modal-heading"><div><span class="eyebrow">${MAP_LEVELS[point.level].label}</span><h2>${esc(point.name)}</h2><p class="map-gallery-count">${children.length} ${point.level==='trip'?(children.length===1?'cidade':'cidades'):(children.length===1?'ponto':'pontos')} · ${memoryPostCount(self.entries.length)} · ${mapCountLabel(total)}</p></div><button type="button" class="close" data-detail-close aria-label="Fechar mapa">×</button></div><div class="map-gallery-actions">${parent?`<button type="button" data-detail-parent>← ${esc(parent.point.name)}</button>`:''}<button type="button" data-detail-all>▧ Ver todas as fotos</button><button type="button" data-detail-clip>▷ Miniclipe</button></div><div id="mapDetailCanvas" role="region" aria-label="Mapa ampliado de ${esc(point.name)}"></div><h3 class="map-detail-subtitle">${childLabel}</h3><ol class="map-detail-list">${children.map((x,i)=>{const cover=x.entries.flatMap(e=>e.files||[]).find(f=>f.mime.startsWith('image/'));return `<li><button type="button" data-detail-child="${i}">${cover?`<img src="/media/${cover.id}" alt="" loading="lazy">`:'<span class="map-detail-noimg">⌖</span>'}<span><strong>${esc(x.point.name)}</strong><small>${memoryPostCount(x.entries.length)} · ${mapCountLabel(mapMediaCount(x.entries))}</small><em>${point.level==='trip'?'Abrir mapa da cidade →':'Ver fotos →'}</em></span></button></li>`}).join('')}</ol>`;
+  const openChild=x=>point.level==='trip'?openMapDetail(x.point):openMapGallery(x.point,x.entries);
+  dialog.querySelector('[data-detail-close]').onclick=()=>dialog.close();
+  dialog.querySelector('[data-detail-all]').onclick=()=>openMapGallery(point,self.entries);
+  dialog.querySelector('[data-detail-clip]').onclick=()=>presentMemories(self.entries,true);
+  if(parent)dialog.querySelector('[data-detail-parent]').onclick=()=>openMapDetail(parent.point);
+  dialog.querySelectorAll('[data-detail-child]').forEach(b=>b.onclick=()=>openChild(children[Number(b.dataset.detailChild)]));
+  if(!dialog.open)dialog.showModal();dialog.scrollTop=0;
+  mapDetailMap?.remove();
+  const map=mapDetailMap=L.map('mapDetailCanvas',{maxZoom:18,scrollWheelZoom:true,zoomSnap:.5});
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(map);
+  children.forEach(x=>mapMarker(x.point,x.entries,()=>openChild(x)).addTo(map));
+  const coords=children.map(x=>[x.point.lat,x.point.lng]);
+  if(coords.length>1)map.fitBounds(coords,{padding:[45,45],maxZoom:15});else map.setView(coords[0]||[point.lat,point.lng],point.level==='trip'?6:14);
+  requestAnimationFrame(()=>map.invalidateSize());
 }
 function syncPublicMapLevels(){
   if(!publicMap)return;const zoom=publicMap.getZoom();
@@ -71,12 +101,10 @@ function openMapGallery(point,entries){
   let dialog=$('#mapGallery');
   if(!dialog){dialog=document.createElement('dialog');dialog.id='mapGallery';dialog.className='map-gallery';dialog.setAttribute('aria-label','Fotos do ponto selecionado');document.body.append(dialog)}
   const total=mapMediaCount(entries);
-  dialog.innerHTML=`<div class="modal-heading"><div><span class="eyebrow">${MAP_LEVELS[point.level].label}</span><h2>${esc(point.name)}</h2><p class="map-gallery-count">${memoryPostCount(entries.length)} · ${total} ${total===1?'foto/vídeo':'fotos/vídeos'}</p></div><button type="button" class="close" data-map-close aria-label="Fechar fotos">×</button></div><div class="map-gallery-actions"><button type="button" data-map-slides>▧ Ver slides</button><button type="button" data-map-clip>▷ Ver miniclipe</button>${point.level!=='attraction'?'<button type="button" data-map-zoom>⌖ Aproximar no mapa</button>':''}</div>${entries.map(e=>`<article class="map-gallery-memory"><h3>${esc(e.title)}</h3><p>${esc(e.author)} · ${date(e.start)}${e.place?' · '+esc(e.place):''}</p>${e.description?`<p class="map-gallery-text">${esc(e.description)}</p>`:''}${memoryGallery(e)}</article>`).join('')}`;
+  dialog.innerHTML=`<div class="modal-heading"><div><span class="eyebrow">${MAP_LEVELS[point.level].label}</span><h2>${esc(point.name)}</h2><p class="map-gallery-count">${memoryPostCount(entries.length)} · ${total} ${total===1?'foto/vídeo':'fotos/vídeos'}</p></div><button type="button" class="close" data-map-close aria-label="Fechar fotos">×</button></div><div class="map-gallery-actions"><button type="button" data-map-slides>▧ Ver slides</button><button type="button" data-map-clip>▷ Ver miniclipe</button></div>${entries.map(e=>`<article class="map-gallery-memory"><h3>${esc(e.title)}</h3><p>${esc(e.author)} · ${date(e.start)}${e.place?' · '+esc(e.place):''}</p>${e.description?`<p class="map-gallery-text">${esc(e.description)}</p>`:''}${memoryGallery(e)}</article>`).join('')}`;
   dialog.querySelector('[data-map-close]').onclick=()=>dialog.close();
   dialog.querySelector('[data-map-slides]').onclick=()=>presentMemories(entries,false);
   dialog.querySelector('[data-map-clip]').onclick=()=>presentMemories(entries,true);
-  const zoom=dialog.querySelector('[data-map-zoom]');
-  if(zoom)zoom.onclick=()=>{dialog.close();publicMap.setView([point.lat,point.lng],point.level==='trip'?5:11)};
   dialog.querySelectorAll('[data-memory-thumbnail]').forEach(b=>b.onclick=()=>presentMemories(entries,false,Number(b.dataset.memoryFile)));
   dialog.scrollTop=0;if(!dialog.open)dialog.showModal();
 }
