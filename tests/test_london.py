@@ -108,3 +108,33 @@ class MergedItineraries(unittest.TestCase):
             self.assertEqual([g['route_sequence'] for g in day_guides],list(range(1,13)))
             self.assertEqual([g['title'] for g in day_guides],guides['londres-city']['route_summary'][day-1]['places'])
             for g in day_guides:self.assertTrue(g['kicker'].endswith(f"Parada {g['route_sequence']}"))
+
+
+class MadridDay(unittest.TestCase):
+    def test_madrid_day_reorders_existing_stops_and_adds_new_ones(self):
+        from roma2026 import apply_merge
+        c=sqlite3.connect(':memory:')
+        try:
+            c.executescript('''CREATE TABLE migrations(name TEXT PRIMARY KEY);
+            CREATE TABLE trips(id INTEGER,name TEXT,start TEXT);
+            CREATE TABLE users(id INTEGER,role TEXT);
+            CREATE TABLE entries(id INTEGER PRIMARY KEY,kind TEXT,title TEXT,place TEXT,start TEXT,end TEXT,description TEXT,category TEXT,user_id INTEGER,trip_id INTEGER,guide_key TEXT,sort_order INTEGER,attraction_id INTEGER);
+            INSERT INTO trips VALUES(1,'Europa','2026-10-27'); INSERT INTO users VALUES(1,'admin');
+            INSERT INTO entries(id,kind,title,place,start,end,trip_id,guide_key,description) VALUES(36,'tour','Puerta del Sol, Plaza Mayor e centro','Madrid','2026-11-12T12:00','2026-11-12T15:00',1,'madrid-centro','x');
+            INSERT INTO entries(id,kind,title,place,start,end,trip_id,guide_key,description) VALUES(37,'tour','Retiro ou arredores do Palácio Real — opcional','Madrid','2026-11-12T15:30','2026-11-12T17:00',1,'madrid-retiro','y');
+            INSERT INTO entries(id,kind,title,trip_id,attraction_id) VALUES(50,'diary','Memória',1,36);''')
+            apply_merge(c,'madrid_day.json','m3','test')
+            rows=c.execute("SELECT substr(start,12,5),substr(end,12,5),title FROM entries WHERE kind='tour' AND start<>'' ORDER BY start").fetchall()
+            self.assertEqual(rows,[('10:00','10:40','Puerta del Sol'),('10:40','11:20','Plaza Mayor'),('11:20','12:30','Mercado de San Miguel — tapas'),('12:30','14:00','Palácio Real e Plaza de Oriente'),('14:30','16:00','Primark Gran Vía — compras')])
+            self.assertEqual(c.execute('SELECT start,title FROM entries WHERE id=37').fetchone(),('','Parque do Retiro — alternativa sem data'))
+            self.assertEqual(c.execute('SELECT id,attraction_id FROM entries WHERE id=50').fetchone(),(50,36))
+            self.assertEqual(c.execute('SELECT title FROM entries WHERE id=36').fetchone()[0],'Puerta del Sol')
+        finally:c.close()
+    def test_madrid_guides_are_consistent(self):
+        guides=json.loads((ROOT/'guides.json').read_text(encoding='utf-8'))
+        places=json.loads((ROOT/'places.json').read_text(encoding='utf-8'))['guides']
+        day=sorted((g for g in guides.values() if g['city']=='Madrid' and g.get('route_day')),key=lambda g:g['route_sequence'])
+        self.assertEqual([g['route_sequence'] for g in day],[1,2,3,4,5])
+        self.assertEqual([g['title'] for g in day],day[0]['route_summary'][0]['places'])
+        for g in day:self.assertIn(g['key'],places)
+        self.assertNotIn('route_day',guides['madrid-retiro'])

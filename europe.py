@@ -142,3 +142,4 @@ def seed(c):
     from roma2026 import apply_merge
     apply_merge(c,'roma_sant_ignazio.json','europa-roma-santignazio-v1','roma-santignazio')
     apply_merge(c,'london_merged.json','europa-london-merged-v1','london-merged')
+    apply_merge(c,'madrid_day.json','europa-madrid-day-v1','madrid-day')

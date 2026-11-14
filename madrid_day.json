@@ -1,0 +1,67 @@
+{
+ "common": "Madri em 12/11/2026. Horários locais e propostas, não reservas: 10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel com tapas, 12h30 Palácio Real e Plaza de Oriente, e Primark à tarde. Chegada de Londres sem horário confirmado e retorno com partida às 22h: se houver atraso, cortar a partir do fim. Grupo com cadeira motorizada: manter pausas, rotas sem escadas e banheiro acessível. Retiro permanece como alternativa sem data.",
+ "stages": [
+  {
+   "key": "madrid-centro",
+   "title": "Puerta del Sol",
+   "place": "Madrid",
+   "start": "2026-11-12T10:00",
+   "end": "2026-11-12T10:40",
+   "new_title": "Puerta del Sol",
+   "replace": [
+    [
+     "Somente se houver tempo após pouso e deslocamento. Confirmar guarda de bagagens e duração real da conexão.",
+     "Horário proposto a partir da tabela do grupo; confirmar a chegada a Madri e o retorno ao aeroporto."
+    ]
+   ],
+   "old_title": "Puerta del Sol, Plaza Mayor e centro"
+  },
+  {
+   "key": "madrid-mayor",
+   "title": "Plaza Mayor",
+   "place": "Madrid",
+   "start": "2026-11-12T10:40",
+   "end": "2026-11-12T11:20",
+   "description": "DIA 1 — CENTRO DE MADRI | Parada 2: Plaza Mayor.\n\nPraça pública sem ingresso. Os terraços de restaurantes ocupam parte do espaço e têm preços próprios; conferir o cardápio antes de sentar. Eventos e feiras sazonais podem alterar a circulação.\n\nMobilidade: Piso de pedra com pequenas irregularidades, mas praticamente plano; as arcadas oferecem trajeto coberto. Alguns arcos de saída têm degraus: escolher a saída em nível e confirmar a rota até o Mercado de San Miguel."
+  },
+  {
+   "key": "madrid-sanmiguel",
+   "title": "Mercado de San Miguel — tapas",
+   "place": "Madrid",
+   "start": "2026-11-12T11:20",
+   "end": "2026-11-12T12:30",
+   "description": "DIA 1 — CENTRO DE MADRI | Parada 3: Mercado de San Miguel — tapas.\n\nEntrada livre, sem ingresso; cada banca tem preço e funcionamento próprios. Orçamento inicial de €20–35 por pessoa para tapas e bebida, não cotação. Horário e lotação do mercado variam: confirmar no site oficial e manter um restaurante vizinho como alternativa.\n\nMobilidade: Corredores estreitos e muito movimentados, com pouco espaço para cadeira motorizada em horários de pico; confirmar portas e banheiro acessível antes de entrar. Se estiver cheio, usar restaurante vizinho com mesa e acesso nivelado."
+  },
+  {
+   "key": "madrid-palacio",
+   "title": "Palácio Real e Plaza de Oriente",
+   "place": "Madrid",
+   "start": "2026-11-12T12:30",
+   "end": "2026-11-12T14:00",
+   "description": "DIA 1 — CENTRO DE MADRI | Parada 4: Palácio Real e Plaza de Oriente.\n\nExterior e Plaza de Oriente gratuitos. O interior tem ingresso e calendário próprios, com fechamento em dias de cerimônia oficial; confirmar tarifa, horário de 12/11 e gratuidades no site do Patrimonio Nacional. Não comprar antes de confirmar o horário de chegada a Madri.\n\nMobilidade: A região tem trechos inclinados e pisos de pedra; confirmar entrada acessível, elevadores e o roteiro adaptado do palácio. Se o interior não couber no horário, manter só a Plaza de Oriente."
+  },
+  {
+   "key": "madrid-primark",
+   "title": "Primark Gran Vía — compras",
+   "place": "Madrid",
+   "start": "2026-11-12T14:30",
+   "end": "2026-11-12T16:00",
+   "description": "DIA 1 — CENTRO DE MADRI | Parada 5: Primark Gran Vía — compras.\n\nEntrada livre, sem ingresso. Horário, promoções e política de devolução são da loja: conferir no site oficial da Primark Espanha. Pagamento em euros; o orçamento de compras é do grupo e não faz parte da estimativa do roteiro. A Primark tem várias lojas em Madri; confirmar endereço e horário da unidade escolhida.\n\nMobilidade: A loja tem vários andares e corredores movimentados: confirmar elevadores, largura dos corredores e provadores acessíveis. Em horários de pico, combinar onde o grupo se encontra, especialmente para quem usa cadeira motorizada."
+  },
+  {
+   "key": "madrid-retiro",
+   "title": "Parque do Retiro — alternativa sem data",
+   "new_title": "Parque do Retiro — alternativa sem data",
+   "place": "Madrid",
+   "start": "",
+   "end": "",
+   "replace": [
+    [
+     "Escolher apenas uma região conforme tempo disponível. Cancelar se a chegada atrasar; priorizar retorno ao aeroporto para a partida às 22h.",
+     "Fora do roteiro de 12/11 (alternativa sem data): o Palácio Real passou a ter etapa própria."
+    ]
+   ],
+   "old_title": "Retiro ou arredores do Palácio Real — opcional"
+  }
+ ]
+}

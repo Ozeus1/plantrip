@@ -13,7 +13,9 @@ QUERIES={'roma-santignazio':['intitle:"Sant\'Ignazio" Roma'],'londres-mall':['in
  'londres-trafalgar':['intitle:"Trafalgar Square"'],'londres-horseguards':['intitle:"Horse Guards" London'],'londres-downing':['intitle:"Downing Street"'],
  'londres-westminsterbridge':['intitle:"Westminster Bridge"'],'londres-potters':['intitle:"Potters Fields"'],'londres-stkatharine':['intitle:"St Katharine Docks"'],
  'londres-southwark':['intitle:"Southwark Cathedral"'],'londres-borough':['intitle:"Borough Market"'],'londres-clink':['intitle:"Golden Hinde"','intitle:"Clink Street"'],
- 'londres-globe':['intitle:"Shakespeare\'s Globe"'],'londres-onenewchange':['intitle:"One New Change"']}
+ 'londres-globe':['intitle:"Shakespeare\'s Globe"'],'londres-onenewchange':['intitle:"One New Change"'],
+ 'madrid-centro':['intitle:"Puerta del Sol" Madrid'],'madrid-mayor':['intitle:"Plaza Mayor" Madrid'],'madrid-sanmiguel':['intitle:"Mercado de San Miguel"'],
+ 'madrid-palacio':['intitle:"Plaza de Oriente" Madrid','intitle:"Palacio Real" Madrid'],'madrid-primark':['intitle:"Primark" Madrid','intitle:"Gran Vía" Madrid'],'madrid-retiro':['intitle:"Parque del Retiro" Madrid']}
 def search(query):
  args=dict(action='query',generator='search',gsrsearch=query+' filetype:bitmap',gsrnamespace=6,gsrlimit=12,prop='imageinfo',iiprop='url|extmetadata',iiurlwidth=1000,format='json')
  for wait in (15,30,60,120,None):
@@ -31,11 +33,11 @@ def candidates():
   for n,pages in enumerate(out[key]):print(key,n,[(i,p['title'][5:60]) for i,p in enumerate(pages)],flush=True)
   CAND.write_text(json.dumps(out,ensure_ascii=False),encoding='utf-8')
 def norm(url):return urllib.parse.unquote(url).replace(' ','_')
-def apply(choices):
+def apply(choices,append=False):
  data=json.loads(CAND.read_text(encoding='utf-8'));p=ROOT/'guides.json';g=json.loads(p.read_text(encoding='utf-8'))
  for key,picks in choices.items():
-  photos=[]
-  for n,(q,index) in enumerate(picks):
+  photos=list(g[key].get('photos',[])) if append else []
+  for n,(q,index) in enumerate(picks,len(photos)):
    page=data[key][q][index];info=page['imageinfo'][0];meta=info['extmetadata'];source=info['descriptionurl']
    license=clean(meta.get('LicenseShortName',{}).get('value',''));author=clean(meta.get('Artist',{}).get('value',''))
    if not author or not('CC' in license or 'Public domain' in license or license=='PDM'):raise ValueError('Revisar licença: '+key)
@@ -51,4 +53,4 @@ def apply(choices):
  p.write_text(json.dumps(g,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 if __name__=='__main__':
  if sys.argv[1]=='candidates':candidates()
- else:apply(json.loads(Path(sys.argv[2]).read_text(encoding='utf-8')))
+ else:apply(json.loads(Path(sys.argv[2]).read_text(encoding='utf-8')),append=sys.argv[1]=='append')

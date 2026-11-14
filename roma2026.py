@@ -48,13 +48,13 @@ def apply_merge(c,filename,marker,backup_prefix):
         with closing(sqlite3.connect(database)) as source,closing(sqlite3.connect(backup)) as target:source.backup(target)
     data=json.loads((Path(__file__).parent/filename).read_text(encoding='utf-8'))
     for item in data['stages']:
-        row=c.execute("SELECT id,description FROM entries WHERE trip_id=? AND kind='tour' AND guide_key=? ORDER BY id LIMIT 1",(trip[0],item['key'])).fetchone()
+        row=c.execute("SELECT id,description FROM entries WHERE trip_id=? AND kind='tour' AND (guide_key=? OR (guide_key IS NULL AND title=?)) ORDER BY guide_key IS NULL,id LIMIT 1",(trip[0],item['key'],item.get('old_title')or'')).fetchone()
         if row:
             description=row[1] or ''
             for old,new in item.get('replace',[]):description=description.replace(old,new)
             if item.get('append') and item['append'] not in description:description=description.rstrip()+'\n\n'+item['append']
             if item.get('parada'):description=re.sub(r'Parada \d+',f"Parada {item['parada']}",description,count=1)
-            c.execute('UPDATE entries SET start=?,end=?,description=?,sort_order=NULL WHERE id=?',(item['start'],item['end'],description,row[0]))
+            c.execute('UPDATE entries SET start=?,end=?,description=?,title=COALESCE(?,title),guide_key=?,sort_order=NULL WHERE id=?',(item['start'],item['end'],description,item.get('new_title'),item['key'],row[0]))
         elif item.get('description'):
             c.execute('INSERT INTO entries(kind,title,place,start,end,description,category,user_id,trip_id,guide_key) VALUES(?,?,?,?,?,?,?,?,?,?)',('tour',item['title'],item['place'],item['start'],item['end'],item['description']+'\n\n'+data['common'],'Passeio',admin[0],trip[0],item['key']))
     c.execute('INSERT INTO migrations(name) VALUES(?)',(marker,))

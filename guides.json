@@ -3891,38 +3891,39 @@
   },
   "madrid-centro": {
     "key": "madrid-centro",
-    "title": "Puerta del Sol, Plaza Mayor e centro",
+    "title": "Puerta del Sol",
     "city": "Madrid",
-    "kicker": "Uma conexão com sabor de cidade",
-    "intro": "Um circuito compacto para o intervalo em Madrid, somente se o horário real de chegada, as malas e o retorno ao aeroporto permitirem. A prioridade continua sendo o voo das 22h.",
+    "kicker": "Madri em um dia · Parada 1",
+    "intro": "Puerta del Sol é um dos grandes espaços de encontro de Madri, no centro geográfico e simbólico da cidade. A placa do quilômetro zero, de onde se contam as estradas radiais da Espanha, o relógio da Casa de Correos, a estátua do urso e do medronheiro e o letreiro de Tío Pepe são as referências que concentram fotos e encontros.",
     "history": [
-      "Puerta del Sol é um dos grandes espaços de encontro de Madrid, ligado a referências como o quilômetro zero e o relógio da Casa de Correos. A praça sintetiza a função de centro urbano, comercial e simbólico.",
-      "A Plaza Mayor se consolidou no início do século XVII como uma grande praça regular associada à cidade da corte. Arcadas, fachadas e a estátua equestre de Felipe III dão unidade ao conjunto. A curta ligação entre as duas praças permite conhecer um recorte histórico sem atravessar a cidade inteira."
+      "Puerta del Sol é um dos grandes espaços de encontro de Madri, no centro geográfico e simbólico da cidade. A placa do quilômetro zero, de onde se contam as estradas radiais da Espanha, o relógio da Casa de Correos, a estátua do urso e do medronheiro e o letreiro de Tío Pepe são as referências que concentram fotos e encontros.",
+      "No fim do ano a praça é o cenário da tradição das doze uvas, ao som do relógio da Casa de Correos. Em um dia comum o movimento é intenso, com ruas de pedestres, comércio e estação de metrô ao redor. A parada é curta, de cerca de 40 minutos, serve de ponto de partida do circuito a pé e pede atenção a multidões e a pequenos furtos."
     ],
     "stops": [
       {
-        "title": "Puerta del Sol",
-        "text": "Localize as principais referências e estabeleça um ponto de encontro para o grupo antes de seguir."
+        "title": "Quilômetro zero e Casa de Correos",
+        "text": "Localizar a placa no piso, diante do prédio do relógio, e combinar um ponto de encontro para o grupo."
       },
       {
-        "title": "Calle Mayor e Plaza Mayor",
-        "text": "Caminhe pelo trecho central e percorra as arcadas para observar a praça de ângulos diferentes."
+        "title": "Urso e medronheiro",
+        "text": "Fotografar a estátua sem bloquear a calçada e com cuidado com bolsas e mochilas."
       },
       {
-        "title": "Pausa para almoço",
-        "text": "Faça uma refeição simples e confira o horário disponível antes de decidir se haverá outro passeio."
+        "title": "Rumo à Plaza Mayor",
+        "text": "Seguir pela Calle Mayor, a poucos minutos, em piso de pedestres."
       }
     ],
     "tips": [
-      "Só saia do aeroporto depois de confirmar tempo, bagagens e viabilidade do retorno.",
-      "Guarde as malas em serviço identificado; não há reserva de guarda-volume incluída.",
-      "Se o voo atrasar, elimine passeios opcionais em vez de reduzir a margem de embarque."
+      "Horários propostos a partir da tabela do grupo (10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel, 12h30 Palácio Real); a Primark fica à tarde. Reservar apenas depois de confirmar a chegada a Madri.",
+      "Voo de retorno às 22h: calcular a ida ao aeroporto com a rota atualizada e cortar as últimas paradas, em vez de reduzir a margem de embarque, se o dia atrasar.",
+      "Guardar as malas em serviço identificado, se ainda não estiverem no hotel; não há guarda-volume incluído.",
+      "Conferir elevadores do metrô e rotas sem degraus; o centro tem pisos de pedra, ladeiras e muita gente. Cuidado com bolsas e mochilas em áreas turísticas."
     ],
-    "arrival": "Referência no centro: estação Sol. Calcule a ida e volta ao aeroporto com a rota atualizada.",
-    "duration": "2 a 3 horas, após confirmação do tempo disponível",
-    "booking": "Praças e caminhada externas; alimentação e guarda de bagagens são contratadas separadamente.",
-    "accessibility": "Predominam trechos de caminhada urbana; consulte elevadores do transporte e evite circuitos longos com malas.",
-    "photo_tip": "Use as arcadas para enquadrar a Plaza Mayor e fotografe detalhes sem bloquear o fluxo de pedestres.",
+    "arrival": "Puerta del Sol, estação Sol (metrô). Horários locais de Madri. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "10:00–10:40 no roteiro; ajustar ao horário real de chegada",
+    "booking": "Praça pública sem ingresso. Eventos e manifestações podem fechar partes da praça. Alimentação e guarda de bagagens são contratadas separadamente.",
+    "accessibility": "Praça ampla e em grande parte plana, mas com multidão e pisos variados; confirmar os elevadores da estação Sol e usar apenas travessias sinalizadas. Evitar circuitos longos com malas.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança e regras do local. As imagens do guia não são registros da viagem.",
     "photo_titles": [
       "Puerta del Sol",
       "Plaza Mayor, Madrid"
@@ -3939,14 +3940,14 @@
         "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
       },
       {
-        "src": "/guide-photos/a5fd1f19f47cf975.jpg",
-        "alt": "Plaza Mayor, Madrid",
-        "author": "Jorge Franganillo",
-        "license": "CC BY 2.0",
-        "license_url": "https://creativecommons.org/licenses/by/2.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Madrid_Plaza_Mayor_%2848733706273%29.jpg",
-        "caption": "Plaza Mayor, Madrid",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "src": "/guide-photos/266545d1a97dc7359b81.jpg",
+        "alt": "Puerta del Sol — perspectiva e detalhe",
+        "caption": "Puerta del Sol — outro olhar",
+        "author": "Zarateman",
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Madrid_-_Puerta_del_Sol_-_Real_Casa_de_Correos_(Sede_de_la_Presidencia_de_la_Comunidad_de_Madrid).jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
       }
     ],
     "sources": [
@@ -3955,18 +3956,38 @@
         "url": "https://www.esmadrid.com/informacion-turistica/puerta-del-sol"
       },
       {
-        "title": "Madrid clássico — turismo oficial",
-        "url": "https://www.esmadrid.com/madrid-clasico"
+        "title": "Puerta del Sol — referência histórica",
+        "url": "https://en.wikipedia.org/wiki/Puerta_del_Sol"
       }
     ],
-    "reviewed": "2026-10-24"
+    "reviewed": "2026-11-14",
+    "photo_query": "intitle:\"Puerta del Sol\" Madrid",
+    "map_query": "Puerta del Sol, estação Sol (metrô), Madrid",
+    "route_day": 1,
+    "route_sequence": 1,
+    "route_title": "Madri em um dia",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-12",
+        "title": "Centro de Madri",
+        "places": [
+          "Puerta del Sol",
+          "Plaza Mayor",
+          "Mercado de San Miguel — tapas",
+          "Palácio Real e Plaza de Oriente",
+          "Primark Gran Vía — compras"
+        ]
+      }
+    ],
+    "route_footnote": "Madri em 12/11/2026. Horários locais e propostas, não reservas: 10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel com tapas, 12h30 Palácio Real e Plaza de Oriente, e Primark à tarde. Chegada de Londres sem horário confirmado e retorno com partida às 22h: se houver atraso, cortar a partir do fim. Grupo com cadeira motorizada: manter pausas, rotas sem escadas e banheiro acessível. Retiro permanece como alternativa sem data."
   },
   "madrid-retiro": {
     "key": "madrid-retiro",
-    "title": "Retiro ou arredores do Palácio Real — opcional",
+    "title": "Parque do Retiro — alternativa sem data",
     "city": "Madrid",
-    "kicker": "Escolha uma paisagem, preserve a volta",
-    "intro": "Uma alternativa curta para completar o dia em Madrid: jardins do Retiro ou o entorno do Palácio Real. São regiões diferentes; escolha apenas uma e mantenha o retorno ao aeroporto como compromisso principal.",
+    "kicker": "Alternativa sem data",
+    "intro": "Alternativa para outro momento em Madri: os jardins do Retiro. O Palácio Real agora tem guia e horário próprios no roteiro de 12/11, e o Retiro fica sem data.",
     "history": [
       "O Retiro nasceu ligado ao lazer da corte e, ao longo do tempo, se transformou em parque público. Seu lago, caminhos e edifícios de épocas diferentes registram essa passagem de espaço real a lugar de convivência urbana.",
       "O Palácio Real pertence a outro eixo da história monárquica madrilenha. O edifício atual foi construído após a perda do antigo Alcázar no século XVIII. Para esta conexão curta, a proposta é apreciar os arredores e a paisagem externa, sem pressupor uma visita completa aos salões."
@@ -3977,8 +3998,8 @@
         "text": "Escolha um acesso conveniente e um pequeno circuito junto ao lago. Não dependa da abertura de edifícios ou exposições."
       },
       {
-        "title": "Opção B: Palácio Real",
-        "text": "Caminhe pela Plaza de Oriente e pelo entorno do palácio, observando a relação com a cidade e a Catedral da Almudena."
+        "title": "Palácio Real",
+        "text": "Já consta no roteiro de 12/11, com guia e horário próprios na Plaza de Oriente."
       },
       {
         "title": "Retorno ao aeroporto",
@@ -3986,12 +4007,12 @@
       }
     ],
     "tips": [
-      "Não tente fazer Retiro e Palácio Real na mesma janela curta.",
+      "O Palácio Real já está no roteiro; esta etapa fica como alternativa sem data para o Retiro.",
       "Consulte obras e áreas interditadas; fotografias históricas não garantem o cenário atual.",
       "Cancele esta etapa se o horário de chegada, clima ou transporte reduzirem a margem de segurança."
     ],
-    "arrival": "Retiro: região de Retiro/Estación del Arte. Palácio: região de Ópera. Escolha conforme o passeio anterior.",
-    "duration": "1 a 1h30, apenas se houver folga",
+    "arrival": "Retiro: região de Retiro/Estación del Arte.",
+    "duration": "1 a 1h30, apenas se houver folga e sem data definida",
     "booking": "Proposta externa; interior do Palácio Real e exposições têm ingresso e calendário próprios.",
     "accessibility": "Jardins, distâncias e acessos de metrô variam; selecione o circuito mais simples para o grupo.",
     "photo_tip": "No Retiro, procure a paisagem do lago; na Plaza de Oriente, explore o conjunto do palácio sem entrar em áreas restritas.",
@@ -4011,14 +4032,14 @@
         "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
       },
       {
-        "src": "/guide-photos/bfb3cc753aa7a67f.jpg",
-        "alt": "Royal Palace of Madrid",
-        "author": "Tim Adams",
+        "src": "/guide-photos/fe46f0c4ff9c10649301.jpg",
+        "alt": "Parque do Retiro — alternativa sem data — perspectiva e detalhe",
+        "caption": "Parque do Retiro — alternativa sem data — outro olhar",
+        "author": "Diego Delso",
         "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-        "source": "https://commons.wikimedia.org/wiki/File:Palacio_Real_de_Madrid_Julio_2016_%28cropped%29.jpg",
-        "caption": "Royal Palace of Madrid",
-        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Estanque_del_Retiro,_Parque_del_Retiro,_Madrid,_Espa%C3%B1a,_2017-05-18,_DD_16.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
       }
     ],
     "sources": [
@@ -12001,5 +12022,365 @@
         ]
       }
     ]
+  },
+  "madrid-mayor": {
+    "key": "madrid-mayor",
+    "title": "Plaza Mayor",
+    "city": "Madrid",
+    "history": [
+      "A Plaza Mayor é uma praça regular, fechada por edifícios de três andares com arcadas, projetada no início do século XVII, no reinado de Filipe III. No centro fica a estátua equestre do rei, e a Casa de la Panadería, com a fachada decorada, ocupa o lado norte e é o edifício mais reconhecível do conjunto.",
+      "Ao longo dos séculos a praça serviu a mercados, festas, touradas e cerimônias públicas; hoje é lugar de passeio, cafés e comércio turístico. O piso é de pedra e as arcadas ajudam a circular a pé, mas os terraços dos restaurantes e a multidão reduzem o espaço. A visita é curta, de cerca de 40 minutos, entre a Puerta del Sol e o Mercado de San Miguel, que fica a poucos passos."
+    ],
+    "intro": "A Plaza Mayor é uma praça regular, fechada por edifícios de três andares com arcadas, projetada no início do século XVII, no reinado de Filipe III. No centro fica a estátua equestre do rei, e a Casa de la Panadería, com a fachada decorada, ocupa o lado norte e é o edifício mais reconhecível do conjunto.",
+    "stops": [
+      {
+        "title": "Estátua de Filipe III",
+        "text": "Usar a estátua como referência no centro da praça e observar o conjunto de ângulos diferentes."
+      },
+      {
+        "title": "Arcadas e Casa de la Panadería",
+        "text": "Percorrer as arcadas e olhar a fachada decorada, mantendo a passagem livre."
+      },
+      {
+        "title": "Saída ao mercado",
+        "text": "Sair por um dos arcos em direção ao Mercado de San Miguel, a poucos metros."
+      }
+    ],
+    "tips": [
+      "Horários propostos a partir da tabela do grupo (10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel, 12h30 Palácio Real); a Primark fica à tarde. Reservar apenas depois de confirmar a chegada a Madri.",
+      "Voo de retorno às 22h: calcular a ida ao aeroporto com a rota atualizada e cortar as últimas paradas, em vez de reduzir a margem de embarque, se o dia atrasar.",
+      "Guardar as malas em serviço identificado, se ainda não estiverem no hotel; não há guarda-volume incluído.",
+      "Conferir elevadores do metrô e rotas sem degraus; o centro tem pisos de pedra, ladeiras e muita gente. Cuidado com bolsas e mochilas em áreas turísticas."
+    ],
+    "arrival": "Plaza Mayor. Horários locais de Madri. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "10:40–11:20 no roteiro; ajustar ao horário real de chegada",
+    "booking": "Praça pública sem ingresso. Os terraços de restaurantes ocupam parte do espaço e têm preços próprios; conferir o cardápio antes de sentar. Eventos e feiras sazonais podem alterar a circulação.",
+    "accessibility": "Piso de pedra com pequenas irregularidades, mas praticamente plano; as arcadas oferecem trajeto coberto. Alguns arcos de saída têm degraus: escolher a saída em nível e confirmar a rota até o Mercado de San Miguel.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança e regras do local. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/a5fd1f19f47cf975.jpg",
+        "alt": "Plaza Mayor, Madrid",
+        "author": "Jorge Franganillo",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Madrid_Plaza_Mayor_%2848733706273%29.jpg",
+        "caption": "Plaza Mayor, Madrid",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/8c0ee65915ca7c98e738.jpg",
+        "alt": "Plaza Mayor — perspectiva e detalhe",
+        "caption": "Plaza Mayor — outro olhar",
+        "author": "Artem Vynohradov",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Casa_de_la_Panader%C3%ADa,_Plaza_Mayor,_Madrid,_Spain.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_query": "intitle:\"Plaza Mayor\" Madrid",
+    "map_query": "Plaza Mayor, Madrid",
+    "sources": [
+      {
+        "title": "Plaza Mayor — turismo oficial",
+        "url": "https://www.esmadrid.com/informacion-turistica/plaza-mayor"
+      },
+      {
+        "title": "Plaza Mayor — referência histórica",
+        "url": "https://en.wikipedia.org/wiki/Plaza_Mayor,_Madrid"
+      }
+    ],
+    "reviewed": "2026-11-14",
+    "kicker": "Madri em um dia · Parada 2",
+    "route_day": 1,
+    "route_sequence": 2,
+    "route_title": "Madri em um dia",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-12",
+        "title": "Centro de Madri",
+        "places": [
+          "Puerta del Sol",
+          "Plaza Mayor",
+          "Mercado de San Miguel — tapas",
+          "Palácio Real e Plaza de Oriente",
+          "Primark Gran Vía — compras"
+        ]
+      }
+    ],
+    "route_footnote": "Madri em 12/11/2026. Horários locais e propostas, não reservas: 10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel com tapas, 12h30 Palácio Real e Plaza de Oriente, e Primark à tarde. Chegada de Londres sem horário confirmado e retorno com partida às 22h: se houver atraso, cortar a partir do fim. Grupo com cadeira motorizada: manter pausas, rotas sem escadas e banheiro acessível. Retiro permanece como alternativa sem data."
+  },
+  "madrid-sanmiguel": {
+    "key": "madrid-sanmiguel",
+    "title": "Mercado de San Miguel — tapas",
+    "city": "Madrid",
+    "history": [
+      "O Mercado de San Miguel é um mercado coberto de ferro e vidro, inaugurado em 1916 junto à Plaza Mayor, e hoje funciona como mercado gastronômico, com bancas de tapas, frutos do mar, queijos, embutidos, doces e vinhos. O edifício preserva a estrutura metálica do início do século XX, que o distingue dos prédios de pedra do entorno.",
+      "A parada, de cerca de uma hora e dez minutos, funciona como pausa de almoço com tapas. Os corredores são estreitos e o mercado costuma encher, principalmente nas horas de refeição; o consumo é feito em pé ou em mesas disputadas. Para o grupo, vale chegar cedo, escolher poucas bancas, conferir o espaço para a cadeira e ter um restaurante vizinho como alternativa. Os preços são de mercado turístico."
+    ],
+    "intro": "O Mercado de San Miguel é um mercado coberto de ferro e vidro, inaugurado em 1916 junto à Plaza Mayor, e hoje funciona como mercado gastronômico, com bancas de tapas, frutos do mar, queijos, embutidos, doces e vinhos. O edifício preserva a estrutura metálica do início do século XX, que o distingue dos prédios de pedra do entorno.",
+    "stops": [
+      {
+        "title": "Escolha das bancas",
+        "text": "Percorrer a entrada e escolher poucas bancas antes de circular pelos corredores."
+      },
+      {
+        "title": "Tapas e mesa",
+        "text": "Procurar mesa com espaço para a cadeira ou levar a refeição a um ponto mais amplo."
+      },
+      {
+        "title": "Rumo ao Palácio Real",
+        "text": "Seguir pela região da Calle Mayor até a Plaza de Oriente, de 10 a 15 minutos, com trechos inclinados."
+      }
+    ],
+    "tips": [
+      "Horários propostos a partir da tabela do grupo (10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel, 12h30 Palácio Real); a Primark fica à tarde. Reservar apenas depois de confirmar a chegada a Madri.",
+      "Voo de retorno às 22h: calcular a ida ao aeroporto com a rota atualizada e cortar as últimas paradas, em vez de reduzir a margem de embarque, se o dia atrasar.",
+      "Guardar as malas em serviço identificado, se ainda não estiverem no hotel; não há guarda-volume incluído.",
+      "Conferir elevadores do metrô e rotas sem degraus; o centro tem pisos de pedra, ladeiras e muita gente. Cuidado com bolsas e mochilas em áreas turísticas."
+    ],
+    "arrival": "Plaza de San Miguel. Horários locais de Madri. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "11:20–12:30 no roteiro; ajustar ao horário real de chegada",
+    "booking": "Entrada livre, sem ingresso; cada banca tem preço e funcionamento próprios. Orçamento inicial de €20–35 por pessoa para tapas e bebida, não cotação. Horário e lotação do mercado variam: confirmar no site oficial e manter um restaurante vizinho como alternativa.",
+    "accessibility": "Corredores estreitos e muito movimentados, com pouco espaço para cadeira motorizada em horários de pico; confirmar portas e banheiro acessível antes de entrar. Se estiver cheio, usar restaurante vizinho com mesa e acesso nivelado.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança e regras do local. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/8e18829effd6d2711bd2.jpg",
+        "alt": "Mercado de San Miguel — tapas — vista geral",
+        "caption": "Mercado de San Miguel — tapas — vista geral",
+        "author": "Nicolas Vigier",
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Miguel,_Madrid_-_001.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/d7ffd6cc5f5af1898cdd.jpg",
+        "alt": "Mercado de San Miguel — tapas — perspectiva e detalhe",
+        "caption": "Mercado de San Miguel — tapas — outro olhar",
+        "author": "Zorro2212",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Interior_of_Mercado_de_San_Miguel_2015_04.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_query": "intitle:\"Mercado de San Miguel\" Madrid",
+    "map_query": "Plaza de San Miguel, Madrid",
+    "sources": [
+      {
+        "title": "Mercado de San Miguel — referência histórica",
+        "url": "https://en.wikipedia.org/wiki/Mercado_de_San_Miguel"
+      },
+      {
+        "title": "Madri — turismo oficial",
+        "url": "https://www.esmadrid.com/"
+      }
+    ],
+    "reviewed": "2026-11-14",
+    "kicker": "Madri em um dia · Parada 3",
+    "route_day": 1,
+    "route_sequence": 3,
+    "route_title": "Madri em um dia",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-12",
+        "title": "Centro de Madri",
+        "places": [
+          "Puerta del Sol",
+          "Plaza Mayor",
+          "Mercado de San Miguel — tapas",
+          "Palácio Real e Plaza de Oriente",
+          "Primark Gran Vía — compras"
+        ]
+      }
+    ],
+    "route_footnote": "Madri em 12/11/2026. Horários locais e propostas, não reservas: 10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel com tapas, 12h30 Palácio Real e Plaza de Oriente, e Primark à tarde. Chegada de Londres sem horário confirmado e retorno com partida às 22h: se houver atraso, cortar a partir do fim. Grupo com cadeira motorizada: manter pausas, rotas sem escadas e banheiro acessível. Retiro permanece como alternativa sem data."
+  },
+  "madrid-palacio": {
+    "key": "madrid-palacio",
+    "title": "Palácio Real e Plaza de Oriente",
+    "city": "Madrid",
+    "history": [
+      "O Palácio Real de Madri foi construído em meados do século XVIII onde ficava o antigo Alcázar, destruído por um incêndio em 1734. É a residência oficial do monarca espanhol, hoje usada sobretudo em cerimônias de Estado, e recebe visitas aos salões, à Armería e a coleções. A fachada de pedra clara domina a Plaza de la Armería.",
+      "A Plaza de Oriente, do outro lado, é um jardim formal com estátuas de reis e a estátua equestre de Filipe IV, em frente ao Teatro Real. Nesta proposta o foco é a Plaza de Oriente e o exterior do palácio, com visita interna apenas se o grupo confirmar ingresso, horário e acesso. Perto fica a Catedral da Almudena. A parada é de cerca de 1h30, com pausa e banheiro; a subida desde o mercado tem trechos inclinados."
+    ],
+    "intro": "O Palácio Real de Madri foi construído em meados do século XVIII onde ficava o antigo Alcázar, destruído por um incêndio em 1734. É a residência oficial do monarca espanhol, hoje usada sobretudo em cerimônias de Estado, e recebe visitas aos salões, à Armería e a coleções. A fachada de pedra clara domina a Plaza de la Armería.",
+    "stops": [
+      {
+        "title": "Plaza de Oriente",
+        "text": "Caminhar pelos jardins e pela estátua de Filipe IV, com o Teatro Real de um lado e o palácio do outro."
+      },
+      {
+        "title": "Fachada e Plaza de la Armería",
+        "text": "Observar o palácio do lado de fora e conferir se há fila ou fechamento por cerimônia."
+      },
+      {
+        "title": "Interior (opcional)",
+        "text": "Somente com ingresso, horário e acesso confirmados; a visita pode exigir 1h30 ou mais."
+      }
+    ],
+    "tips": [
+      "Horários propostos a partir da tabela do grupo (10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel, 12h30 Palácio Real); a Primark fica à tarde. Reservar apenas depois de confirmar a chegada a Madri.",
+      "Voo de retorno às 22h: calcular a ida ao aeroporto com a rota atualizada e cortar as últimas paradas, em vez de reduzir a margem de embarque, se o dia atrasar.",
+      "Guardar as malas em serviço identificado, se ainda não estiverem no hotel; não há guarda-volume incluído.",
+      "Conferir elevadores do metrô e rotas sem degraus; o centro tem pisos de pedra, ladeiras e muita gente. Cuidado com bolsas e mochilas em áreas turísticas."
+    ],
+    "arrival": "Plaza de Oriente / Palacio Real. Horários locais de Madri. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "12:30–14:00 no roteiro; ajustar ao horário real de chegada",
+    "booking": "Exterior e Plaza de Oriente gratuitos. O interior tem ingresso e calendário próprios, com fechamento em dias de cerimônia oficial; confirmar tarifa, horário de 12/11 e gratuidades no site do Patrimonio Nacional. Não comprar antes de confirmar o horário de chegada a Madri.",
+    "accessibility": "A região tem trechos inclinados e pisos de pedra; confirmar entrada acessível, elevadores e o roteiro adaptado do palácio. Se o interior não couber no horário, manter só a Plaza de Oriente.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança e regras do local. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/bfb3cc753aa7a67f.jpg",
+        "alt": "Royal Palace of Madrid",
+        "author": "Tim Adams",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Palacio_Real_de_Madrid_Julio_2016_%28cropped%29.jpg",
+        "caption": "Royal Palace of Madrid",
+        "modified": "Redimensionamento para exibição; enquadramento via CSS. A fotografia mantém sua licença original."
+      },
+      {
+        "src": "/guide-photos/d0c1cdd676b23728d535.jpg",
+        "alt": "Palácio Real e Plaza de Oriente — perspectiva e detalhe",
+        "caption": "Palácio Real e Plaza de Oriente — outro olhar",
+        "author": "Claudio perez 21",
+        "license": "CC BY-SA 3.0 es",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/es/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Plaza_de_Oriente,Madrid_2013.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_query": "intitle:\"Plaza de Oriente\" Madrid",
+    "map_query": "Plaza de Oriente / Palacio Real, Madrid",
+    "sources": [
+      {
+        "title": "Palácio Real — Patrimonio Nacional",
+        "url": "https://www.patrimonionacional.es/visita/palacio-real-de-madrid"
+      },
+      {
+        "title": "Palácio Real — turismo oficial",
+        "url": "https://www.esmadrid.com/informacion-turistica/palacio-real"
+      },
+      {
+        "title": "Plaza de Oriente — referência",
+        "url": "https://en.wikipedia.org/wiki/Plaza_de_Oriente"
+      }
+    ],
+    "reviewed": "2026-11-14",
+    "kicker": "Madri em um dia · Parada 4",
+    "route_day": 1,
+    "route_sequence": 4,
+    "route_title": "Madri em um dia",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-12",
+        "title": "Centro de Madri",
+        "places": [
+          "Puerta del Sol",
+          "Plaza Mayor",
+          "Mercado de San Miguel — tapas",
+          "Palácio Real e Plaza de Oriente",
+          "Primark Gran Vía — compras"
+        ]
+      }
+    ],
+    "route_footnote": "Madri em 12/11/2026. Horários locais e propostas, não reservas: 10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel com tapas, 12h30 Palácio Real e Plaza de Oriente, e Primark à tarde. Chegada de Londres sem horário confirmado e retorno com partida às 22h: se houver atraso, cortar a partir do fim. Grupo com cadeira motorizada: manter pausas, rotas sem escadas e banheiro acessível. Retiro permanece como alternativa sem data."
+  },
+  "madrid-primark": {
+    "key": "madrid-primark",
+    "title": "Primark Gran Vía — compras",
+    "city": "Madrid",
+    "history": [
+      "A Primark é uma rede irlandesa de moda e artigos para casa conhecida pelos preços baixos, com várias lojas em Madri. A proposta usa a loja da Gran Vía, no centro, como parada de compras livre depois do Palácio Real, sem exigir deslocamento ao outro lado da cidade. É uma parada de consumo, não uma atração turística.",
+      "A Gran Vía é uma das avenidas mais conhecidas de Madri, aberta a partir de 1910, com edifícios de estilos variados, teatros e cinemas, e a caminhada até a loja já funciona como passeio. A loja costuma ficar cheia, com filas de provadores e de caixa. Como o voo de volta sai às 22h, vale decidir antes o orçamento, o peso e o volume das compras, considerando o limite de bagagem da companhia aérea, e reservar margem para recolher as malas e seguir ao aeroporto."
+    ],
+    "intro": "A Primark é uma rede irlandesa de moda e artigos para casa conhecida pelos preços baixos, com várias lojas em Madri. A proposta usa a loja da Gran Vía, no centro, como parada de compras livre depois do Palácio Real, sem exigir deslocamento ao outro lado da cidade. É uma parada de consumo, não uma atração turística.",
+    "stops": [
+      {
+        "title": "Caminhada pela Gran Vía",
+        "text": "Seguir da região do Palácio Real à Gran Vía observando a arquitetura, por calçadas largas."
+      },
+      {
+        "title": "Compras",
+        "text": "Definir lista e orçamento antes de entrar e combinar um ponto de encontro do grupo dentro da loja."
+      },
+      {
+        "title": "Bagagem e retorno",
+        "text": "Verificar peso e volume das compras antes do voo das 22h e planejar o trajeto ao aeroporto."
+      }
+    ],
+    "tips": [
+      "Horários propostos a partir da tabela do grupo (10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel, 12h30 Palácio Real); a Primark fica à tarde. Reservar apenas depois de confirmar a chegada a Madri.",
+      "Voo de retorno às 22h: calcular a ida ao aeroporto com a rota atualizada e cortar as últimas paradas, em vez de reduzir a margem de embarque, se o dia atrasar.",
+      "Guardar as malas em serviço identificado, se ainda não estiverem no hotel; não há guarda-volume incluído.",
+      "Conferir elevadores do metrô e rotas sem degraus; o centro tem pisos de pedra, ladeiras e muita gente. Cuidado com bolsas e mochilas em áreas turísticas."
+    ],
+    "arrival": "Gran Vía (loja Primark Gran Vía). Horários locais de Madri. O mapa aponta a atração, não uma rota acessível garantida.",
+    "duration": "14:30–16:00 no roteiro, a confirmar",
+    "booking": "Entrada livre, sem ingresso. Horário, promoções e política de devolução são da loja: conferir no site oficial da Primark Espanha. Pagamento em euros; o orçamento de compras é do grupo e não faz parte da estimativa do roteiro. A Primark tem várias lojas em Madri; confirmar endereço e horário da unidade escolhida.",
+    "accessibility": "A loja tem vários andares e corredores movimentados: confirmar elevadores, largura dos corredores e provadores acessíveis. Em horários de pico, combinar onde o grupo se encontra, especialmente para quem usa cadeira motorizada.",
+    "photo_tip": "Combinar uma vista geral e um detalhe. Respeitar culto, segurança e regras do local. As imagens do guia não são registros da viagem.",
+    "photos": [
+      {
+        "src": "/guide-photos/a7e7f92920efb67a8e65.jpg",
+        "alt": "Primark Gran Vía — compras — vista geral",
+        "caption": "Primark Gran Vía — compras — vista geral",
+        "author": "Zarateman",
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Madrid_-_Megastore_de_Primark_en_Gran_V%C3%ADa_32_(01)_02.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      },
+      {
+        "src": "/guide-photos/88adfa709fabd3c59a5e.jpg",
+        "alt": "Primark Gran Vía — compras — perspectiva e detalhe",
+        "caption": "Primark Gran Vía — compras — outro olhar",
+        "author": "SentoBR",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Gran_V%C3%ADa,_Madrid_-_septiembre_2021.jpg",
+        "modified": "Fotografia do Commons em versão redimensionada; enquadramento por CSS."
+      }
+    ],
+    "photo_query": "intitle:\"Gran Vía\" Madrid",
+    "map_query": "Gran Vía (loja Primark Gran Vía), Madrid",
+    "sources": [
+      {
+        "title": "Primark Espanha",
+        "url": "https://www.primark.com/es-es"
+      },
+      {
+        "title": "Gran Vía — referência histórica",
+        "url": "https://en.wikipedia.org/wiki/Gran_V%C3%ADa_(Madrid)"
+      }
+    ],
+    "reviewed": "2026-11-14",
+    "kicker": "Madri em um dia · Parada 5",
+    "route_day": 1,
+    "route_sequence": 5,
+    "route_title": "Madri em um dia",
+    "route_summary": [
+      {
+        "day": 1,
+        "date": "2026-11-12",
+        "title": "Centro de Madri",
+        "places": [
+          "Puerta del Sol",
+          "Plaza Mayor",
+          "Mercado de San Miguel — tapas",
+          "Palácio Real e Plaza de Oriente",
+          "Primark Gran Vía — compras"
+        ]
+      }
+    ],
+    "route_footnote": "Madri em 12/11/2026. Horários locais e propostas, não reservas: 10h00 Puerta del Sol, 10h40 Plaza Mayor, 11h20 Mercado de San Miguel com tapas, 12h30 Palácio Real e Plaza de Oriente, e Primark à tarde. Chegada de Londres sem horário confirmado e retorno com partida às 22h: se houver atraso, cortar a partir do fim. Grupo com cadeira motorizada: manter pausas, rotas sem escadas e banheiro acessível. Retiro permanece como alternativa sem data."
   }
 }
