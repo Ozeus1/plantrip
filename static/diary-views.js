@@ -1,3 +1,5 @@
+// Capa escolhida pelo autor (cover_file_id); sem escolha, vale a primeira foto da ordem definida.
+function coverOf(entries){const list=[].concat(entries);for(const e of list){const c=(e.files||[]).find(f=>f.id===e.cover_file_id&&f.mime.startsWith('image/'));if(c)return c}return list.flatMap(e=>e.files||[]).find(f=>f.mime.startsWith('image/'))}
 const diaryBrowsers={private:{mode:'list',place:null,month:null,day:null},public:{mode:'list',place:null,month:null,day:null}};
 function memoryPostCount(n){return n+' '+(n===1?'publicação':'publicações')}
 function memoryDay(value){const day=String(value||'').slice(0,10);return /^\d{4}-\d{2}-\d{2}$/.test(day)?day:''}
@@ -5,7 +7,31 @@ function memoryPlaceKey(e){return String(e.trip_id||'')+':'+String(e.place||'Loc
 function groupMemoryPlaces(entries){const map=new Map();for(const e of entries){const key=memoryPlaceKey(e);if(!map.has(key))map.set(key,{key,label:e.place||'Local não informado',entries:[]});map.get(key).entries.push(e)}return [...map.values()].sort((a,b)=>a.label.localeCompare(b.label,'pt-BR'))}
 function memoryMonthCells(year,month){const first=new Date(year,month,1),offset=(first.getDay()+6)%7,count=new Date(year,month+1,0).getDate();return Array.from({length:Math.ceil((offset+count)/7)*7},(_,i)=>{const day=i-offset+1;return day>0&&day<=count?`${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`:null})}
 function memoryViewerButtons(e){return `<div class="memory-view-buttons"><button type="button" data-memory-slides="${e.id}">▧ Ver slides</button><button type="button" data-memory-clip="${e.id}">▷ Ver miniclipe</button></div>`}
-function memoryGallery(e,editable=false){return `<div class="memory-thumbnail-grid">${(e.files||[]).map(f=>{const video=f.mime.startsWith('video/'),visual=video||f.mime.startsWith('image/');return `<div class="memory-thumbnail-item">${visual?`<button type="button" class="memory-thumbnail" data-memory-thumbnail="${e.id}" data-memory-file="${f.id}" aria-label="${video?'Reproduzir vídeo':'Abrir foto'}: ${esc(f.name)}">${video?`<video src="/media/${f.id}#t=0.1" preload="metadata" muted playsinline tabindex="-1" aria-hidden="true"></video><span class="memory-video-badge">▷ Vídeo</span>`:`<img src="/media/${f.id}" alt="${esc(f.name)}" loading="lazy">`}</button>`:media(f)}${editable?`<button type="button" class="text-btn danger" data-del-file="${f.id}">Remover arquivo</button>`:''}</div>`}).join('')}</div>`}
+function memoryGallery(e,editable=false){
+  const files=e.files||[],cover=coverOf(e);
+  return `<div class="memory-thumbnail-grid${editable?' is-arranging':''}"${editable?' data-arrange-grid':''}>${files.map((f,i)=>{const video=f.mime.startsWith('video/'),visual=video||f.mime.startsWith('image/'),isCover=cover?.id===f.id;
+    const tools=editable?`<div class="photo-tools" role="group" aria-label="Organizar ${esc(f.name)}"><button type="button" data-file-move="${f.id}" data-dir="-1" ${i===0?'disabled':''} aria-label="Mover para antes" title="Mover para antes">‹</button>${f.mime.startsWith('image/')?`<button type="button" data-file-cover="${f.id}" ${isCover?'disabled':''} title="Usar como foto de capa">${isCover?'★ Capa':'☆ Capa'}</button>`:''}<button type="button" data-file-move="${f.id}" data-dir="1" ${i===files.length-1?'disabled':''} aria-label="Mover para depois" title="Mover para depois">›</button></div>`:'';
+    return `<div class="memory-thumbnail-item${isCover?' is-cover':''}" data-file-item="${f.id}"${editable?' draggable="true"':''}>${visual?`<button type="button" class="memory-thumbnail" data-memory-thumbnail="${e.id}" data-memory-file="${f.id}" aria-label="${video?'Reproduzir vídeo':'Abrir foto'}: ${esc(f.name)}">${video?`<video src="/media/${f.id}#t=0.1" preload="metadata" muted playsinline tabindex="-1" aria-hidden="true"></video><span class="memory-video-badge">▷ Vídeo</span>`:`<img src="/media/${f.id}" alt="${esc(f.name)}" loading="lazy" draggable="false">`}${isCover?'<span class="memory-cover-badge">★ Capa</span>':''}</button>`:media(f)}${tools}${editable?`<button type="button" class="text-btn danger" data-del-file="${f.id}">Remover arquivo</button>`:''}</div>`}).join('')}</div>${editable&&files.length>1?'<p class="photo-arrange-hint">Arraste as miniaturas ou use ‹ › para mudar a ordem; ☆ Capa define a foto de destaque da memória.</p>':''}`}
+// Ordem e capa: salva no servidor e reabre o detalhe mantendo a rolagem.
+function bindFileArranging(e){
+  const grid=document.querySelector('[data-arrange-grid]');if(!grid)return;
+  const ids=()=>(e.files||[]).map(f=>f.id);
+  let busy=false,dragged=null;
+  async function save(body){
+    if(busy)return;busy=true;const box=$('#detail'),top=box.scrollTop;
+    try{await api('/api/files/arrange',{entry_id:e.id,...body});await load();detail(e.id);box.scrollTop=top}
+    catch(ex){toast(ex.message);busy=false}
+  }
+  function moved(list,id,target,after){if(id===target)return list;const rest=list.filter(x=>x!==id);rest.splice(rest.indexOf(target)+(after?1:0),0,id);return rest}
+  grid.querySelectorAll('[data-file-move]').forEach(b=>b.onclick=()=>{const list=ids(),id=Number(b.dataset.fileMove),at=list.indexOf(id),to=at+Number(b.dataset.dir);if(to<0||to>=list.length)return;[list[at],list[to]]=[list[to],list[at]];save({file_ids:list})});
+  grid.querySelectorAll('[data-file-cover]').forEach(b=>b.onclick=()=>save({cover_file_id:Number(b.dataset.fileCover)}));
+  grid.querySelectorAll('[data-file-item]').forEach(item=>{
+    item.ondragstart=ev=>{dragged=Number(item.dataset.fileItem);item.classList.add('is-dragging');ev.dataTransfer.effectAllowed='move';ev.dataTransfer.setData('text/plain',String(dragged))};
+    item.ondragend=()=>{dragged=null;grid.querySelectorAll('.drop-before,.drop-after,.is-dragging').forEach(x=>x.classList.remove('drop-before','drop-after','is-dragging'))};
+    item.ondragover=ev=>{if(dragged===null)return;ev.preventDefault();const r=item.getBoundingClientRect(),after=ev.clientX>r.left+r.width/2;grid.querySelectorAll('.drop-before,.drop-after').forEach(x=>x.classList.remove('drop-before','drop-after'));if(Number(item.dataset.fileItem)!==dragged)item.classList.add(after?'drop-after':'drop-before')};
+    item.ondrop=ev=>{if(dragged===null)return;ev.preventDefault();const r=item.getBoundingClientRect(),list=ids(),result=moved(list,dragged,Number(item.dataset.fileItem),ev.clientX>r.left+r.width/2);dragged=null;if(result.some((id,i)=>id!==list[i]))save({file_ids:result})};
+  });
+}
 function memoryModeToolbar(scope){const current=diaryBrowsers[scope].mode;return `<div class="memory-modes" role="group" aria-label="Visualização das memórias">${[['list','▧ Memórias'],['places','⌖ Por local'],['calendar','▦ Calendário'],...(scope==='private'?[['map','◌ Mapa']]:[])].map(([mode,label])=>`<button type="button" data-diary-mode="${mode}" data-diary-scope="${scope}" aria-pressed="${current===mode}">${label}</button>`).join('')}</div>`}
 function setMemoryMode(scope,mode){diaryBrowsers[scope].mode=mode;diaryBrowsers[scope].place=null;diaryBrowsers[scope].day=null;redrawMemoryBrowser(scope)}
 function redrawMemoryBrowser(scope){if(scope==='home')return render();if(scope==='public')renderPublicPosts();else renderResults()}
@@ -16,7 +42,7 @@ function renderMemoryBrowser(entries,scope,renderPosts,toolbar=true){
   if(ui.mode==='places'){
     const groups=groupMemoryPlaces(entries),selected=groups.find(g=>g.key===ui.place);
     if(selected)return html+`<div class="memory-section-heading"><button class="text-btn" data-place-back="${scope}">← Todos os locais</button><h2>${esc(selected.label)}</h2><span>${memoryPostCount(selected.entries.length)}</span><div><button class="text-btn" data-place-slides="${scope}">▧ Slides do local</button><button class="text-btn" data-place-clip="${scope}">▷ Miniclipe do local</button></div></div>`+renderPosts(selected.entries);
-    return html+`<div class="memory-place-grid">${groups.map((g,i)=>{const image=g.entries.flatMap(e=>e.files||[]).find(f=>f.mime.startsWith('image/'));return `<button type="button" class="memory-place-card" data-place-index="${i}" data-diary-scope="${scope}">${image?`<img src="/media/${image.id}" alt="${esc(g.label)}" loading="lazy">`:'<span class="memory-place-placeholder">⌖</span>'}<span class="memory-place-copy"><strong>${esc(g.label)}</strong><small>${memoryPostCount(g.entries.length)} · ${g.entries.reduce((n,e)=>n+(e.files||[]).filter(f=>/^(image|video)\//.test(f.mime)).length,0)} fotos/vídeos</small></span></button>`}).join('')}</div>`;
+    return html+`<div class="memory-place-grid">${groups.map((g,i)=>{const image=coverOf(g.entries);return `<button type="button" class="memory-place-card" data-place-index="${i}" data-diary-scope="${scope}">${image?`<img src="/media/${image.id}" alt="${esc(g.label)}" loading="lazy">`:'<span class="memory-place-placeholder">⌖</span>'}<span class="memory-place-copy"><strong>${esc(g.label)}</strong><small>${memoryPostCount(g.entries.length)} · ${g.entries.reduce((n,e)=>n+(e.files||[]).filter(f=>/^(image|video)\//.test(f.mime)).length,0)} fotos/vídeos</small></span></button>`}).join('')}</div>`;
   }
   const days=new Map();for(const e of entries){const day=memoryDay(e.start);if(day){if(!days.has(day))days.set(day,[]);days.get(day).push(e)}}
   const latest=[...days.keys()].sort().at(-1)||memoryToday();

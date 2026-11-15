@@ -62,6 +62,10 @@ def init():
             c.execute('ALTER TABLE entries ADD COLUMN attraction_id INTEGER REFERENCES entries(id) ON DELETE SET NULL')
         if 'sort_order' not in {r['name'] for r in c.execute('PRAGMA table_info(entries)')}:
             c.execute('ALTER TABLE entries ADD COLUMN sort_order INTEGER')
+        if 'cover_file_id' not in {r['name'] for r in c.execute('PRAGMA table_info(entries)')}:
+            c.execute('ALTER TABLE entries ADD COLUMN cover_file_id INTEGER')
+        if 'position' not in {r['name'] for r in c.execute('PRAGMA table_info(files)')}:
+            c.execute('ALTER TABLE files ADD COLUMN position INTEGER')
         if 'public_diary' not in {r['name'] for r in c.execute('PRAGMA table_info(trips)')}:
             c.execute('ALTER TABLE trips ADD COLUMN public_diary INTEGER NOT NULL DEFAULT 0')
         for column in ('login','photo'):
@@ -72,6 +76,8 @@ def init():
         seed(c)
         from attractions import attach_guides
         attach_guides(c)
+
+FILE_ORDER='ORDER BY CASE WHEN position IS NULL THEN 1 ELSE 0 END,position,id'
 
 def allowed(c,u,trip_id):
     return bool(c.execute('SELECT 1 FROM trips WHERE id=?',(trip_id,)).fetchone()) and (u['role']=='admin' or bool(c.execute('SELECT 1 FROM trip_members WHERE trip_id=? AND user_id=?',(trip_id,u['id'])).fetchone()))
@@ -135,9 +141,9 @@ class Handler(BaseHTTPRequestHandler):
             u=self.user(c)
             if path=='/api/public/diary':
                 trips=[dict(r) for r in c.execute('SELECT id,name FROM trips WHERE public_diary=1 ORDER BY start,id')]
-                entries=[dict(r) for r in c.execute("SELECT e.id,e.trip_id,e.title,e.place,e.start,e.description,e.attraction_id,u.name author,u.photo author_photo FROM entries e JOIN trips t ON t.id=e.trip_id JOIN users u ON u.id=e.user_id WHERE e.kind='diary' AND t.public_diary=1 ORDER BY e.start DESC,e.id DESC")]
+                entries=[dict(r) for r in c.execute("SELECT e.id,e.trip_id,e.title,e.place,e.start,e.description,e.attraction_id,e.cover_file_id,u.name author,u.photo author_photo FROM entries e JOIN trips t ON t.id=e.trip_id JOIN users u ON u.id=e.user_id WHERE e.kind='diary' AND t.public_diary=1 ORDER BY e.start DESC,e.id DESC")]
                 for e in entries:
-                    e['files']=[dict(r) for r in c.execute("SELECT id,name,mime FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%')",(e['id'],))]
+                    e['files']=[dict(r) for r in c.execute("SELECT id,name,mime FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%') "+FILE_ORDER,(e['id'],))]
                     e['comments']=[dict(r) for r in c.execute('SELECT u.name author,u.photo author_photo,c.body,c.created FROM comments c JOIN users u ON u.id=c.user_id WHERE c.entry_id=? ORDER BY c.id',(e['id'],))]
                 from geo import build_map
                 return self.respond({'trips':trips,'entries':entries,'map':build_map(c,[e for e in entries if e['files']])})
@@ -156,7 +162,7 @@ class Handler(BaseHTTPRequestHandler):
                 for e in entries:
                     from attractions import preview
                     e['guide']=preview(e)
-                    e['files']=[dict(r) for r in c.execute('SELECT id,name,mime FROM files WHERE entry_id=?',(e['id'],))]
+                    e['files']=[dict(r) for r in c.execute('SELECT id,name,mime FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
                     e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author,u.photo author_photo FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
                 members=[dict(r) for r in c.execute('SELECT id,name,role,login,photo FROM users WHERE id IN (SELECT user_id FROM trip_members WHERE trip_id=?)',(trip_id,))]
                 users=[dict(r) for r in c.execute('SELECT id,name,email,role,login,photo FROM users ORDER BY name')] if u['role']=='admin' else []
@@ -171,7 +177,7 @@ class Handler(BaseHTTPRequestHandler):
                 if not entry:return self.respond({'error':'Passeio não encontrado'},404)
                 if not allowed(c,u,entry['trip_id']):return self.respond({'error':'Sem acesso a esta viagem'},403)
                 e=dict(entry)
-                e['files']=[dict(r) for r in c.execute('SELECT id,name,mime FROM files WHERE entry_id=?',(e['id'],))]
+                e['files']=[dict(r) for r in c.execute('SELECT id,name,mime FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
                 e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author,u.photo author_photo FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
                 from attractions import guide_for
                 return self.respond({'entry':e,'guide':guide_for(entry)})
@@ -370,7 +376,22 @@ class Handler(BaseHTTPRequestHandler):
                     f=c.execute('SELECT id,path FROM files WHERE id=? AND entry_id=?',(int(payload.get('file_id',0)),eid)).fetchone()
                     if not f:raise ValueError('Arquivo inexistente')
                     c.execute('DELETE FROM files WHERE id=?',(f['id'],))
+                    c.execute('UPDATE entries SET cover_file_id=NULL WHERE id=? AND cover_file_id=?',(eid,f['id']))
                     (DATA/'uploads'/f['path']).unlink(missing_ok=True)
+                    return self.respond({'ok':True})
+                if path=='/api/files/arrange':
+                    # Ordem das fotos e foto de capa: só arquivos desta memória, sem repetições.
+                    current=[r['id'] for r in c.execute('SELECT id FROM files WHERE entry_id=? '+FILE_ORDER,(eid,))]
+                    if 'file_ids' in payload:
+                        ids=payload['file_ids']
+                        if not isinstance(ids,list) or not all(isinstance(i,int) and not isinstance(i,bool) for i in ids) or len(set(ids))!=len(ids) or set(ids)!=set(current):raise ValueError('Ordem inválida: envie todos os arquivos desta memória uma única vez')
+                        c.executemany('UPDATE files SET position=? WHERE id=? AND entry_id=?',[(n,i,eid) for n,i in enumerate(ids)])
+                    if 'cover_file_id' in payload:
+                        cover=payload['cover_file_id']
+                        if cover is not None:
+                            row=c.execute("SELECT id FROM files WHERE id=? AND entry_id=? AND mime LIKE 'image/%'",(cover if isinstance(cover,int) and not isinstance(cover,bool) else 0,eid)).fetchone()
+                            if not row:raise ValueError('A capa precisa ser uma foto desta memória')
+                        c.execute('UPDATE entries SET cover_file_id=? WHERE id=?',(cover,eid))
                     return self.respond({'ok':True})
                 if path=='/api/upload':
                     name=Path(self.headers.get('X-File-Name','arquivo')).name
