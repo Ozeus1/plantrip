@@ -10,7 +10,7 @@ function homeEditButton(e){return `<button type="button" class="home-diary-edit"
 function homeCard(e){return card(e).replace('data-detail=','data-home-slides=').replace(/<\/article>$/,homeEditButton(e)+'</article>')}
 function homeDiaryRow(e){
   const cover=coverOf(e),media=(e.files||[]).filter(f=>/^(image|video)\//.test(f.mime)).length;
-  return `<article class="home-diary-row" data-home-slides="${e.id}" tabindex="0" role="button">${cover?`<img src="/media/${cover.id}" alt="" loading="lazy">`:'<span class="home-diary-thumb">▧</span>'}<div class="home-diary-copy"><h3>${esc(e.title)}</h3><p>⌖ ${esc(e.place||'Local não informado')} · ${date(e.start)}</p></div><span class="author-label">${avatarHtml({name:e.author,photo:e.author_photo})}<span>${esc(e.author)}</span></span><small>${media} ${media===1?'foto/vídeo':'fotos/vídeos'}</small>${homeEditButton(e)}</article>`;
+  return `<article class="home-diary-row" data-home-slides="${e.id}" tabindex="0" role="button">${cover?`<img src="${mediaUrl(cover,480)}" alt="" loading="lazy">`:'<span class="home-diary-thumb">▧</span>'}<div class="home-diary-copy"><h3>${esc(e.title)}</h3><p>⌖ ${esc(e.place||'Local não informado')} · ${date(e.start)}</p></div><span class="author-label">${avatarHtml({name:e.author,photo:e.author_photo})}<span>${esc(e.author)}</span></span><small>${media} ${media===1?'foto/vídeo':'fotos/vídeos'}</small>${homeEditButton(e)}</article>`;
 }
 function homeDiaryBody(diary){
   if(homeDiaryMode==='map')return mapMarkup('private','Mapa mundi da viagem: toque em um ponto para abrir as fotos; ao tocar na viagem, veja o resumo com datas, países e pontos visitados.');

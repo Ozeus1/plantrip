@@ -1,5 +1,7 @@
 FROM python:3.13-slim
 WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
 COPY europe.py .
 COPY roma2026.py roma2026.json ./
@@ -9,7 +11,7 @@ COPY london_two_days.json ./
 COPY london_without_museums.json ./
 COPY roma_sant_ignazio.json london_merged.json madrid_day.json ./
 COPY paris_five_days.json ./
-COPY attractions.py geo.py guides.json places.json ./
+COPY media_variants.py attractions.py geo.py guides.json places.json ./
 COPY static ./static
 COPY scripts/create_admin.py ./scripts/create_admin.py
 COPY scripts/import_members.py ./scripts/import_members.py

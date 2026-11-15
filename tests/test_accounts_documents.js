@@ -4,7 +4,7 @@ const vm=require('node:vm');
 const nodes=new Map();
 const node=selector=>{if(!nodes.has(selector))nodes.set(selector,{hidden:false,innerHTML:'',textContent:'',value:''});return nodes.get(selector)};
 let opened=null,bound=0;
-const context=vm.createContext({
+const context=vm.createContext({mediaUrl:f=>`/media/${f.id}?v=${f.v||""}`,
   console,esc:s=>String(s??'').replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;'),
   $:node,document:{querySelectorAll:()=>[]},resetAttractionLayout:()=>{},
   bindActions:()=>bound++,openEditor:(entry,kind)=>opened=kind,

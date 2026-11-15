@@ -11,7 +11,7 @@ async function showPublicDiary(){
   $('#publicLogin').onclick=()=>{if(state.user){location.href='/';return}showLogin()};
   $('#publicSearch').oninput=renderPublicPosts;$('#publicTrip').onchange=renderPublicPosts;renderPublicPosts();initPublicMap();
 }
-function publicMedia(f){return f.mime.startsWith('image/')?`<a href="/media/${f.id}" target="_blank" rel="noopener"><img src="/media/${f.id}" alt="${esc(f.name)}" loading="lazy"></a>`:`<video controls preload="metadata" src="/media/${f.id}" aria-label="${esc(f.name)}"></video>`}
+function publicMedia(f){return f.mime.startsWith('image/')?`<a href="${mediaUrl(f)}" target="_blank" rel="noopener"><img ${imgAttrs(f,'(max-width:700px) 50vw, 260px')} alt="${esc(f.name)}" loading="lazy"></a>`:`<video controls preload="metadata" src="${mediaUrl(f)}" aria-label="${esc(f.name)}"></video>`}
 function renderPublicPosts(){
   const query=$('#publicSearch').value.toLowerCase(),trip=$('#publicTrip').value;
   const posts=publicDiaryData.entries.filter(e=>(!trip||String(e.trip_id)===trip)&&`${e.title} ${e.place} ${e.description} ${e.author}`.toLowerCase().includes(query));

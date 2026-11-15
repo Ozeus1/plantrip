@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from http.cookies import SimpleCookie
 from urllib.parse import urlsplit, parse_qs
+import media_variants
 
 ROOT = Path(__file__).parent
 DATA = Path(os.environ.get('DATA_DIR', ROOT / 'data'))
@@ -118,7 +119,8 @@ class Handler(BaseHTTPRequestHandler):
                 if requested is not None:start,end=requested;status=206
             self.send_response(status);self.send_header('Content-Type',mime);self.send_header('Accept-Ranges','bytes')
             self.send_header('X-Content-Type-Options','nosniff');self.send_header('Content-Length',str(max(0,end-start+1)))
-            if private:self.send_header('Cache-Control','private, no-store')
+            # Cada /media/<id> nunca muda de conteúdo: o navegador pode reaproveitar sem baixar de novo.
+            if private:self.send_header('Cache-Control','private, max-age=2592000, immutable')
             if status==206:self.send_header('Content-Range',f'bytes {start}-{end}/{size}')
             self.end_headers()
             if self.command=='HEAD':return
@@ -143,7 +145,7 @@ class Handler(BaseHTTPRequestHandler):
                 trips=[dict(r) for r in c.execute('SELECT id,name FROM trips WHERE public_diary=1 ORDER BY start,id')]
                 entries=[dict(r) for r in c.execute("SELECT e.id,e.trip_id,e.title,e.place,e.start,e.description,e.attraction_id,e.cover_file_id,u.name author,u.photo author_photo FROM entries e JOIN trips t ON t.id=e.trip_id JOIN users u ON u.id=e.user_id WHERE e.kind='diary' AND t.public_diary=1 ORDER BY e.start DESC,e.id DESC")]
                 for e in entries:
-                    e['files']=[dict(r) for r in c.execute("SELECT id,name,mime FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%') "+FILE_ORDER,(e['id'],))]
+                    e['files']=[dict(r) for r in c.execute("SELECT id,name,mime,substr(path,1,8) v FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%') "+FILE_ORDER,(e['id'],))]
                     e['comments']=[dict(r) for r in c.execute('SELECT u.name author,u.photo author_photo,c.body,c.created FROM comments c JOIN users u ON u.id=c.user_id WHERE c.entry_id=? ORDER BY c.id',(e['id'],))]
                 from geo import build_map
                 return self.respond({'trips':trips,'entries':entries,'map':build_map(c,[e for e in entries if e['files']])})
@@ -162,7 +164,7 @@ class Handler(BaseHTTPRequestHandler):
                 for e in entries:
                     from attractions import preview
                     e['guide']=preview(e)
-                    e['files']=[dict(r) for r in c.execute('SELECT id,name,mime FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
+                    e['files']=[dict(r) for r in c.execute('SELECT id,name,mime,substr(path,1,8) v FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
                     e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author,u.photo author_photo FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
                 members=[dict(r) for r in c.execute('SELECT id,name,role,login,photo FROM users WHERE id IN (SELECT user_id FROM trip_members WHERE trip_id=?)',(trip_id,))]
                 users=[dict(r) for r in c.execute('SELECT id,name,email,role,login,photo FROM users ORDER BY name')] if u['role']=='admin' else []
@@ -177,7 +179,7 @@ class Handler(BaseHTTPRequestHandler):
                 if not entry:return self.respond({'error':'Passeio não encontrado'},404)
                 if not allowed(c,u,entry['trip_id']):return self.respond({'error':'Sem acesso a esta viagem'},403)
                 e=dict(entry)
-                e['files']=[dict(r) for r in c.execute('SELECT id,name,mime FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
+                e['files']=[dict(r) for r in c.execute('SELECT id,name,mime,substr(path,1,8) v FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
                 e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author,u.photo author_photo FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
                 from attractions import guide_for
                 return self.respond({'entry':e,'guide':guide_for(entry)})
@@ -189,6 +191,11 @@ class Handler(BaseHTTPRequestHandler):
                 if not public and not u:return self.respond({'error':'Entre para acessar os arquivos.'},401)
                 if not public and (not entry or not allowed(c,u,entry['trip_id'])):return self.respond({'error':'Sem acesso a esta viagem'},403)
                 target=DATA/'uploads'/f['path']; mime=f['mime']
+                # ?w=480|1280|1920: versão leve para exibição; o original segue disponível sem o parâmetro.
+                width=parse_qs(urlsplit(self.path).query).get('w',[''])[0]
+                if width.isdigit():
+                    light=media_variants.variant(target,mime,int(width))
+                    if light:target,mime=light,'image/webp'
             else:
                 target=ROOT/'static'/('index.html' if path in ('/','/diary') or re.fullmatch(r'/attractions/\d+/?',path) else 'upload.html' if re.fullmatch(r'/u/[A-Za-z0-9_-]+/?',path) else path.lstrip('/'))
                 if not target.resolve().is_relative_to((ROOT/'static').resolve()):return self.respond({'error':'Inválido'},404)
@@ -370,14 +377,14 @@ class Handler(BaseHTTPRequestHandler):
                 if path=='/api/delete':
                     files=c.execute('SELECT path FROM files WHERE entry_id=?',(eid,)).fetchall()
                     c.execute('DELETE FROM entries WHERE id=?',(eid,))
-                    for f in files:(DATA/'uploads'/f['path']).unlink(missing_ok=True)
+                    for f in files:(DATA/'uploads'/f['path']).unlink(missing_ok=True);media_variants.drop(DATA/'uploads'/f['path'])
                     return self.respond({'ok':True})
                 if path=='/api/delete-file':
                     f=c.execute('SELECT id,path FROM files WHERE id=? AND entry_id=?',(int(payload.get('file_id',0)),eid)).fetchone()
                     if not f:raise ValueError('Arquivo inexistente')
                     c.execute('DELETE FROM files WHERE id=?',(f['id'],))
                     c.execute('UPDATE entries SET cover_file_id=NULL WHERE id=? AND cover_file_id=?',(eid,f['id']))
-                    (DATA/'uploads'/f['path']).unlink(missing_ok=True)
+                    (DATA/'uploads'/f['path']).unlink(missing_ok=True);media_variants.drop(DATA/'uploads'/f['path'])
                     return self.respond({'ok':True})
                 if path=='/api/files/arrange':
                     # Ordem das fotos e foto de capa: só arquivos desta memória, sem repetições.
@@ -401,7 +408,7 @@ class Handler(BaseHTTPRequestHandler):
                     if entry['kind']=='documents' and ext not in ('.jpg','.jpeg','.png','.webp','.gif','.pdf'):raise ValueError('Documentação aceita PDF e imagens')
                     if ext not in mime_types:raise ValueError('Use imagem, vídeo MP4/WebM/MOV ou PDF')
                     filename=secrets.token_hex(24)+ext; (DATA/'uploads'/filename).write_bytes(raw)
-                    c.execute('INSERT INTO files(entry_id,name,path,mime) VALUES(?,?,?,?)',(eid,name,filename,mime_types[ext])); return self.respond({'ok':True})
+                    c.execute('INSERT INTO files(entry_id,name,path,mime) VALUES(?,?,?,?)',(eid,name,filename,mime_types[ext]));media_variants.warm(DATA/'uploads'/filename,mime_types[ext]); return self.respond({'ok':True})
                 return self.respond({'error':'Rota inexistente'},404)
         except (ValueError,KeyError,sqlite3.IntegrityError) as ex:self.respond({'error':str(ex) if not isinstance(ex,sqlite3.IntegrityError) else 'Este e-mail ou login já está cadastrado'},400)
 
@@ -434,6 +441,7 @@ class Handler(BaseHTTPRequestHandler):
             if not raw:raise ValueError('Arquivo vazio')
             filename=secrets.token_hex(24)+ext;(DATA/'uploads'/filename).write_bytes(raw)
             c.execute('INSERT INTO files(entry_id,name,path,mime) VALUES(?,?,?,?)',(entry['id'],name,filename,UPLOAD_TYPES[ext]))
+            media_variants.warm(DATA/'uploads'/filename,UPLOAD_TYPES[ext])
             return self.respond({'ok':True})
         return self.respond({'error':'Rota inexistente'},404)
 
@@ -465,5 +473,6 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__=='__main__':
     init()
+    with db() as c:media_variants.backfill([(DATA/'uploads'/r['path'],r['mime']) for r in c.execute("SELECT path,mime FROM files WHERE mime LIKE 'image/%' ORDER BY id DESC")])
     print('Plantrip disponível em http://localhost:'+os.environ.get('PORT','8000'),flush=True)
     ThreadingHTTPServer((os.environ.get('HOST','127.0.0.1'),int(os.environ.get('PORT','8000'))),Handler).serve_forever()

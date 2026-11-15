@@ -55,4 +55,22 @@ class PhotoOrder(test_app.Integration):
         call(m,'/api/delete-file',{'entry_id':mine,'file_id':ids[1]})
         self.assertIsNone(entry(mine)['cover_file_id'])
 
+    def test_light_versions(self):
+        import io,time
+        from PIL import Image
+        call=self.call;a=self.admin
+        tid=call(a,'/api/state')['trip_id']
+        eid=call(a,'/api/entries',{'kind':'diary','trip_id':tid,'title':'Grande','place':'Roma','start':'2026-10-31'})['id']
+        buf=io.BytesIO();Image.effect_noise((3000,2000),80).convert('RGB').save(buf,'JPEG',quality=95)
+        call(a,'/api/upload',buf.getvalue(),{'X-Entry-Id':str(eid),'X-File-Name':'grande.jpg'})
+        f=next(e for e in call(a,'/api/state')['entries'] if e['id']==eid)['files'][0]
+        self.assertEqual(len(f['v']),8)
+        with a.open(self.url+f"/media/{f['id']}?w=480&v={f['v']}") as r:
+            self.assertEqual(r.headers['Content-Type'],'image/webp');self.assertIn('max-age',r.headers['Cache-Control']);small=r.read()
+        with a.open(self.url+f"/media/{f['id']}") as r:
+            self.assertEqual(r.headers['Content-Type'],'image/jpeg');original=r.read()
+        self.assertEqual(original,buf.getvalue())
+        self.assertLess(len(small)*5,len(original))
+        self.assertEqual(Image.open(io.BytesIO(small)).size,(480,320))
+
 if __name__=='__main__':unittest.main()
