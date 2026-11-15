@@ -14,7 +14,7 @@ _locks = {}
 _guard = threading.Lock()
 
 try:
-    from PIL import Image, ImageOps, ImageEnhance
+    from PIL import Image, ImageOps, ImageEnhance, ImageFilter
     Image.MAX_IMAGE_PIXELS = 200_000_000
     try:
         from pillow_heif import register_heif_opener
@@ -88,11 +88,60 @@ def backfill(sources):
     threading.Thread(target=run, daemon=True, name='media-backfill').start()
 
 
+def readable(raw: bytes) -> bool:
+    """O conteúdo enviado abre como imagem? (sem Pillow, aceita.)"""
+    if Image is None:
+        return True
+    import io
+    try:
+        with Image.open(io.BytesIO(raw)) as img:
+            img.verify()
+        return True
+    except Exception:
+        return False
+
+
+def focus_mask(size, x, y, r):
+    """Máscara do objeto em foco: 255 no centro, caindo suavemente até 0 na borda do círculo.
+
+    x, y em frações da imagem; r em fração do menor lado. Mesma conta da prévia no navegador.
+    """
+    W, H = size
+    k = 256 / max(W, H)
+    w, h = max(1, round(W * k)), max(1, round(H * k))
+    radius = r * min(W, H)
+    data = bytearray(w * h)
+    for j in range(h):
+        dy = ((j + .5) / h - y) * H
+        for i in range(w):
+            dx = ((i + .5) / w - x) * W
+            t = min(1, max(0, ((dx * dx + dy * dy) ** .5 / radius - .6) / .4))
+            data[j * w + i] = round(255 * (1 - t * t * (3 - 2 * t)))
+    return Image.frombytes('L', (w, h), bytes(data)).resize(size, Image.BILINEAR)
+
+
+def apply_focus(img, focus):
+    """Realça a nitidez (na foto toda ou só no objeto marcado) e, se pedido, suaviza o fundo."""
+    sharpen, blur, marked = focus['sharpen'], focus['blur'], focus['x'] is not None
+    rgb = img.convert('RGB')
+    side = max(rgb.size)
+    result = rgb
+    if sharpen:
+        result = rgb.filter(ImageFilter.UnsharpMask(radius=max(1.2, side / 700), percent=round(sharpen * 220), threshold=2))
+    if marked:
+        back = rgb.filter(ImageFilter.GaussianBlur(blur * side / 130)) if blur else rgb
+        result = Image.composite(result, back, focus_mask(rgb.size, focus['x'], focus['y'], focus['r']))
+    if img.mode == 'RGBA':
+        result.putalpha(img.getchannel('A'))
+    return result
+
+
 def edit(source: Path, target_stem: Path, ops: dict):
     """Aplica giro, espelho, corte e ajustes de cor ao arquivo; devolve (caminho novo, mime).
 
     ops: rotate (0/90/180/270, horário), flip_h, flip_v, crop {x,y,w,h} em frações da imagem já
-    girada, brightness/contrast/saturation (0.5 a 1.5; 1 = sem mudança). Levanta ValueError.
+    girada, brightness/contrast/saturation (0.5 a 1.5; 1 = sem mudança), focus {x,y,r,sharpen,blur}
+    (x/y nulos = nitidez na foto toda; posição em frações da imagem girada, antes do corte). Levanta ValueError.
     """
     if Image is None:
         raise ValueError('Editor indisponível neste servidor')
@@ -112,6 +161,20 @@ def edit(source: Path, target_stem: Path, ops: dict):
         x, y, w, h = (float(crop[k]) for k in 'xywh')
         if x < 0 or y < 0 or w <= 0 or h <= 0 or x + w > 1.0001 or y + h > 1.0001:
             raise ValueError('Corte fora da imagem')
+    focus = ops.get('focus')
+    if focus is not None:
+        def unit(key, low=0.0, high=1.0, optional=False):
+            value = focus.get(key) if isinstance(focus, dict) else False
+            if value is None and optional:
+                return None
+            if type(value) not in (int, float) or not low <= value <= high:
+                raise ValueError('Foco inválido')
+            return float(value)
+        focus = {'x': unit('x', optional=True), 'y': unit('y', optional=True), 'r': unit('r', .03, 1), 'sharpen': unit('sharpen'), 'blur': unit('blur')}
+        if (focus['x'] is None) != (focus['y'] is None):
+            raise ValueError('Foco inválido')
+        if not focus['sharpen'] and not (focus['blur'] and focus['x'] is not None):
+            focus = None
     try:
         with Image.open(source) as img:
             fmt = img.format
@@ -125,6 +188,8 @@ def edit(source: Path, target_stem: Path, ops: dict):
                 img = img.transpose(Image.FLIP_LEFT_RIGHT)
             if ops.get('flip_v'):
                 img = img.transpose(Image.FLIP_TOP_BOTTOM)
+            if focus:
+                img = apply_focus(img, focus)
             if crop is not None:
                 W, H = img.size
                 box = (round(x * W), round(y * H), min(W, round((x + w) * W)), min(H, round((y + h) * H)))

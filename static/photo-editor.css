@@ -18,3 +18,14 @@ dialog#photoEditor{max-width:760px;z-index:11}
 .pe-sliders input[type=range]{width:100%;padding:0;accent-color:var(--green)}
 .pe-note{margin-top:12px}
 @media(max-width:600px){.pe-sliders{grid-template-columns:1fr;gap:6px}}
+.pe-ring{position:absolute;box-sizing:border-box;transform:translate(-50%,-50%);border:2px dashed #ffe27a;border-radius:50%;pointer-events:none;z-index:2;box-shadow:0 0 0 1px #0006}
+.pe-ring[hidden]{display:none}
+.pe-frame.is-picking{cursor:crosshair}.pe-frame.is-picking .pe-crop{pointer-events:none}
+.pe-focus{border:1px solid var(--line);border-radius:10px;padding:10px 14px 12px;margin:14px 0 4px}
+.pe-focus legend{font-size:13px;font-weight:600;padding:0 6px}
+.pe-focus .pe-tools{margin-bottom:6px}
+.pe-tools button[aria-pressed=true]{background:var(--green);color:#fff}
+.pe-sliders input:disabled{opacity:.4}
+.pe-file{margin:12px 0}
+.pe-link{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:7px;color:var(--green);padding:10px 14px;font-size:12px;text-decoration:none}
+.pe-link:hover{background:#edf3e7}

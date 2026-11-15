@@ -111,6 +111,11 @@ def clean_poi(c,payload):
     if not c.execute('SELECT 1 FROM trips WHERE id=?',(tid,)).fetchone():raise ValueError('Viagem inexistente')
     return dict(trip_id=tid,name=name,city=city,country=country,lat=number('lat',-90,90),lng=number('lng',-180,180),text=body,aliases=json.dumps(aliases,ensure_ascii=False))
 
+def same_kind_name(name,ext,mime):
+    """Mantém o nome exibido, ajustando a extensão quando o tipo do arquivo mudou (ex.: HEIC que virou JPEG)."""
+    name=name or 'arquivo'
+    return name if UPLOAD_TYPES.get(Path(name).suffix.lower())==mime else str(Path(name).with_suffix(ext))
+
 FILE_ORDER='ORDER BY CASE WHEN position IS NULL THEN 1 ELSE 0 END,position,id'
 
 def allowed(c,u,trip_id):
@@ -421,7 +426,7 @@ class Handler(BaseHTTPRequestHandler):
                     else:eid=c.execute('INSERT INTO entries(kind,title,place,start,end,description,category,user_id,trip_id) VALUES(?,?,?,?,?,?,?,?,?)',values+(u['id'],tid)).lastrowid
                     c.execute('UPDATE entries SET attraction_id=? WHERE id=?',(attraction_id,eid))
                     return self.respond({'id':eid})
-                eid=int(self.headers.get('X-Entry-Id',0) if path=='/api/upload' else payload.get('entry_id',0))
+                eid=int(self.headers.get('X-Entry-Id',0) if path in ('/api/upload','/api/files/replace') else payload.get('entry_id',0))
                 entry=c.execute('SELECT * FROM entries WHERE id=?',(eid,)).fetchone()
                 if not entry:raise ValueError('Etapa inexistente')
                 if not allowed(c,u,entry['trip_id']):return self.respond({'error':'Sem acesso a esta viagem'},403)
@@ -453,19 +458,39 @@ class Handler(BaseHTTPRequestHandler):
                     if not f:raise ValueError('Arquivo inexistente')
                     current=DATA/'uploads'/f['path']
                     if payload.get('restore'):
-                        if not f['original_path']:raise ValueError('Esta foto não foi editada')
+                        if not f['original_path']:raise ValueError('Este arquivo não foi editado nem substituído')
                         if not (DATA/'uploads'/f['original_path']).is_file():raise ValueError('O arquivo original não está mais disponível')
-                        mime=UPLOAD_TYPES.get(Path(f['original_path']).suffix.lower(),f['mime'])
-                        c.execute('UPDATE files SET path=?,mime=?,original_path=NULL WHERE id=?',(f['original_path'],mime,f['id']))
+                        ext=Path(f['original_path']).suffix.lower();mime=UPLOAD_TYPES.get(ext,f['mime'])
+                        c.execute('UPDATE files SET path=?,mime=?,name=?,original_path=NULL WHERE id=?',(f['original_path'],mime,same_kind_name(f['name'],ext,mime),f['id']))
                         current.unlink(missing_ok=True);media_variants.drop(current)
                         media_variants.warm(DATA/'uploads'/f['original_path'],mime)
                         return self.respond({'ok':True})
                     if f['mime'] not in media_variants.RESIZABLE:raise ValueError('Só fotos JPEG, PNG, WebP ou HEIC podem ser editadas')
                     target,mime=media_variants.edit(current,DATA/'uploads'/secrets.token_hex(24),payload)
-                    c.execute('UPDATE files SET path=?,mime=?,original_path=? WHERE id=?',(target.name,mime,f['original_path'] or f['path'],f['id']))
+                    c.execute('UPDATE files SET path=?,mime=?,name=?,original_path=? WHERE id=?',(target.name,mime,same_kind_name(f['name'],target.suffix,mime),f['original_path'] or f['path'],f['id']))
                     media_variants.drop(current)
                     if f['original_path']:current.unlink(missing_ok=True)
                     media_variants.warm(target,mime)
+                    return self.respond({'ok':True})
+                if path=='/api/files/replace':
+                    # Troca o arquivo por outro enviado pelo administrador (ex.: corrigido num editor externo),
+                    # mantendo memória, ordem e capa. O arquivo enviado originalmente continua guardado.
+                    if u['role']!='admin':return self.respond({'error':'Apenas o administrador pode substituir arquivos'},403)
+                    fid=self.headers.get('X-File-Id','')
+                    f=c.execute('SELECT * FROM files WHERE id=? AND entry_id=?',(int(fid) if fid.isdigit() else 0,eid)).fetchone()
+                    if not f:raise ValueError('Arquivo inexistente')
+                    from urllib.parse import unquote
+                    ext=Path(unquote(self.headers.get('X-File-Name',''))).suffix.lower();mime=UPLOAD_TYPES.get(ext)
+                    if not mime or mime.split('/')[0]!=f['mime'].split('/')[0] or f['mime'].split('/')[0] not in ('image','video'):
+                        raise ValueError('Envie '+('uma foto (JPEG, PNG, WebP, GIF ou HEIC)' if f['mime'].startswith('image/') else 'um vídeo MP4, WebM ou MOV')+' para substituir este arquivo')
+                    if not raw:raise ValueError('Arquivo vazio')
+                    if mime in media_variants.RESIZABLE and not media_variants.readable(raw):raise ValueError('O arquivo enviado não é uma imagem válida')
+                    filename=secrets.token_hex(24)+ext;(DATA/'uploads'/filename).write_bytes(raw)
+                    current=DATA/'uploads'/f['path']
+                    c.execute('UPDATE files SET path=?,mime=?,name=?,original_path=? WHERE id=?',(filename,mime,same_kind_name(f['name'],ext,mime),f['original_path'] or f['path'],f['id']))
+                    media_variants.drop(current)
+                    if f['original_path']:current.unlink(missing_ok=True)
+                    media_variants.warm(DATA/'uploads'/filename,mime)
                     return self.respond({'ok':True})
                 if path=='/api/files/move':
                     # Só o administrador passa a foto para outra memória (mesma viagem); vai para o fim da ordem.

@@ -11,7 +11,13 @@ function movableMemories(entry){
   return (state.entries||[]).filter(e=>e.kind==='diary'&&e.id!==entry.id&&e.trip_id===entry.trip_id&&(e.files||[]).some(f=>/^(image|video)\//.test(f.mime)))
     .sort((a,b)=>String(a.place||'').localeCompare(String(b.place||''),'pt-BR')||String(a.title).localeCompare(String(b.title),'pt-BR'));
 }
-// onDone({action:'moved'|'deleted'|'cover', target?}) é chamado depois que o servidor confirmou.
+// Envia outro arquivo no lugar do atual (mesma memória, ordem e capa).
+async function replaceMediaFile(entry,file,chosen){
+  if(chosen.size>100*1024*1024)throw Error('Limite de 100 MB por arquivo');
+  const r=await fetch('/api/files/replace',{method:'POST',headers:{'X-Entry-Id':String(entry.id),'X-File-Id':String(file.id),'X-File-Name':encodeURIComponent(chosen.name)},body:chosen});
+  if(!r.ok){let message='Falha ao enviar o arquivo';try{message=(await r.json()).error||message}catch{}throw Error(message)}
+}
+// onDone({action:'moved'|'deleted'|'cover'|'edited', target?}) é chamado depois que o servidor confirmou.
 function openPhotoAdmin(entry,file,onDone=()=>{}){
   if(!isAdminUser())return;
   const d=adminDialog('photoAdmin','Editar foto'),targets=entry.trip_id===state.trip_id?movableMemories(entry):[],video=file.mime.startsWith('video/');
@@ -20,6 +26,7 @@ function openPhotoAdmin(entry,file,onDone=()=>{}){
   <p class="error" id="photoAdminError" role="alert"></p>
   <section class="admin-block"><h3>Atribuir a outro ponto de visita</h3>${targets.length?`<label>Mover para a memória<select id="photoMoveTo">${targets.map(t=>`<option value="${t.id}">${esc(t.place||'Sem local')} · ${esc(t.title)} (${(t.files||[]).length})</option>`).join('')}</select></label><button type="button" class="primary" id="photoMove">Mover ${video?'clipe':'foto'}</button>`:'<p class="admin-sub">Não há outras memórias com fotos nesta viagem para receber este arquivo.</p>'}</section>
   <section class="admin-block admin-row">${video?'':`<button type="button" id="photoCover" ${entry.cover_file_id===file.id?'disabled':''}>${entry.cover_file_id===file.id?'★ Já é a capa':'☆ Usar como capa'}</button>`}${typeof openPhotoEditor==='function'&&photoEditable(file)?'<button type="button" id="photoEdit">✂ Editar imagem…</button>':''}<button type="button" id="photoPoi">◎ Ponto de interesse…</button></section>
+  <section class="admin-block"><h3>Arquivo</h3><div class="admin-row"><a class="pe-link" href="/media/${file.id}?download=1" download>⬇ Baixar ${video?'clipe':'imagem'}</a><button type="button" id="photoReplace" title="Envia outro arquivo no lugar deste, por exemplo corrigido em outro editor">⇪ Substituir por outro arquivo…</button>${file.edited?'<button type="button" class="text-btn" id="photoRestore" title="Volta ao arquivo enviado originalmente">Restaurar original</button>':''}<input type="file" id="photoReplaceFile" hidden accept="${video?'video/mp4,video/webm,video/quicktime':'image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif'}"></div></section>
   <section class="admin-block"><button type="button" class="text-btn danger" id="photoDelete">Excluir do site</button></section>`;
   const fail=ex=>{$('#photoAdminError').textContent=ex.message};
   const done=async(info,message)=>{d.close();try{await onDone(info)}finally{toast(message)}};
@@ -30,6 +37,18 @@ function openPhotoAdmin(entry,file,onDone=()=>{}){
   };
   if($('#photoCover'))$('#photoCover').onclick=async()=>{try{await api('/api/files/arrange',{entry_id:entry.id,cover_file_id:file.id});await done({action:'cover'},'Capa atualizada.')}catch(ex){fail(ex)}};
   if($('#photoEdit'))$('#photoEdit').onclick=()=>{d.close();openPhotoEditor(entry,file,onDone)};
+  $('#photoReplace').onclick=()=>$('#photoReplaceFile').click();
+  $('#photoReplaceFile').onchange=async ev=>{
+    const chosen=ev.target.files[0];ev.target.value='';if(!chosen)return;
+    if(!confirm('Substituir este arquivo do site por “'+chosen.name+'”? O arquivo enviado originalmente continua guardado.'))return;
+    $('#photoAdminError').textContent='';$('#photoReplace').disabled=true;$('#photoReplace').textContent='Enviando…';
+    try{await replaceMediaFile(entry,file,chosen);await done({action:'edited'},'Arquivo substituído.')}
+    catch(ex){fail(ex);$('#photoReplace').disabled=false;$('#photoReplace').textContent='⇪ Substituir por outro arquivo…'}
+  };
+  if($('#photoRestore'))$('#photoRestore').onclick=async()=>{
+    if(!confirm('Descartar edições e substituições e voltar ao arquivo enviado originalmente?'))return;
+    try{await api('/api/files/edit',{entry_id:entry.id,file_id:file.id,restore:true});await done({action:'edited'},'Arquivo original restaurado.')}catch(ex){fail(ex)}
+  };
   $('#photoPoi').onclick=()=>{d.close();openPoiEditor(poiPrefillFor(entry))};
   $('#photoDelete').onclick=async()=>{
     if(!confirm('Excluir este arquivo do site? Esta ação não pode ser desfeita.'))return;

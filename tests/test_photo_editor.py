@@ -58,11 +58,47 @@ class PhotoEditor(test_app.Integration):
         edit(restore=True);edit(flip_h=True)
         img,_=pixels(files()[0]);self.assertGreater(img.getpixel((50,100))[2],150);self.assertGreater(img.getpixel((350,100))[0],150)
 
+        edit(restore=True)
+
+        # Foco: nitidez só no objeto marcado e fundo suavizado. Imagem de teste: xadrez fino.
+        board=Image.new('L',(400,200));board.putdata([90+70*((x//2+y//2)%2) for y in range(200) for x in range(400)])
+        buf=io.BytesIO();board.convert('RGB').save(buf,'PNG');checker=buf.getvalue()
+        def replace(client,data,name,file_id=None):return call(client,'/api/files/replace',data,{'X-Entry-Id':str(eid),'X-File-Id':str(file_id or fid),'X-File-Name':name})
+        for client in (m,self.client()):
+            with self.assertRaises(urllib.error.HTTPError) as ex:replace(client,checker,'xadrez.png')
+            self.assertIn(ex.exception.code,(401,403))
+        for data,name in ((b'nao e imagem','x.png'),(checker,'x.mp4'),(checker,'x.pdf'),(b'','x.png')):
+            with self.assertRaises(urllib.error.HTTPError,msg=name) as ex:replace(a,data,name)
+            self.assertEqual(ex.exception.code,400)
+        with self.assertRaises(urllib.error.HTTPError) as ex:replace(a,checker,'x.png',pdf['id'])
+        self.assertEqual(ex.exception.code,400)
+        call(a,'/api/files/arrange',{'entry_id':eid,'cover_file_id':fid})
+        order=[f['id'] for f in files()]
+        replace(a,checker,'corrigida.png')
+        swapped=files()[0]
+        self.assertEqual((swapped['id'],swapped['name'],swapped['mime'],bool(swapped['edited'])),(fid,'foto.png','image/png',True))
+        self.assertEqual([f['id'] for f in files()],order);self.assertEqual(next(e for e in call(a,'/api/state')['entries'] if e['id']==eid)['cover_file_id'],fid)
+        self.assertEqual(pixels(swapped)[1],checker)
+        spread=lambda img,box:(lambda v:max(v)-min(v))([img.getpixel((x,y))[0] for x in range(box[0],box[0]+12) for y in range(box[1],box[1]+12)])
+        for bad in ({'x':.5,'y':.5,'r':.3,'sharpen':2,'blur':0},{'x':.5,'y':None,'r':.3,'sharpen':.5,'blur':0},{'x':.5,'y':.5,'r':0,'sharpen':.5,'blur':0},'forte',{'sharpen':.5}):
+            with self.assertRaises(urllib.error.HTTPError,msg=repr(bad)) as ex:edit(focus=bad)
+            self.assertEqual(ex.exception.code,400)
+        edit(focus={'x':.25,'y':.5,'r':.3,'sharpen':1,'blur':1})
+        img,_=pixels(files()[0]);self.assertEqual(img.size,(400,200))
+        self.assertGreater(spread(img,(94,94)),75,'o objeto marcado ganha contraste local');self.assertLess(spread(img,(340,94)),30,'o fundo fica suavizado')
+        # Sem objeto marcado, a nitidez vale para a foto toda.
+        replace(a,checker,'corrigida.png');edit(focus={'x':None,'y':None,'r':.25,'sharpen':1,'blur':1})
+        img,_=pixels(files()[0]);self.assertGreater(spread(img,(94,94)),75);self.assertGreater(spread(img,(340,94)),75)
+        # Restaurar volta ao primeiro arquivo enviado, com o nome e o tipo dele.
+        edit(restore=True)
+        back=files()[0];self.assertEqual((back['name'],back['mime'],bool(back['edited'])),('foto.jpg','image/jpeg',False));self.assertEqual(pixels(back)[1],sent)
+        edit(flip_h=True)
+
         # Excluir a foto editada remove também o original guardado.
         import pathlib
         uploads=pathlib.Path(self.tmp.name)/'uploads'
-        self.assertEqual(len([p for p in uploads.iterdir() if p.suffix=='.jpg']),2)
+        self.assertEqual(len([p for p in uploads.iterdir() if p.suffix in ('.jpg','.png')]),2)
         call(a,'/api/delete-file',{'entry_id':eid,'file_id':fid})
-        self.assertEqual([p for p in uploads.iterdir() if p.suffix=='.jpg'],[])
+        self.assertEqual([p for p in uploads.iterdir() if p.suffix in ('.jpg','.png')],[])
 
 if __name__=='__main__':unittest.main()
