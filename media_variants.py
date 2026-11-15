@@ -14,7 +14,7 @@ _locks = {}
 _guard = threading.Lock()
 
 try:
-    from PIL import Image, ImageOps, ImageEnhance, ImageFilter
+    from PIL import Image, ImageOps, ImageEnhance, ImageFilter, ImageChops
     Image.MAX_IMAGE_PIXELS = 200_000_000
     try:
         from pillow_heif import register_heif_opener
@@ -136,24 +136,57 @@ def apply_focus(img, focus):
     return result
 
 
+def apply_look(img, look):
+    """Acabamento dos filtros prontos: pele suave, temperatura, desbotado e vinheta (nessa ordem)."""
+    alpha = img.getchannel('A') if img.mode == 'RGBA' else None
+    rgb = img.convert('RGB')
+    W, H = rgb.size
+    soften, warmth, fade, vignette = look['soften'], look['warmth'], look['fade'], look['vignette']
+    if soften:
+        # Suaviza só onde a textura é fina (pele); contornos fortes como olhos e cabelo ficam nítidos.
+        blurred = rgb.filter(ImageFilter.GaussianBlur(max(1.5, max(W, H) / 250)))
+        mask = ImageChops.difference(rgb, blurred).convert('L').point([round(255 * soften * max(0, 1 - d / 40)) for d in range(256)])
+        rgb = Image.composite(blurred, rgb, mask)
+    if warmth or fade:
+        def lut(gain):
+            return [max(0, min(255, round(40 * fade + min(255, v * gain) * (1 - .25 * fade)))) for v in range(256)]
+        rgb = rgb.point(lut(1 + .18 * warmth) + lut(1) + lut(1 - .18 * warmth))
+    if vignette:
+        k = 256 / max(W, H)
+        w, h = max(1, round(W * k)), max(1, round(H * k))
+        data = bytearray(w * h)
+        for j in range(h):
+            dy = ((j + .5) / h - .5) * 2
+            for i in range(w):
+                dx = ((i + .5) / w - .5) * 2
+                t = min(1, max(0, ((dx * dx + dy * dy) ** .5 / 1.41421356 - .35) / .65))
+                data[j * w + i] = round(255 * (1 - .75 * vignette * t * t * (3 - 2 * t)))
+        shade = Image.frombytes('L', (w, h), bytes(data)).resize((W, H), Image.BILINEAR)
+        rgb = ImageChops.multiply(rgb, Image.merge('RGB', (shade, shade, shade)))
+    if alpha:
+        rgb.putalpha(alpha)
+    return rgb
+
+
 def edit(source: Path, target_stem: Path, ops: dict):
     """Aplica giro, espelho, corte e ajustes de cor ao arquivo; devolve (caminho novo, mime).
 
     ops: rotate (0/90/180/270, horário), flip_h, flip_v, crop {x,y,w,h} em frações da imagem já
-    girada, brightness/contrast/saturation (0.5 a 1.5; 1 = sem mudança), focus {x,y,r,sharpen,blur}
+    girada, brightness/contrast (0.5 a 1.5) e saturation (0 a 2; 1 = sem mudança), look {warmth -1..1,
+    vignette, fade, soften 0..1} aplicado depois do corte e antes de brilho/contraste/cor, focus {x,y,r,sharpen,blur}
     (x/y nulos = nitidez na foto toda; posição em frações da imagem girada, antes do corte). Levanta ValueError.
     """
     if Image is None:
         raise ValueError('Editor indisponível neste servidor')
-    def factor(key):
+    def factor(key, low=0.5, high=1.5):
         value = ops.get(key, 1)
-        if type(value) not in (int, float) or not 0.5 <= value <= 1.5:
+        if type(value) not in (int, float) or not low <= value <= high:
             raise ValueError('Ajuste inválido: ' + key)
         return float(value)
     rotate = ops.get('rotate', 0)
     if type(rotate) is not int or rotate not in (0, 90, 180, 270):
         raise ValueError('Giro inválido')
-    bright, contrast, color = factor('brightness'), factor('contrast'), factor('saturation')
+    bright, contrast, color = factor('brightness'), factor('contrast'), factor('saturation', 0, 2)
     crop = ops.get('crop')
     if crop is not None:
         if not isinstance(crop, dict) or any(type(crop.get(k)) not in (int, float) for k in 'xywh'):
@@ -161,6 +194,18 @@ def edit(source: Path, target_stem: Path, ops: dict):
         x, y, w, h = (float(crop[k]) for k in 'xywh')
         if x < 0 or y < 0 or w <= 0 or h <= 0 or x + w > 1.0001 or y + h > 1.0001:
             raise ValueError('Corte fora da imagem')
+    look = ops.get('look')
+    if look is not None:
+        if not isinstance(look, dict):
+            raise ValueError('Filtro inválido')
+        def amount(key, low=0.0):
+            value = look.get(key, 0)
+            if type(value) not in (int, float) or not low <= value <= 1:
+                raise ValueError('Filtro inválido: ' + key)
+            return float(value)
+        look = {'warmth': amount('warmth', -1.0), 'vignette': amount('vignette'), 'fade': amount('fade'), 'soften': amount('soften')}
+        if not any(look.values()):
+            look = None
     focus = ops.get('focus')
     if focus is not None:
         def unit(key, low=0.0, high=1.0, optional=False):
@@ -196,6 +241,8 @@ def edit(source: Path, target_stem: Path, ops: dict):
                 if box[2] - box[0] < 16 or box[3] - box[1] < 16:
                     raise ValueError('Corte pequeno demais')
                 img = img.crop(box)
+            if look:
+                img = apply_look(img, look)
             if (bright, contrast, color) != (1, 1, 1):
                 alpha = img.getchannel('A') if img.mode == 'RGBA' else None
                 rgb = img.convert('RGB')

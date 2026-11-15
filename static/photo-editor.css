@@ -29,3 +29,12 @@ dialog#photoEditor{max-width:760px;z-index:11}
 .pe-file{margin:12px 0}
 .pe-link{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:7px;color:var(--green);padding:10px 14px;font-size:12px;text-decoration:none}
 .pe-link:hover{background:#edf3e7}
+.pe-presets{margin-top:6px}
+.pe-chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0 8px}
+.pe-chips span{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);min-width:74px}
+.pe-chips button,.pe-strength button{background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--green);padding:7px 12px;font-size:12px}
+.pe-chips button:hover{background:#edf3e7}
+.pe-chips button[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
+.pe-strength{grid-template-columns:1fr auto;align-items:end}
+.pe-strength button:disabled{opacity:.45}
+@media(max-width:600px){.pe-sliders.pe-strength{grid-template-columns:1fr auto}}

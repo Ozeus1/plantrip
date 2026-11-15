@@ -28,7 +28,7 @@ class PhotoEditor(test_app.Integration):
             with self.assertRaises(urllib.error.HTTPError) as ex:edit(client,rotate=90)
             self.assertIn(ex.exception.code,(401,403))
         # Operações inválidas não alteram nada.
-        for bad in ({'rotate':45},{'rotate':'90'},{'brightness':3},{'contrast':'1'},{'saturation':0.1},{'crop':{'x':0.5,'y':0,'w':0.7,'h':1}},{'crop':{'x':0,'y':0,'w':0,'h':1}},{'crop':[0,0,1,1]},{'crop':{'x':0,'y':0,'w':0.01,'h':0.01}},{'restore':True}):
+        for bad in ({'rotate':45},{'rotate':'90'},{'brightness':3},{'contrast':'1'},{'saturation':2.5},{'look':{'warmth':2}},{'look':{'vignette':-1}},{'look':'vivo'},{'look':{'soften':'1'}},{'crop':{'x':0.5,'y':0,'w':0.7,'h':1}},{'crop':{'x':0,'y':0,'w':0,'h':1}},{'crop':[0,0,1,1]},{'crop':{'x':0,'y':0,'w':0.01,'h':0.01}},{'restore':True}):
             with self.assertRaises(urllib.error.HTTPError,msg=repr(bad)) as ex:edit(**bad)
             self.assertEqual(ex.exception.code,400)
         with self.assertRaises(urllib.error.HTTPError) as ex:call(a,'/api/files/edit',{'entry_id':eid,'file_id':pdf['id'],'rotate':90})
@@ -89,6 +89,18 @@ class PhotoEditor(test_app.Integration):
         # Sem objeto marcado, a nitidez vale para a foto toda.
         replace(a,checker,'corrigida.png');edit(focus={'x':None,'y':None,'r':.25,'sharpen':1,'blur':1})
         img,_=pixels(files()[0]);self.assertGreater(spread(img,(94,94)),75);self.assertGreater(spread(img,(340,94)),75)
+        # Filtros prontos: temperatura, vinheta, desbotado e pele suave, aplicados sobre o corte.
+        flat=Image.new('RGB',(400,200),(120,120,120));buf=io.BytesIO();flat.save(buf,'PNG')
+        replace(a,buf.getvalue(),'cinza.png');edit(look={'warmth':1,'vignette':1,'fade':0,'soften':0},crop={'x':0,'y':0,'w':.5,'h':1})
+        img,_=pixels(files()[0]);self.assertEqual(img.size,(200,200))
+        r,g,b=img.getpixel((100,100));self.assertEqual((r,g,b),(142,120,98),'quente: mais vermelho, menos azul')
+        self.assertLess(img.getpixel((3,3))[1],45,'vinheta escurece os cantos do corte')
+        replace(a,buf.getvalue(),'cinza.png');edit(look={'fade':1},saturation=0)
+        self.assertEqual(pixels(files()[0])[0].getpixel((50,50)),(130,130,130))
+        fine=Image.new('L',(400,200));fine.putdata([110+20*((x//2+y//2)%2) for y in range(200) for x in range(400)]);fine.paste(255,(300,0,400,200))
+        buf=io.BytesIO();fine.convert('RGB').save(buf,'PNG');replace(a,buf.getvalue(),'pele.png');edit(look={'soften':1})
+        img,_=pixels(files()[0]);self.assertLess(spread(img,(94,94)),8,'textura fina fica suave')
+        self.assertGreater(img.getpixel((301,100))[0]-img.getpixel((298,100))[0],100,'contorno forte continua nítido')
         # Restaurar volta ao primeiro arquivo enviado, com o nome e o tipo dele.
         edit(restore=True)
         back=files()[0];self.assertEqual((back['name'],back['mime'],bool(back['edited'])),('foto.jpg','image/jpeg',False));self.assertEqual(pixels(back)[1],sent)

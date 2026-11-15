@@ -38,4 +38,23 @@ assert.equal(context.photoFocusWeight(0,100),1);assert.equal(context.photoFocusW
 const px=new Uint8ClampedArray(4*4*4).fill(100),soft=new Uint8ClampedArray(64).fill(90),back=new Uint8ClampedArray(64).fill(50);
 context.photoFocusPixels(px,soft,back,4,4,{x:.125,y:.125,r:.5,sharpen:1,blur:1});
 assert.equal(px[0],122);assert.equal(px[3],100,'alfa intacto');assert.equal(px[4*15],50);
+
+// Filtros prontos: 100% dá os valores do filtro, 0% o neutro, 50% o meio; filtro desconhecido = neutro.
+const golden=context.photoPresetValues('golden',100);assert.equal(golden.warmth,48);assert.equal(golden.saturation,118);assert.equal(golden.soften,0);
+assert.equal(context.photoPresetValues('golden',50).warmth,24);assert.equal(context.photoPresetValues('golden',0).saturation,100);
+assert.equal(context.photoPresetValues('',100).contrast,100);
+context.PHOTO_PRESETS=vm.runInContext('PHOTO_PRESETS',context);
+const groups=new Set(Array.from(context.PHOTO_PRESETS,p=>p.group));assert.ok(groups.has('Paisagem')&&groups.has('Pessoas'));
+assert.equal(new Set(Array.from(context.PHOTO_PRESETS,p=>p.id)).size,context.PHOTO_PRESETS.length);
+// Todo filtro fica dentro dos limites aceitos pelo servidor.
+for(const p of context.PHOTO_PRESETS){const o=context.photoEditOps({...base,...context.photoPresetValues(p.id),focus:{x:null,y:null,r:.25,sharpen:context.photoPresetValues(p.id).sharpen,blur:0}});
+  assert.ok(o.brightness>=.5&&o.brightness<=1.5&&o.contrast>=.5&&o.contrast<=1.5&&o.saturation>=0&&o.saturation<=2,p.id);
+  if(o.look)assert.ok(Math.abs(o.look.warmth)<=1&&[o.look.vignette,o.look.fade,o.look.soften].every(v=>v>=0&&v<=1),p.id);assert.ok(context.photoEditChanged({...base,...context.photoPresetValues(p.id)})||o.focus,p.id)}
+assert.equal(context.photoEditOps(base).look,null);assert.equal(context.photoEditOps({...base,warmth:-50}).look.warmth,-.5);
+// Pixels do acabamento: mesmos números do servidor (cinza 120 quente = 142/120/98; desbotado = 130; canto com vinheta escuro).
+const gray=()=>new Uint8ClampedArray(4*8*8).fill(120),whole={x:0,y:0,w:1,h:1},none={warmth:0,vignette:0,fade:0,soften:0};
+let q=context.photoLookPixels(gray(),null,8,8,{...none,warmth:1},whole);assert.deepEqual([q[0],q[1],q[2]],[142,120,98]);
+q=context.photoLookPixels(gray(),null,8,8,{...none,fade:1},whole);assert.equal(q[1],130);
+q=context.photoLookPixels(gray(),null,8,8,{...none,vignette:1},whole);assert.ok(q[1]<45);assert.equal(q[4*(8*4+4)+1],120);
+q=context.photoLookPixels(gray(),new Uint8ClampedArray(256).fill(100),8,8,{...none,soften:1},whole);assert.equal(q[0],110,'diferença 20 de 40: mistura metade');
 console.log('photo editor ok');
