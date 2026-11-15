@@ -57,4 +57,15 @@ let q=context.photoLookPixels(gray(),null,8,8,{...none,warmth:1},whole);assert.d
 q=context.photoLookPixels(gray(),null,8,8,{...none,fade:1},whole);assert.equal(q[1],130);
 q=context.photoLookPixels(gray(),null,8,8,{...none,vignette:1},whole);assert.ok(q[1]<45);assert.equal(q[4*(8*4+4)+1],120);
 q=context.photoLookPixels(gray(),new Uint8ClampedArray(256).fill(100),8,8,{...none,soften:1},whole);assert.equal(q[0],110,'diferença 20 de 40: mistura metade');
+
+// Pincel de apagar: tela -> original e de volta, em todos os giros e espelhos; os traços entram no que é salvo.
+for(const rotate of [0,90,180,270])for(const flipH of [false,true])for(const flipV of [false,true]){
+  const view={rotate,flipH,flipV},[x,y]=context.photoViewToOriginal(.2,.7,view),[u,v]=context.photoOriginalToView(x,y,view);near(u,.2);near(v,.7);
+}
+// Girar 90° à direita leva o canto superior esquerdo do original para o canto superior direito da tela.
+let o2v=context.photoOriginalToView(0,0,{rotate:90});near(o2v[0],1);near(o2v[1],0);
+o2v=context.photoOriginalToView(.1,.2,{rotate:0,flipH:true});near(o2v[0],.9);near(o2v[1],.2);
+assert.equal(context.photoEditOps(base).erase,null);
+const erased=context.photoEditOps({...base,erase:[{r:.02,pts:[[.1,.1]]}],erasePending:[{r:.03,pts:[[.5,.5]]}]});
+assert.equal(erased.erase.length,2);assert.equal(context.photoEditChanged({...base,erasePending:[{r:.02,pts:[[.1,.1]]}]}),true);
 console.log('photo editor ok');

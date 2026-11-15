@@ -439,16 +439,16 @@ class Handler(BaseHTTPRequestHandler):
                     files=c.execute('SELECT path,original_path FROM files WHERE entry_id=?',(eid,)).fetchall()
                     c.execute('DELETE FROM entries WHERE id=?',(eid,))
                     for f in files:
-                        (DATA/'uploads'/f['path']).unlink(missing_ok=True);media_variants.drop(DATA/'uploads'/f['path'])
-                        if f['original_path']:(DATA/'uploads'/f['original_path']).unlink(missing_ok=True)
+                        media_variants.remove(DATA/'uploads'/f['path']);media_variants.drop(DATA/'uploads'/f['path'])
+                        if f['original_path']:media_variants.remove(DATA/'uploads'/f['original_path'])
                     return self.respond({'ok':True})
                 if path=='/api/delete-file':
                     f=c.execute('SELECT id,path,original_path FROM files WHERE id=? AND entry_id=?',(int(payload.get('file_id',0)),eid)).fetchone()
                     if not f:raise ValueError('Arquivo inexistente')
                     c.execute('DELETE FROM files WHERE id=?',(f['id'],))
                     c.execute('UPDATE entries SET cover_file_id=NULL WHERE id=? AND cover_file_id=?',(eid,f['id']))
-                    (DATA/'uploads'/f['path']).unlink(missing_ok=True);media_variants.drop(DATA/'uploads'/f['path'])
-                    if f['original_path']:(DATA/'uploads'/f['original_path']).unlink(missing_ok=True)
+                    media_variants.remove(DATA/'uploads'/f['path']);media_variants.drop(DATA/'uploads'/f['path'])
+                    if f['original_path']:media_variants.remove(DATA/'uploads'/f['original_path'])
                     return self.respond({'ok':True})
                 if path=='/api/files/edit':
                     # Editor de fotos do administrador: grava a versão editada e guarda o arquivo enviado
@@ -462,16 +462,25 @@ class Handler(BaseHTTPRequestHandler):
                         if not (DATA/'uploads'/f['original_path']).is_file():raise ValueError('O arquivo original não está mais disponível')
                         ext=Path(f['original_path']).suffix.lower();mime=UPLOAD_TYPES.get(ext,f['mime'])
                         c.execute('UPDATE files SET path=?,mime=?,name=?,original_path=NULL WHERE id=?',(f['original_path'],mime,same_kind_name(f['name'],ext,mime),f['id']))
-                        current.unlink(missing_ok=True);media_variants.drop(current)
+                        media_variants.remove(current);media_variants.drop(current)
                         media_variants.warm(DATA/'uploads'/f['original_path'],mime)
                         return self.respond({'ok':True})
                     if f['mime'] not in media_variants.RESIZABLE:raise ValueError('Só fotos JPEG, PNG, WebP ou HEIC podem ser editadas')
                     target,mime=media_variants.edit(current,DATA/'uploads'/secrets.token_hex(24),payload)
                     c.execute('UPDATE files SET path=?,mime=?,name=?,original_path=? WHERE id=?',(target.name,mime,same_kind_name(f['name'],target.suffix,mime),f['original_path'] or f['path'],f['id']))
                     media_variants.drop(current)
-                    if f['original_path']:current.unlink(missing_ok=True)
+                    if f['original_path']:media_variants.remove(current)
                     media_variants.warm(target,mime)
                     return self.respond({'ok':True})
+                if path=='/api/files/erase-preview':
+                    # Prévia do "apagar objeto": devolve a foto reduzida já retocada; nada é gravado.
+                    if u['role']!='admin':return self.respond({'error':'Apenas o administrador pode editar fotos'},403)
+                    f=c.execute('SELECT * FROM files WHERE id=? AND entry_id=?',(payload.get('file_id') if type(payload.get('file_id')) is int else 0,eid)).fetchone()
+                    if not f:raise ValueError('Arquivo inexistente')
+                    if f['mime'] not in media_variants.RESIZABLE:raise ValueError('Só fotos JPEG, PNG, WebP ou HEIC podem ser editadas')
+                    body=media_variants.erase_preview(DATA/'uploads'/f['path'],payload.get('erase'))
+                    self.send_response(200);self.send_header('Content-Type','image/jpeg');self.send_header('Content-Length',str(len(body)));self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff');self.end_headers();self.wfile.write(body)
+                    return
                 if path=='/api/files/replace':
                     # Troca o arquivo por outro enviado pelo administrador (ex.: corrigido num editor externo),
                     # mantendo memória, ordem e capa. O arquivo enviado originalmente continua guardado.
@@ -489,7 +498,7 @@ class Handler(BaseHTTPRequestHandler):
                     current=DATA/'uploads'/f['path']
                     c.execute('UPDATE files SET path=?,mime=?,name=?,original_path=? WHERE id=?',(filename,mime,same_kind_name(f['name'],ext,mime),f['original_path'] or f['path'],f['id']))
                     media_variants.drop(current)
-                    if f['original_path']:current.unlink(missing_ok=True)
+                    if f['original_path']:media_variants.remove(current)
                     media_variants.warm(DATA/'uploads'/filename,mime)
                     return self.respond({'ok':True})
                 if path=='/api/files/move':

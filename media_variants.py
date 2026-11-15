@@ -24,6 +24,12 @@ try:
 except ImportError:  # pragma: no cover - o app continua servindo os originais
     Image = None
 
+try:  # apagar objetos (retoque) é opcional: sem OpenCV o resto do editor continua funcionando
+    import cv2
+    import numpy
+except ImportError:  # pragma: no cover
+    cv2 = None
+
 
 def variant_path(source: Path, width: int) -> Path:
     return source.parent / 'variants' / f'{source.stem}-{width}.webp'
@@ -70,9 +76,21 @@ def warm(source: Path, mime: str):
     threading.Thread(target=run, daemon=True).start()
 
 
+def remove(path: Path):
+    """Apaga o arquivo; no Windows ele pode estar aberto por instantes (miniaturas sendo geradas), então insiste."""
+    import time
+    for attempt in range(40):
+        try:
+            path.unlink(missing_ok=True)
+            return
+        except PermissionError:
+            time.sleep(.05)
+    path.unlink(missing_ok=True)
+
+
 def drop(source: Path):
     for width in WIDTHS:
-        variant_path(source, width).unlink(missing_ok=True)
+        remove(variant_path(source, width))
 
 
 def backfill(sources):
@@ -168,11 +186,104 @@ def apply_look(img, look):
     return rgb
 
 
+def clean_erase(strokes):
+    """Valida os traços do pincel: lista de {r, pts:[[x,y],...]} em frações da imagem original."""
+    if strokes is None:
+        return None
+    if not isinstance(strokes, list) or len(strokes) > 80:
+        raise ValueError('Marcação para apagar inválida')
+    clean = []
+    for stroke in strokes:
+        r, pts = (stroke.get('r'), stroke.get('pts')) if isinstance(stroke, dict) else (None, None)
+        if type(r) not in (int, float) or not .002 <= r <= .15 or not isinstance(pts, list) or not 1 <= len(pts) <= 600:
+            raise ValueError('Marcação para apagar inválida')
+        for p in pts:
+            if not isinstance(p, list) or len(p) != 2 or any(type(v) not in (int, float) or not 0 <= v <= 1 for v in p):
+                raise ValueError('Marcação para apagar inválida')
+        clean.append((float(r), [(float(x), float(y)) for x, y in pts]))
+    return clean or None
+
+
+def erase_mask(size, strokes):
+    """Máscara (255 = apagar) com os traços do pincel; o raio é fração do menor lado."""
+    from PIL import ImageDraw
+    W, H = size
+    mask = Image.new('L', size, 0)
+    draw = ImageDraw.Draw(mask)
+    for r, pts in strokes:
+        radius = max(2, r * min(W, H))
+        xy = [(x * W, y * H) for x, y in pts]
+        if len(xy) > 1:
+            draw.line(xy, fill=255, width=round(radius * 2), joint='curve')
+        for x, y in xy:
+            draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=255)
+    return mask
+
+
+def apply_erase(img, strokes):
+    """Apaga o que foi pintado, preenchendo a área com a continuação do entorno (retoque Telea)."""
+    if cv2 is None:
+        raise ValueError('Apagar objetos não está disponível neste servidor')
+    mask = erase_mask(img.size, strokes)
+    box = mask.getbbox()
+    if not box:
+        return img
+    W, H = img.size
+    if (box[2] - box[0]) * (box[3] - box[1]) > .35 * W * H:
+        raise ValueError('Área grande demais para apagar: pinte só o objeto')
+    margin = max(24, round(.04 * max(W, H)))
+    box = (max(0, box[0] - margin), max(0, box[1] - margin), min(W, box[2] + margin), min(H, box[3] + margin))
+    region, hole = img.crop(box).convert('RGB'), mask.crop(box)
+    # Trabalha num recorte reduzido (rápido mesmo em fotos enormes) e devolve só a área pintada.
+    scale = min(1, 1400 / max(region.size))
+    small = tuple(max(1, round(v * scale)) for v in region.size)
+    work = region.resize(small, Image.LANCZOS) if scale < 1 else region
+    wide = hole.resize(small, Image.BILINEAR).point(lambda v: 255 if v > 16 else 0).filter(ImageFilter.MaxFilter(5))
+    filled = cv2.inpaint(numpy.asarray(work), numpy.asarray(wide), max(3, round(6 * scale + 2)), cv2.INPAINT_TELEA)
+    filled = Image.fromarray(filled).resize(region.size, Image.BICUBIC) if scale < 1 else Image.fromarray(filled)
+    soft = wide.resize(region.size, Image.BILINEAR).filter(ImageFilter.GaussianBlur(max(1.5, 1.5 / scale)))
+    # O preenchimento sai liso; devolve a ele o grão da foto (medido fora da área) para não ficar uma mancha lavada.
+    pixels = numpy.asarray(region, dtype=numpy.float32)
+    grain = pixels - numpy.asarray(region.filter(ImageFilter.GaussianBlur(2)), dtype=numpy.float32)
+    outside = numpy.asarray(soft) == 0
+    if outside.sum() > 500:
+        level = min(12.0, float(numpy.median(numpy.abs(grain[outside]))) * 1.4826)
+        if level > .4:
+            noise = numpy.random.default_rng(0).normal(0, level, pixels.shape[:2] + (1,))
+            filled = Image.fromarray(numpy.clip(numpy.asarray(filled, dtype=numpy.float32) + noise, 0, 255).astype(numpy.uint8))
+    patch = Image.composite(filled, region, soft)
+    result = img.copy()
+    if img.mode == 'RGBA':
+        patch.putalpha(img.crop(box).getchannel('A'))
+    result.paste(patch, box[:2])
+    return result
+
+
+def erase_preview(source: Path, strokes, width=1280):
+    """JPEG da foto (orientação original, reduzida) já com os objetos apagados, para a prévia do editor."""
+    import io
+    strokes = clean_erase(strokes)
+    if Image is None or not strokes:
+        raise ValueError('Pinte o objeto a apagar')
+    try:
+        with Image.open(source) as img:
+            img.draft('RGB', (width, width))
+            img = ImageOps.exif_transpose(img).convert('RGB')
+            img.thumbnail((width, width), Image.LANCZOS)
+            out = io.BytesIO()
+            apply_erase(img, strokes).save(out, 'JPEG', quality=88)
+            return out.getvalue()
+    except ValueError:
+        raise
+    except Exception:
+        raise ValueError('Não foi possível apagar nesta imagem')
+
+
 def edit(source: Path, target_stem: Path, ops: dict):
     """Aplica giro, espelho, corte e ajustes de cor ao arquivo; devolve (caminho novo, mime).
 
     ops: rotate (0/90/180/270, horário), flip_h, flip_v, crop {x,y,w,h} em frações da imagem já
-    girada, brightness/contrast (0.5 a 1.5) e saturation (0 a 2; 1 = sem mudança), look {warmth -1..1,
+    girada, erase (traços do pincel sobre a imagem original, apagados antes de tudo), brightness/contrast (0.5 a 1.5) e saturation (0 a 2; 1 = sem mudança), look {warmth -1..1,
     vignette, fade, soften 0..1} aplicado depois do corte e antes de brilho/contraste/cor, focus {x,y,r,sharpen,blur}
     (x/y nulos = nitidez na foto toda; posição em frações da imagem girada, antes do corte). Levanta ValueError.
     """
@@ -194,6 +305,7 @@ def edit(source: Path, target_stem: Path, ops: dict):
         x, y, w, h = (float(crop[k]) for k in 'xywh')
         if x < 0 or y < 0 or w <= 0 or h <= 0 or x + w > 1.0001 or y + h > 1.0001:
             raise ValueError('Corte fora da imagem')
+    erase = clean_erase(ops.get('erase'))
     look = ops.get('look')
     if look is not None:
         if not isinstance(look, dict):
@@ -227,6 +339,8 @@ def edit(source: Path, target_stem: Path, ops: dict):
             img = ImageOps.exif_transpose(img)
             if img.mode not in ('RGB', 'RGBA'):
                 img = img.convert('RGBA' if 'A' in img.getbands() or 'transparency' in img.info else 'RGB')
+            if erase:
+                img = apply_erase(img, erase)
             if rotate:
                 img = img.transpose({90: Image.ROTATE_270, 180: Image.ROTATE_180, 270: Image.ROTATE_90}[rotate])
             if ops.get('flip_h'):

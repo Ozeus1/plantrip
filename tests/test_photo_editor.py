@@ -1,4 +1,4 @@
-import io,unittest,urllib.error
+import io,json,unittest,urllib.error,urllib.request
 import test_app
 from PIL import Image
 
@@ -101,6 +101,27 @@ class PhotoEditor(test_app.Integration):
         buf=io.BytesIO();fine.convert('RGB').save(buf,'PNG');replace(a,buf.getvalue(),'pele.png');edit(look={'soften':1})
         img,_=pixels(files()[0]);self.assertLess(spread(img,(94,94)),8,'textura fina fica suave')
         self.assertGreater(img.getpixel((301,100))[0]-img.getpixel((298,100))[0],100,'contorno forte continua nítido')
+        # Apagar objeto: ponto vermelho sobre fundo liso some; o traço é dado na imagem original e o giro vem depois.
+        wall=Image.new('RGB',(400,200),(90,140,200));wall.paste((220,20,20),(90,90,110,110));buf=io.BytesIO();wall.save(buf,'PNG')
+        replace(a,buf.getvalue(),'parede.png')
+        stroke=[{'r':.1,'pts':[[.25,.5],[.26,.5]]}]
+        for bad in ('x',[{'r':.5,'pts':[[.5,.5]]}],[{'r':.05,'pts':[]}],[{'r':.05,'pts':[[2,.5]]}],[{'r':.05,'pts':[[.5]]}],[{'r':.05}],[{'r':.14,'pts':[[x/10,y/4] for y in range(5) for x in range(11)]}]):
+            with self.assertRaises(urllib.error.HTTPError,msg=repr(bad)[:60]) as ex:edit(erase=bad)
+            self.assertEqual(ex.exception.code,400)
+        preview=lambda client,body:client.open(urllib.request.Request(self.url+'/api/files/erase-preview',json.dumps({'entry_id':eid,'file_id':fid,**body}).encode(),{'Content-Type':'application/json'}))
+        with self.assertRaises(urllib.error.HTTPError) as ex:preview(m,{'erase':stroke})
+        self.assertEqual(ex.exception.code,403)
+        with self.assertRaises(urllib.error.HTTPError) as ex:preview(a,{'erase':[]})
+        self.assertEqual(ex.exception.code,400)
+        with preview(a,{'erase':stroke}) as r:
+            self.assertEqual(r.headers['Content-Type'],'image/jpeg');shot=Image.open(io.BytesIO(r.read())).convert('RGB')
+        self.assertEqual(shot.size,(400,200));self.assertLess(shot.getpixel((100,100))[0],120,'a prévia já vem sem o objeto')
+        self.assertGreater(pixels(files()[0])[0].getpixel((100,100))[0],200,'a prévia não grava nada')
+        edit(erase=stroke,rotate=90)
+        img,_=pixels(files()[0]);self.assertEqual(img.size,(200,400))
+        for x in range(85,116,5):
+            for y in range(85,116,5):
+                r,g,b=img.getpixel((x,y));self.assertTrue(abs(r-90)<12 and abs(g-140)<12 and abs(b-200)<12,(x,y,r,g,b))
         # Restaurar volta ao primeiro arquivo enviado, com o nome e o tipo dele.
         edit(restore=True)
         back=files()[0];self.assertEqual((back['name'],back['mime'],bool(back['edited'])),('foto.jpg','image/jpeg',False));self.assertEqual(pixels(back)[1],sent)
