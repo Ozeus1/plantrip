@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const elements=new Map(),timers=new Map();let timerId=0;
 function element(selector){if(!elements.has(selector))elements.set(selector,{open:false,value:selector==='#memorySpeed'?'4':'',checked:false,style:{},classList:{toggle(){},remove(){}},listeners:{},addEventListener(name,fn){this.listeners[name]=fn},setAttribute(){},removeAttribute(){},load(){},pause(){this.paused=true},showModal(){this.open=true},textContent:'',innerHTML:''});return elements.get(selector)}
-const context=vm.createContext({console,Map,Date,setTimeout:fn=>{timers.set(++timerId,fn);return timerId},clearTimeout:id=>timers.delete(id),$:element,esc:s=>String(s??''),date:s=>s,memoryToday:()=> '2026-10-25',renderResults(){},renderPublicPosts(){},toast:s=>{throw Error(s)},document:{hidden:false,addEventListener(){},querySelectorAll:()=>[]}});
+const context=vm.createContext({isAdminUser:()=>context.__admin===true,openPhotoAdmin(){},console,Map,Date,setTimeout:fn=>{timers.set(++timerId,fn);return timerId},clearTimeout:id=>timers.delete(id),$:element,esc:s=>String(s??''),date:s=>s,memoryToday:()=> '2026-10-25',renderResults(){},renderPublicPosts(){},toast:s=>{throw Error(s)},document:{hidden:false,addEventListener(){},querySelectorAll:()=>[]}});
 vm.runInContext(fs.readFileSync('static/diary-views.js','utf8'),context);
 assert.equal(context.memoryDay('2026-10-25T22:00'),'2026-10-25');assert.equal(context.memoryDay(''), '');
 const image=id=>({id,mime:'image/jpeg',name:'Foto '+id});
@@ -38,5 +38,5 @@ media.tagName='IMG';context.presentMemories(mixed,false,22);
 assert.equal(element('#memoryFrameCount').textContent,'3 / 3');
 element('#memoryPlayPause').onclick();assert.equal(element('#memoryFrameCount').textContent,'2 / 2');
 element('#memoryViewer').open=false;element('#memoryViewer').listeners.close();
-const gallery=context.memoryGallery(mixed[0]);assert.ok(!gallery.includes('download=1'),'sem botão de baixar fora da edição');const editGallery=context.memoryGallery(mixed[0],true);assert.ok(editGallery.includes('/media/21?download=1')&&editGallery.includes('Baixar o clipe'));assert.ok(gallery.includes('data-memory-file="21"'));assert.ok(gallery.includes('memory-video-badge'));assert.ok(!gallery.includes(' controls'));
+const gallery=context.memoryGallery(mixed[0]);assert.ok(!gallery.includes('download=1'),'sem botão de baixar fora da edição');assert.ok(!context.memoryGallery(mixed[0],true).includes('data-photo-admin'),'sem ✎ para quem não é administrador');context.__admin=true;const editGallery=context.memoryGallery(mixed[0],true);assert.ok(editGallery.includes('data-photo-admin="21"'));assert.ok(editGallery.includes('/media/21?download=1')&&editGallery.includes('Baixar o clipe'));assert.ok(gallery.includes('data-memory-file="21"'));assert.ok(gallery.includes('memory-video-badge'));assert.ok(!gallery.includes(' controls'));
 console.log('Miniaturas por item, vídeo manual e miniclipe apenas com fotos: OK');

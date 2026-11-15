@@ -60,6 +60,12 @@ def build_map(c,entries,trip_ids=None,detailed=False):
     marks=','.join('?'*len(trips))
     tours=[dict(r) for r in c.execute(f"SELECT id,trip_id,place,guide_key,start FROM entries WHERE kind='tour' AND trip_id IN ({marks}) ORDER BY start,id",tuple(trips))]
     extras={tid:places.get('trips',{}).get(t['name'],{}) for tid,t in trips.items()}
+    # Pontos de interesse cadastrados pelo administrador entram junto com os de places.json.
+    for r in c.execute(f"SELECT * FROM pois WHERE trip_id IN ({marks})",tuple(trips)):
+        base=extras.get(r['trip_id'],{})
+        extras[r['trip_id']]=ex=dict(base,interest=list(base.get('interest',[])))
+        raw=json.loads(r['aliases'])
+        ex['interest'].append({'id':f"db{r['id']}",'poi_id':r['id'],'name':r['name'],'city':r['city'],'country':r['country'],'lat':r['lat'],'lng':r['lng'],'text':r['text'],'aliases':[a for a in [r['name']]+raw if norm(a)],'raw_aliases':raw})
     spots={};by_tour={};candidates={}
     for t in tours:
         g=guides.get(t['guide_key']);coords=places['guides'].get(t['guide_key'])
@@ -74,7 +80,7 @@ def build_map(c,entries,trip_ids=None,detailed=False):
     origins={}
     for tid,ex in extras.items():
         for p in ex.get('interest',[]):
-            pois[(tid,p['id'])]={'id':f"p-{tid}-{p['id']}",'level':'attraction','kind':'poi','trip_id':tid,'city':p['city'],'name':p['name'],'lat':p['lat'],'lng':p['lng'],'text':p.get('text',''),'entry_ids':[],'always':True}
+            pois[(tid,p['id'])]={'id':f"p-{tid}-{p['id']}",'level':'attraction','kind':'poi','trip_id':tid,'city':p['city'],'name':p['name'],'lat':p['lat'],'lng':p['lng'],'text':p.get('text',''),'entry_ids':[],'always':True,**({'poi_id':p['poi_id'],'country':p['country'],'aliases':p['raw_aliases']} if 'poi_id' in p else {})}
         if ex.get('origin'):
             name=ex['origin']['city'];city=places['cities'][name]
             origins[tid]={'id':f'o-{tid}','level':'origin','trip_id':tid,'city':name,'name':name,'country':city['country'],'lat':city['lat'],'lng':city['lng'],'text':ex['origin'].get('text',''),'entry_ids':[],'always':True}
@@ -102,7 +108,7 @@ def build_map(c,entries,trip_ids=None,detailed=False):
     attractions.extend(pois.values())
     cities={}
     for a in attractions:
-        info=places['cities'][a['city']]
+        info=places['cities'].get(a['city']) or {'country':a.get('country',''),'lat':a['lat'],'lng':a['lng']}
         item=cities.setdefault((a['trip_id'],a['city']),{'id':f"c-{a['trip_id']}-{a['city']}",'level':'city','trip_id':a['trip_id'],'name':a['city'],'country':info['country'],'lat':info['lat'],'lng':info['lng'],'entry_ids':[]})
         item['entry_ids'].extend(a['entry_ids']);item['always']=item.get('always',False) or bool(a.get('always'))
     trip_points=[];meta=[]
@@ -111,7 +117,7 @@ def build_map(c,entries,trip_ids=None,detailed=False):
         route=_route(places,t['places']) if detailed else []
         countries=[]
         for name in route+[x['name'] for x in mine]:
-            country=places['cities'][name]['country']
+            country=(places['cities'].get(name) or next(x for x in mine if x['name']==name))['country']
             if country not in countries:countries.append(country)
         origin=origins.get(tid)
         meta.append({'id':tid,'name':t['name'],'start':t['start'],'end':t['end'],'route':route,'countries':countries,'origin':{'name':origin['name'],'country':origin['country']} if origin else None})

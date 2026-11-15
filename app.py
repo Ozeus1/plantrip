@@ -51,6 +51,7 @@ def init():
         CREATE TABLE IF NOT EXISTS trips(id INTEGER PRIMARY KEY,name TEXT NOT NULL,start TEXT NOT NULL,end TEXT NOT NULL,places TEXT NOT NULL,notes TEXT NOT NULL DEFAULT '');
         CREATE TABLE IF NOT EXISTS trip_members(trip_id INTEGER REFERENCES trips(id) ON DELETE CASCADE,user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,PRIMARY KEY(trip_id,user_id));
         CREATE TABLE IF NOT EXISTS migrations(name TEXT PRIMARY KEY);
+        CREATE TABLE IF NOT EXISTS pois(id INTEGER PRIMARY KEY,trip_id INTEGER NOT NULL REFERENCES trips(id) ON DELETE CASCADE,name TEXT NOT NULL,city TEXT NOT NULL,country TEXT NOT NULL DEFAULT '',lat REAL NOT NULL,lng REAL NOT NULL,text TEXT NOT NULL DEFAULT '',aliases TEXT NOT NULL DEFAULT '[]');
         CREATE TABLE IF NOT EXISTS password_requests(id INTEGER PRIMARY KEY,user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,created TEXT NOT NULL,status TEXT NOT NULL DEFAULT 'pending',resolved_by INTEGER REFERENCES users(id));
         CREATE UNIQUE INDEX IF NOT EXISTS one_pending_password_request ON password_requests(user_id) WHERE status='pending';
         CREATE TABLE IF NOT EXISTS upload_links(token TEXT PRIMARY KEY,trip_id INTEGER NOT NULL REFERENCES trips(id) ON DELETE CASCADE,user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,created TEXT NOT NULL,UNIQUE(trip_id,user_id));
@@ -77,6 +78,36 @@ def init():
         seed(c)
         from attractions import attach_guides
         attach_guides(c)
+
+def clean_poi(c,payload):
+    """Valida um ponto de interesse informado pelo administrador."""
+    from geo import _places,_city_for
+    def text(key,limit,required=False):
+        value=payload.get(key,'')
+        if value is None:value=''
+        if not isinstance(value,str):raise ValueError('Campo inválido: '+key)
+        value=value.strip()
+        if required and not value:raise ValueError('Informe '+{'name':'o nome do ponto','city':'a cidade'}[key])
+        if len(value)>limit:raise ValueError('Texto longo demais: '+key)
+        return value
+    def number(key,low,high):
+        value=payload.get(key)
+        if isinstance(value,str):
+            try:value=float(value.replace(',','.'))
+            except ValueError:value=None
+        if type(value) not in (int,float) or not low<=value<=high:raise ValueError('Informe '+('a latitude' if key=='lat' else 'a longitude')+f' entre {low} e {high}')
+        return float(value)
+    name=text('name',120,True);city=text('city',80,True);country=text('country',80);body=text('text',4000)
+    known=_city_for(_places(),city)
+    if known:city=known
+    elif not country:raise ValueError('Cidade nova: informe também o país')
+    aliases=payload.get('aliases',[])
+    if isinstance(aliases,str):aliases=aliases.split(',')
+    if not isinstance(aliases,list) or len(aliases)>20 or not all(isinstance(a,str) and len(a)<=80 for a in aliases):raise ValueError('Nomes alternativos inválidos')
+    aliases=list(dict.fromkeys(a.strip() for a in aliases if a.strip()))
+    tid=payload.get('trip_id')
+    if not c.execute('SELECT 1 FROM trips WHERE id=?',(tid,)).fetchone():raise ValueError('Viagem inexistente')
+    return dict(trip_id=tid,name=name,city=city,country=country,lat=number('lat',-90,90),lng=number('lng',-180,180),text=body,aliases=json.dumps(aliases,ensure_ascii=False))
 
 FILE_ORDER='ORDER BY CASE WHEN position IS NULL THEN 1 ELSE 0 END,position,id'
 
@@ -150,6 +181,11 @@ class Handler(BaseHTTPRequestHandler):
                     e['comments']=[dict(r) for r in c.execute('SELECT u.name author,u.photo author_photo,c.body,c.created FROM comments c JOIN users u ON u.id=c.user_id WHERE c.entry_id=? ORDER BY c.id',(e['id'],))]
                 from geo import build_map
                 return self.respond({'trips':trips,'entries':entries,'map':build_map(c,[e for e in entries if e['files']])})
+            if path=='/api/pois':
+                if not u or u['role']!='admin':return self.respond({'error':'Apenas o administrador'},403)
+                from geo import _places
+                places=_places()
+                return self.respond({'pois':[{**dict(r),'aliases':json.loads(r['aliases'])} for r in c.execute('SELECT * FROM pois ORDER BY trip_id,name')],'cities':[{'name':n,'country':v['country'],'lat':v['lat'],'lng':v['lng']} for n,v in sorted(places['cities'].items())]})
             if path.startswith('/api/u/'):
                 link=upload_link(c,path[len('/api/u/'):])
                 if not link:return self.respond({'error':'Este QR-code não é mais válido. Peça um novo ao organizador da viagem.'},404)
@@ -332,6 +368,16 @@ class Handler(BaseHTTPRequestHandler):
                     c.execute('DELETE FROM trip_members WHERE trip_id=?',(tid,))
                     c.executemany('INSERT INTO trip_members VALUES(?,?)',[(tid,uid) for uid in members])
                     return self.respond({'id':tid})
+                if path in ('/api/pois','/api/pois/delete'):
+                    if not u or u['role']!='admin':return self.respond({'error':'Apenas o administrador pode editar pontos de interesse'},403)
+                    if path.endswith('delete'):
+                        c.execute('DELETE FROM pois WHERE id=?',(payload.get('id'),));return self.respond({'ok':True})
+                    p=clean_poi(c,payload);pid=payload.get('id')
+                    if pid is not None:
+                        if not c.execute('SELECT 1 FROM pois WHERE id=?',(pid,)).fetchone():raise ValueError('Ponto inexistente')
+                        c.execute('UPDATE pois SET trip_id=?,name=?,city=?,country=?,lat=?,lng=?,text=?,aliases=? WHERE id=?',(p['trip_id'],p['name'],p['city'],p['country'],p['lat'],p['lng'],p['text'],p['aliases'],pid))
+                    else:pid=c.execute('INSERT INTO pois(trip_id,name,city,country,lat,lng,text,aliases) VALUES(?,?,?,?,?,?,?,?)',(p['trip_id'],p['name'],p['city'],p['country'],p['lat'],p['lng'],p['text'],p['aliases'])).lastrowid
+                    return self.respond({'id':pid})
                 if path=='/api/entries/reorder':
                     if u['role']!='admin':return self.respond({'error':'Apenas o administrador pode alterar a ordem'},403)
                     tid=payload.get('trip_id');kind=payload.get('kind')
@@ -393,6 +439,18 @@ class Handler(BaseHTTPRequestHandler):
                     c.execute('DELETE FROM files WHERE id=?',(f['id'],))
                     c.execute('UPDATE entries SET cover_file_id=NULL WHERE id=? AND cover_file_id=?',(eid,f['id']))
                     (DATA/'uploads'/f['path']).unlink(missing_ok=True);media_variants.drop(DATA/'uploads'/f['path'])
+                    return self.respond({'ok':True})
+                if path=='/api/files/move':
+                    # Só o administrador passa a foto para outra memória (mesma viagem); vai para o fim da ordem.
+                    if u['role']!='admin':return self.respond({'error':'Apenas o administrador pode mover fotos'},403)
+                    f=c.execute('SELECT id FROM files WHERE id=? AND entry_id=?',(payload.get('file_id') if type(payload.get('file_id')) is int else 0,eid)).fetchone()
+                    if not f:raise ValueError('Arquivo inexistente')
+                    target=c.execute("SELECT id FROM entries WHERE id=? AND kind='diary' AND trip_id=?",(payload.get('to_entry_id') if type(payload.get('to_entry_id')) is int else 0,entry['trip_id'])).fetchone()
+                    if not target:raise ValueError('Escolha uma memória desta viagem')
+                    ids=[r['id'] for r in c.execute('SELECT id FROM files WHERE entry_id=? '+FILE_ORDER,(target['id'],))]
+                    c.executemany('UPDATE files SET position=? WHERE id=?',[(n,i) for n,i in enumerate(ids)])
+                    c.execute('UPDATE files SET entry_id=?,position=? WHERE id=?',(target['id'],len(ids),f['id']))
+                    c.execute('UPDATE entries SET cover_file_id=NULL WHERE id=? AND cover_file_id=?',(eid,f['id']))
                     return self.respond({'ok':True})
                 if path=='/api/files/arrange':
                     # Ordem das fotos e foto de capa: só arquivos desta memória, sem repetições.

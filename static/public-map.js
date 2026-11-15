@@ -17,10 +17,17 @@ function loadLeaflet(){
   }).catch(error=>{leafletLoading=null;throw error});
   return leafletLoading;
 }
-function mapMarkup(prefix,intro='Amplie o mapa para ir da viagem às cidades e aos pontos visitados. Toque em um ponto para abrir as fotos.'){return `<section class="public-map" aria-labelledby="${prefix}MapTitle"><div class="public-map-heading"><div><span class="eyebrow">MAPA MUNDI</span><h2 id="${prefix}MapTitle">Onde as histórias aconteceram</h2><p>${intro}</p></div><div class="public-map-actions"><button type="button" id="${prefix}MapWorld">◌ Mundo</button><button type="button" id="${prefix}MapFit">⌖ Ir aos pontos</button></div></div><div id="${prefix}MapCanvas" class="map-canvas" role="region" aria-label="Mapa mundi com as viagens e os pontos visitados"></div><p id="${prefix}MapStatus" class="public-map-status" role="status"></p></section>`}
+function mapMarkup(prefix,intro='Amplie o mapa para ir da viagem às cidades e aos pontos visitados. Toque em um ponto para abrir as fotos.'){return `<section class="public-map" aria-labelledby="${prefix}MapTitle"><div class="public-map-heading"><div><span class="eyebrow">MAPA MUNDI</span><h2 id="${prefix}MapTitle">Onde as histórias aconteceram</h2><p>${intro}</p></div><div class="public-map-actions"><button type="button" id="${prefix}MapWorld">◌ Mundo</button><button type="button" id="${prefix}MapFit">⌖ Ir aos pontos</button>${prefix==='private'&&isAdminUser()?'<button type="button" class="map-admin-btn" id="privatePoiManage">◎ Pontos de interesse</button>':''}</div></div><div id="${prefix}MapCanvas" class="map-canvas" role="region" aria-label="Mapa mundi com as viagens e os pontos visitados"></div><p id="${prefix}MapStatus" class="public-map-status" role="status"></p></section>`}
 function publicMapMarkup(){return mapMarkup('public')}
 function mapMediaCount(entries){return entries.reduce((n,e)=>n+(e.files||[]).filter(f=>/^(image|video)\//.test(f.mime)).length,0)}
 function mapCountLabel(count){return `${count} ${count===1?'foto/vídeo':'fotos/vídeos'}`}
+// Só administrador: editar um ponto cadastrado ou promover o local livre de uma memória a ponto de interesse.
+function mapAdminPointButton(point,entries){
+  if(typeof isAdminUser!=='function'||!isAdminUser())return '';
+  if(point.poi_id!=null)return '<div class="map-gallery-actions"><button type="button" data-point-admin>✎ Editar ponto de interesse</button></div>';
+  if(String(point.id).startsWith('g-')&&entries.length)return '<div class="map-gallery-actions"><button type="button" data-point-admin>◎ Transformar em ponto de interesse</button></div>';
+  return '';
+}
 function mapPointKind(point){return point.level==='attraction'&&point.kind==='poi'?'poi':point.level}
 function mapPinSize(point){return ({trip:[52,52],city:[40,40],attraction:[32,32],poi:[36,36],origin:[38,38]})[mapPointKind(point)]}
 function mapPinGlyph(point,count){const kind=mapPointKind(point);return kind==='origin'?'✈':kind==='poi'&&!count?'★':count||'·'}
@@ -41,6 +48,7 @@ async function initMap(ctx){
   map.setView(...MAP_WORLD_VIEW);
   $(`#${ctx.prefix}MapWorld`).onclick=()=>map.setView(...MAP_WORLD_VIEW);
   $(`#${ctx.prefix}MapFit`).onclick=()=>fitMapPoints(ctx);
+  if($('#privatePoiManage'))$('#privatePoiManage').onclick=openPoiManager;
   ctx.ready=true;updateMap(ctx,ctx.posts);
 }
 function visibleMapPoints(ctx,posts){
@@ -151,8 +159,9 @@ function openMapGallery(ctx,point,entries){
   let dialog=$('#mapGallery');
   if(!dialog){dialog=document.createElement('dialog');dialog.id='mapGallery';dialog.className='map-gallery';dialog.setAttribute('aria-label','Fotos do ponto selecionado');document.body.append(dialog)}
   const total=mapMediaCount(entries),kind=mapPointKind(point);
-  dialog.innerHTML=`<div class="modal-heading"><div><span class="eyebrow">${kind==='poi'?'PONTO DE INTERESSE':MAP_LEVELS[point.level].label}</span><h2>${esc(point.name)}</h2><p class="map-gallery-count">${entries.length?`${memoryPostCount(entries.length)} · ${mapCountLabel(total)}`:'Ainda sem fotos neste ponto'}</p></div><button type="button" class="close" data-map-close aria-label="Fechar fotos">×</button></div>${point.text?`<p class="map-gallery-text">${esc(point.text)}</p>`:''}${entries.length?'<div class="map-gallery-actions"><button type="button" data-map-slides>▧ Ver slides</button><button type="button" data-map-clip>▷ Ver miniclipe</button></div>':''}${entries.map(e=>`<article class="map-gallery-memory"><h3>${esc(e.title)}</h3><p>${esc(e.author)} · ${date(e.start)}${e.place?' · '+esc(e.place):''}</p>${e.description?`<p class="map-gallery-text">${esc(e.description)}</p>`:''}${memoryGallery(e)}</article>`).join('')}`;
+  dialog.innerHTML=`<div class="modal-heading"><div><span class="eyebrow">${kind==='poi'?'PONTO DE INTERESSE':MAP_LEVELS[point.level].label}</span><h2>${esc(point.name)}</h2><p class="map-gallery-count">${entries.length?`${memoryPostCount(entries.length)} · ${mapCountLabel(total)}`:'Ainda sem fotos neste ponto'}</p></div><button type="button" class="close" data-map-close aria-label="Fechar fotos">×</button></div>${point.text?`<p class="map-gallery-text">${esc(point.text)}</p>`:''}${mapAdminPointButton(point,entries)}${entries.length?'<div class="map-gallery-actions"><button type="button" data-map-slides>▧ Ver slides</button><button type="button" data-map-clip>▷ Ver miniclipe</button></div>':''}${entries.map(e=>`<article class="map-gallery-memory"><h3>${esc(e.title)}</h3><p>${esc(e.author)} · ${date(e.start)}${e.place?' · '+esc(e.place):''}</p>${e.description?`<p class="map-gallery-text">${esc(e.description)}</p>`:''}${memoryGallery(e)}</article>`).join('')}`;
   dialog.querySelector('[data-map-close]').onclick=()=>dialog.close();
+  dialog.querySelector('[data-point-admin]')?.addEventListener('click',()=>{dialog.close();openPoiEditor(point.poi_id!=null?poiFromPoint(point):poiPrefillFor(entries[0]))});
   if(entries.length){
     dialog.querySelector('[data-map-slides]').onclick=()=>presentMemories(entries,false);
     dialog.querySelector('[data-map-clip]').onclick=()=>presentMemories(entries,true);

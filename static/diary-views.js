@@ -15,8 +15,9 @@ function memoryGallery(e,editable=false){
   const files=e.files||[],cover=coverOf(e);
   return `<div class="memory-thumbnail-grid${editable?' is-arranging':''}"${editable?' data-arrange-grid':''}>${files.map((f,i)=>{const video=f.mime.startsWith('video/'),visual=video||f.mime.startsWith('image/'),isCover=cover?.id===f.id;
     const dl=editable?`<a class="photo-download" href="/media/${f.id}?download=1" download title="Baixar ${video?'o clipe':'a foto'} no tamanho original" aria-label="Baixar original: ${esc(f.name)}">⬇</a>`:'';
+    const adm=editable&&isAdminUser()?`<button type="button" class="photo-admin" data-photo-admin="${f.id}" title="Editar: mover, excluir, capa, ponto de interesse" aria-label="Editar ${esc(f.name)}">✎</button>`:'';
     const tools=editable?`<div class="photo-tools" role="group" aria-label="Organizar ${esc(f.name)}"><button type="button" data-file-move="${f.id}" data-dir="-1" ${i===0?'disabled':''} aria-label="Mover para antes" title="Mover para antes">‹</button>${f.mime.startsWith('image/')?`<button type="button" data-file-cover="${f.id}" ${isCover?'disabled':''} title="Usar como foto de capa">${isCover?'★ Capa':'☆ Capa'}</button>`:''}<button type="button" data-file-move="${f.id}" data-dir="1" ${i===files.length-1?'disabled':''} aria-label="Mover para depois" title="Mover para depois">›</button></div>`:'';
-    return `<div class="memory-thumbnail-item${isCover?' is-cover':''}" data-file-item="${f.id}"${editable?' draggable="true"':''}>${visual?`<button type="button" class="memory-thumbnail" data-memory-thumbnail="${e.id}" data-memory-file="${f.id}" aria-label="${video?'Reproduzir vídeo':'Abrir foto'}: ${esc(f.name)}">${video?`<video src="${mediaUrl(f)}#t=0.1" preload="metadata" muted playsinline tabindex="-1" aria-hidden="true"></video><span class="memory-video-badge">▷ Vídeo</span>`:`<img src="${mediaUrl(f,480)}" alt="${esc(f.name)}" loading="lazy" draggable="false">`}${isCover?'<span class="memory-cover-badge">★ Capa</span>':''}</button>`:media(f)}${dl}${tools}${editable?`<button type="button" class="text-btn danger" data-del-file="${f.id}">Remover arquivo</button>`:''}</div>`}).join('')}</div>${editable&&files.length>1?'<p class="photo-arrange-hint">Arraste as miniaturas ou use ‹ › para mudar a ordem; ☆ Capa define a foto de destaque da memória.</p>':''}`}
+    return `<div class="memory-thumbnail-item${isCover?' is-cover':''}" data-file-item="${f.id}"${editable?' draggable="true"':''}>${visual?`<button type="button" class="memory-thumbnail" data-memory-thumbnail="${e.id}" data-memory-file="${f.id}" aria-label="${video?'Reproduzir vídeo':'Abrir foto'}: ${esc(f.name)}">${video?`<video src="${mediaUrl(f)}#t=0.1" preload="metadata" muted playsinline tabindex="-1" aria-hidden="true"></video><span class="memory-video-badge">▷ Vídeo</span>`:`<img src="${mediaUrl(f,480)}" alt="${esc(f.name)}" loading="lazy" draggable="false">`}${isCover?'<span class="memory-cover-badge">★ Capa</span>':''}</button>`:media(f)}${dl}${adm}${tools}${editable?`<button type="button" class="text-btn danger" data-del-file="${f.id}">Remover arquivo</button>`:''}</div>`}).join('')}</div>${editable&&files.length>1?'<p class="photo-arrange-hint">Arraste as miniaturas ou use ‹ › para mudar a ordem; ☆ Capa define a foto de destaque da memória.</p>':''}`}
 // Ordem e capa: salva no servidor e reabre o detalhe mantendo a rolagem.
 function bindFileArranging(e){
   const grid=document.querySelector('[data-arrange-grid]');if(!grid)return;
@@ -29,6 +30,7 @@ function bindFileArranging(e){
   }
   function moved(list,id,target,after){if(id===target)return list;const rest=list.filter(x=>x!==id);rest.splice(rest.indexOf(target)+(after?1:0),0,id);return rest}
   grid.querySelectorAll('[data-file-move]').forEach(b=>b.onclick=()=>{const list=ids(),id=Number(b.dataset.fileMove),at=list.indexOf(id),to=at+Number(b.dataset.dir);if(to<0||to>=list.length)return;[list[at],list[to]]=[list[to],list[at]];save({file_ids:list})});
+  grid.querySelectorAll('[data-photo-admin]').forEach(b=>b.onclick=()=>{const file=(e.files||[]).find(f=>f.id===Number(b.dataset.photoAdmin));if(file)openPhotoAdmin(e,file,async()=>{await load();detail(e.id)})});
   grid.querySelectorAll('[data-file-cover]').forEach(b=>b.onclick=()=>save({cover_file_id:Number(b.dataset.fileCover)}));
   grid.querySelectorAll('[data-file-item]').forEach(item=>{
     item.ondragstart=ev=>{dragged=Number(item.dataset.fileItem);item.classList.add('is-dragging');ev.dataTransfer.effectAllowed='move';ev.dataTransfer.setData('text/plain',String(dragged))};
@@ -84,7 +86,7 @@ function clearMemoryTimer(){if(memoryTimer!==null)clearTimeout(memoryTimer);memo
 function memoryFramesFor(entries,photosOnly=false){return entries.flatMap(e=>(e.files||[]).filter(f=>photosOnly?f.mime.startsWith('image/'):/^(image|video)\//.test(f.mime)).map(f=>({entry:e,file:f})))}
 function presentMemories(entries,auto=false,startFileId=null){
   const frames=memoryFramesFor(entries,auto);if(!frames.length)return toast(auto?'Esta seleção não tem fotos para o miniclipe.':'Esta seleção ainda não tem fotos ou vídeos para apresentar.');
-  clearMemoryTimer();memoryFrames=frames;memoryPhotosOnly=auto;memoryFrameIndex=Math.max(0,frames.findIndex(x=>x.file.id===startFileId));memoryPlaying=auto;$('#memoryRepeat').checked=false;setMemoryPanel(false);$('#memoryViewer').showModal();$('#memoryViewerStage').focus?.();showMemoryFrame();
+  clearMemoryTimer();memoryFrames=frames;memoryPhotosOnly=auto;memoryFrameIndex=Math.max(0,frames.findIndex(x=>x.file.id===startFileId));memoryPlaying=auto;$('#memoryRepeat').checked=false;setMemoryPanel(false);$('#memoryEditToggle').hidden=!isAdminUser();$('#memoryViewer').showModal();$('#memoryViewerStage').focus?.();showMemoryFrame();
 }
 function updateMemoryPlaybackButton(){$('#memoryPlayPause').textContent=memoryPlaying?'Ⅱ Pausar':!memoryPhotosOnly?'▷ Miniclipe só de fotos':memoryFrameIndex===memoryFrames.length-1?'↻ Reproduzir novamente':'▷ Reproduzir';$('#memoryPlayPause').disabled=!memoryFrames.some(x=>x.file.mime.startsWith('image/'));$('#memoryPlayPause').setAttribute('aria-pressed',String(memoryPlaying))}
 function scheduleMemoryFrame(sequence){clearMemoryTimer();if(!memoryPlaying||!$('#memoryViewer').open||sequence!==memorySequence)return;const ms=Number($('#memorySpeed').value)*1000;memoryTimer=setTimeout(()=>advanceMemoryFrame(),ms)}
@@ -152,11 +154,27 @@ function bindMemoryProtection(){
   document.addEventListener('keydown',e=>{if(viewer.open&&((e.ctrlKey||e.metaKey)&&['s','p','u'].includes(e.key.toLowerCase())||(e.metaKey&&e.shiftKey&&['3','4','5'].includes(e.key))))e.preventDefault()});
   if(typeof window!=='undefined'){window.addEventListener('blur',()=>{if(viewer.open)hide(true)});window.addEventListener('focus',()=>hide(false));window.addEventListener('beforeprint',()=>hide(true));window.addEventListener('afterprint',()=>hide(false))}
 }
+// Administrador: edita a foto em exibição e, ao concluir, ajusta a sequência sem fechar o visualizador.
+function editCurrentMemoryFrame(){
+  const frame=memoryFrames[memoryFrameIndex];if(!frame)return;
+  memoryPlaying=false;clearMemoryTimer();updateMemoryPlaybackButton();
+  openPhotoAdmin(frame.entry,frame.file,async info=>{
+    if(info.action==='moved'){frame.entry=info.target}
+    else if(info.action==='deleted'){
+      memoryFrames.splice(memoryFrameIndex,1);
+      if(!memoryFrames.length){$('#memoryViewer').close();load().catch(()=>{});return}
+      memoryFrameIndex=Math.min(memoryFrameIndex,memoryFrames.length-1);
+    }
+    showMemoryFrame();
+    try{await load()}catch{}
+  });
+}
 function stopMemoryMedia(){const previous=$('#memoryFrameMedia');if(previous?.tagName==='VIDEO'){previous.pause();previous.removeAttribute('src');previous.load()}}
 function initMemoryViewer(){
   $('#memoryFramePrev').onclick=()=>stepMemoryFrame(-1);
   $('#memoryFrameNext').onclick=()=>stepMemoryFrame(1);
   $('#memoryMenuToggle').onclick=()=>setMemoryPanel($('#memoryViewerPanel').hidden);
+  $('#memoryEditToggle').onclick=editCurrentMemoryFrame;
   bindMemoryGestures();bindMemoryProtection();
   $('#memoryPlayPause').onclick=()=>{if(!memoryPhotosOnly){const current=memoryFrames[memoryFrameIndex]?.file.id;memoryFrames=memoryFrames.filter(x=>x.file.mime.startsWith('image/'));memoryFrameIndex=Math.max(0,memoryFrames.findIndex(x=>x.file.id===current));memoryPhotosOnly=true;if(!memoryFrames.length)return;memoryPlaying=true}else{memoryPlaying=!memoryPlaying;if(memoryPlaying&&memoryFrameIndex===memoryFrames.length-1)memoryFrameIndex=0}showMemoryFrame()};
   $('#memorySpeed').onchange=()=>{if(memoryPlaying&&$('#memoryFrameMedia')?.tagName==='IMG')scheduleMemoryFrame(memorySequence)};

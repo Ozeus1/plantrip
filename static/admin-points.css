@@ -1,0 +1,24 @@
+dialog.admin-dialog{max-width:640px;width:calc(100% - 24px);max-height:92vh;overflow:auto}
+dialog#photoAdmin{z-index:10}
+.admin-dialog .modal-heading{align-items:flex-start}
+.admin-dialog h2{margin:0 0 4px;word-break:break-word}
+.admin-dialog .eyebrow{display:block;font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:6px}
+.admin-sub{font-size:12px;color:var(--muted);margin:0 0 10px}
+.admin-photo{display:block;max-width:100%;max-height:220px;border-radius:10px;margin:8px 0;object-fit:contain;background:#eef1e8}
+.admin-block{border-top:1px solid var(--line);padding:14px 0 4px;margin-top:10px}
+.admin-block h3{font-size:14px;margin:0 0 6px}
+.admin-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.admin-row button:not(.primary):not(.text-btn){background:#fff;border:1px solid var(--line);border-radius:7px;color:var(--green);padding:10px 14px;font-size:12px}
+.admin-row button:disabled{opacity:.5}
+.admin-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.admin-picker{height:260px;border-radius:10px;border:1px solid var(--line);background:#cfe0ea;margin-bottom:6px;z-index:0}
+.admin-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.admin-list button{width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px 12px;color:var(--ink)}
+.admin-list button:hover{background:#edf3e7}
+.admin-list strong{display:block;font-size:13px}.admin-list small{color:var(--muted);font-size:11px}
+.admin-dialog label small{font-weight:400;color:var(--muted)}
+.memory-thumbnail-item>.photo-admin{position:absolute;top:6px;left:6px;z-index:3;width:28px;height:28px;padding:0;border:0;border-radius:50%;background:#ffffffe6;color:var(--green);font-size:13px;box-shadow:0 1px 5px #0003;cursor:pointer}
+.memory-thumbnail-item.is-cover>.photo-admin{top:34px}
+#memoryViewer .memory-viewer-top #memoryEditToggle[hidden]{display:none}
+.map-admin-btn{border-style:dashed!important}
+@media(max-width:600px){.admin-two{grid-template-columns:1fr}}
