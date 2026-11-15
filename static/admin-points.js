@@ -19,7 +19,7 @@ function openPhotoAdmin(entry,file,onDone=()=>{}){
   ${video?'':`<img class="admin-photo" src="${mediaUrl(file,480)}" alt="">`}
   <p class="error" id="photoAdminError" role="alert"></p>
   <section class="admin-block"><h3>Atribuir a outro ponto de visita</h3>${targets.length?`<label>Mover para a memória<select id="photoMoveTo">${targets.map(t=>`<option value="${t.id}">${esc(t.place||'Sem local')} · ${esc(t.title)} (${(t.files||[]).length})</option>`).join('')}</select></label><button type="button" class="primary" id="photoMove">Mover ${video?'clipe':'foto'}</button>`:'<p class="admin-sub">Não há outras memórias com fotos nesta viagem para receber este arquivo.</p>'}</section>
-  <section class="admin-block admin-row">${video?'':`<button type="button" id="photoCover" ${entry.cover_file_id===file.id?'disabled':''}>${entry.cover_file_id===file.id?'★ Já é a capa':'☆ Usar como capa'}</button>`}<button type="button" id="photoPoi">◎ Ponto de interesse…</button></section>
+  <section class="admin-block admin-row">${video?'':`<button type="button" id="photoCover" ${entry.cover_file_id===file.id?'disabled':''}>${entry.cover_file_id===file.id?'★ Já é a capa':'☆ Usar como capa'}</button>`}${typeof openPhotoEditor==='function'&&photoEditable(file)?'<button type="button" id="photoEdit">✂ Editar imagem…</button>':''}<button type="button" id="photoPoi">◎ Ponto de interesse…</button></section>
   <section class="admin-block"><button type="button" class="text-btn danger" id="photoDelete">Excluir do site</button></section>`;
   const fail=ex=>{$('#photoAdminError').textContent=ex.message};
   const done=async(info,message)=>{d.close();try{await onDone(info)}finally{toast(message)}};
@@ -29,6 +29,7 @@ function openPhotoAdmin(entry,file,onDone=()=>{}){
     try{await api('/api/files/move',{entry_id:entry.id,file_id:file.id,to_entry_id:to});await done({action:'moved',target},'Movido para “'+(target.place||target.title)+'”.')}catch(ex){fail(ex)}
   };
   if($('#photoCover'))$('#photoCover').onclick=async()=>{try{await api('/api/files/arrange',{entry_id:entry.id,cover_file_id:file.id});await done({action:'cover'},'Capa atualizada.')}catch(ex){fail(ex)}};
+  if($('#photoEdit'))$('#photoEdit').onclick=()=>{d.close();openPhotoEditor(entry,file,onDone)};
   $('#photoPoi').onclick=()=>{d.close();openPoiEditor(poiPrefillFor(entry))};
   $('#photoDelete').onclick=async()=>{
     if(!confirm('Excluir este arquivo do site? Esta ação não pode ser desfeita.'))return;

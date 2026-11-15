@@ -15,7 +15,7 @@ function memoryGallery(e,editable=false){
   const files=e.files||[],cover=coverOf(e);
   return `<div class="memory-thumbnail-grid${editable?' is-arranging':''}"${editable?' data-arrange-grid':''}>${files.map((f,i)=>{const video=f.mime.startsWith('video/'),visual=video||f.mime.startsWith('image/'),isCover=cover?.id===f.id;
     const dl=editable?`<a class="photo-download" href="/media/${f.id}?download=1" download title="Baixar ${video?'o clipe':'a foto'} no tamanho original" aria-label="Baixar original: ${esc(f.name)}">⬇</a>`:'';
-    const adm=editable&&isAdminUser()?`<button type="button" class="photo-admin" data-photo-admin="${f.id}" title="Editar: mover, excluir, capa, ponto de interesse" aria-label="Editar ${esc(f.name)}">✎</button>`:'';
+    const adm=editable&&isAdminUser()?`<button type="button" class="photo-admin" data-photo-admin="${f.id}" title="Editar: cortar e ajustar, mover, excluir, capa, ponto de interesse" aria-label="Editar ${esc(f.name)}">✎</button>`:'';
     const tools=editable?`<div class="photo-tools" role="group" aria-label="Organizar ${esc(f.name)}"><button type="button" data-file-move="${f.id}" data-dir="-1" ${i===0?'disabled':''} aria-label="Mover para antes" title="Mover para antes">‹</button>${f.mime.startsWith('image/')?`<button type="button" data-file-cover="${f.id}" ${isCover?'disabled':''} title="Usar como foto de capa">${isCover?'★ Capa':'☆ Capa'}</button>`:''}<button type="button" data-file-move="${f.id}" data-dir="1" ${i===files.length-1?'disabled':''} aria-label="Mover para depois" title="Mover para depois">›</button></div>`:'';
     return `<div class="memory-thumbnail-item${isCover?' is-cover':''}" data-file-item="${f.id}"${editable?' draggable="true"':''}>${visual?`<button type="button" class="memory-thumbnail" data-memory-thumbnail="${e.id}" data-memory-file="${f.id}" aria-label="${video?'Reproduzir vídeo':'Abrir foto'}: ${esc(f.name)}">${video?`<video src="${mediaUrl(f)}#t=0.1" preload="metadata" muted playsinline tabindex="-1" aria-hidden="true"></video><span class="memory-video-badge">▷ Vídeo</span>`:`<img src="${mediaUrl(f,480)}" alt="${esc(f.name)}" loading="lazy" draggable="false">`}${isCover?'<span class="memory-cover-badge">★ Capa</span>':''}</button>`:media(f)}${dl}${adm}${tools}${editable?`<button type="button" class="text-btn danger" data-del-file="${f.id}">Remover arquivo</button>`:''}</div>`}).join('')}</div>${editable&&files.length>1?'<p class="photo-arrange-hint">Arraste as miniaturas ou use ‹ › para mudar a ordem; ☆ Capa define a foto de destaque da memória.</p>':''}`}
 // Ordem e capa: salva no servidor e reabre o detalhe mantendo a rolagem.
@@ -164,6 +164,13 @@ function editCurrentMemoryFrame(){
       memoryFrames.splice(memoryFrameIndex,1);
       if(!memoryFrames.length){$('#memoryViewer').close();load().catch(()=>{});return}
       memoryFrameIndex=Math.min(memoryFrameIndex,memoryFrames.length-1);
+    }
+    if(info.action==='edited'){
+      // A foto ganhou novo arquivo: recarrega para exibir a versão editada.
+      try{await load()}catch{}
+      const fresh=(state.entries||[]).flatMap(e=>e.files||[]).find(f=>f.id===frame.file.id);
+      if(fresh)frame.file=fresh;
+      showMemoryFrame();return;
     }
     showMemoryFrame();
     try{await load()}catch{}

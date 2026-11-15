@@ -68,6 +68,8 @@ def init():
             c.execute('ALTER TABLE entries ADD COLUMN cover_file_id INTEGER')
         if 'position' not in {r['name'] for r in c.execute('PRAGMA table_info(files)')}:
             c.execute('ALTER TABLE files ADD COLUMN position INTEGER')
+        if 'original_path' not in {r['name'] for r in c.execute('PRAGMA table_info(files)')}:
+            c.execute('ALTER TABLE files ADD COLUMN original_path TEXT')
         if 'public_diary' not in {r['name'] for r in c.execute('PRAGMA table_info(trips)')}:
             c.execute('ALTER TABLE trips ADD COLUMN public_diary INTEGER NOT NULL DEFAULT 0')
         for column in ('login','photo'):
@@ -177,7 +179,7 @@ class Handler(BaseHTTPRequestHandler):
                 trips=[dict(r) for r in c.execute('SELECT id,name FROM trips WHERE public_diary=1 ORDER BY start,id')]
                 entries=[dict(r) for r in c.execute("SELECT e.id,e.trip_id,e.title,e.place,e.start,e.description,e.attraction_id,e.cover_file_id,u.name author,u.photo author_photo FROM entries e JOIN trips t ON t.id=e.trip_id JOIN users u ON u.id=e.user_id WHERE e.kind='diary' AND t.public_diary=1 ORDER BY e.start DESC,e.id DESC")]
                 for e in entries:
-                    e['files']=[dict(r) for r in c.execute("SELECT id,name,mime,substr(path,1,8) v FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%') "+FILE_ORDER,(e['id'],))]
+                    e['files']=[dict(r) for r in c.execute("SELECT id,name,mime,substr(path,1,8) v,original_path IS NOT NULL edited FROM files WHERE entry_id=? AND (mime LIKE 'image/%' OR mime LIKE 'video/%') "+FILE_ORDER,(e['id'],))]
                     e['comments']=[dict(r) for r in c.execute('SELECT u.name author,u.photo author_photo,c.body,c.created FROM comments c JOIN users u ON u.id=c.user_id WHERE c.entry_id=? ORDER BY c.id',(e['id'],))]
                 from geo import build_map
                 return self.respond({'trips':trips,'entries':entries,'map':build_map(c,[e for e in entries if e['files']])})
@@ -201,7 +203,7 @@ class Handler(BaseHTTPRequestHandler):
                 for e in entries:
                     from attractions import preview
                     e['guide']=preview(e)
-                    e['files']=[dict(r) for r in c.execute('SELECT id,name,mime,substr(path,1,8) v FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
+                    e['files']=[dict(r) for r in c.execute('SELECT id,name,mime,substr(path,1,8) v,original_path IS NOT NULL edited FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
                     e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author,u.photo author_photo FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
                 members=[dict(r) for r in c.execute('SELECT id,name,role,login,photo FROM users WHERE id IN (SELECT user_id FROM trip_members WHERE trip_id=?)',(trip_id,))]
                 users=[dict(r) for r in c.execute('SELECT id,name,email,role,login,photo FROM users ORDER BY name')] if u['role']=='admin' else []
@@ -216,7 +218,7 @@ class Handler(BaseHTTPRequestHandler):
                 if not entry:return self.respond({'error':'Passeio não encontrado'},404)
                 if not allowed(c,u,entry['trip_id']):return self.respond({'error':'Sem acesso a esta viagem'},403)
                 e=dict(entry)
-                e['files']=[dict(r) for r in c.execute('SELECT id,name,mime,substr(path,1,8) v FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
+                e['files']=[dict(r) for r in c.execute('SELECT id,name,mime,substr(path,1,8) v,original_path IS NOT NULL edited FROM files WHERE entry_id=? '+FILE_ORDER,(e['id'],))]
                 e['comments']=[dict(r) for r in c.execute('SELECT c.*,u.name author,u.photo author_photo FROM comments c JOIN users u ON u.id=c.user_id WHERE entry_id=? ORDER BY c.id',(e['id'],))]
                 from attractions import guide_for
                 return self.respond({'entry':e,'guide':guide_for(entry)})
@@ -429,16 +431,41 @@ class Handler(BaseHTTPRequestHandler):
                     c.execute('INSERT INTO comments(entry_id,user_id,body,created) VALUES(?,?,?,?)',(eid,u['id'],body,datetime.now(timezone.utc).isoformat())); return self.respond({'ok':True})
                 if u['role']!='admin' and (entry['user_id']!=u['id'] or entry['kind']!='diary'):return self.respond({'error':'Sem permissão'},403)
                 if path=='/api/delete':
-                    files=c.execute('SELECT path FROM files WHERE entry_id=?',(eid,)).fetchall()
+                    files=c.execute('SELECT path,original_path FROM files WHERE entry_id=?',(eid,)).fetchall()
                     c.execute('DELETE FROM entries WHERE id=?',(eid,))
-                    for f in files:(DATA/'uploads'/f['path']).unlink(missing_ok=True);media_variants.drop(DATA/'uploads'/f['path'])
+                    for f in files:
+                        (DATA/'uploads'/f['path']).unlink(missing_ok=True);media_variants.drop(DATA/'uploads'/f['path'])
+                        if f['original_path']:(DATA/'uploads'/f['original_path']).unlink(missing_ok=True)
                     return self.respond({'ok':True})
                 if path=='/api/delete-file':
-                    f=c.execute('SELECT id,path FROM files WHERE id=? AND entry_id=?',(int(payload.get('file_id',0)),eid)).fetchone()
+                    f=c.execute('SELECT id,path,original_path FROM files WHERE id=? AND entry_id=?',(int(payload.get('file_id',0)),eid)).fetchone()
                     if not f:raise ValueError('Arquivo inexistente')
                     c.execute('DELETE FROM files WHERE id=?',(f['id'],))
                     c.execute('UPDATE entries SET cover_file_id=NULL WHERE id=? AND cover_file_id=?',(eid,f['id']))
                     (DATA/'uploads'/f['path']).unlink(missing_ok=True);media_variants.drop(DATA/'uploads'/f['path'])
+                    if f['original_path']:(DATA/'uploads'/f['original_path']).unlink(missing_ok=True)
+                    return self.respond({'ok':True})
+                if path=='/api/files/edit':
+                    # Editor de fotos do administrador: grava a versão editada e guarda o arquivo enviado
+                    # (original_path) para poder restaurar. Novas edições partem da versão atual.
+                    if u['role']!='admin':return self.respond({'error':'Apenas o administrador pode editar fotos'},403)
+                    f=c.execute('SELECT * FROM files WHERE id=? AND entry_id=?',(payload.get('file_id') if type(payload.get('file_id')) is int else 0,eid)).fetchone()
+                    if not f:raise ValueError('Arquivo inexistente')
+                    current=DATA/'uploads'/f['path']
+                    if payload.get('restore'):
+                        if not f['original_path']:raise ValueError('Esta foto não foi editada')
+                        if not (DATA/'uploads'/f['original_path']).is_file():raise ValueError('O arquivo original não está mais disponível')
+                        mime=UPLOAD_TYPES.get(Path(f['original_path']).suffix.lower(),f['mime'])
+                        c.execute('UPDATE files SET path=?,mime=?,original_path=NULL WHERE id=?',(f['original_path'],mime,f['id']))
+                        current.unlink(missing_ok=True);media_variants.drop(current)
+                        media_variants.warm(DATA/'uploads'/f['original_path'],mime)
+                        return self.respond({'ok':True})
+                    if f['mime'] not in media_variants.RESIZABLE:raise ValueError('Só fotos JPEG, PNG, WebP ou HEIC podem ser editadas')
+                    target,mime=media_variants.edit(current,DATA/'uploads'/secrets.token_hex(24),payload)
+                    c.execute('UPDATE files SET path=?,mime=?,original_path=? WHERE id=?',(target.name,mime,f['original_path'] or f['path'],f['id']))
+                    media_variants.drop(current)
+                    if f['original_path']:current.unlink(missing_ok=True)
+                    media_variants.warm(target,mime)
                     return self.respond({'ok':True})
                 if path=='/api/files/move':
                     # Só o administrador passa a foto para outra memória (mesma viagem); vai para o fim da ordem.
