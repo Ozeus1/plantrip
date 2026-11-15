@@ -1,4 +1,4 @@
-import unittest
+import unittest,urllib.error
 import test_app
 
 class PublicDiary(test_app.Integration):
@@ -26,8 +26,8 @@ class PublicDiary(test_app.Integration):
         self.assertEqual([f['id'] for f in post['files']],[photo])
         self.assertEqual(post['comments'][0]['body'],'Boa viagem!')
         self.assertNotIn('email',str(public));self.assertNotIn('password',str(public));self.assertNotIn('notes',str(public));self.assertNotIn('member_ids',str(public))
-        self.assertEqual(call(guest,f'/media/{photo}'),b'image-data')
-        import urllib.error
+        with self.assertRaises(urllib.error.HTTPError) as ex:call(guest,f'/media/{photo}')
+        self.assertEqual(ex.exception.code,401,'visitante não recebe o original da foto')
         for path,data in [(f'/media/{pdf}',None),(f'/media/{reservation}',None),('/api/comments',{'entry_id':diary,'body':'Anônimo'}),('/api/entries',{'kind':'diary','trip_id':tid,'title':'Anônimo'}),('/api/upload',b'file')]:
             with self.assertRaises(urllib.error.HTTPError) as ex:call(guest,path,data)
             self.assertEqual(ex.exception.code,401)

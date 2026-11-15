@@ -32,11 +32,11 @@ context.presentMemories(mixed,true);assert.equal(element('#memoryFrameCount').te
 element('#memoryViewer').open=false;element('#memoryViewer').listeners.close();
 media.tagName='VIDEO';context.presentMemories(mixed,false,21);
 assert.equal(element('#memoryFrameCount').textContent,'2 / 3');
-assert.equal(timers.size,0);assert.ok(element('#memoryViewerStage').innerHTML.includes('controls playsinline preload="metadata"'));assert.ok(!element('#memoryViewerStage').innerHTML.includes('autoplay'));
+assert.equal(timers.size,0);assert.ok(element('#memoryViewerStage').innerHTML.includes('controls controlsList="nodownload noplaybackrate" disablePictureInPicture playsinline preload="metadata"'));assert.ok(!element('#memoryViewerStage').innerHTML.includes('autoplay'));
 assert.equal(element('#memoryVideoOriginal').hidden,false);
 media.tagName='IMG';context.presentMemories(mixed,false,22);
 assert.equal(element('#memoryFrameCount').textContent,'3 / 3');
 element('#memoryPlayPause').onclick();assert.equal(element('#memoryFrameCount').textContent,'2 / 2');
 element('#memoryViewer').open=false;element('#memoryViewer').listeners.close();
-const gallery=context.memoryGallery(mixed[0]);assert.ok(gallery.includes('data-memory-file="21"'));assert.ok(gallery.includes('memory-video-badge'));assert.ok(!gallery.includes(' controls'));
+const gallery=context.memoryGallery(mixed[0]);assert.ok(!gallery.includes('download=1'),'sem botão de baixar fora da edição');const editGallery=context.memoryGallery(mixed[0],true);assert.ok(editGallery.includes('/media/21?download=1')&&editGallery.includes('Baixar o clipe'));assert.ok(gallery.includes('data-memory-file="21"'));assert.ok(gallery.includes('memory-video-badge'));assert.ok(!gallery.includes(' controls'));
 console.log('Miniaturas por item, vídeo manual e miniclipe apenas com fotos: OK');

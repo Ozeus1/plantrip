@@ -73,4 +73,17 @@ class PhotoOrder(test_app.Integration):
         self.assertLess(len(small)*5,len(original))
         self.assertEqual(Image.open(io.BytesIO(small)).size,(480,320))
 
+        # Original e download: só logado. Visitante do diário público recebe apenas as versões leves.
+        trip=call(a,'/api/state')['trips'][0]
+        call(a,'/api/trips',{**{k:trip[k] for k in ('id','name','start','end','places','notes')},'public_diary':True,'member_ids':trip['member_ids']})
+        guest=self.client()
+        with a.open(self.url+f"/media/{f['id']}?download=1") as r:
+            self.assertIn('attachment',r.headers['Content-Disposition']);self.assertIn('grande.jpg',r.headers['Content-Disposition']);self.assertEqual(r.read(),original)
+        for path in (f"/media/{f['id']}?download=1",f"/media/{f['id']}"):
+            with self.assertRaises(urllib.error.HTTPError,msg=path) as ex:guest.open(self.url+path)
+            self.assertEqual(ex.exception.code,401)
+        with guest.open(self.url+f"/media/{f['id']}?w=480") as r:self.assertEqual(r.headers['Content-Type'],'image/webp')
+        with self.assertRaises(urllib.error.HTTPError) as ex:guest.open(self.url+f"/media/{f['id']}?w=999")
+        self.assertEqual(ex.exception.code,401)
+
 if __name__=='__main__':unittest.main()

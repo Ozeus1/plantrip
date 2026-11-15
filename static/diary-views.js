@@ -14,8 +14,9 @@ function memoryViewerButtons(e){return `<div class="memory-view-buttons"><button
 function memoryGallery(e,editable=false){
   const files=e.files||[],cover=coverOf(e);
   return `<div class="memory-thumbnail-grid${editable?' is-arranging':''}"${editable?' data-arrange-grid':''}>${files.map((f,i)=>{const video=f.mime.startsWith('video/'),visual=video||f.mime.startsWith('image/'),isCover=cover?.id===f.id;
+    const dl=editable?`<a class="photo-download" href="/media/${f.id}?download=1" download title="Baixar ${video?'o clipe':'a foto'} no tamanho original" aria-label="Baixar original: ${esc(f.name)}">⬇</a>`:'';
     const tools=editable?`<div class="photo-tools" role="group" aria-label="Organizar ${esc(f.name)}"><button type="button" data-file-move="${f.id}" data-dir="-1" ${i===0?'disabled':''} aria-label="Mover para antes" title="Mover para antes">‹</button>${f.mime.startsWith('image/')?`<button type="button" data-file-cover="${f.id}" ${isCover?'disabled':''} title="Usar como foto de capa">${isCover?'★ Capa':'☆ Capa'}</button>`:''}<button type="button" data-file-move="${f.id}" data-dir="1" ${i===files.length-1?'disabled':''} aria-label="Mover para depois" title="Mover para depois">›</button></div>`:'';
-    return `<div class="memory-thumbnail-item${isCover?' is-cover':''}" data-file-item="${f.id}"${editable?' draggable="true"':''}>${visual?`<button type="button" class="memory-thumbnail" data-memory-thumbnail="${e.id}" data-memory-file="${f.id}" aria-label="${video?'Reproduzir vídeo':'Abrir foto'}: ${esc(f.name)}">${video?`<video src="${mediaUrl(f)}#t=0.1" preload="metadata" muted playsinline tabindex="-1" aria-hidden="true"></video><span class="memory-video-badge">▷ Vídeo</span>`:`<img src="${mediaUrl(f,480)}" alt="${esc(f.name)}" loading="lazy" draggable="false">`}${isCover?'<span class="memory-cover-badge">★ Capa</span>':''}</button>`:media(f)}${tools}${editable?`<button type="button" class="text-btn danger" data-del-file="${f.id}">Remover arquivo</button>`:''}</div>`}).join('')}</div>${editable&&files.length>1?'<p class="photo-arrange-hint">Arraste as miniaturas ou use ‹ › para mudar a ordem; ☆ Capa define a foto de destaque da memória.</p>':''}`}
+    return `<div class="memory-thumbnail-item${isCover?' is-cover':''}" data-file-item="${f.id}"${editable?' draggable="true"':''}>${visual?`<button type="button" class="memory-thumbnail" data-memory-thumbnail="${e.id}" data-memory-file="${f.id}" aria-label="${video?'Reproduzir vídeo':'Abrir foto'}: ${esc(f.name)}">${video?`<video src="${mediaUrl(f)}#t=0.1" preload="metadata" muted playsinline tabindex="-1" aria-hidden="true"></video><span class="memory-video-badge">▷ Vídeo</span>`:`<img src="${mediaUrl(f,480)}" alt="${esc(f.name)}" loading="lazy" draggable="false">`}${isCover?'<span class="memory-cover-badge">★ Capa</span>':''}</button>`:media(f)}${dl}${tools}${editable?`<button type="button" class="text-btn danger" data-del-file="${f.id}">Remover arquivo</button>`:''}</div>`}).join('')}</div>${editable&&files.length>1?'<p class="photo-arrange-hint">Arraste as miniaturas ou use ‹ › para mudar a ordem; ☆ Capa define a foto de destaque da memória.</p>':''}`}
 // Ordem e capa: salva no servidor e reabre o detalhe mantendo a rolagem.
 function bindFileArranging(e){
   const grid=document.querySelector('[data-arrange-grid]');if(!grid)return;
@@ -97,7 +98,7 @@ function showMemoryFrame(){
   stopMemoryMedia();
   clearMemoryTimer();const sequence=++memorySequence,{entry:e,file:f}=memoryFrames[memoryFrameIndex],video=f.mime.startsWith('video/');
   $('#memoryViewer').classList.toggle('is-playing',memoryPlaying);
-  $('#memoryViewerStage').innerHTML=video?`<video id="memoryFrameMedia" src="${mediaUrl(f)}" controls playsinline preload="metadata" aria-label="${esc(f.name)}"></video>`:`<img id="memoryFrameMedia" ${imgAttrs(f,'100vw')} alt="${esc(f.name)}">`;
+  $('#memoryViewerStage').innerHTML=video?`<video id="memoryFrameMedia" src="${mediaUrl(f)}" controls controlsList="nodownload noplaybackrate" disablePictureInPicture playsinline preload="metadata" aria-label="${esc(f.name)}"></video>`:`<img id="memoryFrameMedia" ${imgAttrs(f,'100vw')} alt="${esc(f.name)}">`;
   $('#memoryVideoOriginal').hidden=!video;$('#memoryVideoOriginal').href=mediaUrl(f);
   $('#memoryFrameTitle').textContent=e.title;$('#memoryFrameCaption').textContent=`${e.place||'Nossa viagem'} · ${date(e.start)} · ${e.author}`;
   $('#memoryFrameCount').textContent=$('#memoryFrameCountTop').textContent=`${memoryFrameIndex+1} / ${memoryFrames.length}`;$('#memoryViewer').classList.toggle('at-start',memoryFrameIndex===0);$('#memoryViewer').classList.toggle('at-end',memoryFrameIndex===memoryFrames.length-1);preloadMemoryNeighbors();$('#memoryFramePrev').disabled=memoryFrameIndex===0;$('#memoryFrameNext').disabled=memoryFrameIndex===memoryFrames.length-1;
@@ -140,12 +141,23 @@ function bindMemoryGestures(){
   stage.addEventListener('pointercancel',e=>finish(e,true));
   stage.addEventListener('mousemove',e=>{const r=stage.getBoundingClientRect(),zone=(e.clientX-r.left)/r.width;stage.style.cursor=zone<.3&&memoryFrameIndex>0?'w-resize':zone>.7&&memoryFrameIndex<memoryFrames.length-1?'e-resize':'grab'});
 }
+// Dissuasão no visualizador: sem menu de contexto, arrastar ou segurar para salvar, e a tela se oculta ao imprimir,
+// ao usar PrintScreen ou ao perder o foco. Nenhum site consegue impedir de fato uma captura de tela do aparelho.
+function bindMemoryProtection(){
+  const viewer=$('#memoryViewer');
+  const block=e=>{e.preventDefault()};
+  ['contextmenu','dragstart','copy','cut'].forEach(n=>viewer.addEventListener(n,block));
+  const hide=on=>viewer.classList.toggle('shielded',on);
+  document.addEventListener('keyup',e=>{if(viewer.open&&e.key==='PrintScreen'){hide(true);try{navigator.clipboard?.writeText('')}catch{}setTimeout(()=>hide(false),1500)}});
+  document.addEventListener('keydown',e=>{if(viewer.open&&((e.ctrlKey||e.metaKey)&&['s','p','u'].includes(e.key.toLowerCase())||(e.metaKey&&e.shiftKey&&['3','4','5'].includes(e.key))))e.preventDefault()});
+  if(typeof window!=='undefined'){window.addEventListener('blur',()=>{if(viewer.open)hide(true)});window.addEventListener('focus',()=>hide(false));window.addEventListener('beforeprint',()=>hide(true));window.addEventListener('afterprint',()=>hide(false))}
+}
 function stopMemoryMedia(){const previous=$('#memoryFrameMedia');if(previous?.tagName==='VIDEO'){previous.pause();previous.removeAttribute('src');previous.load()}}
 function initMemoryViewer(){
   $('#memoryFramePrev').onclick=()=>stepMemoryFrame(-1);
   $('#memoryFrameNext').onclick=()=>stepMemoryFrame(1);
   $('#memoryMenuToggle').onclick=()=>setMemoryPanel($('#memoryViewerPanel').hidden);
-  bindMemoryGestures();
+  bindMemoryGestures();bindMemoryProtection();
   $('#memoryPlayPause').onclick=()=>{if(!memoryPhotosOnly){const current=memoryFrames[memoryFrameIndex]?.file.id;memoryFrames=memoryFrames.filter(x=>x.file.mime.startsWith('image/'));memoryFrameIndex=Math.max(0,memoryFrames.findIndex(x=>x.file.id===current));memoryPhotosOnly=true;if(!memoryFrames.length)return;memoryPlaying=true}else{memoryPlaying=!memoryPlaying;if(memoryPlaying&&memoryFrameIndex===memoryFrames.length-1)memoryFrameIndex=0}showMemoryFrame()};
   $('#memorySpeed').onchange=()=>{if(memoryPlaying&&$('#memoryFrameMedia')?.tagName==='IMG')scheduleMemoryFrame(memorySequence)};
   $('#memoryViewer').addEventListener('close',()=>{memoryPlaying=false;memorySequence++;clearMemoryTimer();stopMemoryMedia();$('#memoryViewerStage').innerHTML='';memoryFrames=[];$('#memoryViewer').classList.remove('is-playing')});

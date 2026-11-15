@@ -3,7 +3,7 @@ from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from http.cookies import SimpleCookie
-from urllib.parse import urlsplit, parse_qs
+from urllib.parse import urlsplit, parse_qs, quote
 import media_variants
 
 ROOT = Path(__file__).parent
@@ -109,7 +109,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_HEAD(self):self.do_GET()
 
-    def send_file(self,target,mime,private=False):
+    def send_file(self,target,mime,private=False,extra=None):
         with target.open('rb') as stream:
             size=os.fstat(stream.fileno()).st_size;start=0;end=size-1;status=200
             if self.command=='GET' and not self.headers.get('If-Range'):
@@ -118,6 +118,7 @@ class Handler(BaseHTTPRequestHandler):
                     self.send_response(416);self.send_header('Content-Range',f'bytes */{size}');self.send_header('Content-Length','0');self.send_header('Accept-Ranges','bytes');self.send_header('Cache-Control','no-store');self.end_headers();return
                 if requested is not None:start,end=requested;status=206
             self.send_response(status);self.send_header('Content-Type',mime);self.send_header('Accept-Ranges','bytes')
+            for name,value in (extra or {}).items():self.send_header(name,value)
             self.send_header('X-Content-Type-Options','nosniff');self.send_header('Content-Length',str(max(0,end-start+1)))
             # Cada /media/<id> nunca muda de conteúdo: o navegador pode reaproveitar sem baixar de novo.
             if private:self.send_header('Cache-Control','private, max-age=2592000, immutable')
@@ -191,11 +192,18 @@ class Handler(BaseHTTPRequestHandler):
                 if not public and not u:return self.respond({'error':'Entre para acessar os arquivos.'},401)
                 if not public and (not entry or not allowed(c,u,entry['trip_id'])):return self.respond({'error':'Sem acesso a esta viagem'},403)
                 target=DATA/'uploads'/f['path']; mime=f['mime']
-                # ?w=480|1280|1920: versão leve para exibição; o original segue disponível sem o parâmetro.
-                width=parse_qs(urlsplit(self.path).query).get('w',[''])[0]
-                if width.isdigit():
-                    light=media_variants.variant(target,mime,int(width))
-                    if light:target,mime=light,'image/webp'
+                # ?w=480|1280|1920: versão leve para exibição. O original (sem ?w) e o download são só de quem está
+                # logado e tem acesso à viagem; visitantes do diário público recebem apenas as versões reduzidas.
+                query=parse_qs(urlsplit(self.path).query);width=query.get('w',[''])[0]
+                member=bool(u and entry and allowed(c,u,entry['trip_id']))
+                light=media_variants.variant(target,mime,int(width)) if width.isdigit() and not query.get('download') else None
+                if light:target,mime=light,'image/webp'
+                elif mime in media_variants.RESIZABLE and media_variants.Image and not member:return self.respond({'error':'Entre para ver o arquivo original.'},401)
+                if query.get('download'):
+                    if not u:return self.respond({'error':'Entre para baixar o original.'},401)
+                    if not member:return self.respond({'error':'Sem acesso a esta viagem'},403)
+                    self.send_file(target,mime,True,{'Content-Disposition':"attachment; filename*=UTF-8''"+quote(f['name'] or 'arquivo',safe='')})
+                    return
             else:
                 target=ROOT/'static'/('index.html' if path in ('/','/diary') or re.fullmatch(r'/attractions/\d+/?',path) else 'upload.html' if re.fullmatch(r'/u/[A-Za-z0-9_-]+/?',path) else path.lstrip('/'))
                 if not target.resolve().is_relative_to((ROOT/'static').resolve()):return self.respond({'error':'Inválido'},404)

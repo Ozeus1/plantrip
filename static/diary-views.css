@@ -41,3 +41,11 @@ dialog#memoryViewer{width:100vw;height:100vh;height:100dvh;max-width:none;max-he
 .card-edit{position:absolute;top:10px;right:10px;z-index:2;width:34px;height:34px;padding:0;border:0;border-radius:50%;background:#ffffffcc;color:var(--green);font-size:15px;line-height:34px;text-align:center;box-shadow:0 2px 8px #0002;opacity:.8;cursor:pointer;transition:opacity .15s,background .15s}
 .card-edit:hover,.card-edit:focus-visible{opacity:1;background:#fff}
 #memoryViewerStage:focus{outline:none}
+
+/* Proteção do visualizador e das fotos públicas */
+#memoryViewer,#memoryViewer *,.protected-media{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+#memoryViewer img,.protected-media{-webkit-user-drag:none}
+#memoryViewer.shielded #memoryViewerStage{visibility:hidden}
+@media print{#memoryViewer,.protected-media{display:none!important}}
+.memory-thumbnail-item>.photo-download{position:absolute;top:6px;right:6px;z-index:3;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#ffffffe6;color:var(--green);font-size:14px;text-decoration:none;box-shadow:0 1px 5px #0003}
+.memory-thumbnail-item>.photo-download:hover,.memory-thumbnail-item>.photo-download:focus-visible{background:#fff;color:#12332a}
